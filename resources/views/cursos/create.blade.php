@@ -4,22 +4,7 @@
 
 <style>
 
-    .meuBtn{
-        font-weight: 900;
-        font-family: 'Consolas',sans-serif;
-        font-size: 1rem;
-        border: none;
-    }
-    .meuBtn:hover{
-        background-color: darkgreen;
-        color: #000;
-        border: none;
-        transform: scale(1);
-        font-size: 1.2rem;
-    }
-    label{
-        color:#fff;
-    }
+  
 
     </style>
 
@@ -27,7 +12,18 @@
 <div class="container p-3" style="margin:20px">
     <a href="/cursos" class="btn-inicial" style="background-color: red">Voltar</a>
 
-    
+      {{-- DEBUG DE ERROS NO FORM-------------------- --}}
+  @if ($errors->any())
+  <div class=" text-white">
+      <ul>
+          @foreach ($errors->all() as $erro)
+              <li class="">
+                  {{ $erro }}                   
+              </li>                 
+          @endforeach
+      </ul>
+  </div>       
+@endif
 
 
         <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:rgb(105, 236, 253);font-size:5rem;">Registar um Curso</h1>
@@ -36,7 +32,7 @@
 
             <div class="form-group display-4 text-center">
                 {{ Form::label('nome','Nome') }}
-                {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Primeiro e Ultimo Nome']) }}
+                {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Nome do curso']) }}
 
                
                 {{ Form::label('disciplinas','Disciplinas') }}

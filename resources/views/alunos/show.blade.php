@@ -19,11 +19,11 @@
     <a href="/alunos" class="btn-inicial" style="background-color: red">Voltar</a>
   
     <h1 class="text-white text-center display-4">
-        Cursos a frequentar</h1>
-        @foreach ($cursos as $item)
-
-        <p class="text-white text-center">{{ $item->nome }}</p>
+        Curso a frequentar</h1>
+        
+      
+        <p class="text-white text-center">{{ $curso }}</p>
        
-   @endforeach
+   
 </div> 
 @endsection

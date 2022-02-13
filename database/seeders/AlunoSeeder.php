@@ -28,6 +28,6 @@ class AlunoSeeder extends Seeder
         //     ]);
         // }
 
-        Aluno::factory()->count(10)->create();
+        // Aluno::factory()->count(1)->create();
     }
 }

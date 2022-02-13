@@ -17,7 +17,10 @@ class ProfessorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nome' => "Prof.".$this->faker->name(),
+            // 'id_disciplina'  => rand(1, 10),
+            'created_at'=>now()
+            
         ];
     }
 }

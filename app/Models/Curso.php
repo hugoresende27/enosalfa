@@ -22,8 +22,8 @@ class Curso extends Model
      */
     public function aluno()//: BelongsTo
     {
-        // return $this->belongsTo(Aluno::class, 'id_curso', 'id');
-        return $this->hasOne(Aluno::class, 'id_curso', 'id');
+        return $this->belongsTo(Aluno::class, 'id_curso', 'id');
+        // return $this->hasOne(Aluno::class, 'id_curso', 'id');
     }
 
 }

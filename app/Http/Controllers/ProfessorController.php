@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Professor;
+use App\Models\Disciplina;
 use App\Http\Requests\StoreProfessorRequest;
 use App\Http\Requests\UpdateProfessorRequest;
 
@@ -15,7 +16,12 @@ class ProfessorController extends Controller
      */
     public function index()
     {
-        return view('professores.index');
+
+        $disciplina = Disciplina::all()->pluck('nome');
+        $profs = Professor::all();
+        // dd($disciplina);
+        return view('professores.index', compact('disciplina','profs'));
+       
     }
 
     /**
@@ -36,7 +42,25 @@ class ProfessorController extends Controller
      */
     public function store(StoreProfessorRequest $request)
     {
-        //
+        $this->validate($request, [
+            'nome'=>'required',
+            'disciplina'=>'required|integer|min:1|max:10',
+           
+        ],
+        [
+            'nome.required' => 'Preencha o nome!',
+            'disciplina.required' => 'Preencha a disciplina!',
+            'disciplina.integer' => 'Tem de colocar o número do código da disciplina',
+           
+        ]);
+
+        $prof = new Professor;
+        $prof->nome=$request->input('nome');
+        $prof->id_disciplina=$request->input('disciplina');
+      
+        $prof->save();
+
+        return redirect ('/professores')->with('message','Professor registado');
     }
 
     /**
@@ -79,8 +103,13 @@ class ProfessorController extends Controller
      * @param  \App\Models\Professor  $professor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Professor $professor)
+    public function destroy( $id)
     {
-        //
+              
+        $prof = Professor::where('id', $id);
+      
+        $prof->delete();
+       
+        return redirect('/professores')->with ('message', 'Registo do professor apagado!');
     }
 }

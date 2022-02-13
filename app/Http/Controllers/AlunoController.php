@@ -18,8 +18,10 @@ class AlunoController extends Controller
     {
 
         $alunos = Aluno::all();
-        // dd($alunos);
-        return view ('alunos.index')->with('alunos',$alunos);
+       
+        $curso = Curso::all()->pluck('nome');
+       
+        return view ('alunos.index',compact('alunos','curso'));
     }
 
     /**
@@ -29,7 +31,11 @@ class AlunoController extends Controller
      */
     public function create()
     {
-        return view('alunos.create');
+        
+        $cursos = Curso::all()->pluck('nome','id');
+          
+    //    dd($cursos);
+        return view('alunos.create',compact('cursos'));
     }
 
     /**
@@ -72,10 +78,13 @@ class AlunoController extends Controller
      */
     public function show( $id)
     {
-        $cursos = Curso::where('id_aluno', $id)->get();
+        // $curso = Curso::where('id_aluno', $id)->get();
+        $curso = Curso::all();
         $aluno = Aluno::where('id', $id)->pluck('nome');
-        // dd($id);
-        return view ('alunos.show', compact('cursos','aluno'));
+        $skips = ["[","]","\""];
+        $curso = str_replace($skips, ' ',$curso);
+        dd($curso);
+        return view ('alunos.show', compact('curso','aluno'));
     }
 
     /**

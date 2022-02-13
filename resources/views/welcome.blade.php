@@ -3,13 +3,26 @@
 @section('content')
     <style>
 
-     
+        .menu{
+                
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                text-align: center;
+                
+                
+            }
+            ul li{
+                margin: 20px;
+            }
       
 
     </style>
    
        
-@auth
+        @auth
     
 
             <div class="menu">
@@ -33,6 +46,7 @@
                     </li>
                 </ul>
             </div>
-            @endauth
+        @endauth
+
 @endsection          
  

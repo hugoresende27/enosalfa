@@ -18,7 +18,7 @@ class AlunoFactory extends Factory
     {
         return [
             'nome' => $this->faker->name(),
-            'turma'  => \Str::random(1),
+            'turma'  => \Str::upper(\Str::random(2)) ,
             'sala'  => rand(25, 65),
             'id_curso'  => rand(1, 6),
             'created_at'=>now()

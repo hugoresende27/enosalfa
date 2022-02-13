@@ -15,42 +15,86 @@ class CursoSeeder extends Seeder
     public function run()
     {
         \DB::table('cursos')->insert([
-            'nome'  => 'PHP',
+            'nome'  => 'Desenvolvedor WEB Inicial',
             'disciplinas'  => \Str::random(10),
             // 'id_aluno'=>1,          
             
   
         ]);
         \DB::table('cursos')->insert([
-            'nome'  => 'JAVA',
+            'nome'  => 'Desenvolvedor WEB Medio',
             'disciplinas'  => \Str::random(10),
             // 'id_aluno'=>1,          
             
   
         ]);
         \DB::table('cursos')->insert([
-            'nome'  => 'C/C++',
+            'nome'  => 'Desenvolvedor WEB Avançado',
             'disciplinas'  => \Str::random(10),
             // 'id_aluno'=>1,          
             
   
         ]);
         \DB::table('cursos')->insert([
-            'nome'  => 'Javascript',
+            'nome'  => 'Gestor Redes Sociais',
             'disciplinas'  => \Str::random(10),
             // 'id_aluno'=>1,          
             
   
         ]);
         \DB::table('cursos')->insert([
-            'nome'  => 'HTML/CSS',
+            'nome'  => 'Mecanica Auto',
+            'disciplinas'  => \Str::random(10),
+            // 'id_aluno'=>1,          
+            
+  
+        ]);
+
+        \DB::table('cursos')->insert([
+            'nome'  => 'Artes Urbanas',
             'disciplinas'  => \Str::random(10),
             // 'id_aluno'=>1,          
             
   
         ]);
         \DB::table('cursos')->insert([
-            'nome'  => 'Python',
+            'nome'  => 'Soldador',
+            'disciplinas'  => \Str::random(10),
+            // 'id_aluno'=>1,          
+            
+  
+        ]);
+        \DB::table('cursos')->insert([
+            'nome'  => 'CAP de formadores',
+            'disciplinas'  => \Str::random(10),
+            // 'id_aluno'=>1,          
+            
+  
+        ]);
+        \DB::table('cursos')->insert([
+            'nome'  => 'Gestao de Stocks',
+            'disciplinas'  => \Str::random(10),
+            // 'id_aluno'=>1,          
+            
+  
+        ]);
+        \DB::table('cursos')->insert([
+            'nome'  => 'Estudos Interpessoais',
+            'disciplinas'  => \Str::random(10),
+            // 'id_aluno'=>1,          
+            
+  
+        ]);
+        \DB::table('cursos')->insert([
+            'nome'  => 'Eletronica Emocional',
+            'disciplinas'  => \Str::random(10),
+            // 'id_aluno'=>1,          
+            
+  
+        ]);
+        
+        \DB::table('cursos')->insert([
+            'nome'  => 'Analista de Base de Dados',
             'disciplinas'  => \Str::random(10),
             // 'id_aluno'=>1,          
             

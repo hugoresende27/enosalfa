@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Disciplina;
+use App\Models\Professor;
 use App\Http\Requests\StoreDisciplinaRequest;
 use App\Http\Requests\UpdateDisciplinaRequest;
 
@@ -15,7 +16,9 @@ class DisciplinaController extends Controller
      */
     public function index()
     {
-        return view('disciplinas.index');
+        $disc = Disciplina::all();
+        $profs = Professor::all()->pluck('nome');
+        return view('disciplinas.index',compact('disc','profs'));
     }
 
     /**
@@ -79,8 +82,13 @@ class DisciplinaController extends Controller
      * @param  \App\Models\Disciplina  $disciplina
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Disciplina $disciplina)
+    public function destroy($id)
     {
-        //
+               
+        $disc = Professor::where('id', $id);
+      
+        $disc->delete();
+       
+        return redirect('/disciplinas')->with ('message', 'Disciplina apagada!');
     }
 }

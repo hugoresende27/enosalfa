@@ -4,22 +4,7 @@
 
 <style>
 
-    .meuBtn{
-        font-weight: 900;
-        font-family: 'Consolas',sans-serif;
-        font-size: 1rem;
-        border: none;
-    }
-    .meuBtn:hover{
-        background-color: darkgreen;
-        color: #000;
-        border: none;
-        transform: scale(1);
-        font-size: 1.2rem;
-    }
-    label{
-        color:#fff;
-    }
+  
 
     </style>
 
@@ -53,9 +38,21 @@
                 {{ Form::text('turma','', ['class'=>'form-control m-3','placeholder'=>'Turma']) }}
                 {{ Form::label('sala','Sala') }}
                 {{ Form::text('sala','', ['class'=>'form-control m-3','placeholder'=>'Sala']) }}
-                <p class="text-white" style="font-size: 20pt">1 &rAarr; PHP 2 &rAarr;JAVA 3 &rAarr;C/C++ 4 &rAarr;JavaScript 5 &rAarr;HTML/CSS 5 &rAarr;PYTHON</p>
+
+               
+
+                {{-- <p class="text-white" style="font-size: 20pt">{{ $cursos }}</p> --}}
                 {{-- {{ Form::label('curso','Curso') }} --}}
+
+
                 {{ Form::text('curso','', ['class'=>'form-control m-3','placeholder'=>'Curso']) }}
+
+                @foreach ($cursos as $key=>$row)
+                   
+                    
+                <p class="text-white" style="font-size:1.5rem; text-align:left;">  {{ $key }} &rAarr; {{ $row }} </p>
+            
+        @endforeach
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 
