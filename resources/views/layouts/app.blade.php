@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ env('APP_NAME') }} v{{ env('APP_V') }}</title>
+        {{-- <title>{{ env('APP_NAME') }} v{{ env('APP_V') }}</title> --}}
+        <title> E.N.O.S. v1.0  &lAarr;HR&copy;</title>
 
 
         <!-- Fonts -->
