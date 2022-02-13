@@ -20,7 +20,7 @@ class Curso extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function aluno()//: BelongsTo
+    public  function  aluno()//: BelongsTo
     {
         return $this->belongsTo(Aluno::class, 'id_curso', 'id');
         // return $this->hasOne(Aluno::class, 'id_curso', 'id');

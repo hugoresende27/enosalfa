@@ -23,13 +23,15 @@
     <table class="table table-striped table-dark">
         <thead>
           <tr>
-            <th scope="col">Nome da Disciplina</th>
+
             <th scope="col">ID Disciplina</th>
-            <th scope="col">Nome do professor</th>
+            <th scope="col">Nome da Disciplina</th>
+            
+            {{-- <th scope="col">Nome do professor</th>
         
             
             <th scope="col">ID Professor</th>
-            
+             --}}
             <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
           </tr>
@@ -37,25 +39,29 @@
         <tbody>
 
           
-          @foreach ($disc as $key=>$row)
+          @foreach ($disc as $item)
                 {{-- {{ dd($row) }} --}}
           
           <tr>
-            <td>  {{ $row['nome'] }} </td>
+
+            <td>{{ $item->id }}</td>
+
+            <td>  {{ $item->nome }} </td>
            
             
-            <td>{{ $row['id'] }}</td>
             
-            <td>{{ $profs[$key] }}</td>
+{{--             
+            <td>{{ $item->id_professor }}</td>
+            <td>{{ $item->id_professor }}</td> --}}
 
-            <td>{{ $row['id_professor'] }}</td>
+            
      
             <td><a href="">Editar </a></td>
     
     
             <td>
                 
-                <form action="/disciplinas/{{ $row['id'] }}" method="POST">
+                <form action="/disciplinas/{{ $item->id }}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit"

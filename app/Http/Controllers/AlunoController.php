@@ -17,9 +17,13 @@ class AlunoController extends Controller
     public function index()
     {
 
-        $alunos = Aluno::all();
+        $alunos = Aluno::orderBy('created_at','DESC')->get();
        
         $curso = Curso::all()->pluck('nome');
+        // $curso = Curso::with('aluno')->get();
+        // $x = new Curso();
+        // $x->aluno()->get();
+        // dd($curso);
        
         return view ('alunos.index',compact('alunos','curso'));
     }

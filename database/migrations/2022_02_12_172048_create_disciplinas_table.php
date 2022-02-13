@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->unsignedBigInteger('id_professor')->nullable();
-            $table->foreign('id_professor')->references('id')->on('professors')->onDelete('cascade');
+            // $table->foreign('id_professor')->references('id')->on('professors')->onDelete('cascade');
             $table->timestamps();
         });
 
-        Schema::table('professors', function($table)
-        {
-            $table->foreign('id_disciplina')->references('id')->on('disciplinas');
-        });
+        // Schema::table('professors', function($table)
+        // {
+        //     $table->foreign('id_disciplina')->references('id')->on('disciplinas');
+        // });
     }
 
     /**

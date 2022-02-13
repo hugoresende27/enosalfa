@@ -42,7 +42,7 @@
                
 
                 {{-- <p class="text-white" style="font-size: 20pt">{{ $cursos }}</p> --}}
-                {{-- {{ Form::label('curso','Curso') }} --}}
+                {{ Form::label('curso','Curso') }}
 
 
                 {{ Form::text('curso','', ['class'=>'form-control m-3','placeholder'=>'Curso']) }}

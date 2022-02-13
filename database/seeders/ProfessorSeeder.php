@@ -20,6 +20,11 @@ class ProfessorSeeder extends Seeder
             // 'id_disciplina'  => 1,       
   
         ]);
+
+
+        
+
+
         \DB::table('professors')->insert([
             'nome'  => 'Rui',
             // 'id_disciplina'  => 2,       

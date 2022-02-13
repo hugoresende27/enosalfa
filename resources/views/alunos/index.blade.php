@@ -40,17 +40,26 @@
         <tbody>
          
         
-            @foreach ($alunos as $key=>$row)
-          {{-- {{ dd($row) }} --}}
+            {{-- @foreach ($alunos as $key=>$row) --}}
+            @foreach ($alunos as $key)
+          {{-- {{ dd($key) }} --}}
               <tr>
-             
-                <td>{{ $row['id']}} </td>
+
+                
+                <td>{{ $key->id }}</td>
+                <td>{{ $key->nome }}</td>
+                <td>{{ $key->id_curso }}</td>
+                <td>{{ $key->turma }}</td>
+                <td>{{ $key->sala }}</td>
+
+
+                {{-- <td>{{ $row['id']}} </td>
                 <td>{{ $row['nome']}} </td>
                 
                 <td>{{ $curso[$key]}} </td>
-                {{-- <td>{{ $row['id_curso']}} </td> --}}
+              
                 <td>{{ $row['turma']}} </td>
-                <td>{{ $row['sala']}} </td>
+                <td>{{ $row['sala']}} </td> --}}
              
                
         
@@ -59,7 +68,7 @@
         
                 <td>
                     
-                    <form action="/alunos/{{ $row['id'] }}" method="POST">
+                    <form action="/alunos/{{ $key->id }}" method="POST">
                         @csrf
                         @method('delete')
                         <button type="submit"

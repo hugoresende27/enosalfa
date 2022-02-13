@@ -32,22 +32,22 @@
         </thead>
         <tbody>
          
-          {{-- @foreach ($profs as $item) --}}
-          @foreach($profs as $key=>$row)
+          @foreach ($profs as $item)
+          {{-- @foreach($profs as $key=>$row) --}}
         
           <tr>
-            {{-- <td>  {{ $item->nome }} </td> --}}
-            <td>  {{ $row['nome'] }} </td>
+            <td>  {{ $item->nome }} </td>
+            {{-- <td>  {{ $row['nome'] }} </td> --}}
          
-           
-            <td>{{ $disciplina[$key] }}</td>
+           <td>{{ $item->id_disciplina }}</td>
+            {{-- <td>{{ $disciplina[$key] }}</td> --}}
      
             <td><a href="">Editar </a></td>
     
     
             <td>
                 
-                <form action="/professores/{{ $row['id'] }}" method="POST">
+                <form action="/professores/{{ $item->id_disciplina  }}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit"

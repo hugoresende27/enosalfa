@@ -35,8 +35,14 @@
                 {{ Form::label('nome','Nome') }}
                 {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Primeiro e Ultimo Nome']) }}
                 {{ Form::label('disciplina','Código da Disciplina') }}
-                {{ Form::text('disciplina','', ['class'=>'form-control m-3','placeholder'=>'Disciplina']) }}
+                {{ Form::text('disciplina','', ['class'=>'form-control m-3','placeholder'=>'Código Disciplina']) }}
                
+                @foreach ($disciplinas as $key=>$row)
+                   
+                    
+                    <p class="text-white" style="font-size:1.5rem; text-align:left;">  {{ $key }} &rAarr; {{ $row }} </p>
+            
+                @endforeach
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 

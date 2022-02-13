@@ -18,7 +18,7 @@ class DisciplinaFactory extends Factory
     {
         return [
             'nome' => $this->faker->randomElement(['PHP', 'JAVA','JavaScript','Python','Portugues','Matemática','Fisica','Algoritmia','Inglês Técnico','C/C++']),
-            'id_professor'  => rand(1, 5),
+            'id_professor'  => rand(1, 10),
             'created_at'=>now()
         ];
     }

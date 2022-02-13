@@ -17,7 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->unsignedBigInteger('id_disciplina')->nullable();
+            $table->foreign('id_disciplina')->references('id')->on('disciplinas')->onDelete('cascade');
             $table->timestamps();
+        });
+
+        Schema::table('disciplinas', function($table)
+        {
+            $table->foreign('id_professor')->references('id')->on('professors')->onDelete('cascade');
         });
     }
 

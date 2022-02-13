@@ -18,7 +18,7 @@ class ProfessorController extends Controller
     {
 
         $disciplina = Disciplina::all()->pluck('nome');
-        $profs = Professor::all();
+        $profs = Professor::orderBy('created_at','DESC')->get();
         // dd($disciplina);
         return view('professores.index', compact('disciplina','profs'));
        
@@ -31,7 +31,9 @@ class ProfessorController extends Controller
      */
     public function create()
     {
-        return view ('professores.create');
+
+        $disciplinas = Disciplina::all()->pluck('nome','id');
+        return view ('professores.create',compact('disciplinas'));
     }
 
     /**
