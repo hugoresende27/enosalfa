@@ -64,7 +64,7 @@ class AlunoController extends Controller
             'telefone'=>'required',
             'turma'=>'required',
             'sala'=>'required',
-            'curso'=>[new minhaValidation],'integer','min:1'
+            // 'curso'=>[new minhaValidation],'integer','min:1'
             
             
         ],
@@ -76,8 +76,8 @@ class AlunoController extends Controller
             'telefone.required' => 'Preencha o telefone!',
             'turma.required' => 'Preencha a turma!',
             'sala.required' => 'Preencha a sala!',
-            'curso.required' => 'Preencha o curso!',
-            'curso.integer' => 'Curso tem de ser um número de curso',
+            // 'curso.required' => 'Preencha o curso!',
+            // 'curso.integer' => 'Curso tem de ser um número de curso',
         ]);
         // dd($this);
         $aluno = new Aluno;
