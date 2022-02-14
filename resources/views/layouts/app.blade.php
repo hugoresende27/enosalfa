@@ -99,7 +99,38 @@
                 color:#fff;
             }
 
-            
+            /*///////////////MEDIA QUERYS////////////////////////////////////////////////////////////////////*/
+
+@media(max-width: 480px)        /*para ecras mais pequenos*/
+{
+    body{
+        overflow:visible;
+    }
+
+    footer 
+    {
+        display: none;
+    };
+
+}
+
+@media (max-width: 800px)
+{
+    body{
+        overflow:visible;
+    }
+    footer 
+    {
+        display: none;
+    };
+  
+
+}
+
+@media (max-width : 600px)
+{
+
+}
     
         
         </style>
