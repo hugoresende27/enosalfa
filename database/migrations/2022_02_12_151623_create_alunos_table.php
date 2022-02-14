@@ -17,6 +17,13 @@ return new class extends Migration
             $table->id();
             // $table->increments('id');
             $table->string('nome');
+
+            $table->date('idade');
+            $table->string('morada');
+            $table->string('email');
+            $table->string('telefone');
+
+
             $table->string('turma');
             $table->string('sala');
             $table->unsignedBigInteger('id_curso');

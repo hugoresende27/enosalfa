@@ -62,10 +62,7 @@
                 position: relative;
             }
 
-            nav .minha-nav {
-                background-color: #000;
-                color:#fff;
-            }
+        
             .btn-inicial{
                 background-color: rgb(0, 0, 0);
                 padding: 5px;

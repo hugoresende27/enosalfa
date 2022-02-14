@@ -22,6 +22,7 @@ class DisciplinaSeeder extends Seeder
         ]);
 
         \DB::table('professors')->where('id',1)->update(['id_disciplina'=> 1]);
+        // \DB::table('cursos')->where('id',1)->update(['id_aluno'=> 1]);
 
 
 

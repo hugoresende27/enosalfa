@@ -14,8 +14,8 @@ class Aluno extends Model
     //RELAÇÃO UM ALUNO PODE APENAS TER UM CURSO
     public function cursos()
     {
-        return $this->hasOne(Curso::class,'id_aluno','id');
-        // return $this->belongsTo(Curso::class,'id_aluno','id');
+        // return $this->hasOne(Curso::class,'id_aluno','id');
+        return $this->belongsTo(Curso::class,'id_aluno','id');
     }
 
     /**

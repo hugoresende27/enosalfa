@@ -17,9 +17,13 @@ class AlunoFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->name(),
+            'nome' => $this->faker->firstName(),
+            'idade' => $this->faker->dateTimeBetween($startDate = '-50 years', $endDate = '-18 years', $timezone = null),
+            'morada' => $this->faker->streetAddress(),
+            'email' => $this->faker->email(),
+            'telefone' => $this->faker->numerify('91-#######'),
             'turma'  => \Str::upper(\Str::random(2)) ,
-            'sala'  => rand(25, 65),
+            'sala'  => rand(1, 20),
             'id_curso'  => rand(1, 6),
             'created_at'=>now()
             

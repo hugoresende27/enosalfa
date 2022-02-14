@@ -47,7 +47,7 @@
 
                 
                 <td>{{ $key->id }}</td>
-                <td>{{ $key->nome }}</td>
+                <td> <a href="/alunos/{{ $key->id }}">  {{ $key->nome }} </a></td>
                 <td>{{ $key->id_curso }}</td>
                 <td>{{ $key->turma }}</td>
                 <td>{{ $key->sala }}</td>

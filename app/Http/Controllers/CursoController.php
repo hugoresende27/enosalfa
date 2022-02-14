@@ -73,7 +73,7 @@ class CursoController extends Controller
     {
         $alunos = Aluno::where('id_curso', $id)->get();
         $curso = Curso::where('id', $id)->pluck('nome');
-
+        // dd($alunos);
         $skips = ["[","]","\""];
         $curso = str_replace($skips, ' ',$curso);
         return view ('cursos.show', compact('alunos','curso'));

@@ -6,6 +6,7 @@ use App\Models\Aluno;
 use App\Models\Curso;
 use App\Http\Requests\StoreAlunoRequest;
 use App\Http\Requests\UpdateAlunoRequest;
+use Illuminate\Support\Facades\Schema;
 
 class AlunoController extends Controller
 {
@@ -52,22 +53,34 @@ class AlunoController extends Controller
     {
         $this->validate($request, [
             'nome'=>'required',
+            'morada'=>'required',
+            'email'=>'required|email',
+            'telefone'=>'required',
             'turma'=>'required',
             'sala'=>'required',
             'curso'=>'required|integer',
         ],
         [
             'nome.required' => 'Preencha o nome!',
+            'morada.required' => 'Preencha a morada!',
+            'email.required' => 'Preencha o email!',
+            'email.email' => 'email tem de ser válido!',
+            'telefone.required' => 'Preencha o telefone!',
             'turma.required' => 'Preencha a turma!',
             'sala.required' => 'Preencha a sala!',
             'curso.required' => 'Preencha o curso!',
             'curso.integer' => 'Curso tem de ser um número de curso',
         ]);
-
+        // dd($this);
         $aluno = new Aluno;
         $aluno->nome=$request->input('nome');
+        $aluno->morada=$request->input('morada');
+        $aluno->email=$request->input('email');
+        
+        $aluno->telefone=$request->input('telefone');
         $aluno->turma=$request->input('turma');
         $aluno->sala=$request->input('sala');
+        $aluno->idade=$request->input('data_nascimento');
         $aluno->id_curso=$request->input('curso');
         $aluno->save();
 
@@ -82,13 +95,28 @@ class AlunoController extends Controller
      */
     public function show( $id)
     {
-        // $curso = Curso::where('id_aluno', $id)->get();
-        $curso = Curso::all();
-        $aluno = Aluno::where('id', $id)->pluck('nome');
+        $curso = Curso::where('id_aluno', $id)->get();
+        $tudo = Aluno::where('id', $id)->get();
+        $aluno_nome = Aluno::where('id', $id)->pluck('nome');
         $skips = ["[","]","\""];
-        $curso = str_replace($skips, ' ',$curso);
-        dd($curso);
-        return view ('alunos.show', compact('curso','aluno'));
+        $aluno_nome = str_replace($skips, ' ',$aluno_nome);
+        
+        
+        
+        // $columns = Schema::getColumnListing('alunos');
+        foreach($tudo as $teste){
+            $data =  new \DateTime($teste->idade);
+            // $data2 = strtotime($data);
+            $anoAtual = now();
+            // $anos = $anoAtual - $data;  
+            $x = $data->diff($anoAtual)->format("%y");
+        }
+        
+        // dd($data->format('Y'));
+        // dd($x);
+
+
+        return view ('alunos.show', compact('curso','aluno_nome','tudo','x'));
     }
 
     /**
