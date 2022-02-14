@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> --}}
+<html lang="PT-pt">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,6 +34,8 @@
 
         
         <style>
+
+
             body {
                 font-family: 'Nunito', sans-serif;
                 background-color: black;
@@ -52,12 +55,7 @@
                 list-style: none;
             }
       
-            .menu-login{
-                text-align: right;
-                /* background-color: rgb(16, 31, 116);
-                float: right; */
-                
-            }
+   
             .meu-footer{
                 position: relative;
             }
@@ -100,6 +98,8 @@
             label{
                 color:#fff;
             }
+
+            
     
         
         </style>
@@ -113,13 +113,13 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
                         </li>
                     @endif
 
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
+                            {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a> --}}
                         </li>
                     @endif
                 @else
@@ -164,12 +164,12 @@
                 @endguest
             </ul>
         </div>
-        <div class=" overflow-hidden justify-center min-vh-100 bg-gray-100 dark:bg-gray-900 sm:items-center">
+        {{-- <div class=" overflow-hidden justify-center min-vh-100 bg-gray-100 dark:bg-gray-900 sm:items-center"> --}}
+        <div class=" overflow-hidden justify-center bg-gray-100 dark:bg-gray-900 sm:items-center">
             
             @yield('content')
 
-      
-       
+         
         </div>
 
        
@@ -177,8 +177,7 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+  
     
 
     <div class="meu-footer">
@@ -186,5 +185,6 @@
     </div>
 
     </body>
-   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </html>

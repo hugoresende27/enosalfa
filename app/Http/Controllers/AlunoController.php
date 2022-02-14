@@ -20,12 +20,15 @@ class AlunoController extends Controller
 
         $alunos = Aluno::orderBy('created_at','DESC')->get();
        
-        $curso = Curso::all()->pluck('nome');
+        // $curso = Curso::all()->pluck('nome');
+        $x = new Curso();
+        $curso= $x->aluno();
+        // $curso = Curso::where('id');
         // $curso = Curso::with('aluno')->get();
         // $x = new Curso();
         // $x->aluno()->get();
-        // dd($curso);
-       
+        // dd($x);
+        // dd(get_defined_vars());
         return view ('alunos.index',compact('alunos','curso'));
     }
 
@@ -51,6 +54,9 @@ class AlunoController extends Controller
      */
     public function store(StoreAlunoRequest $request)
     {
+
+        
+        
         $this->validate($request, [
             'nome'=>'required',
             'morada'=>'required',
@@ -58,7 +64,9 @@ class AlunoController extends Controller
             'telefone'=>'required',
             'turma'=>'required',
             'sala'=>'required',
-            'curso'=>'required|integer',
+            'curso'=>[new minhaValidation],'integer','min:1'
+            
+            
         ],
         [
             'nome.required' => 'Preencha o nome!',
@@ -95,10 +103,12 @@ class AlunoController extends Controller
      */
     public function show( $id)
     {
-        $curso = Curso::where('id_aluno', $id)->get();
+        $curso = Curso::where('id', $id)->get();
+        // $curso = Curso::all();
         $tudo = Aluno::where('id', $id)->get();
         $aluno_nome = Aluno::where('id', $id)->pluck('nome');
         $skips = ["[","]","\""];
+        // dd($curso);
         $aluno_nome = str_replace($skips, ' ',$aluno_nome);
         
         
@@ -160,4 +170,22 @@ class AlunoController extends Controller
     }
 
     
+}
+
+
+use Illuminate\Contracts\Validation\Rule;
+class minhaValidation implements Rule
+{
+
+   
+
+    public function passes($attribute, $value)
+    {
+        $numCursos = Curso::count();
+        return $value<$numCursos;
+    }
+    public function message()
+    {
+        return 'Curso não válido';
+    }
 }

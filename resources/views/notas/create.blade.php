@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('layouts.footer')
 @section('content')
 
 <style>

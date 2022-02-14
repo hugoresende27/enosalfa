@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('layouts.footer')
 @section('content')
 
 <style>
@@ -77,15 +77,15 @@
                </div>
 
                {{-- BOTÃO SUBMIT-------------------- --}}
-            <div class=" m-3">
+            {{-- <div class=" m-3">
                 <button type="submit"
                         class="btn btn-primary">
                     Criar
     
                 </button>
-            </div>
+            </div> --}}
             
             </div>
-        </form> --}}
+        </form> 
 
 @endsection

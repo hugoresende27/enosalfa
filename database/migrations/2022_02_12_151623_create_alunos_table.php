@@ -31,10 +31,10 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::table('cursos', function($table)
-        {
-            $table->foreign('id_aluno')->references('id')->on('alunos');
-        });
+        // Schema::table('cursos', function($table)
+        // {
+        //     $table->foreign('id_aluno')->references('id')->on('alunos');
+        // });
     }
 
     /**

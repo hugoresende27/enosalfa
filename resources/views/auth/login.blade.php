@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
+
+
 @section('content')
+
+
+            <style>
+
+                        label{
+                            color:#000;
+                            }
+            </style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,7 +22,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Endereço de Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -45,7 +55,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Guardar') }}
                                     </label>
                                 </div>
                             </div>
@@ -56,11 +66,12 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
+                                <a href="/" class="btn btn-primary" style="background-color: red">Voltar</a>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
+                                    {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Esqueceu a sua password?') }}
+                                    </a> --}}
                                 @endif
                             </div>
                         </div>

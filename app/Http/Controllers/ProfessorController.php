@@ -46,13 +46,12 @@ class ProfessorController extends Controller
     {
         $this->validate($request, [
             'nome'=>'required',
-            'disciplina'=>'required|integer|min:1|max:10',
+         
            
         ],
         [
             'nome.required' => 'Preencha o nome!',
-            'disciplina.required' => 'Preencha a disciplina!',
-            'disciplina.integer' => 'Tem de colocar o número do código da disciplina',
+     
            
         ]);
 

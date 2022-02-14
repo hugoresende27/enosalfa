@@ -32,10 +32,10 @@ class DatabaseSeeder extends Seeder
         \App\Models\Aluno::factory(50)->create();
 
 
-        for ( $i=1; $i<13 ;$i++)
-        {
-            \DB::table('cursos')->where('id',$i)->update(['id_aluno'=> $i]);
-        }
+        // for ( $i=1; $i<13 ;$i++)
+        // {
+        //     \DB::table('cursos')->where('id',$i)->update(['id_aluno'=> $i]);
+        // }
        
      
 

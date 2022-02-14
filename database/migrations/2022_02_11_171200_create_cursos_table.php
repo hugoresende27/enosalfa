@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('disciplinas');
            
-            $table->unsignedBigInteger('id_aluno')->nullable();
+            // $table->unsignedBigInteger('id_aluno')->nullable()->onDelete('cascade');
             // $table->timestamps();
         });
 

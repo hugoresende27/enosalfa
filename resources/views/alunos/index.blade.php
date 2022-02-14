@@ -42,7 +42,7 @@
         
             {{-- @foreach ($alunos as $key=>$row) --}}
             @foreach ($alunos as $key)
-          {{-- {{ dd($key) }} --}}
+          {{-- {{ dd($curso) }} --}}
               <tr>
 
                 
@@ -51,7 +51,11 @@
                 <td>{{ $key->id_curso }}</td>
                 <td>{{ $key->turma }}</td>
                 <td>{{ $key->sala }}</td>
-
+                {{-- <td>    
+                  @foreach ($curso as $item)
+                  <td>{{ $item }}</td>
+                @endforeach</td> --}}
+            
 
                 {{-- <td>{{ $row['id']}} </td>
                 <td>{{ $row['nome']}} </td>

@@ -23,9 +23,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Route::get('/alunos/{id_curso}',  [\App\Http\Controllers\AlunoController::class,'show']);
 Route::resource('alunos', AlunoController::class);
 Route::post('/alunos/create',  [\App\Http\Controllers\AlunoController::class,'store'])->name('guardar_aluno');
-// Route::get('/alunos/{id}',  [\App\Http\Controllers\AlunoController::class,'show']);
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::resource('professores', ProfessorController::class);
 Route::post('/professores/create',  [\App\Http\Controllers\ProfessorController::class,'store'])->name('guardar_prof');
