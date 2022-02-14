@@ -20,53 +20,63 @@
   
 
   <div class="card bg-light mb-3" style="max-width: ">
-    <div class="card-header">{!! $aluno->nome !!}</div>
+    <div class="card-header">{!! $aluno_nome !!}</div>
       <div class="card-body">
         <h5 class="card-title">Curso:
 
-             {{ $curso->nome }}
 
-     
-
-        </h5>
-        <h5 class="card-title">Idade:
-
-            {{ $x }} anos, nascido em {{ $aluno->idade }}
-
+{{ dd(get_defined_vars()) ; }}
      
 
         </h5>
         <h5 class="card-title"> 
 
-      {{ $aluno->email }}
+          @foreach ($tudo as $item)
+
+            {{ $item->idade }} &rAarr; {{ $x }} anos de idade
+        @endforeach  
 
         </h5>
         <h5 class="card-title">Morada: 
 
-          {{ $aluno->morada }}
+          @foreach ($tudo as $item)
+            {{ $item->nome }}
+        @endforeach  
 
         </h5>
         <h5 class="card-title">
- 
+
+          @foreach ($tudo as $item)
+            {{ $item->email }}
+        @endforeach  
 
         </h5>
         <h5 class="card-title">Telefone: 
 
-       {{ $aluno->telefone }}
+          @foreach ($tudo as $item)
+            {{ $item->telefone }}
+        @endforeach  
 
         </h5>
         <h5 class="card-title">Turma: 
-          {{ $aluno->turma }}
-     
+
+          @foreach ($tudo as $item)
+            {{ $item->turma }}
+        @endforeach  
 
         </h5>
         <h5 class="card-title">Sala: 
 
-          {{ $aluno->sala }}
+          @foreach ($tudo as $item)
+            {{ $item->sala }}
+        @endforeach  
+
         </h5>
         <h5 class="card-title">Registado em: 
 
-          {{ $aluno->created_at }}
+          @foreach ($tudo as $item)
+            {{ $item->created_at }}
+        @endforeach  
 
         </h5>
       

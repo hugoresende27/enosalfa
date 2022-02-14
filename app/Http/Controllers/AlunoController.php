@@ -102,12 +102,27 @@ class AlunoController extends Controller
      * @param  \App\Models\Aluno  $aluno
      * @return \Illuminate\Http\Response
      */
-    public function show( $id)
+    public function show(Aluno $aluno)
     {
+
+        $aluno = $aluno;
+        // {{ dd(get_defined_vars()) ; }}
+        
+
+        $curso = Curso::with('alunos')->where('id', $aluno->id_curso)->first();
+
+        $anoAtual = now();
+
+        $data =  new \DateTime($aluno->idade);
+
+        $x = $data->diff($anoAtual)->format("%y");
+        // dd($x);
+
+        return view ('alunos.show', compact('aluno','curso','x'));
         // $id = $id->id_curso;
         
         
-        
+        /*
         $tudo = Aluno::where('id', $id)->get();
 
 
@@ -144,7 +159,8 @@ class AlunoController extends Controller
         //           ->get();
 
         $last2 = Aluno::where('id_curso');
-        $last = Curso::where('id',Aluno::where('id_curso'));
+        // $last = Curso::where('id',Aluno::where('id_curso'));
+        $last = Curso::with('alunos')->where('id', );
       
         // dd($lastOperationUser);
 
@@ -162,6 +178,7 @@ class AlunoController extends Controller
      
 
         return view ('alunos.show', compact('aluno_nome','tudo','x','last'));
+        */
     }
 
     /**
