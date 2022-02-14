@@ -24,6 +24,7 @@ class Curso extends Model
     {
         return $this->belongsTo(Aluno::class, 'id_curso', 'id');
         // return $this->hasOne(Aluno::class, 'id_curso', 'id');
+        //  return $this->hasMany(Aluno::class, 'id_curso', 'id');
     }
 
 }

@@ -7,6 +7,7 @@ use App\Models\Curso;
 use App\Http\Requests\StoreAlunoRequest;
 use App\Http\Requests\UpdateAlunoRequest;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Http\Request;
 
 class AlunoController extends Controller
 {
@@ -103,9 +104,13 @@ class AlunoController extends Controller
      */
     public function show( $id)
     {
-        $curso = Curso::where('id', $id)->get();
-        // $curso = Curso::all();
+        // $id = $id->id_curso;
+        
+        
+        
         $tudo = Aluno::where('id', $id)->get();
+
+
         $aluno_nome = Aluno::where('id', $id)->pluck('nome');
         $skips = ["[","]","\""];
         // dd($curso);
@@ -125,8 +130,38 @@ class AlunoController extends Controller
         // dd($data->format('Y'));
         // dd($x);
 
+   
+        // $last = \DB::table('alunos')
+        //           ->join('cursos', 'cursos.id', '=', 'alunos.id_curso')
+        //           ->get();
+        // $last = \DB::table('cursos')
+        //           ->join('alunos', 'id_curso', '=', 'cursos.id')
+        //           ->where('cursos.id','=','alunos.id_curso')
+        //           ->get();
+        // $last = \DB::table('alunos')
+        //           ->join('cursos', 'cursos.id', '=', 'alunos.id_curso')
+        //           ->where('alunos.id_curso','cursos.id')
+        //           ->get();
 
-        return view ('alunos.show', compact('curso','aluno_nome','tudo','x'));
+        $last2 = Aluno::where('id_curso');
+        $last = Curso::where('id',Aluno::where('id_curso'));
+      
+        // dd($lastOperationUser);
+
+        //$someVariable = Input::get("some_variable");
+        //$todos = Aluno::all()->pluck('id_curso');
+      
+        // $results = \DB::select( \DB::raw("SELECT nome FROM cursos WHERE id = '$x'") );
+        //  $results = \DB::select( \DB::raw("SELECT 'nome' from  cursos
+        //  where 'cursos.id'='alunos.id_curso'") );
+        // dd($results);
+        //$armies = Curso::with('aluno')->get();
+
+        //  dd(get_defined_vars()) ;
+
+     
+
+        return view ('alunos.show', compact('aluno_nome','tudo','x','last'));
     }
 
     /**

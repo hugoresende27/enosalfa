@@ -24,16 +24,16 @@
       <div class="card-body">
         <h5 class="card-title">Curso:
 
-          @foreach ($curso as $item)
-            {{ $item->nome }}
-        @endforeach  
+
+{{ dd(get_defined_vars()) ; }}
+     
 
         </h5>
         <h5 class="card-title"> 
 
           @foreach ($tudo as $item)
 
-            {{ $item->idade }} <p> {{ $x }} anos de idade</p>
+            {{ $item->idade }} &rAarr; {{ $x }} anos de idade
         @endforeach  
 
         </h5>
