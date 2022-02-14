@@ -20,7 +20,8 @@ class AlunoController extends Controller
     {
 
         $alunos = Aluno::orderBy('created_at','DESC')->get();
-       
+        // $alunos = Aluno::with('cursos')->get();
+        
         $curso = Curso::all()->pluck('nome');
         // $x = new Curso();
         // $curso= $x->aluno();
@@ -105,7 +106,7 @@ class AlunoController extends Controller
     public function show(Aluno $aluno)
     {
 
-        $aluno = $aluno;
+        //$aluno = $aluno;
         // {{ dd(get_defined_vars()) ; }}
         
 
@@ -117,8 +118,10 @@ class AlunoController extends Controller
 
         $x = $data->diff($anoAtual)->format("%y");
         // dd($x);
-
+        // {{ dd(get_defined_vars()) ; }}
         return view ('alunos.show', compact('aluno','curso','x'));
+
+      
         // $id = $id->id_curso;
         
         

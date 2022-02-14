@@ -28,7 +28,9 @@ class DisciplinaController extends Controller
      */
     public function create()
     {
-        return view('disciplinas.create');
+        $profs = Professor::all()->pluck('nome','id');
+        // dd($profs);
+        return view('disciplinas.create',compact('profs'));
     }
 
     /**
@@ -39,7 +41,21 @@ class DisciplinaController extends Controller
      */
     public function store(StoreDisciplinaRequest $request)
     {
-        //
+        $this->validate($request, [
+            'nome'=>'required',
+        
+        ],
+        [
+            'nome.required' => 'Preencha o nome!',    
+        ]);
+        // dd($this);
+        $disc = new Disciplina;
+        $disc->nome=$request->input('nome');
+       
+        $disc->id_professor=$request->input('profs');
+        $disc->save();
+
+        return redirect ('/disciplinas')->with('message','Disciplina registada');
     }
 
     /**

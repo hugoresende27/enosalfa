@@ -20,7 +20,7 @@
   
 
   <div class="card bg-light mb-3" style="max-width: ">
-    <div class="card-header">{!! $aluno->nome !!}</div>
+    <div class="card-header display-4">{!! $aluno->nome !!}</div>
       <div class="card-body">
         <h5 class="card-title">Curso:
 
@@ -74,7 +74,8 @@
   </div>
 
   <div class="text-center">
-    <a href="/alunos" class="btn-inicial" style="background-color: red">Voltar</a>
+ 
+    <a href="/alunos" class="btn-inicial" style="background-color: red">Voltar </a>
 </div>
  
  

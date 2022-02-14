@@ -1,8 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+  .minimo-altura{
+    min-height: 70vh;
+    /* background-color: yellow; */
+  }
 
-<div class="container p-3" style="margin:20px">
+  </style>
+<div class="container p-3 minimo-altura" style="margin:20px">
 
   <h1 class="text-white text-center display-4">
     {!! $curso !!}
@@ -23,7 +29,7 @@
         Alunos a frequentar</h1>
         @foreach ($alunos as $item)
 
-        <p class="text-white text-center">{{ $item->nome }}</p>
+        <p class="text-white text-center"> <a href="/alunos/{{ $item->id }}">  {{ $item->nome }}  </a>  </p>
        
    @endforeach
 </div> 

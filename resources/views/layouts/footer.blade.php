@@ -6,16 +6,21 @@
         text-align: center;
         color:#fff;
         /* position: relative; */
-        position: absolute;
+        /* position: absolute; */
         /* bottom: 0rem;  */
-        left: 50%; 
-        transform: translateX(-50%);
+        /* left: 50%;  */
+        /* transform: translateX(-50%); */
+        clear: both;
+        position: relative;
+        /* height: 200px; */
+        /* margin-top: -200px; */
+ 
     }
     
     footer:hover{
         background-color: #333;
         color: #fff;
-        border-radius: 20px;
+        border-radius: 10px;
         /* transform:  scale(1.1);  */
     }
     footer:hover a{

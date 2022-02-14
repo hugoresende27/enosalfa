@@ -17,7 +17,10 @@ class NotaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'created_at'=>now(),
+            'id_disciplina'=>rand(1,10),
+            'id_aluno'=>rand(1,50),
+            'nota'=>rand(7,20)
         ];
     }
 }

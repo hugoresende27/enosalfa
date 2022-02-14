@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@include('layouts.footer')
+{{-- @include('layouts.footer') --}}
 @section('content')
 
 <style>
@@ -36,10 +36,14 @@
 
             <div class="form-group display-4 text-center">
                 {{ Form::label('nome','Nome Disciplina') }}
-                {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Nome da disciplina']) }}
+                {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Nome da disciplina','required'=>'required']]) }}
                
                 {{ Form::label('prof','Professor') }}
-                {{ Form::text('prof','', ['class'=>'form-control m-3','placeholder'=>'Professor']) }}
+                {{-- {{ Form::text('prof','', ['class'=>'form-control m-3','placeholder'=>'Professor']) }} --}}
+
+             
+
+                {{  Form::select('profs', $profs,null); }}
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 

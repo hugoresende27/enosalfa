@@ -57,7 +57,7 @@ class ProfessorController extends Controller
 
         $prof = new Professor;
         $prof->nome=$request->input('nome');
-        $prof->id_disciplina=$request->input('disciplina');
+        $prof->id_disciplina=$request->input('disciplinas');
       
         $prof->save();
 

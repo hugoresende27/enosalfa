@@ -19,5 +19,10 @@ public function professor(): HasOne
     return $this->hasOne(Professor::class, 'id_disciplina', 'id');
 }
 
+public function nota() 
+{
+    return $this->hasMany(Nota::class, 'id_disciplina');
+}
+
 }
 

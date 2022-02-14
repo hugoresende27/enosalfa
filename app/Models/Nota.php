@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Nota extends Model
 {
     use HasFactory;
+
+    public function alunos()
+    {
+        return $this->belongsTo(Aluno::class);
+    }
 }

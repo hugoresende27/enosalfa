@@ -15,7 +15,8 @@ class Aluno extends Model
     public function cursos()
     {
         // return $this->hasOne(Curso::class,'id_aluno','id');
-        return $this->belongsTo(Curso::class,'id_aluno','id');
+        // return $this->belongsTo(Curso::class,'id_aluno','id');
+        return $this->belongsTo(Curso::class);
     }
 
     /**
@@ -27,5 +28,11 @@ class Aluno extends Model
     // {
     //     return $this->hasMany(Curso::class, 'id_aluno', 'id');
     // }
+
+    public function nota() 
+    {
+        return $this->hasMany(Nota::class, 'id_aluno');
+    }
+
    
 }

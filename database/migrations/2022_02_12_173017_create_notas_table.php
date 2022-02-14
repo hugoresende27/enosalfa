@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('notas', function (Blueprint $table) {
-            $table->id();
+            $table->id();          
+            $table->unsignedBigInteger('id_disciplina');
+            $table->unsignedBigInteger('id_aluno');
+            $table->Integer('nota');
+
             $table->timestamps();
         });
     }

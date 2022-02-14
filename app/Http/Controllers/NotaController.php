@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nota;
+use App\Models\Aluno;
+use App\Models\Disciplina;
+use App\Models\Curso;
 use App\Http\Requests\StoreNotaRequest;
 use App\Http\Requests\UpdateNotaRequest;
 
@@ -15,7 +18,25 @@ class NotaController extends Controller
      */
     public function index()
     {
-        return view('notas.index');
+        $alunos = Aluno::with('nota')->get();
+        // $alunos = Aluno::with('nota')->get();
+        // $a = Aluno::with('nota')->pluck('nome','id');
+        // $a = Aluno::find($a->id);
+        // $notas = Nota::all();
+        $notas = Nota::with('alunos')->get();
+        // $notas = Nota::with('aluno')->pluck('nota');
+        // $a = Aluno::all();
+        // $a = Aluno::pluck('nome','id');
+        // $notas = Nota::pluck('id_aluno');
+
+        // $n = Nota::with('alunos')->where('id_aluno', $a->id)->first();
+        // $alunos = Nota::with('alunos')->where('id_aluno',$a->nome)->first();
+        // $outro = $a;
+
+        
+       
+        // dd(get_defined_vars()) ;
+        return view('notas.index',compact('alunos','notas'));
     }
 
     /**
@@ -25,7 +46,9 @@ class NotaController extends Controller
      */
     public function create()
     {
-        return view('notas.create');
+        $aluno = Aluno::all()->pluck('nome','id');
+        $disciplina = Disciplina::all()->pluck('nome','id');
+        return view('notas.create',compact('aluno','disciplina'));
     }
 
     /**
@@ -36,7 +59,24 @@ class NotaController extends Controller
      */
     public function store(StoreNotaRequest $request)
     {
-        //
+        $this->validate($request, [
+            'nota'=>'required|integer|max:20',
+        
+        ],
+        [
+            'nota.required' => 'Preencha a nota!',    
+            'nota.integer' => 'Tem de ser um número',                 
+            'nota.max' => 'Máximo é 20 sr. professor...',    
+        ]);
+        // dd($this);
+        $nota = new Nota;
+        $nota->nota=$request->input('nota');
+       
+        $nota->id_aluno=$request->input('aluno');
+        $nota->id_disciplina=$request->input('disciplina');
+        $nota->save();
+
+        return redirect ('/notas')->with('message','Nota registada');
     }
 
     /**

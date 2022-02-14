@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container p-3" style="">
+<div class="container p-3" style="margin:20px">
 
   <h1 class="text-white text-center display-4">ALUNOS</h1>
 
@@ -27,7 +27,7 @@
             <th scope="col">ID do aluno</th>
             <th scope="col">Nome</th>
             
-            <th scope="col">Curso</th>
+            <th scope="col">ID do Curso</th>
             {{-- <th scope="col">ID do Curso</th> --}}
             <th scope="col">Turma</th>
             <th scope="col">Sala</th>
@@ -41,14 +41,16 @@
          
         
             {{-- @foreach ($alunos as $key=>$row) --}}
+            {{-- <h1> {{ $al->id_curso }} </h1> --}}
             @foreach ($alunos as $key)
-          {{-- {{ dd($curso) }} --}}
+          {{-- {{ dd($al) }} --}}
               <tr>
 
                 
                 <td>{{ $key->id }}</td>
                 <td> <a href="/alunos/{{ $key->id }}">  {{ $key->nome }} </a></td>
                 <td>{{ $key->id_curso }}</td>
+                
                 <td>{{ $key->turma }}</td>
                 <td>{{ $key->sala }}</td>
                 {{-- <td>    

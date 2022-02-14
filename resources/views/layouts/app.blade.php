@@ -35,10 +35,21 @@
         
         <style>
 
+            .principal{
+                /* min-width: 100vw; */
+                text-align: center;
+                align-content: center;
+               display: flex;          /*coloca tudo em linha*/
+                flex-direction: column; /*coloca tudo em coluna*/
+                align-items: center;    /*alinha horizontalmente*/
+                /* justify-content: center;/*alinha tudo verticalmente com uso de height:100vh*/
+            }
+
 
             body {
                 font-family: 'Nunito', sans-serif;
                 background-color: black;
+               
             }
 
             a{
@@ -56,9 +67,7 @@
             }
       
    
-            .meu-footer{
-                position: relative;
-            }
+      
 
         
             .btn-inicial{
@@ -196,7 +205,7 @@
             </ul>
         </div>
         {{-- <div class=" overflow-hidden justify-center min-vh-100 bg-gray-100 dark:bg-gray-900 sm:items-center"> --}}
-        <div class=" overflow-hidden justify-center bg-gray-100 dark:bg-gray-900 sm:items-center">
+        <div class=" overflow-hidden justify-center bg-gray-100 dark:bg-gray-900 sm:items-center principal">
             
             @yield('content')
 
@@ -206,7 +215,8 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
 
-    <div class="meu-footer">
+    {{-- <div class="text-center fixed-bottom"> --}}
+        <div>
          @include('layouts.footer')
     </div>
 
