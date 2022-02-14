@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('/alunos/{id_curso}',  [\App\Http\Controllers\AlunoController::class,'show']);
+// Route::get('/alunos/{id_curso}',  [\App\Http\Controllers\AlunoController::class,'show']);
 Route::resource('alunos', AlunoController::class);
 Route::post('/alunos/create',  [\App\Http\Controllers\AlunoController::class,'store'])->name('guardar_aluno');
 

@@ -20,9 +20,9 @@ class AlunoController extends Controller
 
         $alunos = Aluno::orderBy('created_at','DESC')->get();
        
-        // $curso = Curso::all()->pluck('nome');
-        $x = new Curso();
-        $curso= $x->aluno();
+        $curso = Curso::all()->pluck('nome');
+        // $x = new Curso();
+        // $curso= $x->aluno();
         // $curso = Curso::where('id');
         // $curso = Curso::with('aluno')->get();
         // $x = new Curso();
