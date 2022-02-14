@@ -202,14 +202,9 @@
 
          
         </div>
-
-       
+     
     <!-- Optional JavaScript; choose one of the two! -->
 
-
-
-  
-    
 
     <div class="meu-footer">
          @include('layouts.footer')

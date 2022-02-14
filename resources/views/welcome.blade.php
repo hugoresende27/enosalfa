@@ -48,6 +48,9 @@
                 text-align: left;
                 
             }
+            footer{
+                display: none;
+            }
 
     </style>
 
