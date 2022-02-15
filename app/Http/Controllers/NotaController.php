@@ -18,13 +18,30 @@ class NotaController extends Controller
      */
     public function index()
     {
-        $alunos = Aluno::with('nota')->get();
+
+        
+        // $todas_as_notas = Nota::all();
+        $todas_as_notas = Nota::orderBy('nota','DESC')->get();
+        
+        $alunos = Aluno::all();
+        // $alunos = Aluno::orderBy('nome')->get();
+        
+
+        $disciplinas = Disciplina::all();
+        // $disciplinas = Disciplina::orderBy('nome')->get();
+        // dd(get_defined_vars()) ;
+        return view('notas.index', compact('todas_as_notas','alunos','disciplinas'));
+
+
+
+
+        //$alunos = Aluno::with('nota')->get();
         // $alunos = Aluno::with('nota')->get();
         // $a = Aluno::with('nota')->pluck('nome','id');
         // $a = Aluno::find($a->id);
         // $notas = Nota::all();
-        $notas = Nota::with('alunos')->get();
-        // $notas = Nota::with('aluno')->pluck('nota');
+        // $notas = Nota::with('alunos')->get();
+        //$notas = Nota::with('aluno')->pluck('nota','id_aluno')->toArray();
         // $a = Aluno::all();
         // $a = Aluno::pluck('nome','id');
         // $notas = Nota::pluck('id_aluno');
@@ -33,10 +50,11 @@ class NotaController extends Controller
         // $alunos = Nota::with('alunos')->where('id_aluno',$a->nome)->first();
         // $outro = $a;
 
-        
+        // $x= Nota::selectRaw('id as value, nota as text')->get();
        
+        //$disciplinas = Disciplina::with('nota')->pluck('nome','id')->toArray();
         // dd(get_defined_vars()) ;
-        return view('notas.index',compact('alunos','notas'));
+        //return view('notas.index',compact('alunos','notas','disciplinas'));
     }
 
     /**
@@ -119,8 +137,12 @@ class NotaController extends Controller
      * @param  \App\Models\Nota  $nota
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Nota $nota)
+    public function destroy($id)
     {
-        //
+        $nota = Nota::where('id', $id);
+      
+        $nota->delete();
+       
+        return redirect('/notas')->with ('message', 'Nota apagada!');
     }
 }

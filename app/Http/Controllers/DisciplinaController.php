@@ -16,7 +16,7 @@ class DisciplinaController extends Controller
      */
     public function index()
     {
-        $disc = Disciplina::all();
+        $disc = Disciplina::orderBy('created_at')->get();
         $profs = Professor::all()->pluck('nome');
         return view('disciplinas.index',compact('disc','profs'));
     }
@@ -101,8 +101,8 @@ class DisciplinaController extends Controller
     public function destroy($id)
     {
                
-        $disc = Professor::where('id', $id);
-      
+        $disc = Disciplina::where('id', $id);
+        // dd($disc);
         $disc->delete();
        
         return redirect('/disciplinas')->with ('message', 'Disciplina apagada!');

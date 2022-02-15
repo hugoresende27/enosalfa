@@ -34,48 +34,39 @@
             <th scope="col">Aluno</th>
         
             
-            {{-- <th scope="col">Disciplina</th> --}}
+           
             <th scope="col">Nota</th>
-            
+            <th scope="col">Disciplina</th>
             <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
           </tr>
         </thead>
         <tbody>
-         
+   
 
+          @foreach ($todas_as_notas as $nota)
 
-       
-
-          @foreach ($alunos as $a)
-          <tr>
-
+        
+              @foreach ($alunos as $a)
+                  @if (isset($a) && ($a->id == ($nota->id_aluno)))
+                      <td> <a href="/alunos/{{ $a->id }}">  {{ $a->nome }}  </a> </td>
+                  @endif
+                  
+              @endforeach
             
-               
-           
-            <td> {{ $a->nome }}</td>
+              <td>{{ $nota->nota }}</td>
+
+              @foreach ($disciplinas as $dis)
+                  @if (isset($dis) && ($dis->id == $nota->id_disciplina))
+                      <td> {{ $dis->nome }} </td>
+                  @endif
+              @endforeach
           
-            @foreach ($notas as $n)
-
-              @if ( $a->id == $n->id_aluno )
-              {{-- {{ dd($n->nota) ; }} --}}
-                <td>{{ $n->nota }}</td>
-
-              @elseif (empty($item->id_aluno) )
-
-                {{-- <td> Sem nota </td> --}}
-              <?php //continue; ?>
-              @endif
+         
+             
             
-
-              
-
-            @endforeach
-
+             
             
-            
-            {{-- <td>{{ $item->id_disciplina }}</td> --}}
-            {{-- <td>{{ $item->nota }}</td> --}} 
            
      
             <td><a href="">Editar </a></td>
@@ -83,7 +74,7 @@
            
             <td>
                 
-                <form action="" method="POST">
+                <form action="/notas/{{ $nota->id }}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit"

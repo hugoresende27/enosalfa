@@ -36,7 +36,7 @@
 
             <div class="form-group display-4 text-center">
                 {{ Form::label('nome','Nome Disciplina') }}
-                {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Nome da disciplina','required'=>'required']]) }}
+                {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Nome da disciplina','required'=>'required']) }}
                
                 {{ Form::label('prof','Professor') }}
                 {{-- {{ Form::text('prof','', ['class'=>'form-control m-3','placeholder'=>'Professor']) }} --}}

@@ -17,7 +17,7 @@ class ProfessorController extends Controller
     public function index()
     {
 
-        $disciplina = Disciplina::all()->pluck('nome');
+        $disciplina = Disciplina::all();
         $profs = Professor::orderBy('created_at','DESC')->get();
         // dd($disciplina);
         return view('professores.index', compact('disciplina','profs'));

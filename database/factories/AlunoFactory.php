@@ -24,7 +24,7 @@ class AlunoFactory extends Factory
             'telefone' => $this->faker->numerify('91-#######'),
             'turma'  => \Str::upper(\Str::random(2)) ,
             'sala'  => rand(1, 20),
-            'id_curso'  => rand(1, 6),
+            'id_curso'  => rand(1, 10),
             'created_at'=>now()
             
         ];

@@ -20,7 +20,7 @@ class NotaFactory extends Factory
             'created_at'=>now(),
             'id_disciplina'=>rand(1,10),
             'id_aluno'=>rand(1,50),
-            'nota'=>rand(7,20)
+            'nota'=>rand(4,20)
         ];
     }
 }

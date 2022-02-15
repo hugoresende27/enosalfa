@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Aluno;
 use App\Models\Curso;
+use App\Models\Disciplina;
+use App\Models\Nota;
 use App\Http\Requests\StoreAlunoRequest;
 use App\Http\Requests\UpdateAlunoRequest;
 use Illuminate\Support\Facades\Schema;
@@ -19,10 +21,12 @@ class AlunoController extends Controller
     public function index()
     {
 
-        $alunos = Aluno::orderBy('created_at','DESC')->get();
+        // $alunos = Aluno::orderBy('created_at','DESC')->get();
+        $alunos = Aluno::orderBy('nome')->get();
         // $alunos = Aluno::with('cursos')->get();
         
-        $curso = Curso::all()->pluck('nome');
+        // $curso = Curso::all()->pluck('nome');
+        $curso = Curso::all();
         // $x = new Curso();
         // $curso= $x->aluno();
         // $curso = Curso::where('id');
@@ -31,6 +35,8 @@ class AlunoController extends Controller
         // $x->aluno()->get();
         // dd($x);
         // dd(get_defined_vars());
+
+        // dd(get_defined_vars()) ;
         return view ('alunos.index',compact('alunos','curso'));
     }
 
@@ -117,9 +123,14 @@ class AlunoController extends Controller
         $data =  new \DateTime($aluno->idade);
 
         $x = $data->diff($anoAtual)->format("%y");
-        // dd($x);
+
+        $disc = Disciplina::all();
+        
+        $nota = Nota::where('id_aluno', $aluno->id)->get();
+        // $disc = Disciplina::where('id')->get();
+        // dd($nota);
         // {{ dd(get_defined_vars()) ; }}
-        return view ('alunos.show', compact('aluno','curso','x'));
+        return view ('alunos.show', compact('aluno','curso','x','disc','nota'));
 
       
         // $id = $id->id_curso;

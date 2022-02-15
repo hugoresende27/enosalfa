@@ -39,7 +39,12 @@
             <td>  {{ $item->nome }} </td>
             {{-- <td>  {{ $row['nome'] }} </td> --}}
          
-           <td>{{ $item->id_disciplina }}</td>
+            @foreach ($disciplina as $d)
+                @if ($d->id == $item->id_disciplina)
+                  <td> <a href="/disciplinas">{{ $d->nome }} </a> </td>
+                @endif
+            @endforeach
+           
             {{-- <td>{{ $disciplina[$key] }}</td> --}}
      
             <td><a href="">Editar </a></td>
