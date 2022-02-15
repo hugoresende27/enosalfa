@@ -19,6 +19,7 @@ class ProfessorFactory extends Factory
         return [
             'nome' => "Prof.".$this->faker->name(),
             'id_disciplina'  => rand(1, 10),
+            'id_turma'  => rand(1, 25),
             'created_at'=>now()
             
         ];

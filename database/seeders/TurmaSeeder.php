@@ -18,20 +18,22 @@ class TurmaSeeder extends Seeder
             \DB::table('turmas')->insert([
                 
                 'id_curso'  => rand(1,12),       
-                'id_professor'  => rand(1,10),       
+                'id_professor'  => rand(1,10),   
+                  
       
             ]);
 
         }
         for($i=1; $i<11;$i++){
-            \DB::table('professors')->update([
+            \DB::table('professors')->where('id',$i)->update([
                 
                 'id_disciplina'  => $i,       
-                      
+                'id_turma' =>$i
       
             ]);
 
         }
+        
         
     }
 }

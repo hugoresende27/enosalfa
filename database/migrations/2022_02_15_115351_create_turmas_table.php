@@ -49,8 +49,11 @@ return new class extends Migration
            
             
             $table->foreign('id_disciplina')->references('id')->on('disciplinas')->onDelete('cascade');                  
+            $table->foreign('id_turma')->references('id')->on('turmas')->onDelete('cascade');                  
             
         });
+
+      
     }
 
     /**

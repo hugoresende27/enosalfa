@@ -31,11 +31,12 @@ class DatabaseSeeder extends Seeder
             
         ]);
 
-        for($i=0;$i<50;$i++){
+        // for($i=0;$i<50;$i++){
+        for($i=0;$i<5;$i++){
             \App\Models\Aluno::factory()->create();
             
         }
-        for($i=0;$i<150;$i++){
+        for($i=0;$i<1;$i++){
           
             \App\Models\Nota::factory()->create();
         }

@@ -24,7 +24,8 @@
           <tr>
             <th scope="col">Nome</th>
             
-            <th scope="col">ID Disciplina</th>
+            <th scope="col">Disciplina</th>
+            <th scope="col">Turma</th>
             
             <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
@@ -45,7 +46,14 @@
                 @endif
             @endforeach
            
-            {{-- <td>{{ $disciplina[$key] }}</td> --}}
+            @foreach ($turmas as $tu)
+           
+              @if ($tu->id == $item->id_turma)
+                <td> <a href="/turmas"> {{ $tu->id }} </a> </td>
+              @endif
+             
+            @endforeach
+           
      
             <td><a href="">Editar </a></td>
     

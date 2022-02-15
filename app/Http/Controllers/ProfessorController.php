@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Professor;
 use App\Models\Disciplina;
+use App\Models\Turma;
 use App\Http\Requests\StoreProfessorRequest;
 use App\Http\Requests\UpdateProfessorRequest;
 
@@ -18,9 +19,10 @@ class ProfessorController extends Controller
     {
 
         $disciplina = Disciplina::all();
+        $turmas = Turma::all();
         $profs = Professor::orderBy('created_at','DESC')->get();
         // dd($disciplina);
-        return view('professores.index', compact('disciplina','profs'));
+        return view('professores.index', compact('disciplina','profs','turmas'));
        
     }
 
@@ -45,14 +47,10 @@ class ProfessorController extends Controller
     public function store(StoreProfessorRequest $request)
     {
         $this->validate($request, [
-            'nome'=>'required',
-         
-           
+            'nome'=>'required',         
         ],
         [
-            'nome.required' => 'Preencha o nome!',
-     
-           
+            'nome.required' => 'Preencha o nome!',             
         ]);
 
         $prof = new Professor;
