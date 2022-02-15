@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
             ProfessorSeeder::class,
             
             DisciplinaSeeder::class, 
+            TurmaSeeder::class,
             // \App\Models\Professor::factory(10)->create(),
             // CursoSeeder::class
             
@@ -37,12 +39,12 @@ class DatabaseSeeder extends Seeder
           
             \App\Models\Nota::factory()->create();
         }
-        for($i=0;$i<20;$i++){
+        for($i=0;$i<25;$i++){
           
-            \App\Models\Turma::factory()->create();
+            // \App\Models\Turma::factory()->create();
         }
        
-        
+    
 
 
         // for ( $i=1; $i<13 ;$i++)
@@ -62,4 +64,6 @@ class DatabaseSeeder extends Seeder
 
         
     }
+
+
 }

@@ -17,7 +17,7 @@ class ProfessorSeeder extends Seeder
     {
         \DB::table('professors')->insert([
             'nome'  => 'Luis',
-            'id_disciplina'  => 1,       
+            // 'id_disciplina'  => 1,       
   
         ]);
 
@@ -27,47 +27,47 @@ class ProfessorSeeder extends Seeder
 
         \DB::table('professors')->insert([
             'nome'  => 'Rui',
-            'id_disciplina'  => 2,       
+            // 'id_disciplina'  => 2,       
   
         ]);
         \DB::table('professors')->insert([
             'nome'  => 'Pedro',
-            'id_disciplina'  => 3,       
+            // 'id_disciplina'  => 3,       
   
         ]);
         \DB::table('professors')->insert([
             'nome'  => 'Carlos',
-            'id_disciplina'  => 4,       
+            // 'id_disciplina'  => 4,       
   
         ]);
         \DB::table('professors')->insert([
             'nome'  => 'Manuel',
-            'id_disciplina'  => 5,       
+            // 'id_disciplina'  => 5,       
   
         ]);
         \DB::table('professors')->insert([
             'nome'  => 'Tiago',
-            'id_disciplina'  => 6,       
+            // 'id_disciplina'  => 6,       
   
         ]);
         \DB::table('professors')->insert([
             'nome'  => 'Rita',
-            'id_disciplina'  => 7,       
+            // 'id_disciplina'  => 7,       
   
         ]);
         \DB::table('professors')->insert([
             'nome'  => 'Lécio',
-            'id_disciplina'  => 8,       
+            // 'id_disciplina'  => 8,       
   
         ]);
         \DB::table('professors')->insert([
             'nome'  => 'Ricardo',
-            'id_disciplina'  => 9,       
+            // 'id_disciplina'  => 9,       
   
         ]);
         \DB::table('professors')->insert([
             'nome'  => 'Daniel',
-            'id_disciplina'  => 10,       
+            // 'id_disciplina'  => 10,       
   
         ]);
 

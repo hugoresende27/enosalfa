@@ -63,8 +63,13 @@
                 
                 
 
-
-                <td>{{ $key->turma }}</td>
+                {{-- @foreach ($turmas as $turma)
+                @if ($key->id_)
+                    
+                @endif
+                    
+                @endforeach --}}
+                <td>{{ $key->id_turma }}</td>
                 <td>{{ $key->sala }}</td>
                 {{-- <td>    
                   @foreach ($curso as $item)

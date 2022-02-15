@@ -24,9 +24,10 @@ return new class extends Migration
             $table->string('telefone');
 
 
-            $table->string('turma');
+            // $table->string('turma');
             $table->string('sala');
             $table->unsignedBigInteger('id_curso');
+            $table->unsignedBigInteger('id_turma');
             // $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');
             $table->timestamps();
         });

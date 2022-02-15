@@ -6,6 +6,7 @@ use App\Models\Aluno;
 use App\Models\Curso;
 use App\Models\Disciplina;
 use App\Models\Nota;
+use App\Models\Turma;
 use App\Http\Requests\StoreAlunoRequest;
 use App\Http\Requests\UpdateAlunoRequest;
 use Illuminate\Support\Facades\Schema;
@@ -36,8 +37,10 @@ class AlunoController extends Controller
         // dd($x);
         // dd(get_defined_vars());
 
+        $turmas = Turma::all();
+
         // dd(get_defined_vars()) ;
-        return view ('alunos.index',compact('alunos','curso'));
+        return view ('alunos.index',compact('alunos','curso','turmas'));
     }
 
     /**
@@ -70,7 +73,7 @@ class AlunoController extends Controller
             'morada'=>'required',
             'email'=>'required|email',
             'telefone'=>'required',
-            'turma'=>'required',
+            // 'turma'=>'required',
             'sala'=>'required',
             // 'curso'=>[new minhaValidation],'integer','min:1'
             
@@ -82,7 +85,7 @@ class AlunoController extends Controller
             'email.required' => 'Preencha o email!',
             'email.email' => 'email tem de ser válido!',
             'telefone.required' => 'Preencha o telefone!',
-            'turma.required' => 'Preencha a turma!',
+            // 'turma.required' => 'Preencha a turma!',
             'sala.required' => 'Preencha a sala!',
             // 'curso.required' => 'Preencha o curso!',
             // 'curso.integer' => 'Curso tem de ser um número de curso',
@@ -94,7 +97,7 @@ class AlunoController extends Controller
         $aluno->email=$request->input('email');
         
         $aluno->telefone=$request->input('telefone');
-        $aluno->turma=$request->input('turma');
+        // $aluno->turma=$request->input('turma');
         $aluno->sala=$request->input('sala');
         $aluno->idade=$request->input('data_nascimento');
         $aluno->id_curso=$request->input('curso');

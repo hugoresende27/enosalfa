@@ -21,6 +21,36 @@ return new class extends Migration
             $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');
             $table->timestamps();
         });
+
+        Schema::table('alunos', function (Blueprint $table) {
+           
+            
+            $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');
+            $table->foreign('id_turma')->references('id')->on('turmas')->onDelete('cascade');
+            
+        });
+
+        Schema::table('disciplinas', function (Blueprint $table) {
+           
+            
+            $table->foreign('id_professor')->references('id')->on('professors')->onDelete('cascade');          
+            
+        });
+
+        Schema::table('notas', function (Blueprint $table) {
+           
+            
+            $table->foreign('id_disciplina')->references('id')->on('disciplinas')->onDelete('cascade');          
+            $table->foreign('id_aluno')->references('id')->on('alunos')->onDelete('cascade');          
+            
+        });
+
+        Schema::table('professors', function (Blueprint $table) {
+           
+            
+            $table->foreign('id_disciplina')->references('id')->on('disciplinas')->onDelete('cascade');                  
+            
+        });
     }
 
     /**
