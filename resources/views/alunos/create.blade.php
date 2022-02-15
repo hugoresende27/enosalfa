@@ -10,7 +10,7 @@
 
 
 <div class="container p-3" style="margin:20px">
-    <a href="/alunos" class="btn-inicial" style="background-color: red">Voltar</a>
+    <a href="/alunos" class="btn-voltar" style="background-color: red">Voltar</a>
 
   {{-- DEBUG DE ERROS NO FORM-------------------- --}}
   @if ($errors->any())
@@ -27,11 +27,11 @@
     
 
 
-        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:rgb(105, 236, 253);font-size:5rem;">Registar um aluno</h1>
+        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Registar um aluno</h1>
 
         {!! Form::open(['route' => 'guardar_aluno', 'method'=> 'POST']) !!}
 
-            <div class="form-group display-4 text-center">
+            <div class="form-group display-6 text-center">
                 {{ Form::label('nome','Nome') }}
                 {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Primeiro e Ultimo Nome']) }}
 
@@ -50,11 +50,11 @@
                 {{ Form::label('sala','Sala') }}
                 {{ Form::text('sala','', ['class'=>'form-control m-3','placeholder'=>'Sala']) }}
 
-                {{ Form::label('curso','Curso') }}
+                {{ Form::label('curso','Curso',['class'=>' m-3']) }}<br>
 
                 {{  Form::select('curso', $cursos,null); }}
 
-                <label for="data">Data de Nascimento</label><br>
+                <label for="data" class="m-3">Data de Nascimento</label><br>
                 <input type="date" name="data_nascimento" id="data" max="2005-12-31" required value="{{ old('date') }}"><br>
               
 

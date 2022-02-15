@@ -7,6 +7,7 @@
 
     label{
         color:#000;
+        background-color: #fff;
         }
 </style>
 

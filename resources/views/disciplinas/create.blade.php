@@ -25,25 +25,25 @@
 
 
 <div class="container p-3" style="margin:20px">
-    <a href="/disciplinas" class="btn-inicial" style="background-color: red">Voltar</a>
+    <a href="/disciplinas" class="btn-voltar" style="background-color: red">Voltar</a>
 
     
 
 
-        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:rgb(105, 236, 253);font-size:5rem;">Registar uma Disciplina</h1>
+        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Registar uma Disciplina</h1>
 
         {!! Form::open(['route' => 'guardar_disci', 'method'=> 'POST']) !!}
 
-            <div class="form-group display-4 text-center">
+            <div class="form-group display-6 text-center">
                 {{ Form::label('nome','Nome Disciplina') }}
                 {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Nome da disciplina','required'=>'required']) }}
                
                 {{ Form::label('prof','Professor') }}
                 {{-- {{ Form::text('prof','', ['class'=>'form-control m-3','placeholder'=>'Professor']) }} --}}
 
-             
+                <br>
 
-                {{  Form::select('profs', $profs,null); }}
+                {{  Form::select('profs', $profs,null,['class'=>'m-3']); }}
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 

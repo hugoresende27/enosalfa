@@ -33,7 +33,7 @@
 
 
 <div class=" p-3" style="margin:20px">
-    <a href="/notas" class="btn-inicial" style="background-color: red">Voltar</a>
+    <a href="/notas" class="btn-voltar" style="background-color: red">Voltar</a>
 
          {{-- DEBUG DE ERROS NO FORM-------------------- --}}
   @if ($errors->any())
@@ -49,11 +49,11 @@
 @endif 
 
 
-        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:rgb(105, 236, 253);font-size:5rem;">Lançar uma nota</h1>
+        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Lançar uma nota</h1>
 
         {!! Form::open(['route' => 'guardar_notas', 'method'=> 'POST']) !!}
 
-            <div class="display-4 text-center">
+            <div class="display-6 text-center">
                 {{-- {{ Form::label('aluno','aluno') }} --}}
                 {{  Form::select('aluno', $aluno,null,['class'=>'input-select m-3','placeholder'=>'aluno','required'=>'required']); }}
                 {{-- {{ Form::text('aluno','', ['class'=>'form-control m-3','placeholder'=>'aluno']) }} --}}
@@ -63,7 +63,7 @@
                 {{-- {{ Form::text('disciplina','', ['class'=>'form-control m-3','placeholder'=>'disciplina']) }} --}}
 
                 {{-- {{ Form::label('nota','nota') }} --}}
-                {{ Form::text('nota','', ['class'=>'input-select','placeholder'=>'Inserir Nota (0-20)']) }}
+                {{ Form::text('nota','', ['class'=>'input-select m-3','placeholder'=>'Inserir Nota (0-20)']) }}
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 

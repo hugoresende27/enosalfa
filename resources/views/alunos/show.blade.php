@@ -135,7 +135,7 @@
   </div>
   <div class="text-center">
  
-    <a href="/alunos" class="btn-inicial" style="background-color: red">Voltar </a>
+    <a href="/alunos" class="btn-voltar" style="background-color: red">Voltar </a>
 </div>
  
  

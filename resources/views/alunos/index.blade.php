@@ -15,9 +15,9 @@
 @endif
 
 
-    <a href="/" class="btn-inicial" style="background-color: red">Voltar</a>
+    <a href="/" class="btn-voltar" style="background-color: red">Voltar</a>
     
-    <a href="/alunos/create" class="btn-inicial" style="background-color: green">Adicionar</a>
+    <a href="/alunos/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
 
 
 

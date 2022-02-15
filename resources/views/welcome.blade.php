@@ -108,12 +108,13 @@ margin-left: 4px;
 
         .menu{
                 
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
+              
                 text-align: center;
+                align-content: center;
+               display: flex;          /*coloca tudo em linha*/
+                flex-direction: column; /*coloca tudo em coluna*/
+                align-items: center;    /*alinha horizontalmente*/
+                 justify-content: center;/*alinha tudo verticalmente com uso de height:100vh*/
                 
                 
             }
@@ -136,7 +137,7 @@ margin-left: 4px;
                 
             }
             footer{
-                /* display: none; */
+            /* display: none; */
             }
 
     </style>
@@ -201,7 +202,7 @@ margin-left: 4px;
     
 
             <div class="menu">
-                <h1 class="titulo-inicial">Sistema E.N.O.S.</h1>
+                <h1 class="titulo-inicial titulo-topo">Sistema E.N.O.S.</h1>
             
                 <ul>
                     <li>

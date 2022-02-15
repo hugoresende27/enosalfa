@@ -10,7 +10,7 @@
 
 
 <div class="container p-3" style="margin:20px">
-    <a href="/cursos" class="btn-inicial" style="background-color: red">Voltar</a>
+    <a href="/cursos" class="btn-voltar" style="background-color: red">Voltar</a>
 
       {{-- DEBUG DE ERROS NO FORM-------------------- --}}
   @if ($errors->any())
@@ -26,11 +26,11 @@
 @endif
 
 
-        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:rgb(105, 236, 253);font-size:5rem;">Registar um Curso</h1>
+        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Registar um Curso</h1>
 
         {!! Form::open(['route' => 'guardar_curso', 'method'=> 'POST']) !!}
 
-            <div class="form-group display-4 text-center">
+            <div class="form-group display-6 text-center">
                 {{ Form::label('nome','Nome') }}
                 {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Nome do curso']) }}
 

@@ -16,9 +16,9 @@
 @endif
 
 
-    <a href="/" class="btn-inicial" style="background-color: red">Voltar</a>
+    <a href="/" class="btn-voltar" style="background-color: red">Voltar</a>
     
-    <a href="/disciplinas/create" class="btn-inicial" style="background-color: green">Adicionar</a>
+    <a href="/disciplinas/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
 
     <table class="table table-striped table-dark">
         <thead>
@@ -40,7 +40,7 @@
 
           
           @foreach ($disc as $item)
-                {{-- {{ dd($row) }} --}}
+ 
           
           <tr>
 
@@ -48,13 +48,7 @@
 
             <td>  {{ $item->nome }} </td>
            
-            
-            
-{{--             
-            <td>{{ $item->id_professor }}</td>
-            <td>{{ $item->id_professor }}</td> --}}
-
-            
+         
      
             <td><a href="">Editar </a></td>
     
