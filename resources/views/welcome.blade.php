@@ -220,6 +220,9 @@ margin-left: 4px;
                     <li>
                         <a href="notas" class="btn-inicial ">Notas</a>
                     </li>
+                    <li>
+                        <a href="turmas" class="btn-inicial ">Turmas</a>
+                    </li>
                 </ul>
             </div>
         @endauth

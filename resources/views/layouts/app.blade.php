@@ -235,6 +235,7 @@ font-family: 'Numans', sans-serif;
                         <a class="nav-item nav-link btn-topo" style="color:#000;" href="../cursos">Cursos</a>
                         <a class="nav-item nav-link btn-topo" style="color:#000;"  href="../disciplinas">Disciplinas</a>
                         <a class="nav-item nav-link btn-topo" style="color:#000;"  href="../notas">Notas</a>
+                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="../turmas">Turmas</a>
                       </div>
                     </div>
                     

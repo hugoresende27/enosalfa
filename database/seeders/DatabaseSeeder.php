@@ -31,7 +31,15 @@ class DatabaseSeeder extends Seeder
 
         for($i=0;$i<50;$i++){
             \App\Models\Aluno::factory()->create();
+            
+        }
+        for($i=0;$i<150;$i++){
+          
             \App\Models\Nota::factory()->create();
+        }
+        for($i=0;$i<20;$i++){
+          
+            \App\Models\Turma::factory()->create();
         }
        
         
