@@ -44,7 +44,7 @@ Route::resource('notas', NotaController::class);
 Route::post('/notas/create',  [\App\Http\Controllers\NotaController::class,'store'])->name('guardar_notas');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::resource('turmas', TurmaController::class);
-Route::post('/turmas/create',  [\App\Http\Controllers\Turma::class,'store'])->name('guardar_turma');
+Route::post('/turmas/create',  [\App\Http\Controllers\TurmaController::class,'store'])->name('guardar_turma');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

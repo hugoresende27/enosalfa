@@ -17,7 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->unsignedBigInteger('id_disciplina')->nullable();
-            $table->unsignedBigInteger('id_turma')->nullable();
+
+            $table->date('idade');
+            $table->string('morada');
+            $table->string('email');
+            $table->string('telefone');
+
+            
             // $table->foreign('id_disciplina')->references('id')->on('disciplinas')->onDelete('cascade');
             $table->timestamps();
         });

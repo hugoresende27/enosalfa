@@ -74,10 +74,12 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
+                                <a href="/" class="btn btn-primary" style="background-color: darkblue">Voltar</a>
+
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Registar') }}
                                 </button>
-                                <a href="/" class="btn btn-primary" style="background-color: red">Voltar</a>
+                             
                             </div>
                         </div>
                     </form>

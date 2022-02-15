@@ -29,7 +29,7 @@
             <th scope="col">Nome do curso</th>
         
             
-            <th scope="col">Disciplinas</th>
+            
             
             
             <th scope="col">EDITAR</th>
@@ -44,7 +44,7 @@
             <td><a href="/cursos/{{ $item->id }}">  {{ $item->nome }} </a></td>
            
             
-            <td>{{ $item->disciplinas }}</td>
+            
             
      
             <td><a href="">Editar </a></td>

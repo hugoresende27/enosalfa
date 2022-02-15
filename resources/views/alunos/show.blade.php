@@ -55,11 +55,13 @@
        {{ $aluno->telefone }}
 
         </h5>
-        <h5 class="card-title">Turma: 
+
+        {{-- TODO------------------- --}}
+        {{-- <h5 class="card-title">Turma: 
           {{ $aluno->turma }}
      
 
-        </h5>
+        </h5> --}}
         <h5 class="card-title">Sala: 
 
           {{ $aluno->sala }}

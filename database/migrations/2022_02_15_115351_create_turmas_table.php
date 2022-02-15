@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('turmas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_curso');
-            $table->unsignedBigInteger('id_professor');
-            $table->foreign('id_professor')->references('id')->on('professors')->onDelete('cascade');
+            
+            
             $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');
             $table->timestamps();
         });
@@ -26,14 +26,14 @@ return new class extends Migration
            
             
             $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');
-            $table->foreign('id_turma')->references('id')->on('turmas')->onDelete('cascade');
+           
             
         });
 
         Schema::table('disciplinas', function (Blueprint $table) {
            
             
-            $table->foreign('id_professor')->references('id')->on('professors')->onDelete('cascade');          
+            $table->foreign('id_professor')->references('id')->on('professors')->onDelete('set null');          
             
         });
 
@@ -49,7 +49,7 @@ return new class extends Migration
            
             
             $table->foreign('id_disciplina')->references('id')->on('disciplinas')->onDelete('cascade');                  
-            $table->foreign('id_turma')->references('id')->on('turmas')->onDelete('cascade');                  
+                             
             
         });
 

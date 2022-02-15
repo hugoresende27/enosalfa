@@ -26,7 +26,7 @@
 
     <a href="/" class="btn-voltar" style="background-color: red">Voltar</a>
     
-    <a href="/notas/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
+    <a href="/notas/create" class="btn-adicionar" style="background-color: green">Lançar Nota</a>
 
     <table class="table table-striped table-dark">
         <thead>
@@ -48,6 +48,7 @@
 
         
               @foreach ($alunos as $a)
+              
                   @if (isset($a) && ($a->id == ($nota->id_aluno)))
                       <td> <a href="/alunos/{{ $a->id }}">  {{ $a->nome }}  </a> </td>
                   @endif

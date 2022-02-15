@@ -64,10 +64,14 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
+
+                                <a href="/" class="btn btn-primary" style="background-color: darkblue">Voltar</a>
+
+                                
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-                                <a href="/" class="btn btn-primary" style="background-color: red">Voltar</a>
+                                
 
                                 @if (Route::has('password.request'))
                                     {{-- <a class="btn btn-link" href="{{ route('password.request') }}">

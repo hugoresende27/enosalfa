@@ -21,6 +21,38 @@ O sistema a desenvolver deverá ter um “front-office” que possibilite o aces
 de “login” e com um ambiente para cada tipo de utilizador.
 
 
+1. aluno 
+ - adicionar precisa de curso
+ - index mostra id, nome do aluno e nome do curso
+ - show mostra ficha do aluno
+ - apagar aluno OK
+
+2. professor 
+ - adicionar precisa de disciplina
+ - index mostra nome professor, disciplina
+ - apagar professor OK
+
+3. curso 
+ - adicionar precisa apenas do nome do curso
+ - index mostra ID Curso e nome do curso
+ - apagar curso também apaga turmas do curso
+
+4. Disciplina 
+ - adicionar precisa de professor
+ - index mostra ID Disciplina e nome da disciplina
+ - apagar disciplina também apaga o professor
+
+
+5. Notas
+ - lançar notas precisa de aluno e disciplina
+ - se aluno for apagado, nota também é apagada, onDelete('cascade')
+
+6. Turmas
+ - adicionar turma precisa de curso
+ - mostra ID Turma(número da turma é o ID), nome do curso
+ - apagar turma OK
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

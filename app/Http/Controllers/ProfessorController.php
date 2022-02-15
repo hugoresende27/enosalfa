@@ -7,6 +7,8 @@ use App\Models\Disciplina;
 use App\Models\Turma;
 use App\Http\Requests\StoreProfessorRequest;
 use App\Http\Requests\UpdateProfessorRequest;
+use Carbon\Carbon;
+
 
 class ProfessorController extends Controller
 {
@@ -68,9 +70,34 @@ class ProfessorController extends Controller
      * @param  \App\Models\Professor  $professor
      * @return \Illuminate\Http\Response
      */
-    public function show(Professor $professor)
+    public function show( $id)
     {
-        //
+
+        // dd(get_defined_vars());
+        $disciplina = Disciplina::with('professor')->where('id', $id)->first();
+        $professor = Professor::where('id',$id)->get();
+        $anoAtual = now();
+
+        foreach($professor as $item){
+            $data = new \DateTime($item->idade);
+            
+            $data2 = new Carbon($item->idade);
+
+
+            $nome = $item->nome;
+            $morada = $item->morada;
+            $email = $item->email;
+            $telefone = $item->telefone;
+           
+        }
+        
+       
+        $x = $data->diff($anoAtual)->format("%y");
+
+        
+        // dd(get_defined_vars());
+       
+        return view ('professores.show', compact('disciplina','x','id', 'nome', 'morada', 'email','data','telefone','data2'));
     }
 
     /**

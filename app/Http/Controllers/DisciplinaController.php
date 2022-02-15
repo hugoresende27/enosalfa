@@ -17,7 +17,9 @@ class DisciplinaController extends Controller
     public function index()
     {
         $disc = Disciplina::orderBy('created_at')->get();
-        $profs = Professor::all()->pluck('nome');
+        $profs = Professor::all();
+
+        // dd(get_defined_vars());
         return view('disciplinas.index',compact('disc','profs'));
     }
 

@@ -52,6 +52,7 @@ class AlunoController extends Controller
     {
         
         $cursos = Curso::all()->pluck('nome','id');
+      
           
     //    dd($cursos);
         return view('alunos.create',compact('cursos'));
@@ -72,7 +73,7 @@ class AlunoController extends Controller
             'nome'=>'required',
             'morada'=>'required',
             'email'=>'required|email',
-            'telefone'=>'required',
+            'telefone'=>'required|integer',
             // 'turma'=>'required',
             'sala'=>'required',
             // 'curso'=>[new minhaValidation],'integer','min:1'
@@ -85,6 +86,7 @@ class AlunoController extends Controller
             'email.required' => 'Preencha o email!',
             'email.email' => 'email tem de ser válido!',
             'telefone.required' => 'Preencha o telefone!',
+            'telefone.integer' => 'Número inválido!',
             // 'turma.required' => 'Preencha a turma!',
             'sala.required' => 'Preencha a sala!',
             // 'curso.required' => 'Preencha o curso!',
@@ -116,7 +118,7 @@ class AlunoController extends Controller
     {
 
         //$aluno = $aluno;
-        // {{ dd(get_defined_vars()) ; }}
+        //  dd(get_defined_vars()) ; 
         
 
         $curso = Curso::with('alunos')->where('id', $aluno->id_curso)->first();
@@ -132,7 +134,7 @@ class AlunoController extends Controller
         $nota = Nota::where('id_aluno', $aluno->id)->get();
         // $disc = Disciplina::where('id')->get();
         // dd($nota);
-        // {{ dd(get_defined_vars()) ; }}
+        //  dd(get_defined_vars()) ; 
         return view ('alunos.show', compact('aluno','curso','x','disc','nota'));
 
       

@@ -25,7 +25,7 @@
             <th scope="col">Nome</th>
             
             <th scope="col">Disciplina</th>
-            <th scope="col">Turma</th>
+            
             
             <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
@@ -37,7 +37,8 @@
           {{-- @foreach($profs as $key=>$row) --}}
         
           <tr>
-            <td>  {{ $item->nome }} </td>
+        
+            <td> <a href="/professores/{{ $item->id }}"> {{ $item->nome }} </a> </td>
             {{-- <td>  {{ $row['nome'] }} </td> --}}
          
             @foreach ($disciplina as $d)
@@ -60,7 +61,7 @@
     
             <td>
                 
-                <form action="/professores/{{ $item->id_disciplina  }}" method="POST">
+                <form action="/professores/{{ $item->id  }}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit"

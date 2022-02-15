@@ -44,15 +44,14 @@
                 {{ Form::label('telefone','Telefone') }}
                 {{ Form::text('telefone','', ['class'=>'form-control m-3','placeholder'=>'o seu contacto']) }}
 
-                {{ Form::label('turma','Turma') }}
-                {{ Form::text('turma','', ['class'=>'form-control m-3','placeholder'=>'Turma']) }}
+              
 
                 {{ Form::label('sala','Sala') }}
                 {{ Form::text('sala','', ['class'=>'form-control m-3','placeholder'=>'Sala']) }}
 
                 {{ Form::label('curso','Curso',['class'=>' m-3']) }}<br>
 
-                {{  Form::select('curso', $cursos,null); }}
+                {{  Form::select('curso', $cursos,null); }}<br>
 
                 <label for="data" class="m-3">Data de Nascimento</label><br>
                 <input type="date" name="data_nascimento" id="data" max="2005-12-31" required value="{{ old('date') }}"><br>

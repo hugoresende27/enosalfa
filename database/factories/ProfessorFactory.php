@@ -19,7 +19,10 @@ class ProfessorFactory extends Factory
         return [
             'nome' => "Prof.".$this->faker->name(),
             'id_disciplina'  => rand(1, 10),
-            'id_turma'  => rand(1, 25),
+            'idade' => $this->faker->dateTimeBetween($startDate = '-50 years', $endDate = '-18 years', $timezone = null),
+            'morada' => $this->faker->streetAddress(),
+            'email' => $this->faker->email(),
+            'telefone' => $this->faker->numerify('91-#######'),
             'created_at'=>now()
             
         ];

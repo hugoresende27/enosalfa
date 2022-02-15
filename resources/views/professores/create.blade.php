@@ -34,6 +34,7 @@
             <div class="form-group display-6 text-center">
                 {{ Form::label('nome','Nome') }}
                 {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Primeiro e Ultimo Nome']) }}
+                
                 {{ Form::label('disciplina','Disciplina') }}
                 <br>
 

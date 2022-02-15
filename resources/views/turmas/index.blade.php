@@ -25,7 +25,7 @@
             <th scope="col">Turma</th>
             
             <th scope="col">Curso</th>
-            <th scope="col">Professor</th>
+          
             
             <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
@@ -48,11 +48,7 @@
                 @endif
             @endforeach
 
-            @foreach ($todos_os_profs as $prof)
-                @if ($turma->id_professor == $prof->id)
-                  <td> <a href="/professores">{{ $prof->nome }} </a> </td>
-                @endif
-            @endforeach
+          
            
           
        
@@ -62,7 +58,7 @@
     
             <td>
                 
-                <form action="/cursos/" method="POST">
+                <form action="/turmas/{{ $turma->id }}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit"

@@ -29,7 +29,7 @@
             
             <th scope="col">Nome do Curso</th>
             {{-- <th scope="col">ID do Curso</th> --}}
-            <th scope="col">Turma</th>
+            {{-- <th scope="col">Turma</th> --}}
             <th scope="col">Sala</th>
             
             
@@ -69,7 +69,7 @@
                 @endif
                     
                 @endforeach --}}
-                <td>{{ $key->id_turma }}</td>
+                {{-- <td>{{ $key->id_turma }}</td> --}}
                 <td>{{ $key->sala }}</td>
                 {{-- <td>    
                   @foreach ($curso as $item)

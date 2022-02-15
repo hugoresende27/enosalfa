@@ -40,24 +40,19 @@ class CursoController extends Controller
     {
         $this->validate($request, [
             'nome'=>'required',
-            'disciplinas'=>'required',
-            // 'id_curso'=>'required|integer',
+           
             
         ],
         [
             'nome.required' => 'Preencha o nome!',
-            'disciplinas.required' => 'Preencha as disciplinas!',
-            // 'id_curso.required' => 'Preencha o curso!',
-            // 'id_curso.integer' => 'ID tem de ser um número',
+         
             
             
         ]);
 
         $curso = new Curso;
         $curso->nome=$request->input('nome');
-        $curso->disciplinas=$request->input('disciplinas');
-        // $curso->id_curso=$request->input('id_curso');
-    //    dd($curso);
+    
         $curso->save();
 
         return redirect ('/cursos')->with('message','Curso registado');

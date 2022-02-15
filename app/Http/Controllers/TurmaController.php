@@ -18,10 +18,10 @@ class TurmaController extends Controller
     public function index()
     {
         $todos_os_cursos = Curso::all();
-        $todos_os_profs = Professor::all();
+       
         $todas_as_turmas = Turma::orderBy('id')->get();
 
-        return view('turmas.index',compact('todas_as_turmas','todos_os_cursos','todos_os_profs'));
+        return view('turmas.index',compact('todas_as_turmas','todos_os_cursos'));
     }
 
     /**
@@ -31,7 +31,10 @@ class TurmaController extends Controller
      */
     public function create()
     {
-        //
+
+        $todos_os_cursos = Curso::all()->pluck('nome','id');
+        // dd($todos_os_cursos);
+        return view ('turmas.create',compact('todos_os_cursos'));
     }
 
     /**
@@ -42,7 +45,15 @@ class TurmaController extends Controller
      */
     public function store(StoreTurmaRequest $request)
     {
-        //
+        
+
+        $turma = new Turma;
+        $turma->id_curso=$request->input('curso_escolhido');
+      
+        // dd(get_defined_vars());
+        $turma->save();
+
+        return redirect ('/turmas')->with('message','Turma registada');
     }
 
     /**
@@ -85,8 +96,12 @@ class TurmaController extends Controller
      * @param  \App\Models\Turma  $turma
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Turma $turma)
+    public function destroy($id)
     {
-        //
+        $tur = Turma::where('id', $id);
+      
+        $tur->delete();
+       
+        return redirect('/turmas')->with ('message', 'Turma apagada!');
     }
 }

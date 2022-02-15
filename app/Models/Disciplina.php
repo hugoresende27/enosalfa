@@ -14,7 +14,7 @@ class Disciplina extends Model
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasOne
  */
-public function professor(): HasOne
+public function professor()
 {
     return $this->hasOne(Professor::class, 'id_disciplina', 'id');
 }

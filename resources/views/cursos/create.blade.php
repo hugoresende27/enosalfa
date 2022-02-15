@@ -35,9 +35,7 @@
                 {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Nome do curso']) }}
 
                
-                {{ Form::label('disciplinas','Disciplinas') }}
-                {{ Form::text('disciplinas','', ['class'=>'form-control m-3','placeholder'=>'Ex.: Português;Matemática;Ciências']) }}
-            
+               
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 
             </div>

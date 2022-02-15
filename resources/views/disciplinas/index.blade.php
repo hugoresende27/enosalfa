@@ -27,11 +27,9 @@
             <th scope="col">ID Disciplina</th>
             <th scope="col">Nome da Disciplina</th>
             
-            {{-- <th scope="col">Nome do professor</th>
+             {{-- <th scope="col">Nome do professor</th> --}}
         
-            
-            <th scope="col">ID Professor</th>
-             --}}
+        
             <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
           </tr>
@@ -47,6 +45,15 @@
             <td>{{ $item->id }}</td>
 
             <td>  {{ $item->nome }} </td>
+
+            {{-- @foreach ($profs as $prof)
+            
+              @if ($item->id_professor == $prof->id)
+              <td>{{ $prof->nome }}</td>
+                  
+              @endif
+                
+            @endforeach --}}
            
          
      
