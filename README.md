@@ -19,14 +19,11 @@ disciplina pode ser ministrada por vários professores);
 - Disciplinas;
 - Alunos/Formandos (fazem parte de uma turma e a uma turma pertence uma sala);
 - Notas dos alunos a cada disciplina.
-Deverá ser possível extrair a seguinte informação de acordo com o tipo de utilizador:
-Aluno:
-- Dados pessoais e notas às respetivas disciplinas;
-Professor:
-- Consultar as suas turmas;
-Administrador:
-- Poderá visualizar tudo;
-O sistema a desenvolver deverá ter um “front-office” que possibilite o acesso remoto através
+- Deverá ser possível extrair a seguinte informação de acordo com o tipo de utilizador:
+- Aluno:Dados pessoais e notas às respetivas disciplinas;
+- Professor:Consultar as suas turmas;
+- Administrador:Poderá visualizar tudo;
+- O sistema a desenvolver deverá ter um “front-office” que possibilite o acesso remoto através
 de “login” e com um ambiente para cada tipo de utilizador.
 
 ### FUNCIONALIDADES IMPLEMENTADAS 
