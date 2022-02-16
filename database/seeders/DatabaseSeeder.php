@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
          
         $this->call([
             UserSeeder::class,
-            CursoSeeder::class,
+            // CursoSeeder::class,
             
-            // AlunoSeeder::class,       
+            // // AlunoSeeder::class,       
             
-            ProfessorSeeder::class,
+            // ProfessorSeeder::class,
             
-            DisciplinaSeeder::class, 
-            TurmaSeeder::class,
+            // DisciplinaSeeder::class, 
+            // TurmaSeeder::class,
             // \App\Models\Professor::factory(10)->create(),
             // CursoSeeder::class
             
@@ -34,17 +34,19 @@ class DatabaseSeeder extends Seeder
         
         /*
             SEED DE ALUNOS E NOTAS TEM DE SER PROPORCIONAL, NÃO HÁ NOTAS SEM ALUNOS.
-            NÃO ESQUECER MUDAR OS ID'S A QUE SÃO ATRIBUIDAS AS NOTAS NO NotaFactory.php 
+            NÃO ESQUECER MUDAR OS ID'S A QUE SÃO ATRIBUIDAS AS NOTAS NO  --------- NotaFactory.php ---------
             PARA O NÚMERO TOTAL DE ALUNOS, CADA NOTA VAI SER ATRIBUIDA A UM ALUNO ID RANDOM!!!
+
+            PARA GERAR MAIS TURMAS ------ TurmaSeeder.php --------- ALTERAR NÚMERO DE TURMAS GERADAS E RELAÇÕES COM CURSOS 
         
         */
-        for($i=0;$i<10;$i++){
-            \App\Models\Aluno::factory()->create();
+        for($i=0;$i<0;$i++){
+            // \App\Models\Aluno::factory()->create();
             
         }
-        for($i=0;$i<50;$i++){
+        for($i=0;$i<0;$i++){
           
-            \App\Models\Nota::factory()->create();
+            // \App\Models\Nota::factory()->create();
         }
 
      

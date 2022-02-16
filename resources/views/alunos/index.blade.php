@@ -30,7 +30,7 @@
             <th scope="col">ID do aluno</th>
             <th scope="col">Nome</th>
             
-            <th scope="col">Nome do Curso</th>
+            <th scope="col">Email</th>
             {{-- <th scope="col">ID do Curso</th> --}}
             {{-- <th scope="col">Turma</th> --}}
             <th scope="col">Sala</th>
@@ -51,18 +51,19 @@
 
                 
                 <td>{{ $key->id }}</td>
-                <td> <a href="/alunos/{{ $key->id }}">  {{ $key->nome }} </a></td>
+                  <td> <a href="/alunos/{{ $key->id }}">  {{ $key->nome }} </a></td>
+                <td>   {{ $key->email }} </td>
 
-                @foreach ($curso as $item)
+                {{-- @foreach ($curso as $item)
 
                   @if(isset($item) && ($item->id == $key->id_curso))
 
-                      <td><a href="/cursos/{{ $item->id }}">  {{ $item->nome }}</a></td>
+                      {{-- <td><a href="/cursos/{{ $item->id }}">  {{ $item->nome }}</a></td> 
                   @else
-                      {{-- <td>Sem curso</td> --}}
+                      
                   @endif 
 
-                @endforeach
+                @endforeach --}}
                 
                 
 

@@ -29,7 +29,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
 
 ### FUNCIONALIDADES IMPLEMENTADAS 
 1. aluno 
- - adicionar precisa de curso
+ - adicionar precisa de curso e turma
  - index mostra id, nome do aluno e nome do curso
  - show mostra ficha do aluno
  - apagar aluno OK
@@ -48,7 +48,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - adicionar precisa apenas do nome do curso
  - index mostra ID Curso e nome do curso
  - show do curso mostra os alunos a frequentar o curso e TURMAS
- - apagar curso também apaga turmas do curso
+ - apagar curso  
 
 
 
@@ -56,7 +56,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - adicionar precisa de professor
  - index mostra ID Disciplina e nome da disciplina
  - show da disciplina mostra todas as notas e nomes dos alunos dessa disciplina
- - apagar disciplina também apaga o professor
+ - apagar disciplina também apaga o professor, todos os professores têm de ter uma disciplina
  - 1 disciplina tem 1 id_professor
 
 

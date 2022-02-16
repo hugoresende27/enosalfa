@@ -14,12 +14,10 @@ class TurmaSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1; $i<11;$i++){
+        for($i=1; $i<1;$i++){              //NUMERO DE turmas GERADO
             \DB::table('turmas')->insert([
                 
-                'id_curso'  => $i,       
-                  
-                  
+                'id_curso'  => rand(1,12),     //NUMERO DE cursos GERADO  
       
             ]);
 
@@ -35,13 +33,13 @@ class TurmaSeeder extends Seeder
         }
 
 
-        for($i=1; $i<31;$i++){
+        for($i=1; $i<0;$i++){
 
             \DB::table('professor_turmas')->where('id',$i)->insert([
                 
                 'id_professor'  => rand(1,10),   
-                'id_turma' =>rand(1,10),
-                'id_curso' =>rand(1,12)
+                'id_turma' =>rand(1,1),            //Numero de TURMAS
+                'id_curso' =>rand(1,12)         
             ]);
 
         }

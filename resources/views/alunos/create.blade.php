@@ -52,9 +52,12 @@
                 <label for="data" class="m-3">Data de Nascimento</label><br>
                 <input type="date" name="data_nascimento" id="data" max="2005-12-31" required value="{{ old('data_nascimento') }}"><br>
 
-                {{ Form::label('curso','Curso',['class'=>' m-3']) }}<br>
 
+                {{ Form::label('curso','Curso',['class'=>' m-3']) }}<br>
                 {{  Form::select('curso', $cursos,null); }}<br>
+
+                {{-- {{ Form::label('turma','Turma',['class'=>' m-3']) }}<br>
+                {{  Form::select('turma', $turma,null); }}<br> --}}
 
               
               

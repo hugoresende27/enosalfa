@@ -46,7 +46,7 @@
                 {{ Form::text('telefone','', ['class'=>'form-control m-3','placeholder'=>'o seu contacto']) }}
 
                 <label for="data" class="m-3">Data de Nascimento</label><br>
-                <input type="date" name="data_nascimento" id="data" max="2005-12-31" required value="{{ old('data_nascimento') }}"><br>
+                <input type="date" name="data_nascimento" id="data" max="1990-12-31" required value="{{ old('data_nascimento') }}"><br>
                 <br>
                 {{ Form::label('disciplina','Disciplina') }}
                 <br>

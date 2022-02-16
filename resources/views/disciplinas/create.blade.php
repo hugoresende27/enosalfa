@@ -43,7 +43,7 @@
 
                 <br>
 
-                {{  Form::select('profs', $profs,null,['class'=>'m-3']); }}
+                {{  Form::select('profs', $profs,null,['class'=>'m-3', 'required'=>'required']); }}
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 

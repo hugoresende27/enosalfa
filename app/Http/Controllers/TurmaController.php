@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Turma;
 use App\Models\Professor;
 use App\Models\Curso;
+use App\Models\professor_turma;
 use App\Http\Requests\StoreTurmaRequest;
 use App\Http\Requests\UpdateTurmaRequest;
 
@@ -49,9 +50,16 @@ class TurmaController extends Controller
 
         $turma = new Turma;
         $turma->id_curso=$request->input('curso_escolhido');
+
+        $turma->save();
+
+        $relacao = new professor_turma;
+        $relacao->id_turma=$turma->id;
+        $relacao->id_curso=$request->input('curso_escolhido');
       
         // dd(get_defined_vars());
-        $turma->save();
+       
+        $relacao->save();
 
         return redirect ('/turmas')->with('message','Turma registada');
     }

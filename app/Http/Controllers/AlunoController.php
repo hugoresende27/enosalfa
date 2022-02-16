@@ -52,10 +52,11 @@ class AlunoController extends Controller
     {
         
         $cursos = Curso::all()->pluck('nome','id');
+        $turma = Turma::all()->pluck('id','id');
       
           
-    //    dd($cursos);
-        return view('alunos.create',compact('cursos'));
+    //    dd($turma);
+        return view('alunos.create',compact('cursos','turma'));
     }
 
     /**
@@ -103,6 +104,7 @@ class AlunoController extends Controller
         $aluno->sala=$request->input('sala');
         $aluno->idade=$request->input('data_nascimento');
         $aluno->id_curso=$request->input('curso');
+        $aluno->id_turma=$request->input('turma');
         $aluno->save();
 
         return redirect ('/alunos')->with('message','Aluno registado');

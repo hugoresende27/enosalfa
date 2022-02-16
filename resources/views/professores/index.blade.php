@@ -25,8 +25,9 @@
         <thead>
           <tr>
             <th scope="col">Nome</th>
+            <th scope="col">Email</th>
             
-            <th scope="col">Disciplina</th>
+            {{-- <th scope="col">Disciplina</th> --}}
             
             
             <th scope="col">EDITAR</th>
@@ -41,21 +42,22 @@
           <tr>
         
             <td> <a href="/professores/{{ $item->id }}"> {{ $item->nome }} </a> </td>
+            <td>  {{ $item->email }} </td>
             {{-- <td>  {{ $row['nome'] }} </td> --}}
          
-            @foreach ($disciplina as $d)
+            {{-- @foreach ($disciplina as $d)
                 @if ($d->id == $item->id_disciplina)
                   <td> <a href="/disciplinas/{{ $d->id }}">{{ $d->nome }} </a> </td>
                 @endif
-            @endforeach
+            @endforeach --}}
            
-            @foreach ($turmas as $tu)
+            {{-- @foreach ($turmas as $tu)
            
               @if ($tu->id == $item->id_turma)
                 <td> <a href="/turmas"> {{ $tu->id }} </a> </td>
               @endif
              
-            @endforeach
+            @endforeach --}}
            
      
             <td><a href="">Editar </a></td>

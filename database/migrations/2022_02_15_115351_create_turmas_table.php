@@ -15,17 +15,17 @@ return new class extends Migration
     {
         Schema::create('turmas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_curso');
+            $table->unsignedBigInteger('id_curso')->nullable();
             
             
-            $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');
+            $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('set null');
             $table->timestamps();
         });
 
         Schema::table('alunos', function (Blueprint $table) {
            
             
-            $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');
+            $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('set null');
            
             
         });
@@ -48,7 +48,7 @@ return new class extends Migration
         Schema::table('professors', function (Blueprint $table) {
            
             
-            $table->foreign('id_disciplina')->references('id')->on('disciplinas')->onDelete('cascade');                  
+            $table->foreign('id_disciplina')->references('id')->on('disciplinas')->onDelete('set null');                  
                              
             
         });

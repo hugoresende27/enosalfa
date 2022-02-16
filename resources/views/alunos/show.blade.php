@@ -24,7 +24,13 @@
       <div class="card-body">
         <h5 class="card-title">Curso:
 
-            <a href="/cursos/{{ $curso->id }}" class="text-black"> {{ $curso->nome }}</a>
+          @if (isset($curso->id))
+              <a href="/cursos/{{ $curso->id }}" class="text-black"> {{ $curso->nome }}</a>
+          @else
+             SEM CURSO
+          @endif
+
+         
 
      
 
