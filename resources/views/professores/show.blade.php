@@ -20,8 +20,21 @@
   
 
   <div class="card bg-light mb-3" style="max-width: ">
-    <div class="card-header display-4">{!! $nome !!} :: ID {{ $id }}</div>
+    <div class="card-header display-4">{!! $nome !!} 
+
+      <a href="../professores/{{ $id }}/edit" class="float-right btn-editar">EDITAR</a>
+      
+    </div>
+      
       <div class="card-body">
+
+        <h5 class="card-title">
+
+          ID: {{ $id }}
+ 
+  
+ 
+     </h5>
         <h5 class="card-title">Disciplina:
           
           @if (isset($disciplina->id))
@@ -78,14 +91,23 @@
      
 
         </h5>
-        {{-- <h5 class="card-title">Sala: 
 
-          {{ $aluno->sala }}
-        </h5> --}}
-      
-      
+        <h5 class="card-title">Registado em: 
+
+          {{ $created_at }}
+
+        </h5>
+        <h5 class="card-title">Ultima atualização de registo em: 
+
+          {{ $updated_at }}
+
+        </h5>
+
+
       </div>
-  </div>
+  
+    </div>
+  
 
  
 

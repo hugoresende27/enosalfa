@@ -108,6 +108,8 @@ class ProfessorController extends Controller
             $email = $item->email;
             $telefone = $item->telefone;
             $id_disc = $item->id_disciplina;
+            $created_at = $item->created_at;
+            $updated_at = $item->updated_at;
            
         }
         
@@ -118,7 +120,7 @@ class ProfessorController extends Controller
         
         // dd(get_defined_vars());
        
-        return view ('professores.show', compact('disciplina','x','id', 'nome', 'morada', 'email','data','telefone','data2','turmas'));
+        return view ('professores.show', compact('disciplina','x','id', 'nome', 'morada', 'email','data','telefone','data2','turmas','created_at','updated_at'));
     }
 
     /**
@@ -127,9 +129,14 @@ class ProfessorController extends Controller
      * @param  \App\Models\Professor  $professor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Professor $professor)
+    public function edit(Professor $professore)
     {
-        //
+
+        $disciplinas = Disciplina::all();
+        // $disciplina = Disciplina::findOrFail($professore->id);
+
+        // dd($disciplina->id);
+        return view ('professores.update', compact ('disciplinas','professore'));
     }
 
     /**

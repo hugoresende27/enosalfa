@@ -32,9 +32,10 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - adicionar pode ou não ter  curso e turma
  - index mostra id, nome do aluno e nome do curso
  - show mostra ficha do aluno
+ - editar aluno permite alterar tudo
  - apagar aluno OK
  - ficha tecnica aluno OK
- - 1 aluno tem 1 id_curso
+ - tabela alunos tem id_curso e id_turma
 
 2. professor 
  - adicionar precisa de disciplina
@@ -47,7 +48,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
 3. curso 
  - adicionar precisa apenas do nome do curso
  - index mostra ID Curso e nome do curso
- - show do curso mostra os alunos a frequentar o curso e TURMAS
+ - show do curso mostra os alunos a frequentar o curso, turmas e id
  - apagar curso OK
 
 

@@ -77,7 +77,7 @@ class CursoController extends Controller
         $turmas = professor_turma::where('id_curso',$id)->get();
 
 
-        return view ('cursos.show', compact('alunos','curso','turmas'));
+        return view ('cursos.show', compact('alunos','curso','turmas','id'));
     }
 
     /**

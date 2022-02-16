@@ -19,7 +19,7 @@
 
 
   <div class="card bg-light mb-3" style="max-width: ">
-    <div class="card-header display-4">NOME:{!! $aluno->nome !!} 
+    <div class="card-header display-4">{!! $aluno->nome !!} 
     
         <a href="../alunos/{{ $aluno->id }}/edit" class="float-right btn-editar">EDITAR</a>
         {{-- <a href="{{ action('AlunoController@edit') }}" class="float-right btn-editar">EDITAR</a> --}}
@@ -28,7 +28,7 @@
       <div class="card-body">
         <h5 class="card-title">Aluno ID:
 
-          :: ID {{ $aluno->id }}
+           {{ $aluno->id }}
 
         </h5>
         <h5 class="card-title  bg-info ">Curso:
@@ -42,7 +42,7 @@
         </h5>
       
 
-        <h5 class="card-title">Idade:
+        <h5 class="card-title ">Idade:
 
             {{ $x }} anos, nascido em {{ $aluno->idade }}
 
@@ -83,6 +83,11 @@
         <h5 class="card-title">Registado em: 
 
           {{ $aluno->created_at }}
+
+        </h5>
+        <h5 class="card-title">Ultima atualização de registo em: 
+
+          {{ $aluno->updated_at }}
 
         </h5>
       

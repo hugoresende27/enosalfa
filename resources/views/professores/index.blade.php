@@ -60,7 +60,7 @@
             @endforeach --}}
            
      
-            <td><a href="">Editar </a></td>
+            <td><a href="/professores/{{ $item->id }}/edit">Editar </a></td>
     
     
             <td>

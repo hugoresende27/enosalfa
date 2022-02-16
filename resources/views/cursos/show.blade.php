@@ -14,18 +14,15 @@
     padding: 5px;
     margin: 10px;
     border-radius: 5px;
-    width: 150px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+  
   }
 
   </style>
 <div class="container p-3 minimo-altura" style="margin:20px">
 
-  <h1 class="text-white text-center display-4">
-    {!! $curso !!}
-  </h1>
+ 
 
    {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
  @if (session()->has('message'))
@@ -40,9 +37,15 @@
 
     <div class="card bg-light mb-3" style="max-width: ">
 
-  
+      <div class="card-header display-4">
+        {!! $curso !!}
+      </div>
         <div class="card-body">
 
+          <h5 class="card-title lista-alunos-curso">ID:
+            {{ $id }}
+ 
+          </h5>
 
           <h5 class="card-title">Alunos a frequentar:
 

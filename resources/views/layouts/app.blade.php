@@ -138,6 +138,11 @@ font-family: 'Numans', sans-serif;
                 font-size: 26px; 
                 float:left; 
             }
+            
+            .container a{
+                text-decoration: none !important;
+                color: #fff;
+            }
 
             .titulo-inicial{
                 color: #000;
@@ -173,7 +178,7 @@ font-family: 'Numans', sans-serif;
             }
 
             .card-title{
-                
+                text-align: left;
                 width: fit-content;
             }
 
