@@ -17,8 +17,8 @@ class TurmaFactory extends Factory
     public function definition()
     {
         return [
-            'id_curso' => rand(1,12),
-            'id_professor' => rand(1,10),
+            'id_curso' => 1,
+            // 'id_professor' => rand(1,10),
         ];
     }
 }

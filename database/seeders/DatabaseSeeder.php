@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
          
         $this->call([
             UserSeeder::class,
-            // CursoSeeder::class,
+            CursoSeeder::class,
             
             // // AlunoSeeder::class,       
             
@@ -48,6 +48,10 @@ class DatabaseSeeder extends Seeder
           
             // \App\Models\Nota::factory()->create();
         }
+
+        // \App\Models\Curso::factory()->create();
+        // \App\Models\Turma::factory()->create();
+        
 
      
    

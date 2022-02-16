@@ -14,6 +14,25 @@ class CursoSeeder extends Seeder
      */
     public function run()
     {
+
+       
+        \DB::table('cursos')->insert([
+            'nome'  => 'Desenvolvedor WEB Inicial',
+           
+        ]);
+
+        \DB::table('turmas')->insert([
+            'id_curso'  => 1,
+           
+        ]);
+
+       
+        \DB::table('professor_turmas')->insert([
+            'id_curso'  => 1,
+            'id_turma'  => 1,
+           
+        ]);
+        /*
         \DB::table('cursos')->insert([
             'nome'  => 'Desenvolvedor WEB Inicial',
            
@@ -64,5 +83,6 @@ class CursoSeeder extends Seeder
             'nome'  => 'Analista de Base de Dados',
            
         ]);
+        */
     }
 }

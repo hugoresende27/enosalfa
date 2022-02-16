@@ -20,7 +20,7 @@ class CursoFactory extends Factory
             'nome' => $this->faker->word(),
             
             
-            'id_aluno'=>rand(1,50),          
+            // 'id_aluno'=>rand(1,50),          
             
             
         ];
