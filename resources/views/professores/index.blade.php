@@ -43,7 +43,7 @@
          
             @foreach ($disciplina as $d)
                 @if ($d->id == $item->id_disciplina)
-                  <td> <a href="/disciplinas">{{ $d->nome }} </a> </td>
+                  <td> <a href="/disciplinas/{{ $d->id }}">{{ $d->nome }} </a> </td>
                 @endif
             @endforeach
            

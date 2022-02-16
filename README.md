@@ -20,37 +20,48 @@ Administrador:
 O sistema a desenvolver deverá ter um “front-office” que possibilite o acesso remoto através
 de “login” e com um ambiente para cada tipo de utilizador.
 
-
+### FUNCIONALIDADES IMPLEMENTADAS 
 1. aluno 
  - adicionar precisa de curso
  - index mostra id, nome do aluno e nome do curso
  - show mostra ficha do aluno
  - apagar aluno OK
+ - ficha tecnica aluno OK
+ - 1 aluno tem 1 id_curso
 
 2. professor 
  - adicionar precisa de disciplina
  - index mostra nome professor, disciplina
  - apagar professor OK
+ - ficha tecnica professor OK
+ - 1 professor tem 1 id_disciplina
 
 3. curso 
  - adicionar precisa apenas do nome do curso
  - index mostra ID Curso e nome do curso
+ - show do curso mostra os alunos a frequentar o curso
  - apagar curso também apaga turmas do curso
+
+
 
 4. Disciplina 
  - adicionar precisa de professor
  - index mostra ID Disciplina e nome da disciplina
+ - show da disciplina mostra todas as notas e nomes dos alunos dessa disciplina
  - apagar disciplina também apaga o professor
+ - 1 disciplina tem 1 id_professor
 
 
 5. Notas
  - lançar notas precisa de aluno e disciplina
  - se aluno for apagado, nota também é apagada, onDelete('cascade')
+ - 1 nota tem 1 id_aluno e 1 id_disciplina
 
 6. Turmas
- - adicionar turma precisa de curso
+ - adicionar turma precisa de curso, número atribuido à turma vai ser o ID
  - mostra ID Turma(número da turma é o ID), nome do curso
  - apagar turma OK
+ - 1 turma tem 1 id_curso
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>

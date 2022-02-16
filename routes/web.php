@@ -32,6 +32,7 @@ Route::post('/alunos/create',  [\App\Http\Controllers\AlunoController::class,'st
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::resource('professores', ProfessorController::class);
 Route::post('/professores/create',  [\App\Http\Controllers\ProfessorController::class,'store'])->name('guardar_prof');
+// Route::get('/professores/create',  [\App\Http\Controllers\ProfessorController::class,'store'])->name('guardar_prof');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::resource('cursos', CursoController::class);
 Route::post('/cursos/create',  [\App\Http\Controllers\CursoController::class,'store'])->name('guardar_curso');

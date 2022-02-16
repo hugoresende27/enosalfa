@@ -31,37 +31,24 @@ class DatabaseSeeder extends Seeder
             
         ]);
 
-        // for($i=0;$i<50;$i++){
-        for($i=0;$i<5;$i++){
+        
+        /*
+            SEED DE ALUNOS E NOTAS TEM DE SER PROPORCIONAL, NÃO HÁ NOTAS SEM ALUNOS.
+            NÃO ESQUECER MUDAR OS ID'S A QUE SÃO ATRIBUIDAS AS NOTAS NO NotaFactory.php 
+            PARA O NÚMERO TOTAL DE ALUNOS, CADA NOTA VAI SER ATRIBUIDA A UM ALUNO ID RANDOM!!!
+        
+        */
+        for($i=0;$i<10;$i++){
             \App\Models\Aluno::factory()->create();
             
         }
-        for($i=0;$i<1;$i++){
+        for($i=0;$i<50;$i++){
           
             \App\Models\Nota::factory()->create();
         }
-        for($i=0;$i<25;$i++){
-          
-            // \App\Models\Turma::factory()->create();
-        }
+   
        
-    
 
-
-        // for ( $i=1; $i<13 ;$i++)
-        // {
-        //     \DB::table('cursos')->where('id',$i)->update(['id_aluno'=> $i]);
-        // }
-       
-     
-
-
-        // \App\Models\Professor::factory(10)->create();
-        // \App\Models\Disciplina::factory(10)->create();
-        
-        
-        
-        // \App\Models\Curso::factory(10)->create();
 
         
     }

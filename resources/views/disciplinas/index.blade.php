@@ -44,17 +44,10 @@
 
             <td>{{ $item->id }}</td>
 
-            <td>  {{ $item->nome }} </td>
-
-            {{-- @foreach ($profs as $prof)
-            
-              @if ($item->id_professor == $prof->id)
-              <td>{{ $prof->nome }}</td>
-                  
-              @endif
-                
-            @endforeach --}}
            
+            <td> <a href="/disciplinas/{{ $item->id }} ">{{ $item->nome }}  </a> </td>
+
+       
          
      
             <td><a href="">Editar </a></td>

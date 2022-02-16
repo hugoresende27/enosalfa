@@ -49,18 +49,32 @@ class ProfessorController extends Controller
     public function store(StoreProfessorRequest $request)
     {
         $this->validate($request, [
-            'nome'=>'required',         
+            'nome'=>'required',   
+            'morada'=>'required',
+            'email'=>'required|email',
+            'telefone'=>'required|integer',      
         ],
         [
-            'nome.required' => 'Preencha o nome!',             
+            'nome.required' => 'Preencha o nome!',      
+            'email.required' => 'Preencha o email!',
+            'email.email' => 'email tem de ser válido!',
+            'telefone.required' => 'Preencha o telefone!',
+            'telefone.integer' => 'Número de telefone inválido!',       
         ]);
 
         $prof = new Professor;
         $prof->nome=$request->input('nome');
+
+        $prof->morada=$request->input('morada');
+        $prof->email=$request->input('email');       
+        $prof->telefone=$request->input('telefone');
+        $prof->idade=$request->input('data_nascimento');
+
+
         $prof->id_disciplina=$request->input('disciplinas');
       
         $prof->save();
-
+        // dd($request);
         return redirect ('/professores')->with('message','Professor registado');
     }
 
@@ -70,11 +84,15 @@ class ProfessorController extends Controller
      * @param  \App\Models\Professor  $professor
      * @return \Illuminate\Http\Response
      */
+
+
     public function show( $id)
+    // public function show(Professor $professor)
     {
 
         // dd(get_defined_vars());
-        $disciplina = Disciplina::with('professor')->where('id', $id)->first();
+      
+        
         $professor = Professor::where('id',$id)->get();
         $anoAtual = now();
 
@@ -88,10 +106,11 @@ class ProfessorController extends Controller
             $morada = $item->morada;
             $email = $item->email;
             $telefone = $item->telefone;
+            $id_disc = $item->id_disciplina;
            
         }
         
-       
+        $disciplina = Disciplina::where('id',$id_disc)->first();
         $x = $data->diff($anoAtual)->format("%y");
 
         

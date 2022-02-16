@@ -59,7 +59,7 @@
 
               @foreach ($disciplinas as $dis)
                   @if (isset($dis) && ($dis->id == $nota->id_disciplina))
-                      <td> {{ $dis->nome }} </td>
+                      <td> <a href="/disciplinas/ {{  $dis->id }}">  {{ $dis->nome }} </a> </td>
                   @endif
               @endforeach
           

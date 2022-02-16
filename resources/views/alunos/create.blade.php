@@ -49,12 +49,14 @@
                 {{ Form::label('sala','Sala') }}
                 {{ Form::text('sala','', ['class'=>'form-control m-3','placeholder'=>'Sala']) }}
 
+                <label for="data" class="m-3">Data de Nascimento</label><br>
+                <input type="date" name="data_nascimento" id="data" max="2005-12-31" required value="{{ old('data_nascimento') }}"><br>
+
                 {{ Form::label('curso','Curso',['class'=>' m-3']) }}<br>
 
                 {{  Form::select('curso', $cursos,null); }}<br>
 
-                <label for="data" class="m-3">Data de Nascimento</label><br>
-                <input type="date" name="data_nascimento" id="data" max="2005-12-31" required value="{{ old('date') }}"><br>
+              
               
 
                 {{-- <p class="text-white" style="font-size: 20pt">{{ $cursos }}</p> --}}

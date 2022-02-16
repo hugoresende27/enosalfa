@@ -9,6 +9,8 @@ class Professor extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     /**
      * Get the user associated with the Professor
      *

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Disciplina;
 use App\Models\Professor;
+use App\Models\Aluno;
+use App\Models\Nota;
 use App\Http\Requests\StoreDisciplinaRequest;
 use App\Http\Requests\UpdateDisciplinaRequest;
 
@@ -68,7 +70,12 @@ class DisciplinaController extends Controller
      */
     public function show(Disciplina $disciplina)
     {
-        //
+
+        $todas_as_notas = Nota::where('id_disciplina',$disciplina->id)->get();
+        $todos_os_alunos = Aluno::all();
+
+        // dd(get_defined_vars());
+        return view('disciplinas.show', compact('disciplina','todos_os_alunos','todas_as_notas'));
     }
 
     /**

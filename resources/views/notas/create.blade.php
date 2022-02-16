@@ -55,11 +55,11 @@
 
             <div class="display-6 text-center">
                 {{-- {{ Form::label('aluno','aluno') }} --}}
-                {{  Form::select('aluno', $aluno,null,['class'=>'input-select m-3','placeholder'=>'aluno','required'=>'required']); }}
+                {{  Form::select('aluno', $aluno,null,['class'=>'input-select m-3','placeholder'=>'Aluno','required'=>'required']); }}
                 {{-- {{ Form::text('aluno','', ['class'=>'form-control m-3','placeholder'=>'aluno']) }} --}}
                
                 {{-- {{ Form::label('disciplina','disciplina') }} --}}
-                {{  Form::select('disciplina', $disciplina,null,['class'=>' input-select m-3','placeholder'=>'disciplina','required'=>'required']); }}
+                {{  Form::select('disciplina', $disciplina,null,['class'=>' input-select m-3','placeholder'=>'Disciplina','required'=>'required']); }}
                 {{-- {{ Form::text('disciplina','', ['class'=>'form-control m-3','placeholder'=>'disciplina']) }} --}}
 
                 {{-- {{ Form::label('nota','nota') }} --}}

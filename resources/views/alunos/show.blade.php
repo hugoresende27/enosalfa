@@ -101,7 +101,7 @@
             
         @foreach ($disc as $d)
             @if ($d->id == $n->id_disciplina)
-              <td>{{ $d->nome}}</td>
+              <td><a href="/disciplinas/{{ $d->id }}">  {{ $d->nome}} </a></td>
             @endif
            
             

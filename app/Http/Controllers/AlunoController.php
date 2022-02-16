@@ -86,7 +86,7 @@ class AlunoController extends Controller
             'email.required' => 'Preencha o email!',
             'email.email' => 'email tem de ser válido!',
             'telefone.required' => 'Preencha o telefone!',
-            'telefone.integer' => 'Número inválido!',
+            'telefone.integer' => 'Número de telefone inválido!',
             // 'turma.required' => 'Preencha a turma!',
             'sala.required' => 'Preencha a sala!',
             // 'curso.required' => 'Preencha o curso!',
