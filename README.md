@@ -29,7 +29,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
 
 ### FUNCIONALIDADES IMPLEMENTADAS 
 1. aluno 
- - adicionar precisa de curso e turma
+ - adicionar pode ou não ter  curso e turma
  - index mostra id, nome do aluno e nome do curso
  - show mostra ficha do aluno
  - apagar aluno OK
@@ -48,7 +48,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - adicionar precisa apenas do nome do curso
  - index mostra ID Curso e nome do curso
  - show do curso mostra os alunos a frequentar o curso e TURMAS
- - apagar curso  
+ - apagar curso OK
 
 
 
@@ -68,7 +68,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
 6. Turmas
  - adicionar turma precisa de curso, número atribuido à turma vai ser o ID
  - mostra ID Turma(número da turma é o ID), nome do curso
- - apagar turma OK
+ - apagar turma apaga alunos
  - 1 turma tem 1 id_curso
 
 

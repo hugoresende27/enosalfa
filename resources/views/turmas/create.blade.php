@@ -7,7 +7,7 @@
     .meuBtn{
         font-weight: 900;
         font-family: 'Consolas',sans-serif;
-        font-size: 1rem;
+        font-size: 1.5rem;
         border: none;
     }
     .meuBtn:hover{
@@ -17,8 +17,13 @@
         transform: scale(1);
         font-size: 1.2rem;
     }
-    label{
+    .minha-label{
         color:#fff;
+        background-color: rgb(11, 31, 2);
+        border-radius: 3px;
+        padding: 3px;
+        margin: 3px;
+        font-size:1.2rem;
     }
     .input-select{
         /* margin: 10px; */
@@ -37,7 +42,7 @@
 
          {{-- DEBUG DE ERROS NO FORM-------------------- --}}
   @if ($errors->any())
-  <div class=" text-white">
+  <div class=" text-white mostrar-erros">
       <ul>
           @foreach ($errors->all() as $erro)
               <li class="">
@@ -49,14 +54,15 @@
 @endif 
 
 
-        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Adicionar uma Turma</h1>
+        <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:2.5rem;">Adicionar uma Turma</h1>
 
         {!! Form::open(['route' => 'guardar_turma', 'method'=> 'POST']) !!}
 
             <div class="display-6 text-center">
               
                
-                {{ Form::label('curso','Escolha o Curso') }}
+                {{-- {{ Form::label('curso','Escolha o Curso', ['class'=>'m-3 minha-label']) }} --}}
+                <label for="curso" class="m-3 p-3">Escolha o Curso</label>
                 {{-- {{  Form::select('curso_escolhido', $todos_os_cursos,null,['class'=>' input-select m-3','placeholder'=>'Curso','required'=>'required']); }} --}}
                 {{-- {{ Form::text('disciplina','', ['class'=>'form-control m-3','placeholder'=>'disciplina']) }} --}}
 

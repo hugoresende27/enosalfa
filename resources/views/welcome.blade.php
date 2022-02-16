@@ -9,13 +9,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
-html,body{
+/* html,body{
 background-image: url('https://cdn.pixabay.com/photo/2015/04/01/11/08/sillouette-702178_960_720.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
-}
+} */
 
 .container{
 height: 100%;
@@ -119,7 +119,7 @@ margin-left: 4px;
                 
             }
             ul li{
-                margin: 20px;
+                /* margin: 20px; */
             }
 
         
@@ -130,15 +130,33 @@ margin-left: 4px;
             }
             .btn-heros{
                 width: 100%;
-                display:inline-flex;
-                padding: 20px;
-                margin: 20px;
-                text-align: left;
+                /* display:inline-flex; */
+                padding: 10px;
+                margin: 10px;
+                text-align: center;
+                border-radius: 5px;
+                font-size:1.5rem;
                 
             }
+
+            .btn-heros:hover{
+                background-color: #fff;
+                color: darkgreen;
+            }
+
+            .verde{
+                background-color: darkgreen;
+            }
+            .vermelho{
+                background-color: darkred;
+            }
+
+
             footer{
             /* display: none; */
             }
+
+        
 
     </style>
 
@@ -176,7 +194,7 @@ margin-left: 4px;
                                       
                                         @if (Route::has('login'))
                     
-                                        <a class="btn-heros" style="background-color: darkgreen" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <a class="btn-heros verde"  href="{{ route('login') }}">{{ __('Login') }}</a>
                                 
                                         @endif
                                         
@@ -184,7 +202,7 @@ margin-left: 4px;
                                     <div class="input-group form-group">
                                         @if (Route::has('register'))
                     
-                                        <a class="btn-heros" style="background-color: darkred" href="{{ route('register') }}">{{ __('Registar') }}</a>
+                                        <a class="btn-heros vermelho"  href="{{ route('register') }}">{{ __('Registar') }}</a>
                                 
                                 @endif
                                     
@@ -203,8 +221,12 @@ margin-left: 4px;
 
             <div class="menu">
                 <h1 class="titulo-inicial titulo-topo">Sistema E.N.O.S.</h1>
+
+
+                <img src="https://cdn.pixabay.com/photo/2015/11/05/08/21/geometry-1023846_960_720.jpg" 
+                      alt="welcome">
             
-                <ul>
+                {{-- <ul>
                     <li>
                         <a href="alunos" class="btn-inicial ">Alunos</a>
                     </li>
@@ -223,7 +245,7 @@ margin-left: 4px;
                     <li>
                         <a href="turmas" class="btn-inicial ">Turmas</a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         @endauth
         

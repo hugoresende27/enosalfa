@@ -37,7 +37,7 @@
 
          {{-- DEBUG DE ERROS NO FORM-------------------- --}}
   @if ($errors->any())
-  <div class=" text-white">
+  <div class=" text-white mostrar-erros">
       <ul>
           @foreach ($errors->all() as $erro)
               <li class="">

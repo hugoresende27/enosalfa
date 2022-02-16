@@ -32,6 +32,42 @@ class CursoSeeder extends Seeder
             'id_turma'  => 1,
            
         ]);
+
+        \DB::table('alunos')->insert([
+            'nome' => 'José Carlos',
+            'email' => 'fake@mail.com',
+            'idade' => '1989-6-17',
+            'morada'=>'rua da Areia, n.13',
+            'telefone' => 99999999,
+            'sala' => 1,
+            'id_turma'=>1,
+            'id_curso'=>1
+            
+           
+        ]);
+
+        \DB::table('disciplinas')->insert([
+            'nome' => 'Laravel',     
+          
+        ]);
+
+        \DB::table('professors')->insert([
+            'nome' => 'Prof. Alberto',
+            'email' => 'fake@mail.com',
+            'idade' => '1958-6-17',
+            'morada'=>'rua da Areia, n.17',
+            'telefone' => 6666666,
+            'id_disciplina' => 1
+            
+           
+        ]);
+        
+        \DB::table('disciplinas')->where('id',1)->update(['id_professor'=> 1]);
+      
+
+      
+
+        
         /*
         \DB::table('cursos')->insert([
             'nome'  => 'Desenvolvedor WEB Inicial',

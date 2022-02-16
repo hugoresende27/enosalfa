@@ -19,16 +19,17 @@ return new class extends Migration
             
             
             $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('set null');
+           
             $table->timestamps();
         });
 
         Schema::table('alunos', function (Blueprint $table) {
            
-            
             $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('set null');
-           
+    
             
         });
+        
 
         Schema::table('disciplinas', function (Blueprint $table) {
            

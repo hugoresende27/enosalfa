@@ -69,9 +69,11 @@ font-family: 'Numans', sans-serif;
 
             .titulo-topo{
                 background-color: yellowgreen;
+                
                 border-radius: 10px;
                 padding: 20px;
                 margin: 10px;
+                position: absolute;
             }
 
 
@@ -164,6 +166,53 @@ font-family: 'Numans', sans-serif;
                 border-radius: 3px;
                 padding: 3px;
                 margin: 3px;
+                font-size:1.2rem;
+            }
+            input{
+                font-size:1.2rem;
+            }
+
+            .card-title{
+                
+                width: fit-content;
+            }
+
+            .card-header{
+                text-align: left;
+            }
+          
+            .mostrar-erros{
+                background-color: red;
+                border-radius: 5px;
+                text-align: right;
+                padding: 3px;
+            }
+
+            /* .btn-voltar{
+               position: absolute;
+               right: 0;
+              
+            } */
+
+            .btn-editar{
+                background-color: darkgreen;
+                color: #fff;
+                padding: 3px;
+                border-radius: 3px;
+            }
+
+            .btn-editar:hover{
+                background-color: #000;
+                color: yellowgreen;
+                text-decoration: none;
+            }
+
+            .delete {
+                background-color: cyan;
+                border-radius: 5px;
+                text-align: center;
+                padding: 3px;
+                color:#000;
             }
           
 
@@ -173,6 +222,7 @@ font-family: 'Numans', sans-serif;
 {
     body{
         overflow:visible;
+        background-image: cover;
     }
 
     footer 
@@ -186,6 +236,7 @@ font-family: 'Numans', sans-serif;
 {
     body{
         overflow:visible;
+        background-image: cover;
     }
     footer 
     {
@@ -197,6 +248,15 @@ font-family: 'Numans', sans-serif;
 
 @media (max-width : 600px)
 {
+    body{
+        overflow:visible;
+        background-image: cover;
+    }
+    footer 
+    {
+        display: none;
+    };
+  
 
 }
     
@@ -224,18 +284,18 @@ font-family: 'Numans', sans-serif;
                 @else
 
                 
-                    <a class=" m-3 navbar-brand" href="/">ENOS HR &copy;</a>
+                    <a class=" m-3 navbar-brand minha-nav" href="/">ENOS HR &copy;</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="navbar-nav">
-                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="../alunos">Alunos </a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;" href="../professores">Professores</a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;" href="../cursos">Cursos</a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="../disciplinas">Disciplinas</a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="../notas">Notas</a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="../turmas">Turmas</a>
+                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="{{ asset('alunos')}}">Alunos </a>
+                        <a class="nav-item nav-link btn-topo" style="color:#000;" href="{{ asset('professores') }}">Professores</a>
+                        <a class="nav-item nav-link btn-topo" style="color:#000;" href="{{ asset('cursos ') }}">Cursos</a>
+                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="{{ asset('disciplinas ') }}">Disciplinas</a>
+                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="{{ asset('notas ') }}">Notas</a>
+                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="{{ asset('turmas ') }}">Turmas</a>
                       </div>
                     </div>
                     

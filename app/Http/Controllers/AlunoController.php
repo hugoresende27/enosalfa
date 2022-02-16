@@ -12,6 +12,7 @@ use App\Http\Requests\UpdateAlunoRequest;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Http\Request;
 
+
 class AlunoController extends Controller
 {
     /**
@@ -208,9 +209,22 @@ class AlunoController extends Controller
      * @param  \App\Models\Aluno  $aluno
      * @return \Illuminate\Http\Response
      */
-    public function edit(Aluno $aluno)
+    public function edit($id)
     {
-        //
+
+        $turmas = Turma::all();
+        $cursos = Curso::all();
+        $aluno = Aluno::find($id);
+
+        // dd(get_defined_vars());
+
+        // return view('alunos.update')->with('aluno',$aluno);
+        return view('alunos.update', compact('aluno','turmas','cursos'));
+
+        // $cursos = Curso::all();
+        // $turma = Turma::all();
+        // dd(get_defined_vars());
+        // return view('alunos.update', compact('aluno','cursos','turma'));
     }
 
     /**
@@ -222,7 +236,39 @@ class AlunoController extends Controller
      */
     public function update(UpdateAlunoRequest $request, Aluno $aluno)
     {
-        //
+        $this->validate($request, [
+            'nome'=>'required',
+            'morada'=>'required',
+            'email'=>'required|email',
+            'telefone'=>'required|integer',
+            'sala'=>'required',
+            
+            
+        ],
+        [
+            'nome.required' => 'Preencha o nome!',
+            'morada.required' => 'Preencha a morada!',
+            'email.required' => 'Preencha o email!',
+            'email.email' => 'email tem de ser válido!',
+            'telefone.required' => 'Preencha o telefone!',
+            'telefone.integer' => 'Número de telefone inválido!',        
+            'sala.required' => 'Preencha a sala!',
+          
+        ]);
+
+        $guarda = Aluno::where('id',$aluno->id)
+            ->update([
+                'nome'=>$request->input('nome'),
+                'morada'=>$request->input('morada'),
+                'email'=>$request->input('email'),
+                'telefone'=>$request->input('telefone'),
+                'idade'=>$request->input('data_nascimento'),
+                'sala'=>$request->input('sala'),
+                'id_curso'=>$request->input('curso'),
+                'id_turma'=>$request->input('turma'),
+            ]);
+
+        return redirect ('/alunos')->with('message','Registo Atualizado');
     }
 
     /**

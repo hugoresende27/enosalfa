@@ -10,19 +10,28 @@
        </p>
    </div>
   @endif
-      
+ 
 
 <div class="container p-3" style="margin:20px">
 
 
-  <h1 class="text-white text-center display-4">Ficha Técnica do aluno</h1>
+  <h1 class="text-white text-center display-4"> Ficha Técnica do aluno</h1>
 
-  
 
   <div class="card bg-light mb-3" style="max-width: ">
-    <div class="card-header display-4">{!! $aluno->nome !!} :: ID {{ $aluno->id }}</div>
+    <div class="card-header display-4">NOME:{!! $aluno->nome !!} 
+    
+        <a href="../alunos/{{ $aluno->id }}/edit" class="float-right btn-editar">EDITAR</a>
+        {{-- <a href="{{ action('AlunoController@edit') }}" class="float-right btn-editar">EDITAR</a> --}}
+
+    </div>
       <div class="card-body">
-        <h5 class="card-title">Curso:
+        <h5 class="card-title">Aluno ID:
+
+          :: ID {{ $aluno->id }}
+
+        </h5>
+        <h5 class="card-title  bg-info ">Curso:
 
           @if (isset($curso->id))
               <a href="/cursos/{{ $curso->id }}" class="text-black"> {{ $curso->nome }}</a>
@@ -30,11 +39,9 @@
              SEM CURSO
           @endif
 
-         
-
-     
-
         </h5>
+      
+
         <h5 class="card-title">Idade:
 
             {{ $x }} anos, nascido em {{ $aluno->idade }}
@@ -62,12 +69,13 @@
 
         </h5>
 
-        {{-- TODO------------------- --}}
-        {{-- <h5 class="card-title">Turma: 
-          {{ $aluno->turma }}
+       
+
+        <h5 class="card-title">Turma: 
+          {{ $aluno->id_turma }}
      
 
-        </h5> --}}
+        </h5>
         <h5 class="card-title">Sala: 
 
           {{ $aluno->sala }}
@@ -146,10 +154,8 @@
     </table>
     </div>
   </div>
-  <div class="text-center">
- 
-    <a href="/alunos" class="btn-voltar" style="background-color: red">Voltar </a>
-</div>
+
+
  
  
 </div>

@@ -30,7 +30,7 @@ return new class extends Migration
         Schema::table('alunos', function (Blueprint $table) {
            
             
-            $table->foreign('id_turma')->references('id')->on('turmas')->onDelete('cascade');          
+            $table->foreign('id_turma')->references('id')->on('turmas')->onDelete('set null');          
             
         });
     }

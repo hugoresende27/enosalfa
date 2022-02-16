@@ -36,6 +36,7 @@
             <th scope="col">Sala</th>
             
             
+           
             <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
           </tr>
@@ -91,7 +92,7 @@
              
                
         
-                <td><a href="">Editar </a></td>
+              <td>  <a href="/alunos/{{ $key->id }}/edit">EDITAR</a></td>
         
         
                 <td>

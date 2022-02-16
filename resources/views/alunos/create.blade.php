@@ -14,7 +14,7 @@
 
   {{-- DEBUG DE ERROS NO FORM-------------------- --}}
   @if ($errors->any())
-  <div class=" text-white">
+  <div class="mostrar-erros text-white">
       <ul>
           @foreach ($errors->all() as $erro)
               <li class="">
@@ -44,20 +44,21 @@
                 {{ Form::label('telefone','Telefone') }}
                 {{ Form::text('telefone','', ['class'=>'form-control m-3','placeholder'=>'o seu contacto']) }}
 
-              
+                <label for="data" class="m-3">Data de Nascimento</label><br>
+                <input type="date" name="data_nascimento" id="data" max="2005-12-31" required value="{{ old('data_nascimento') }}"><br>
+
+                <br>
 
                 {{ Form::label('sala','Sala') }}
                 {{ Form::text('sala','', ['class'=>'form-control m-3','placeholder'=>'Sala']) }}
 
-                <label for="data" class="m-3">Data de Nascimento</label><br>
-                <input type="date" name="data_nascimento" id="data" max="2005-12-31" required value="{{ old('data_nascimento') }}"><br>
-
+          
 
                 {{ Form::label('curso','Curso',['class'=>' m-3']) }}<br>
                 {{  Form::select('curso', $cursos,null); }}<br>
 
-                {{-- {{ Form::label('turma','Turma',['class'=>' m-3']) }}<br>
-                {{  Form::select('turma', $turma,null); }}<br> --}}
+                {{ Form::label('turma','Turma',['class'=>' m-3']) }}<br>
+                {{  Form::select('turma', $turma,null); }}<br>
 
               
               
