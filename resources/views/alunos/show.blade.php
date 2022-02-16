@@ -85,7 +85,12 @@
 
   <div class="card bg-light mb-3" style="max-width: ">
 
-    <table class="table table-dark table-responsive ">
+
+    <div class="table-responsive">
+
+
+
+    <table class="table table-dark  ">
       <thead>
         <tr>
           
@@ -133,7 +138,7 @@
     
       </tbody>
     </table>
-    
+    </div>
   </div>
   <div class="text-center">
  

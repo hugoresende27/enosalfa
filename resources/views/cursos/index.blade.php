@@ -21,7 +21,9 @@
     
     <a href="/cursos/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
 
-    <table class="table-responsive  table table-striped table-dark">
+    <div class="table-responsive">
+
+    <table class="  table table-striped table-dark">
         <thead>
           <tr>
 
@@ -69,6 +71,8 @@
       
         </tbody>
       </table>
+
+    </div>
     </div>    
     
 @endsection

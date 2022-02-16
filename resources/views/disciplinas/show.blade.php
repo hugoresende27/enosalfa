@@ -19,8 +19,10 @@
     <a href="/disciplinas" class="btn-voltar" style="background-color: red">Voltar</a>
     
    
+<div class="table-responsive">
 
-    <table class="table-responsive  table table-striped table-dark">
+
+    <table class="  table table-striped table-dark">
         <thead>
           <tr>
 
@@ -68,6 +70,8 @@
 
         </tbody>
       </table>
+
+    </div>
     </div>    
     
 @endsection
