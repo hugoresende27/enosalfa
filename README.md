@@ -19,6 +19,7 @@ disciplina pode ser ministrada por vários professores);
 - Disciplinas;
 - Alunos/Formandos (fazem parte de uma turma e a uma turma pertence uma sala);
 - Notas dos alunos a cada disciplina.
+
 - Deverá ser possível extrair a seguinte informação de acordo com o tipo de utilizador:
 - Aluno:Dados pessoais e notas às respetivas disciplinas;
 - Professor:Consultar as suas turmas;
@@ -38,6 +39,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
 2. professor 
  - adicionar precisa de disciplina
  - index mostra nome professor, disciplina
+ - show mostra ficha professor com dados e turmas
  - apagar professor OK
  - ficha tecnica professor OK
  - 1 professor tem 1 id_disciplina
@@ -45,7 +47,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
 3. curso 
  - adicionar precisa apenas do nome do curso
  - index mostra ID Curso e nome do curso
- - show do curso mostra os alunos a frequentar o curso
+ - show do curso mostra os alunos a frequentar o curso e TURMAS
  - apagar curso também apaga turmas do curso
 
 

@@ -46,6 +46,8 @@ class DatabaseSeeder extends Seeder
           
             \App\Models\Nota::factory()->create();
         }
+
+     
    
        
 

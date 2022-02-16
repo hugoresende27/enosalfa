@@ -25,6 +25,7 @@ class AlunoFactory extends Factory
             // 'id_turma'  => rand(1,5) ,
             'sala'  => rand(1, 20),
             'id_curso'  => rand(1, 10),
+            'id_turma'  => rand(1, 10),
             'created_at'=>now()
             
         ];

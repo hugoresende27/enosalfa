@@ -33,6 +33,20 @@ class TurmaSeeder extends Seeder
             ]);
 
         }
+
+
+        for($i=1; $i<31;$i++){
+
+            \DB::table('professor_turmas')->where('id',$i)->insert([
+                
+                'id_professor'  => rand(1,10),   
+                'id_turma' =>rand(1,10),
+                'id_curso' =>rand(1,12)
+            ]);
+
+        }
+
+
         
         
     }

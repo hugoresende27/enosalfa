@@ -12,6 +12,7 @@
     background-color:#000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 5px;
+    margin: 10px;
     border-radius: 5px;
     width: 150px;
     position: relative;
@@ -37,17 +38,56 @@
     <a href="/cursos" class="btn-voltar" style="background-color: red">Voltar</a>
 
 
-    <h1 class="text-white text-center display-4">
-        Alunos a frequentar</h1>
-        @foreach ($alunos as $item)
+    <div class="card bg-light mb-3" style="max-width: ">
 
-        <ul>
-          <li class="lista-alunos-curso">
-            <a href="/alunos/{{ $item->id }}">{{ $item->nome }}</a> 
-          </li>
-        </ul>
+  
+        <div class="card-body">
+
+
+          <h5 class="card-title">Alunos a frequentar:
+
+            @foreach ($alunos as $aluno)
+
+            
+              <div class="lista-alunos-curso">
+                <a href="/alunos/{{ $aluno->id }}">{{ $aluno->nome }}</a> 
+              </div>
        
        
-   @endforeach
+            @endforeach
+ 
+          </h5>
+        
+          <h5 class="card-title">Turmas com este curso:
+
+            @foreach ($turmas as $turma)
+
+               {{-- @if ($turma->id_turma == $aluno->id_turma) --}}
+
+                <div class="lista-alunos-curso text-white">
+                  {{-- <a href="/turmas/{{ $turma->id_turma }}">{{ $turma->id->id_turma }}</a>  --}}
+                  {{ $turma->id_turma }}
+                </div>
+      
+                  
+              {{-- @endif  --}}
+
+            {{-- {{ dd(get_defined_vars()) }} --}}
+       
+            @endforeach
+ 
+          </h5>
+
+    
+        
+  
+  
+        
+        </div>
+    </div>
+
+
+  
+    
 </div> 
 @endsection

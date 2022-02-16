@@ -59,11 +59,21 @@
        {{ $telefone }}
 
         </h5>
-        {{-- <h5 class="card-title">Turma: 
-          {{ $aluno->turma }}
+
+
+        <h5 class="card-title">Turmas: 
+          @foreach ($turmas as $t)
+            @if ($t->id_professor == $id)
+            &rAarr;  {{ $t->id }}  
+            @endif
+             
+              
+          @endforeach
+
+          
      
 
-        </h5> --}}
+        </h5>
         {{-- <h5 class="card-title">Sala: 
 
           {{ $aluno->sala }}

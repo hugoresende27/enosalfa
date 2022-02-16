@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Professor;
 use App\Models\Disciplina;
 use App\Models\Turma;
+use App\Models\professor_turma;
 use App\Http\Requests\StoreProfessorRequest;
 use App\Http\Requests\UpdateProfessorRequest;
 use Carbon\Carbon;
@@ -113,10 +114,11 @@ class ProfessorController extends Controller
         $disciplina = Disciplina::where('id',$id_disc)->first();
         $x = $data->diff($anoAtual)->format("%y");
 
+        $turmas = professor_turma::all();
         
         // dd(get_defined_vars());
        
-        return view ('professores.show', compact('disciplina','x','id', 'nome', 'morada', 'email','data','telefone','data2'));
+        return view ('professores.show', compact('disciplina','x','id', 'nome', 'morada', 'email','data','telefone','data2','turmas'));
     }
 
     /**
