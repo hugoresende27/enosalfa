@@ -17,7 +17,7 @@ escola/centro de formação, onde possam ser registados:
 - Professores (assumindo que um professor só ministra uma disciplina, mas uma
 disciplina pode ser ministrada por vários professores);
 - Disciplinas;
-- Alunos/Formandos (fazem parte de uma turma e a uma turma pertence uma sala);
+- Alunos/Formandos (fazem parte de uma turma e a uma turma pertence uma sala); ----- TO DO ------
 - Notas dos alunos a cada disciplina.
 
 - Deverá ser possível extrair a seguinte informação de acordo com o tipo de utilizador:
