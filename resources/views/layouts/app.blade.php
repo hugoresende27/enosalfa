@@ -151,6 +151,9 @@
 
             .nav-link{
                 border-radius: 5px !important;
+                color: #fff !important;
+            }
+            .nav-link:hover{
                 color: #000 !important;
             }
 
@@ -158,9 +161,10 @@
                 margin: 5px;
                 border-radius: 10px;
                 padding: 10px;
-                color: #000 !important;
+                color: #fff !important;
                 background-color: darkgreen;
-                font-weight: 800;
+                font-weight: 500;
+                text-transform: uppercase;
             }
             .nav-item:hover {
                 color: #000 !important;
