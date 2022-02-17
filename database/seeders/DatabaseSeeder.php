@@ -40,14 +40,42 @@ class DatabaseSeeder extends Seeder
             PARA GERAR MAIS TURMAS ------ TurmaSeeder.php --------- ALTERAR NÚMERO DE TURMAS GERADAS E RELAÇÕES COM CURSOS 
         
         */
-        for($i=0;$i<0;$i++){
-            // \App\Models\Aluno::factory()->create();
-            
+        
+        
+        
+        for($i=0;$i<30;$i++){
+          
+            //  \App\Models\Curso::factory()->create();
         }
-        for($i=0;$i<0;$i++){
+
+        for($i=0;$i<90;$i++){
+          
+            //  \App\Models\Turma::factory()->create();
+        }
+        for($i=0;$i<50;$i++){
+          
+            //  \App\Models\Disciplina::factory()->create();
+        }
+
+        for($i=0;$i<75;$i++){
+            // \App\Models\Professor::factory()->create();
+           
+       }
+        for($i=0;$i<20;$i++){
+            \App\Models\Aluno::factory()->create();
+           
+       }
+
+        for($i=0;$i<300;$i++){
           
             // \App\Models\Nota::factory()->create();
-        }
+       }
+        for($i=0;$i<300;$i++){
+          
+            // \App\Models\professor_turma::factory()->create();
+       }
+
+     
 
         // \App\Models\Curso::factory()->create();
         // \App\Models\Turma::factory()->create();

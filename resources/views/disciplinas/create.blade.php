@@ -37,14 +37,7 @@
             <div class="form-group display-6 text-center">
                 {{ Form::label('nome','Nome Disciplina') }}
                 {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Nome da disciplina','required'=>'required']) }}
-               
-                {{ Form::label('prof','Professor') }}
-                {{-- {{ Form::text('prof','', ['class'=>'form-control m-3','placeholder'=>'Professor']) }} --}}
-
-                <br>
-
-                {{  Form::select('profs', $profs,null,['class'=>'m-3', 'required'=>'required']); }}
-            
+          
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 
             </div>

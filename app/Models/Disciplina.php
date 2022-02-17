@@ -14,9 +14,9 @@ class Disciplina extends Model
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasOne
  */
-public function professor()
+public function set_fk_professor()
 {
-    return $this->hasOne(Professor::class, 'id_disciplina', 'id');
+    return $this->hasMany(Professor::class, 'id_disciplina', 'id');
 }
 
 public function nota() 

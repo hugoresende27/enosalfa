@@ -74,8 +74,11 @@ class ProfessorController extends Controller
 
         $prof->id_disciplina=$request->input('disciplinas');
       
-        $prof->save();
-        // dd($request);
+        $prof->push();
+     
+
+
+       
         return redirect ('/professores')->with('message','Professor registado');
     }
 
@@ -146,9 +149,37 @@ class ProfessorController extends Controller
      * @param  \App\Models\Professor  $professor
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProfessorRequest $request, Professor $professor)
+    public function update(UpdateProfessorRequest $request, Professor $professore)
     {
-        //
+        $this->validate($request, [
+            'nome'=>'required',
+            'morada'=>'required',
+            'email'=>'required|email',
+            'telefone'=>'required|integer',
+             
+        ],
+        [
+            'nome.required' => 'Preencha o nome!',      
+            'email.required' => 'Preencha o email!',
+            'email.email' => 'email tem de ser válido!',
+            'telefone.required' => 'Preencha o telefone!',
+            'telefone.integer' => 'Número de telefone inválido!',     
+     
+        ]);
+
+        $guarda = Professor::where('id',$professore->id)
+            ->update([
+                'nome'=>$request->input('nome'),
+                'morada'=>$request->input('morada'),
+                'email'=>$request->input('email'),
+                'telefone'=>$request->input('telefone'),
+                'idade'=>$request->input('data_nascimento'),
+                'id_disciplina'=>$request->input('disciplinas')
+            ]);
+            
+        // dd(get_defined_vars());
+
+        return redirect ('/professores')->with('message','Registo Atualizado');
     }
 
     /**

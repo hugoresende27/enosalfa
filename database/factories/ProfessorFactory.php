@@ -22,7 +22,7 @@ class ProfessorFactory extends Factory
             'idade' => $this->faker->dateTimeBetween($startDate = '-50 years', $endDate = '-18 years', $timezone = null),
             'morada' => $this->faker->streetAddress(),
             'email' => $this->faker->email(),
-            'telefone' => $this->faker->numerify('91-#######'),
+            'telefone' => $this->faker->numerify('91#######'),
             'created_at'=>now()
             
         ];

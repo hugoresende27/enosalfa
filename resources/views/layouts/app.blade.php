@@ -219,6 +219,17 @@ font-family: 'Numans', sans-serif;
                 padding: 3px;
                 color:#000;
             }
+
+            .prof-turmas{
+                font-size:1.5rem;
+                background-color:#000;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                padding: 5px;
+                margin: 10px;
+                border-radius: 5px;
+                text-align: center;
+                color: #fff;
+            }
           
 
             /*///////////////MEDIA QUERYS////////////////////////////////////////////////////////////////////*/

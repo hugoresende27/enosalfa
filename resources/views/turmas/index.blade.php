@@ -15,7 +15,7 @@
 @endif
 
 
-    <a href="/" class="btn-voltar" style="background-color: red">Voltar</a>
+    {{-- <a href="/" class="btn-voltar" style="background-color: red">Voltar</a> --}}
 
     <a href="/turmas/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
 
@@ -27,7 +27,7 @@
           <tr>
             <th scope="col">Turma</th>
             
-            <th scope="col">Curso</th>
+            {{-- <th scope="col">Curso</th> --}}
           
             
             <th scope="col">EDITAR</th>
@@ -45,11 +45,11 @@
             <td>  {{ $turma->id }} </td>
           
            
-            @foreach ($todos_os_cursos as $curso)
+            {{-- @foreach ($todos_os_cursos as $curso)
                 @if ($turma->id_curso == $curso->id)
                   <td> <a href="/cursos">{{ $curso->nome }} </a> </td>
                 @endif
-            @endforeach
+            @endforeach --}}
 
           
            

@@ -4,7 +4,8 @@
 
 <div class="container p-3" style="margin:20px">
 
-  <h1 class="text-white text-center display-4">NOTAS &rAarr; {{ $disciplina->nome }}</h1>
+  <h1 class="text-white text-center display-4">TODAS AS NOTAS DA DISCIPLINA </h1>
+  <h5 class="prof-turmas">{{ $disciplina->nome }}</h5>
 
      {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
  @if (session()->has('message'))
@@ -52,9 +53,9 @@
 
                         @if ($aluno->id == $nota->id_aluno)
 
-                            <td> {{ $nota->nota }}</td>
+                            
                             <td> <a href="/alunos/{{ $aluno->id }}">  {{ $aluno->nome }} </a></td>
-
+                            <td> {{ $nota->nota }}</td>
                         @endif
                         
 

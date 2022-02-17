@@ -24,7 +24,7 @@
 @endif
 
 
-    <a href="/" class="btn-voltar" style="background-color: red">Voltar</a>
+    {{-- <a href="/" class="btn-voltar" style="background-color: red">Voltar</a> --}}
     
     <a href="/notas/create" class="btn-adicionar" style="background-color: green">Lançar Nota</a>
 
@@ -42,7 +42,7 @@
            
             <th scope="col">Nota</th>
             <th scope="col">Disciplina</th>
-            <th scope="col">EDITAR</th>
+            
             <th scope="col">APAGAR</th>
           </tr>
         </thead>
@@ -69,13 +69,7 @@
               @endforeach
           
          
-             
-            
-             
-            
-           
-     
-            <td><a href="">Editar </a></td>
+    
     
            
             <td>

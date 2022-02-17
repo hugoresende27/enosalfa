@@ -41,7 +41,8 @@ class CursoSeeder extends Seeder
             'telefone' => 99999999,
             'sala' => 1,
             'id_turma'=>1,
-            'id_curso'=>1
+            'id_curso'=>1,
+            'created_at'=>now()
             
            
         ]);
@@ -57,12 +58,13 @@ class CursoSeeder extends Seeder
             'idade' => '1958-6-17',
             'morada'=>'rua da Areia, n.17',
             'telefone' => 6666666,
-            'id_disciplina' => 1
+            'id_disciplina' => 1,
+            'created_at'=>now()
             
            
         ]);
         
-        \DB::table('disciplinas')->where('id',1)->update(['id_professor'=> 1]);
+    
       
 
       

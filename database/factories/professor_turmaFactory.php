@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Turma>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\professor_turma>
  */
-class TurmaFactory extends Factory
+class professor_turmaFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,9 @@ class TurmaFactory extends Factory
     public function definition()
     {
         return [
-            'id_curso' => rand(1,30),
-            // 'id_professor' => rand(1,10),
+            'id_professor'=>rand(1,75),
+            'id_turma'=>rand(1,90),
+            'id_curso'=>rand(1,30)
         ];
     }
 }

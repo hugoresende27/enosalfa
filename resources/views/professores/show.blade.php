@@ -38,9 +38,14 @@
         <h5 class="card-title">Disciplina:
           
           @if (isset($disciplina->id))
-              <a href="" class="text-black"> {{ $disciplina->nome }}</a>
+          <span style="background-color:green; padding:1px; color:#fff;" >
+              {{ $disciplina->nome }}
+          </span>
           @else
-            SEM DISCIPLINA
+            <span style="background-color:red; padding:1px; color:#fff;" >
+              <a href="../professores/{{ $id }}/edit" >
+              SEM DISCIPLINA
+              </a></span>
           @endif
 
               
@@ -81,7 +86,7 @@
         <h5 class="card-title">Turmas: 
           @foreach ($turmas as $t)
             @if ($t->id_professor == $id)
-            &rAarr;  {{ $t->id }}  
+            <div class="prof-turmas">  {{ $t->id_turma }}  </div>
             @endif
              
               

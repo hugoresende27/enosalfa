@@ -28,7 +28,7 @@
   </div>       
 @endif
     
-        <h1 class="text-center text-uppercase bg-dark" style="font-family: 'Consolas'; color:#fff;font-size:2.5rem;">EDITAR ALUNO</h1>
+        <h1 class="text-center text-uppercase bg-dark" style="font-family: 'Consolas'; color:#fff;font-size:2.5rem;">EDITAR PROFESSOR</h1>
             {{-- <p>{{ dd(get_defined_vars()) }}</p> --}}
 
 
@@ -79,12 +79,9 @@
                       
                 {{-- {{ dd($disciplina->id) }} --}}
 
-                <label for="curso" class="m-3 p-3">Disciplina</label>  
-                <select name="curso" id="turma" class="m-3 p-3">
-                 
-                    
-                    
-                  
+                <label for="disciplinas" class="m-3 p-3">Disciplina</label>  
+                <select name="disciplinas" id="disciplinas" class="m-3 p-3">
+       
                         @foreach($disciplinas as $d)
                             <option selected="" value="{{ $d->id }}">{{ $d->nome }}</option>
                         @endforeach

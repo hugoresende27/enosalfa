@@ -20,11 +20,11 @@ class NotaController extends Controller
     {
 
         
-        // $todas_as_notas = Nota::all();
-        $todas_as_notas = Nota::orderBy('nota','DESC')->get();
+        $todas_as_notas = Nota::all();
+        // $todas_as_notas = Nota::orderBy('nota','DESC')->get();
         
-        $alunos = Aluno::all();
-        // $alunos = Aluno::orderBy('nome')->get();
+        // $alunos = Aluno::all();
+        $alunos = Aluno::orderBy('nome', 'ASC')->get();
         
 
         $disciplinas = Disciplina::all();

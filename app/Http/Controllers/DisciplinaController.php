@@ -32,9 +32,9 @@ class DisciplinaController extends Controller
      */
     public function create()
     {
-        $profs = Professor::all()->pluck('nome','id');
+        // $profs = Professor::all()->pluck('nome','id');
         // dd($profs);
-        return view('disciplinas.create',compact('profs'));
+        return view('disciplinas.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class DisciplinaController extends Controller
         $disc = new Disciplina;
         $disc->nome=$request->input('nome');
        
-        $disc->id_professor=$request->input('profs');
+        // $disc->id_professor=$request->input('profs');
         $disc->save();
 
         return redirect ('/disciplinas')->with('message','Disciplina registada');

@@ -38,7 +38,7 @@
 
 
 <div class=" p-3" style="margin:20px">
-    <a href="/turmas" class="btn-voltar" style="background-color: red">Voltar</a>
+    {{-- <a href="/turmas" class="btn-voltar" style="background-color: red">Voltar</a> --}}
 
          {{-- DEBUG DE ERROS NO FORM-------------------- --}}
   @if ($errors->any())

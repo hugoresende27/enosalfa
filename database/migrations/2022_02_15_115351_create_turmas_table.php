@@ -31,12 +31,7 @@ return new class extends Migration
         });
         
 
-        Schema::table('disciplinas', function (Blueprint $table) {
-           
-            
-            $table->foreign('id_professor')->references('id')->on('professors')->onDelete('set null');          
-            
-        });
+     
 
         Schema::table('notas', function (Blueprint $table) {
            
