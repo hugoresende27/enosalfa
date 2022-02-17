@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+
+
+td a {
+  width: 100%;
+  display: block;
+}
+
+
+
+</style>
 
 <div class="container p-3" style="margin:20px">
 
@@ -30,7 +41,7 @@
             {{-- <th scope="col">Curso</th> --}}
           
             
-            <th scope="col">EDITAR</th>
+            {{-- <th scope="col">EDITAR</th> --}}
             <th scope="col">APAGAR</th>
           </tr>
         </thead>
@@ -42,7 +53,14 @@
           <tr>
             
             
-            <td>  {{ $turma->id }} </td>
+            <td class="especial-id-turma"> 
+              
+              
+              <a href="/turmas/{{ $turma->id }}" class="especial-link-turma">  {{ $turma->id }} 
+              
+              </a>
+
+            </td>
           
            
             {{-- @foreach ($todos_os_cursos as $curso)
@@ -56,7 +74,7 @@
           
        
      
-            <td><a href="">Editar </a></td>
+            {{-- <td><a href="">Editar </a></td> --}}
     
     
             <td>

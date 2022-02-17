@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
            
        }
         for($i=0;$i<20;$i++){
-            \App\Models\Aluno::factory()->create();
+            // \App\Models\Aluno::factory()->create();
            
        }
 

@@ -2,22 +2,7 @@
 
 @section('content')
 <style>
-  .minimo-altura{
-    min-height: 70vh;
-    /* background-color: yellow; */
-  }
 
-  .lista-alunos-curso{
-    font-size:1.5rem;
-    background-color:#000;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 5px;
-    margin: 10px;
-    border-radius: 5px;
-    text-align: center;
-    color: #fff;
-  
-  }
 
   </style>
 <div class="container p-3 minimo-altura" style="margin:20px">
@@ -32,13 +17,17 @@
      </p>
  </div>
 @endif
-    <a href="/cursos" class="btn-voltar" style="background-color: red">Voltar</a>
 
-
+    <h1 class="text-white text-center display-4"> Ficha Técnica do Curso</h1>
     <div class="card bg-light mb-3" style="max-width: ">
 
       <div class="card-header display-4">
-        {!! $curso !!}
+     
+        {!! $curso !!} 
+
+        <a href="../cursos/{{ $id }}/edit" class="float-right btn-editar">EDITAR</a>
+
+
       </div>
         <div class="card-body">
 

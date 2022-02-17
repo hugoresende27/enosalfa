@@ -76,11 +76,11 @@
                 border-radius: 3px;
                 padding: 3px;
                 margin: 3px;
-                font-size:1.2rem;
+                font-size:1.5rem;
             }
 
             input{
-                font-size:1.2rem;
+                font-size:1.5rem;
             }
 
             a{
@@ -144,6 +144,22 @@
                 
             }
    
+            .minimo-altura{
+                min-height: 70vh;
+                /* background-color: yellow; */
+            }
+
+            .lista-alunos-curso{
+                font-size:1.5rem;
+                background-color:#000;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                padding: 5px;
+                margin: 10px;
+                border-radius: 5px;
+                text-align: center;
+                color: #fff;
+            
+            }
          
 
             /*BOTOÕES/////////////////////////////////////////////////////////////////////////////*/
@@ -208,7 +224,7 @@
             .meuBtn{
                 font-weight: 900;
                 font-family: 'Consolas',sans-serif;
-                font-size: 2rem;
+                font-size: 2.5rem !important;
                 border: none;
             }
             .meuBtn:hover{
@@ -268,6 +284,18 @@
                 color: #fff;
             }
           
+            /*///////////////ESPECIAIS////////////////////////////////////////////////////////////////////*/
+
+            .especial-id-turma{
+                background-color: darkblue;
+                text-align: center;
+            }
+            .especial-id-turma:hover{
+                background-color: green;
+                
+                text-align: center;
+            }
+
 
             /*///////////////MEDIA QUERYS////////////////////////////////////////////////////////////////////*/
 

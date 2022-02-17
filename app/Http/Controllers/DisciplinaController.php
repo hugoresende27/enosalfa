@@ -86,7 +86,7 @@ class DisciplinaController extends Controller
      */
     public function edit(Disciplina $disciplina)
     {
-        //
+        return view ('disciplinas.update', compact('disciplina'));
     }
 
     /**
@@ -98,7 +98,21 @@ class DisciplinaController extends Controller
      */
     public function update(UpdateDisciplinaRequest $request, Disciplina $disciplina)
     {
-        //
+        $this->validate($request, [
+            'nome'=>'required',
+         
+        ],
+        [
+            'nome.required' => 'Preencha o nome!',  
+          
+        ]);
+
+        $guarda = Disciplina::where('id',$disciplina->id)
+            ->update([
+                'nome'=>$request->input('nome'),         
+            ]);
+
+        return redirect ('/disciplinas')->with('message','Registo Atualizado');
     }
 
     /**

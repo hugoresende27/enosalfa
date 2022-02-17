@@ -31,12 +31,18 @@
            {{ $aluno->id }}
 
         </h5>
-        <h5 class="card-title  bg-info ">Curso:
+        <h5 class="card-title">Curso:
 
           @if (isset($curso->id))
-              <a href="/cursos/{{ $curso->id }}" class="text-black"> {{ $curso->nome }}</a>
+            <span style="background-color:green; padding:5px !important; color:#fff;" >
+                <a href="/cursos/{{ $curso->id }}" class="text-black"> {{ $curso->nome }}</a>
+            </span>
           @else
+          <span style="background-color:red; padding:5px !important; color:#fff;" >
+            <a href="../alunos/{{ $aluno->id }}/edit">
              SEM CURSO
+            </a>
+          </span>
           @endif
 
         </h5>

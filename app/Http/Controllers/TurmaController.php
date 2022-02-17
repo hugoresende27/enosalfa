@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Turma;
 use App\Models\Professor;
 use App\Models\Curso;
+use App\Models\Aluno;
 use App\Models\professor_turma;
 use App\Http\Requests\StoreTurmaRequest;
 use App\Http\Requests\UpdateTurmaRequest;
@@ -72,7 +73,10 @@ class TurmaController extends Controller
      */
     public function show(Turma $turma)
     {
-        //
+
+        // $alunos = Aluno::where('id_turma', $turma->id);
+        $alunos = Aluno::all();
+        return view('turmas.show', compact('turma','alunos'));
     }
 
     /**

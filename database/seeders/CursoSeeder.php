@@ -26,12 +26,6 @@ class CursoSeeder extends Seeder
            
         ]);
 
-       
-        \DB::table('professor_turmas')->insert([
-            'id_curso'  => 1,
-            'id_turma'  => 1,
-           
-        ]);
 
         \DB::table('alunos')->insert([
             'nome' => 'José Carlos',
@@ -61,6 +55,13 @@ class CursoSeeder extends Seeder
             'id_disciplina' => 1,
             'created_at'=>now()
             
+           
+        ]);
+
+        \DB::table('professor_turmas')->insert([
+            'id_curso'  => 1,
+            'id_turma'  => 1,
+            'id_professor'  => 1,
            
         ]);
         

@@ -53,7 +53,7 @@
        
          
      
-            <td><a href="">Editar </a></td>
+            <td><a href="/disciplinas/{{ $item->id }}/edit">Editar </a></td>
     
     
             <td>

@@ -31,8 +31,8 @@
 
         {!! Form::open(['route' => 'guardar_aluno', 'method'=> 'POST']) !!}
 
-            <div class="form-group display-6 text-center">
-                {{ Form::label('nome','Nome') }}
+            <div class="form-group display-6 ">
+              
                 {{ Form::text('nome','', ['class'=>'form-control m-3','placeholder'=>'Primeiro e Ultimo Nome']) }}
 
                 {{ Form::label('morada','Morada') }}

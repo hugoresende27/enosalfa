@@ -49,7 +49,7 @@
             
             
      
-            <td><a href="">Editar </a></td>
+            <td><a href="/cursos/{{ $item->id }}/edit">Editar </a></td>
             
             
     

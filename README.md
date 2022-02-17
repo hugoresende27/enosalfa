@@ -54,7 +54,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - adicionar precisa apenas do nome do curso
  - index mostra ID Curso e nome do curso
  - show curso mostra ID do curso, alunos a frequentar e turmas com o curso atribuido
- - editar curso  ----------- TO DO ------------
+ - editar nome do curso OK
  - show do curso mostra os alunos a frequentar o curso, turmas e id
  - apagar curso OK
 
@@ -64,20 +64,22 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - adicionar nome
  - index mostra ID Disciplina e nome da disciplina
  - show da disciplina mostra todas as notas e nomes dos alunos dessa disciplina
- - editar disciplina  ----------- TO DO ------------
+ - editar nome da disciplina OK
  - apagar disciplina OK
  
 
 
 5. Notas
  - lançar notas precisa de aluno e disciplina
+ - index notas mostra aluno, nota e disciplina
  - se aluno for apagado, nota também é apagada, onDelete('cascade')
  - 1 nota tem 1 id_aluno e 1 id_disciplina
  - nota pode ser apagada, e lançada de novo
 
 6. Turmas
  - adicionar turma precisa de curso, número atribuido à turma vai ser o ID
- - mostra ID Turma(número da turma é o ID)
+ - index mostra ID Turma(número da turma é o ID)
+ - show da turma mostra ficha técnica da turma, com ID e Alunos
  - apagar turma OK
  - 1 turma tem 1 id_curso
 

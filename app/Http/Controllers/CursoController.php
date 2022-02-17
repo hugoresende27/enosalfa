@@ -69,6 +69,7 @@ class CursoController extends Controller
     {
         $alunos = Aluno::where('id_curso', $id)->get();
         $curso = Curso::where('id', $id)->pluck('nome');
+        
         // dd($alunos);
         $skips = ["[","]","\""];
         $curso = str_replace($skips, ' ',$curso);
@@ -88,7 +89,9 @@ class CursoController extends Controller
      */
     public function edit(Curso $curso)
     {
-        //
+
+        // dd(get_defined_vars());
+        return view ('cursos.update', compact('curso'));
     }
 
     /**
@@ -100,7 +103,21 @@ class CursoController extends Controller
      */
     public function update(UpdateCursoRequest $request, Curso $curso)
     {
-        //
+        $this->validate($request, [
+            'nome'=>'required',
+         
+        ],
+        [
+            'nome.required' => 'Preencha o nome!',  
+          
+        ]);
+
+        $guarda = Curso::where('id',$curso->id)
+            ->update([
+                'nome'=>$request->input('nome'),         
+            ]);
+
+        return redirect ('/cursos')->with('message','Registo Atualizado');
     }
 
     /**
