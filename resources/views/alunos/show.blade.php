@@ -78,7 +78,9 @@
        
 
         <h5 class="card-title">Turma: 
-          {{ $aluno->id_turma }}
+          <span style="background-color:green; padding:5px !important; color:#fff;" >
+            <a href="/turmas/{{ $aluno->id_turma }}">{{ $aluno->id_turma }}</a>  
+          </span>
      
 
         </h5>

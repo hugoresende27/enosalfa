@@ -91,14 +91,14 @@
                 @if ($t->id_professor == $id)
 
                 <div class="prof-turmas">  
-                  <span style="background-color:green; padding:5px !important; color:#fff;" >
-                  {{ $t->id_turma }}  
+                  <span style="background-color:; padding:5px !important; color:#fff;" >
+                    <a href="/turmas/{{ $id }}">{{ $id }}</a>
                 
                 </div>
 
 
                @else
-                  <span style="background-color:red; padding:5px !important; color:#fff;" >
+                <a href="/professores/{{ $id }}/edit">  <span style="background-color:red; padding:5px !important; color:#fff;" ></a>
               
                     {{-- SEM TURMAS --}}
               
