@@ -30,12 +30,11 @@
 <!-- Latest compiled and minified JavaScript -->
 {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script src="scripts/jquery-3.2.1.js"></script> --}} 
         <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> --}}
 
+{{-- 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -43,23 +42,62 @@
         
 
      <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	{{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> --}}
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+ 
+
 
 
 
         <style>
 
-html,body{
-background-image: url('https://cdn.pixabay.com/photo/2015/04/01/11/08/sillouette-702178_960_720.jpg');
-background-size: cover;
-/* background-repeat: no-repeat; */
-height: 100%;
-font-family: 'Numans', sans-serif;
-}
+
+            /*BODY E PRINCIPAL/////////////////////////////////////////////////////////////////////////////*/
+            html,body{
+                background-image: url('https://cdn.pixabay.com/photo/2015/04/01/11/08/sillouette-702178_960_720.jpg');
+                background-size: cover;
+                /* background-repeat: no-repeat; */
+                height: 100%;
+                font-family: 'Numans', sans-serif;
+            }
+
+            ul li{
+                list-style: none;
+            }
+
+       
+        
+            label{
+                color:#fff;
+                background-color: rgb(11, 31, 2);
+                border-radius: 3px;
+                padding: 3px;
+                margin: 3px;
+                font-size:1.2rem;
+            }
+
+            input{
+                font-size:1.2rem;
+            }
+
+            a{
+                text-decoration: none;
+                color: #000;
+            }
+            .titulo-topo{
+                background-color: darkgreen;
+                padding: 10px;
+                border-radius: 5px;
+                font-weight: 900;
+                color: #fff !important;
+            }
 
             .principal{
                 /* min-width: 100vw; */
-                text-align: center;
+                /* text-align: center; */
                 align-content: center;
                display: flex;          /*coloca tudo em linha*/
                 flex-direction: column; /*coloca tudo em coluna*/
@@ -67,7 +105,21 @@ font-family: 'Numans', sans-serif;
                 /* justify-content: center;/*alinha tudo verticalmente com uso de height:100vh*/
             }
 
-            .titulo-topo{
+            .principal button{
+                /* color: #000; */
+                background-color: darkred;
+                border-radius: 5px;
+                padding: 4px 8px;
+                border: none;
+                outline: none;
+            }
+
+            .principal button:hover{
+                background-color: red;
+                transform: scale(1.2);
+            }
+
+            .tit{
                 background-color: yellowgreen;
                 
                 border-radius: 10px;
@@ -76,38 +128,47 @@ font-family: 'Numans', sans-serif;
                 position: absolute;
             }
 
-
-            body {
-                font-family: 'Nunito', sans-serif;
-                background-color: black;
-               
-            }
-
-            a{
-                text-decoration: none;
-                color: #fff;
-            }
-
-       
             .titulo-inicial{
                 color: #000;
                 
             }
-            ul li{
-                list-style: none;
+
+                       
+            .container a{
+                text-decoration: none !important;
+                color: #fff;
             }
-      
-            .btn-topo{
-                background-color: rgb(250, 250, 250);
+
+            .titulo-inicial{
+                color: #000;
+                
+            }
+   
+         
+
+            /*BOTOÕES/////////////////////////////////////////////////////////////////////////////*/
+     
+
+            .nav-link{
+                border-radius: 5px !important;
+                color: #000 !important;
+            }
+
+            .nav-item {
                 margin: 5px;
                 border-radius: 10px;
+                padding: 10px;
+                color: #000 !important;
+                background-color: darkgreen;
+                font-weight: 800;
             }
-            .btn-topo:hover{
-                background-color: rgb(113, 168, 102);
+            .nav-item:hover {
+                color: #000 !important;
+                background-color: #fff;
+                transform: scale(1.2);
             }
-      
 
-        
+     
             .btn-inicial{
                 background-color: rgb(13, 71, 25);
                 /* font-family: 'Consolas',sans-serif; */
@@ -138,19 +199,7 @@ font-family: 'Numans', sans-serif;
                 font-size: 26px; 
                 float:left; 
             }
-            
-            .container a{
-                text-decoration: none !important;
-                color: #fff;
-            }
-
-            .titulo-inicial{
-                color: #000;
-                
-            }
-            ul li{
-                list-style: none;
-            }
+ 
 
             .meuBtn{
                 font-weight: 900;
@@ -159,23 +208,12 @@ font-family: 'Numans', sans-serif;
                 border: none;
             }
             .meuBtn:hover{
-                /* background-color: darkgreen; */
+          
                 color: #000;
                 border: none;
-                /* transform: scale(1); */
-                /* font-size: 2.2rem; */
+       
             }
-            label{
-                color:#fff;
-                background-color: rgb(11, 31, 2);
-                border-radius: 3px;
-                padding: 3px;
-                margin: 3px;
-                font-size:1.2rem;
-            }
-            input{
-                font-size:1.2rem;
-            }
+
 
             .card-title{
                 text-align: left;
@@ -193,11 +231,6 @@ font-family: 'Numans', sans-serif;
                 padding: 3px;
             }
 
-            /* .btn-voltar{
-               position: absolute;
-               right: 0;
-              
-            } */
 
             .btn-editar{
                 background-color: darkgreen;
@@ -241,6 +274,22 @@ font-family: 'Numans', sans-serif;
         background-image: cover;
     }
 
+    
+    .{
+                background-color: darkgreen;
+                color:rgb(0, 0, 0);
+                margin: 5px;
+                border-radius: 10px;
+                padding-left: 10px;
+                font-weight: 700;
+                text-align: center;
+            }
+ 
+
+    .nav-item{
+        padding: 10px !important;
+
+    }
     footer 
     {
         display: none;
@@ -254,6 +303,25 @@ font-family: 'Numans', sans-serif;
         overflow:visible;
         background-image: cover;
     }
+
+        
+    .{
+                background-color: darkgreen;
+                color:rgb(0, 0, 0);
+                margin: 5px;
+                border-radius: 10px;
+                padding-left: 10px;
+                font-weight: 700;
+                text-align: center;
+            }
+ 
+
+    .nav-item{
+        padding: 10px !important;
+
+    }
+
+
     footer 
     {
         display: none;
@@ -268,6 +336,25 @@ font-family: 'Numans', sans-serif;
         overflow:visible;
         background-image: cover;
     }
+
+        
+    .{
+                background-color: darkgreen;
+                color:rgb(0, 0, 0);
+                margin: 5px;
+                border-radius: 10px;
+                padding-left: 10px;
+                font-weight: 700;
+                text-align: center;
+            }
+ 
+
+    .nav-item{
+        padding: 10px !important;
+
+    }
+
+
     footer 
     {
         display: none;
@@ -299,24 +386,28 @@ font-family: 'Numans', sans-serif;
                     @endif
                 @else
 
-                
+        
+
+     
+
+
                     <a class=" m-3 navbar-brand minha-nav" href="/">ENOS HR &copy;</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="navbar-nav">
-                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="{{ asset('alunos')}}">Alunos </a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;" href="{{ asset('professores') }}">Professores</a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;" href="{{ asset('cursos ') }}">Cursos</a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="{{ asset('disciplinas ') }}">Disciplinas</a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="{{ asset('notas ') }}">Notas</a>
-                        <a class="nav-item nav-link btn-topo" style="color:#000;"  href="{{ asset('turmas ') }}">Turmas</a>
+                        <a class="nav-item nav-link "   href="{{ asset('alunos')}}">Alunos </a>
+                        <a class="nav-item nav-link "  href="{{ asset('professores') }}">Professores</a>
+                        <a class="nav-item nav-link "  href="{{ asset('cursos ') }}">Cursos</a>
+                        <a class="nav-item nav-link "   href="{{ asset('disciplinas ') }}">Disciplinas</a>
+                        <a class="nav-item nav-link "   href="{{ asset('notas ') }}">Notas</a>
+                        <a class="nav-item nav-link "   href="{{ asset('turmas ') }}">Turmas</a>
                       </div>
                     </div>
                     
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle btn-topo" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
 
@@ -357,6 +448,10 @@ font-family: 'Numans', sans-serif;
     </div>
 
     </body>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </html>
