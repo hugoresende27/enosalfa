@@ -59,7 +59,7 @@ class CursoSeeder extends Seeder
         ]);
 
         \DB::table('professor_turmas')->insert([
-            'id_curso'  => 1,
+            
             'id_turma'  => 1,
             'id_professor'  => 1,
            

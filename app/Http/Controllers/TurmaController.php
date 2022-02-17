@@ -62,13 +62,9 @@ class TurmaController extends Controller
 
         $turma->save();
 
-        $relacao = new professor_turma;
-        $relacao->id_turma=$turma->id;
-        $relacao->id_curso=$request->input('curso_escolhido');
-      
-        // dd(get_defined_vars());
        
-        $relacao->save();
+    
+      
 
         return redirect ('/turmas')->with('message','Turma registada');
     }

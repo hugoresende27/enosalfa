@@ -83,10 +83,10 @@ class CursoController extends Controller
         $curso = str_replace($skips, ' ',$curso);
 
         // $turmas = professor_turma::all();
-        $turmas = professor_turma::where('id_curso',$id)->get();
+        // $turmas = professor_turma::where('id_curso',$id)->get();
 
 
-        return view ('cursos.show', compact('alunos','curso','turmas','id'));
+        return view ('cursos.show', compact('alunos','curso','id'));
     }
 
     /**

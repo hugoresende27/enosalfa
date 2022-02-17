@@ -46,7 +46,9 @@ class ProfessorController extends Controller
     {
 
         $disciplinas = Disciplina::all()->pluck('nome','id');
-        return view ('professores.create',compact('disciplinas'));
+        $turmas = Turma::all()->pluck('id','id');
+        // dd(get_defined_vars());
+        return view ('professores.create',compact('disciplinas','turmas'));
     }
 
     /**
@@ -78,15 +80,31 @@ class ProfessorController extends Controller
         $prof->email=$request->input('email');       
         $prof->telefone=$request->input('telefone');
         $prof->idade=$request->input('data_nascimento');
+       
 
 
         $prof->id_disciplina=$request->input('disciplinas');
       
         $prof->push();
-     
 
+        // if(($request->input('turma')) != NULL){
+        //     $prof_turma = new professor_turma;
+        //     $prof_turma->id_professor = $prof->id;
+        //     $prof_turma->id_turma=$request->input('turmas');
 
-       
+        
+            
+        //     $turma_curso = Turma::where('id',$request->input('turmas'))->first();
+        //     if(isset($prof_turma->id_curso)){
+        //         $prof_turma->id_curso=$turma_curso->id;
+        //     }
+            
+        //     $prof_turma->save();
+        // }
+
+        
+        
+        
         return redirect ('/professores')->with('message','Professor registado');
     }
 
@@ -144,10 +162,12 @@ class ProfessorController extends Controller
     {
 
         $disciplinas = Disciplina::all();
+        $turmas = Turma::all();
+        $profs_turmas = professor_turma::all();
         // $disciplina = Disciplina::findOrFail($professore->id);
 
         // dd($disciplina->id);
-        return view ('professores.update', compact ('disciplinas','professore'));
+        return view ('professores.update', compact ('disciplinas','professore','turmas','profs_turmas'));
     }
 
     /**
@@ -184,10 +204,37 @@ class ProfessorController extends Controller
                 'idade'=>$request->input('data_nascimento'),
                 'id_disciplina'=>$request->input('disciplinas')
             ]);
-            
-        // dd(get_defined_vars());
+            // dd(get_defined_vars());
 
-        return redirect ('/professores')->with('message','Registo Atualizado');
+        $relations = professor_turma::all();
+        // dd(get_defined_vars());
+        // dd($relations[1]);
+        foreach ($relations as $rel){
+            if(($rel->id_professor == $professore->id) && ($rel->id_turma == $request->input('turmas')))
+            
+                {
+                 
+                    return redirect ('/professores')->with('message','Registo Atualizado');
+                }
+                
+
+            else 
+                
+                {
+                    $guarda3 = professor_turma::where('id_professor',$professore->id)
+                    ->create([                  
+                        'id_turma'=>$request->input('turmas'),
+                        'id_professor'=>$professore->id
+                    ]);
+                    return redirect ('/professores')->with('message','Registo Atualizado');
+                }
+                
+        }
+        
+
+
+
+        
     }
 
     /**

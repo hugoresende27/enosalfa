@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <a href="/turmas" class="btn-voltar" style="background-color: red">Voltar</a>
+    <a href="{{ URL::previous() }}" class="btn-voltar" style="background-color: red">Voltar</a>
     
  
     </div>    

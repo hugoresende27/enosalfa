@@ -14,7 +14,7 @@
 
 <div class="container p-3" style="margin:20px">
 
-
+  <a href="{{ url()->previous() }}" class="btn-voltar" style="background-color: red">Voltar</a>
   <h1 class="text-white text-center display-4"> Ficha Técnica do aluno</h1>
 
 

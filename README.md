@@ -17,9 +17,9 @@
 
 #### Pretende-se com este trabalho, desenvolver um sistema que permita realizar a gestão de uma
 escola/centro de formação, onde possam ser registados:
-- Cursos (pode ter várias turmas);
+- Cursos (pode ter várias turmas); -- show cursos mostra turmas do curso
 - Professores (assumindo que um professor só ministra uma disciplina, mas uma
-disciplina pode ser ministrada por vários professores);
+disciplina pode ser ministrada por vários professores); -- show professor mostra disciplina
 - Disciplinas;
 - Alunos/Formandos (fazem parte de uma turma e a uma turma pertence uma sala); ----- TO DO ------
 - Notas dos alunos a cada disciplina.
@@ -42,7 +42,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - tabela alunos tem id_curso e id_turma
 
 2. professor 
- - adicionar precisa de disciplina
+ - adicionar precisa de disciplina -------- TO DO ATRIBUIÇÃO DE TURMAS INPUT DE TURMA ---------
  - index mostra nome professor, disciplina
  - show mostra ficha professor com dados e turmas
  - editar professor permite alterar tudo

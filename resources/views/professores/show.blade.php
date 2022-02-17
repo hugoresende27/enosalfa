@@ -14,7 +14,7 @@
 
 <div class="container p-3" style="margin:20px">
 
-
+  <a href="{{ url()->previous() }}" class="btn-voltar" style="background-color: red">Voltar</a>
   <h1 class="text-white text-center display-4">Ficha Técnica do Professor</h1>
 
   
@@ -22,7 +22,7 @@
   <div class="card bg-light mb-3" style="max-width: ">
     <div class="card-header display-4">{!! $nome !!} 
 
-      <a href="../professores/{{ $id }}/edit" class="float-right btn-editar">EDITAR</a>
+      <a href="../professores/{{ $id }}/edit" class="float-right btn-editar">ATRIBUIR TURMA</a>
       
     </div>
       
@@ -92,13 +92,13 @@
 
                 <div class="prof-turmas">  
                   <span style="background-color:; padding:5px !important; color:#fff;" >
-                    <a href="/turmas/{{ $id }}">{{ $id }}</a>
+                    <a href="/turmas/{{ $t->id_turma }}">{{ $t->id_turma }}</a>
                 
                 </div>
 
 
                @else
-                <a href="/professores/{{ $id }}/edit">  <span style="background-color:red; padding:5px !important; color:#fff;" ></a>
+                {{-- <a href="/professores/{{ $id }}/edit">  <span style="background-color:red; padding:5px !important; color:#fff;" ></a> --}}
               
                     {{-- SEM TURMAS --}}
               

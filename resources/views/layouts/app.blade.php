@@ -62,6 +62,7 @@
                 /* background-repeat: no-repeat; */
                 height: 100%;
                 font-family: 'Numans', sans-serif;
+                font-size: 1rem;
             }
 
             ul li{
