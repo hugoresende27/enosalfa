@@ -132,12 +132,13 @@ margin-left: 4px;
                 width: 100%;
                 /* display:inline-flex; */
                 padding: 10px;
-                margin: 10px;
+                margin: 10px ;
                 text-align: center;
                 border-radius: 5px;
                 font-size:1.5rem;
                 
             }
+        
 
             .btn-heros:hover{
                 background-color: #fff;
@@ -167,17 +168,7 @@ margin-left: 4px;
 
             @guest
 
-                {{-- @if (Route::has('login'))
-                    
-                        <a class="btn-heros" style="background-color: darkgreen" href="{{ route('login') }}">{{ __('Login') }}</a>
-                
-                @endif
-
-                @if (Route::has('register'))
-                    
-                        <a class="btn-heros" style="background-color: darkred" href="{{ route('register') }}">{{ __('Registar') }}</a>
-                
-                @endif --}}
+          
 
 
 
@@ -190,19 +181,23 @@ margin-left: 4px;
                             </div>
                             <div class="card-body">
                                 <form>
-                                    <div class="input-group form-group">
+                                    <div class="input-group form-group" style="text-align: center; margin:10px padding:20px">
                                       
                                         @if (Route::has('login'))
                     
-                                        <a class="btn-heros verde"  href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <a class="btn-heros verde meuBtn"  
+                                            
+                                            href="{{ route('login') }}">{{ __('Login') }}</a>
                                 
                                         @endif
                                         
                                     </div>
-                                    <div class="input-group form-group">
+                                    <div class="input-group form-group"  style="text-align: center; margin:10px; padding:20px">
                                         @if (Route::has('register'))
                     
-                                        <a class="btn-heros vermelho"  href="{{ route('register') }}">{{ __('Registar') }}</a>
+                                        <a class="btn-heros vermelho meuBtn"  
+                                           
+                                            href="{{ route('register') }}">{{ __('Registar') }}</a>
                                 
                                 @endif
                                     

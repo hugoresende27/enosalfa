@@ -74,9 +74,11 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <a href="/" class="btn btn-primary" style="background-color: darkblue">Voltar</a>
 
-                                <button type="submit" class="btn btn-primary">
+                                <button class="btn meuBtn btn-primary" style="background-color: blue" > <a href="/">Voltar</a>
+                                </button>
+
+                                <button type="submit" class="meuBtn btn btn-primary" style="background-color: green">
                                     {{ __('Registar') }}
                                 </button>
                              

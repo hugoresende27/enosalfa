@@ -406,15 +406,15 @@
                 <nav class="minha-nav text-white navbar navbar-expand-lg navbar-dark ">
                 @guest
                     @if (Route::has('login'))
-                        <li class="nav-item">
+                        {{-- <li class="nav-item"> --}}
                             {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
-                        </li>
+                        {{-- </li> --}}
                     @endif
 
                     @if (Route::has('register'))
-                        <li class="nav-item">
+                        {{-- <li class="nav-item"> --}}
                             {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a> --}}
-                        </li>
+                        {{-- </li> --}}
                     @endif
                 @else
 
