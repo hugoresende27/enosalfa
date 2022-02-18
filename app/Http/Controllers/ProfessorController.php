@@ -336,9 +336,12 @@ class ProfessorController extends Controller
             'professor_id',
             'turma_id',
            
-        ])
+        ]);
         // ->havingRaw("COUNT(*) > 1")
         //  ->havingRaw(("(COUNT(*) > 1)"))->get();
+        //  ->havingRaw('COUNT(*) >?', [1])->get();
+
+        $dupplicates = $dupplicates
          ->havingRaw('COUNT(*) >?', [1])->get();
 
     foreach($dupplicates as $dupplicate) {
