@@ -337,7 +337,8 @@ class ProfessorController extends Controller
             'turma_id',
            
         ])
-        ->havingRaw("COUNT(*) > 1")
+        // ->havingRaw("COUNT(*) > 1")
+         ->having("COUNT(*) > 1")
         ->get();
 
     foreach($dupplicates as $dupplicate) {
@@ -365,38 +366,38 @@ class ProfessorController extends Controller
             
             
       
-    public function deleteDuplicates()
-    {
-        // var_dump('Deleting...');
+    //public function deleteDuplicates()
+    // {
+    //     // var_dump('Deleting...');
 
-        $dupplicates = \App\Models\professor_turma::query()
-            ->select('professor_id', 'turma_id', \DB::raw('COUNT(*) as `count`'))
-            ->groupBy([
-                'professor_id',
-                'turma_id',
+    //     $dupplicates = \App\Models\professor_turma::query()
+    //         ->select('professor_id', 'turma_id', \DB::raw('COUNT(*) as `count`'))
+    //         ->groupBy([
+    //             'professor_id',
+    //             'turma_id',
                
-            ])
-            ->havingRaw("COUNT(*) > 1")
-            ->get();
+    //         ])
+    //         ->havingRaw("COUNT(*) > 1")
+    //         ->get();
 
-        foreach($dupplicates as $dupplicate) {
-            // var_dump('Deleting one group');
-            $safeId = \App\Models\professor_turma::query()
-            ->orderByRaw('ISNULL(approved_at) ASC')
-            ->where('professor_id', $dupplicate->professor_id)
-            ->where('turma_id', $dupplicate->turma_id)
+    //     foreach($dupplicates as $dupplicate) {
+    //         // var_dump('Deleting one group');
+    //         $safeId = \App\Models\professor_turma::query()
+    //         ->orderByRaw('ISNULL(approved_at) ASC')
+    //         ->where('professor_id', $dupplicate->professor_id)
+    //         ->where('turma_id', $dupplicate->turma_id)
             
-            ->value('id');
+    //         ->value('id');
 
-            $deleteQuery = \App\Models\professor_turma::query()
-                ->where('professor_id', $dupplicate->professor_id)
-                ->where('turma_id', $dupplicate->turma_id)
+    //         $deleteQuery = \App\Models\professor_turma::query()
+    //             ->where('professor_id', $dupplicate->professor_id)
+    //             ->where('turma_id', $dupplicate->turma_id)
                 
-                ->where('id','!=',$safeId)
-                ->delete();
-        }
-        // var_dump('Delete complete');
-    }
+    //             ->where('id','!=',$safeId)
+    //             ->delete();
+    //     }
+    //     // var_dump('Delete complete');
+    // }
      
         
         
