@@ -338,7 +338,8 @@ class ProfessorController extends Controller
            
         ])
         // ->havingRaw("COUNT(*) > 1")
-         ->havingRaw(("(COUNT(*) > 1)"))->get();
+        //  ->havingRaw(("(COUNT(*) > 1)"))->get();
+         ->havingRaw(("(COUNT(*) > 1)"));
 
     foreach($dupplicates as $dupplicate) {
         // var_dump('Deleting one group');
