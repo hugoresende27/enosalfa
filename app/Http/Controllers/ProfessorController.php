@@ -343,7 +343,7 @@ class ProfessorController extends Controller
 
         $dupplicates = $dupplicates
          ->havingRaw('COUNT(*) >?', [1])->get();
-
+        // dd(get_defined_vars());
     foreach($dupplicates as $dupplicate) {
         // var_dump('Deleting one group');
         $safeId = \App\Models\professor_turma::query()
