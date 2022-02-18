@@ -66,7 +66,7 @@
                 {{-- {{  Form::select('curso_escolhido', $todos_os_cursos,null,['class'=>' input-select m-3','placeholder'=>'Curso','required'=>'required']); }} --}}
                 {{-- {{ Form::text('disciplina','', ['class'=>'form-control m-3','placeholder'=>'disciplina']) }} --}}
 
-                {{  Form::select('curso_escolhido', $todos_os_cursos,null,['class'=>' m-3']); }}
+                {{  Form::select('curso_escolhido', $todos_os_cursos,null,['class'=>' m-3','required'=>'required']); }}
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 

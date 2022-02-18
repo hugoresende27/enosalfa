@@ -36,7 +36,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - adicionar ok
  - index mostra id, nome do aluno e nome do curso
  - show mostra ficha do aluno
- - editar aluno permite alterar tudo
+ - editar aluno permite alterar curso
  - apagar aluno OK
  - ficha tecnica aluno OK
  - tabela alunos tem id_curso e id_turma

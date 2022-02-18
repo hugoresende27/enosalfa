@@ -33,16 +33,17 @@
 
 
 
-     @foreach ($turmas as $turma)
-              <div class="form-check form-check-inline mb-2">
-                <input name="turma_id[]" class="form-check-input" id="turmas" type="checkbox" value="{{$turma->id}}" >
-                <label class="form-check-label" for="turmas">{{$turma->id}}</label>
+    @foreach ($turmas as $turma)
 
+              <div class="form-group mb-2" >
+
+                <select name="turmas" class="form-control" id="turmas"  >
+                
+                  <option value="{{$turma->id}}">{{$turma->id}} </option>
                 {{-- {!! Form::checkbox('turma_id[]',  false, !!} --}}
-
-
+                </select>
               </div>
-            @endforeach
+    @endforeach
 
             <button type="submit"
             class="float-right meuBtn text-white m-3"

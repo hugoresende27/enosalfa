@@ -271,7 +271,8 @@ class ProfessorController extends Controller
     public function prof_turmas(Professor $professore)
     {
 
-        $turmas = Turma::all();
+        $turmas = Turma::with('professores')->get();
+        // $turmas = Turma::all();
         // dd(get_defined_vars());
         return view('professores.atualizaTurmas', compact('professore','turmas'));
     }
@@ -279,41 +280,59 @@ class ProfessorController extends Controller
     public function turmas_save(Request $request,Professor $professore)
     {
    
+        // $turmas = Turma::find(1);
+        // // dd(get_defined_vars());
+        // foreach($turmas->professores as $t){
+        //     echo $t->pivot->id;
+        // }
+        // dd(get_defined_vars());
+        // $guarda = new professor_turma;
+        // $guarda->turmas()->attach($request->input('turma_id'));
+        
+        // if(($request->input('turma_id'))  != NULL) {
+
+
+        // $guarda = new professor_turma;
+        // $guarda->turmas()->attach($request->input('turma_id'));
+            
+        // $total_turmas = count($request->input('turma_id'));
+        
+        // $arr = $request->input('turma_id');
+
+            
+               
+            // foreach ($arr as $a){
+                // $exists = count(professor_turma::where('professor_id', $professore->id)->where('turma_id',$a)->get());
+                // if ($exists==0){
+                    
+                
+        $guarda = new professor_turma;
+        // $guarda->turmas()->attach($request->input('turma_id'));
+
+        // for ($i=0; $i<$total_turmas;$i++){
+            dd(get_defined_vars());
+        $guarda->create([
+                    
+                            'professor_id'=>$professore->id,
+                            'turma_id'=>$arr[$i],
+                        ]);       
+                        
+          //  dd(get_defined_vars());
+        return redirect('/professores')->with ('message', 'Turmas do professor atualizadas!');
+                    
+    }
+
+            
+            
+      
+         
+     
+        
+        
+        
       
 
-        
-        if(($request->input('turma_id'))  != NULL) {
-            $total_turmas = $request->input('turma_id');
-        }
-        $arr = $request->input('turma_id');
 
-        $exists = professor_turma::where('professor_id', $professore->id)->get();
 
-        dd(get_defined_vars());
-
-        // foreach ($exists as $ee){
-        //     $exists2 = professor_turma::all()->first();
-        //     if ($ee->id == $exists2->professor_id){
-        //         return redirect('/professores')->with ('message', 'Nada foi atualizado!');
-        //     }
-           
-        // }
-
-        // if ($exists == NULL){
-            $guarda = new professor_turma;
-
-            for ($i=1; $i<=$total_turmas;$i++){
-    
-                $guarda->create([
-            
-                    'professor_id'=>$professore->id,
-                    'turma_id'=>$arr[$i],
-                ]);
-    
-            }
-        // }
-     
-        // dd(get_defined_vars());
-        return redirect('/professores')->with ('message', 'Turmas do professor atualizadas!');
-    }
 }
+

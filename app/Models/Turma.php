@@ -9,7 +9,9 @@ class Turma extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+    
     public function professores(){
-        return $this->belongsToMany(Turma::class);
+        return $this->belongsToMany(Turma::class, 'professor_turmas');
       }
 }
