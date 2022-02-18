@@ -121,7 +121,7 @@
       <thead>
         <tr>
           
-          <th scope="col">Nota</th>
+          <th scope="col">0-20</th>
           <th scope="col">Disciplina</th>
         </tr>
       </thead>

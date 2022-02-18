@@ -56,9 +56,9 @@
 
                 {{ Form::label('curso','Curso',['class'=>' m-3']) }}<br>
                 {{  Form::select('curso', $cursos,null); }}<br>
-
+{{-- 
                 {{ Form::label('turma','Turma',['class'=>' m-3']) }}<br>
-                {{  Form::select('turma', $turma,null); }}<br>
+                {{  Form::select('turma', $turma,null); }}<br> --}}
 
               
               

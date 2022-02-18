@@ -53,17 +53,7 @@
 
                 {{  Form::select('disciplinas', $disciplinas,null,['class'=>' m-3']); }}
 
-                {{-- <br>
-                {{ Form::label('turmas','Turmas') }}
-                <br>
-
-                {{  Form::select('turmas', $turmas,null,['class'=>' m-3']); }}
-
-                <br> --}}
-
-                
-          
-              
+   
                
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}

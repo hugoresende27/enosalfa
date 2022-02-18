@@ -25,9 +25,9 @@
 
       <div class="card-header display-4">
      
-        {!! $curso !!} 
+        {!! $curso_nome !!} 
 
-        <a href="../cursos/{{ $id }}/edit" class="float-right btn-editar">EDITAR</a>
+        {{-- <a href="../cursos/{{ $id }}/edit" class="float-right btn-editar">EDITAR</a> --}}
 
 
       </div>
@@ -54,24 +54,18 @@
         
           <h5 class="card-title">Turmas com este curso:
 
-            {{-- @foreach ($turmas as $turma) --}}
+            @foreach ($cursos_turma as $turma)
 
-               {{-- @if ($turma->id_turma == $aluno->id_turma) --}}
+              
 
-                {{-- <div class="lista-alunos-curso text-white"> --}}
-                  {{-- <a href="/turmas/{{ $turma->id_turma }}">{{ $turma->id->id_turma }}</a>  --}}
-                  {{-- {{ $turma->id_turma }} --}}
-                {{-- </div> --}}
-      
-                  
-              {{-- @endif  --}}
-
-            {{-- {{ dd(get_defined_vars()) }} --}}
+                <div class="lista-alunos-curso text-white">
+                  <a href="/turmas/{{ $turma->id_turma }}">{{ $turma->id_turma }}</a> 
+   
        
-            {{-- @endforeach --}}
+            @endforeach
  
           </h5>
-
+          {{-- {{ dd(get_defined_vars()) }} --}}
     
         
   

@@ -33,7 +33,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
 
 ### FUNCIONALIDADES IMPLEMENTADAS 
 1. aluno 
- - adicionar pode ou não ter  curso e turma
+ - adicionar ok
  - index mostra id, nome do aluno e nome do curso
  - show mostra ficha do aluno
  - editar aluno permite alterar tudo

@@ -22,7 +22,7 @@
   <div class="card bg-light mb-3" style="max-width: ">
     <div class="card-header display-4">{!! $nome !!} 
 
-      <a href="../professores/{{ $id }}/edit" class="float-right btn-editar">ATRIBUIR TURMA</a>
+      <a href="../professores/{{ $id }}/edit" class="float-right btn-editar">EDITAR</a>
       
     </div>
       
@@ -88,11 +88,11 @@
  
               @foreach ($turmas as $t)
             
-                @if ($t->id_professor == $id)
+                @if ($t->professor_id == $id)
 
                 <div class="prof-turmas">  
                   <span style="background-color:; padding:5px !important; color:#fff;" >
-                    <a href="/turmas/{{ $t->id_turma }}">{{ $t->id_turma }}</a>
+                    <a href="/turmas/{{ $t->turma_id }}">{{ $t->turma_id }}</a>
                 
                 </div>
 

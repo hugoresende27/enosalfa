@@ -34,7 +34,8 @@ Route::post('/alunos/create',  [\App\Http\Controllers\AlunoController::class,'st
 Route::resource('professores', ProfessorController::class);
 Route::post('/professores/create',  [\App\Http\Controllers\ProfessorController::class,'store'])->name('guardar_prof');
 // Route::post('/professores/{id}/edit',  [\App\Http\Controllers\ProfessorController::class,'edit']);
-// Route::get('/professores/create',  [\App\Http\Controllers\ProfessorController::class,'store'])->name('guardar_prof');
+Route::get('/professores/{professore}/profturmas',  [\App\Http\Controllers\ProfessorController::class,'prof_turmas']);
+Route::post('/professores/{professore}/updateTurma',  [\App\Http\Controllers\ProfessorController::class,'turmas_save']);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::resource('cursos', CursoController::class);
 Route::post('/cursos/create',  [\App\Http\Controllers\CursoController::class,'store'])->name('guardar_curso');

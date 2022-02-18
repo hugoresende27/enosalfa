@@ -5,11 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Turma extends Model
+class Cursos_turma extends Model
 {
+    protected $guarded = [];
     use HasFactory;
-
-    public function professores(){
-        return $this->belongsToMany(Turma::class);
-      }
 }

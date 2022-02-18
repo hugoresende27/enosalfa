@@ -17,7 +17,8 @@
 
   
 
-    <a href="/professores/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
+
+    <a href="/professores/create" class="btn-adicionar float-left" style="background-color: green">Adicionar</a>
 
     <div class="table-responsive">
 
@@ -30,6 +31,7 @@
             {{-- <th scope="col">Disciplina</th> --}}
             
             
+            <th scope="col" >GESTÃO</th>
             <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
           </tr>
@@ -60,7 +62,8 @@
             @endforeach --}}
            
      
-            <td><a href="/professores/{{ $item->id }}/edit">Atribuir Turma </a></td>
+            <td><a href="/professores/{{ $item->id }}/profturmas">Atribuir Turmas </a></td>
+            <td><a href="/professores/{{ $item->id }}/edit">Editar </a></td>
     
     
             <td>

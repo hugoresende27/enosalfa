@@ -7,6 +7,7 @@ use App\Models\Professor;
 use App\Models\Curso;
 use App\Models\Aluno;
 use App\Models\professor_turma;
+use App\Models\Cursos_turma;
 use App\Http\Requests\StoreTurmaRequest;
 use App\Http\Requests\UpdateTurmaRequest;
 
@@ -62,10 +63,17 @@ class TurmaController extends Controller
 
         $turma->save();
 
-       
+        
+        $curso_turma = new Cursos_turma;
+        $curso_turma->id_curso=$request->input('curso_escolhido');
+        $curso_turma->id_turma=$turma->id;
+
+        $curso_turma->save();
+
+     
     
       
-
+       
         return redirect ('/turmas')->with('message','Turma registada');
     }
 
@@ -79,8 +87,12 @@ class TurmaController extends Controller
     {
 
         // $alunos = Aluno::where('id_turma', $turma->id);
-        $alunos = Aluno::all();
-        return view('turmas.show', compact('turma','alunos'));
+        $curso = Curso::where('id',$turma->id_curso)->get();
+        // $alunos = Aluno::all();
+        $alunos = Aluno::where('id_turma', $turma->id)->get();
+
+        // dd(get_defined_vars());
+        return view('turmas.show', compact('turma','alunos','curso'));
     }
 
     /**

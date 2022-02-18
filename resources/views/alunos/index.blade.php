@@ -37,6 +37,7 @@
             
             
            
+            <th scope="col">GESTÃO</th>
             <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
           </tr>
@@ -92,6 +93,7 @@
              
                
         
+              <td>  <a href="/alunos/">Atribuir Turma</a></td>
               <td>  <a href="/alunos/{{ $key->id }}/edit">EDITAR</a></td>
         
         

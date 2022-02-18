@@ -35,19 +35,32 @@
  
           </h5>
 
+          <h5 class="card-title">Curso:
+            @foreach ($curso as $item)
+
+              
+                <div class="lista-alunos-curso">
+                  <a href="/cursos/{{ $item->id }}">{{ $item->nome }}</a> 
+                </div>
+    
+              @endforeach
+          </h5>
+
           <h5 class="card-title">Alunos da Turma:
             {{-- {{ dd(get_defined_vars()); }} --}}
             @foreach ($alunos as $aluno)
 
             
               <div class="lista-alunos-curso">
-                <a href="/turmas/{{ $aluno->id }}">{{ $aluno->nome }}</a> 
+                <a href="/alunos/{{ $aluno->id }}">{{ $aluno->nome }}</a> 
               </div>
        
        
             @endforeach
  
           </h5>
+
+         
         
           
 

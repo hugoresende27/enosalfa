@@ -82,12 +82,12 @@
                         id="sala"
                         value="{{ $aluno->sala }}"><br>
 
-                <label for="turma" class="m-3 p-3">Turma</label>  
+                {{-- <label for="turma" class="m-3 p-3">Turma</label>  
                 <select name="turma" id="turma" class="m-3 p-3">
                     @foreach($turmas as $t)
                         <option selected="" value="{{ $t->id }}">{{ $t->id }}</option>
                     @endforeach
-                </select><br>
+                </select><br> --}}
 
                 <label for="curso" class="m-3 p-3">Curso</label>  
                 <select name="curso" id="turma" class="m-3 p-3">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Curso;
 use App\Models\Aluno;
 use App\Models\professor_turma;
+use App\Models\Cursos_turma;
 use App\Http\Requests\StoreCursoRequest;
 use App\Http\Requests\UpdateCursoRequest;
 
@@ -76,17 +77,16 @@ class CursoController extends Controller
     public function show( $id)
     {
         $alunos = Aluno::where('id_curso', $id)->get();
-        $curso = Curso::where('id', $id)->pluck('nome');
+        $curso_nome = Curso::where('id', $id)->pluck('nome');
         
         // dd($alunos);
         $skips = ["[","]","\""];
-        $curso = str_replace($skips, ' ',$curso);
+        $curso_nome = str_replace($skips, ' ',$curso_nome);
 
-        // $turmas = professor_turma::all();
-        // $turmas = professor_turma::where('id_curso',$id)->get();
-
-
-        return view ('cursos.show', compact('alunos','curso','id'));
+        $cursos_turma = Cursos_turma::where('id_curso',$id)->get();
+      
+        // dd(get_defined_vars());        
+        return view ('cursos.show', compact('alunos','curso_nome','id','cursos_turma'));
     }
 
     /**

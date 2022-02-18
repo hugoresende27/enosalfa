@@ -60,8 +60,14 @@ class CursoSeeder extends Seeder
 
         \DB::table('professor_turmas')->insert([
             
+            'turma_id'  => 1,
+            'professor_id'  => 1,
+           
+        ]);
+        \DB::table('cursos_turmas')->insert([
+            
             'id_turma'  => 1,
-            'id_professor'  => 1,
+            'id_curso'  => 1,
            
         ]);
         
