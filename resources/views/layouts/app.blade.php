@@ -447,11 +447,20 @@
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
 
-                            <a class="dropdown-item" href="{{ route('register') }}"
+                            {{-- <a class="dropdown-item" href="{{ route('register') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 REGISTAR
-                            </a>
+                            </a> --}}
+
+                               <div class="input-group form-group"  style="text-align: center; margin:10px; padding:20px">
+                                            @if (Route::has('register'))
+                        
+                                            <a class="btn-heros vermelho meuBtn"  
+                                            
+                                                href="{{ route('register') }}">{{ __('Registar') }}</a>
+                                        </div>
+                                            @endif
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();

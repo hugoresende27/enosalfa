@@ -338,23 +338,18 @@ class ProfessorController extends Controller
            
         ])
         // ->havingRaw("COUNT(*) > 1")
-         ->having("COUNT(*) > 1")
-        ->get();
+         ->havingRaw("COUNT(*) > 1")->get();
 
     foreach($dupplicates as $dupplicate) {
         // var_dump('Deleting one group');
         $safeId = \App\Models\professor_turma::query()
         ->orderByRaw('ISNULL(created_at) ASC')
         ->where('professor_id', $dupplicate->professor_id)
-        ->where('turma_id', $dupplicate->turma_id)
-        
-        ->value('id');
+        ->where('turma_id', $dupplicate->turma_id)->value('id');
 
         $deleteQuery = \App\Models\professor_turma::query()
             ->where('professor_id', $dupplicate->professor_id)
-            ->where('turma_id', $dupplicate->turma_id)
-            
-            ->where('id','!=',$safeId)
+            ->where('turma_id', $dupplicate->turma_id)->where('id','!=',$safeId)
             ->delete();
     }
                         
