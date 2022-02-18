@@ -192,14 +192,14 @@ margin-left: 4px;
                                         @endif
                                         
                                     </div>
-                                    <div class="input-group form-group"  style="text-align: center; margin:10px; padding:20px">
-                                        @if (Route::has('register'))
-                    
-                                        <a class="btn-heros vermelho meuBtn"  
-                                           
-                                            href="{{ route('register') }}">{{ __('Registar') }}</a>
-                                
-                                @endif
+                                        {{-- <div class="input-group form-group"  style="text-align: center; margin:10px; padding:20px">
+                                            @if (Route::has('register'))
+                        
+                                            <a class="btn-heros vermelho meuBtn"  
+                                            
+                                                href="{{ route('register') }}">{{ __('Registar') }}</a>
+                                        </div>
+                                            @endif --}}
                                     
                                 </form>
                             </div>

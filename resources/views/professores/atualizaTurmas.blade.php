@@ -32,19 +32,19 @@
  
 
 
+      <select name="turma_id" class="form-control" id="turmas"  >
 
     @foreach ($turmas as $turma)
 
               <div class="form-group mb-2" >
 
-                <select name="turmas" class="form-control" id="turmas"  >
                 
                   <option value="{{$turma->id}}">{{$turma->id}} </option>
                 {{-- {!! Form::checkbox('turma_id[]',  false, !!} --}}
-                </select>
+              
               </div>
     @endforeach
-
+  </select>
             <button type="submit"
             class="float-right meuBtn text-white m-3"
             > Enviar </button>
