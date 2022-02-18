@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Curso;
 use App\Models\Aluno;
+use App\Models\Turma;
 use App\Models\professor_turma;
 use App\Models\Cursos_turma;
 use App\Http\Requests\StoreCursoRequest;
@@ -84,6 +85,7 @@ class CursoController extends Controller
         $curso_nome = str_replace($skips, ' ',$curso_nome);
 
         $cursos_turma = Cursos_turma::where('id_curso',$id)->get();
+        // $cursos_turma = Turma::where('id',$id)->get();
       
         // dd(get_defined_vars());        
         return view ('cursos.show', compact('alunos','curso_nome','id','cursos_turma'));
