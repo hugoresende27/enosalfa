@@ -21,13 +21,14 @@ use App\Http\Controllers\TurmaController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = Auth::user();
+    return view('welcome',compact('user'));
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Route::get('/alunos/{id_curso}',  [\App\Http\Controllers\AlunoController::class,'show']);
-Route::resource('alunos', AlunoController::class);
-Route::post('/alunos/create',  [\App\Http\Controllers\AlunoController::class,'store'])->name('guardar_aluno');
+Route::resource('alunos',  AlunoController::class);
+Route::post('/alunos/create',  ['middleware'=>\App\Http\Controllers\AlunoController::class,'store'])->name('guardar_aluno');
 Route::get('/alunos/{aluno}/alunoturmas',  [\App\Http\Controllers\AlunoController::class,'aluno_turmas']);
 Route::post('/alunos/{aluno}/updateTurma',  [\App\Http\Controllers\AlunoController::class,'turmas_save']);
 // Route::post('/alunos/{id}',  [\App\Http\Controllers\AlunoController::class,'edit'])->name('editar_aluno');

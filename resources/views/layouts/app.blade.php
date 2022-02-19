@@ -161,6 +161,18 @@
                 color: #fff;
             
             }
+            .dados{
+                background-color:#000;
+                width: 400px;
+                height: 250px;
+                font-family: 'Consolas';
+                font-size: 1.2rem;
+                color:yellowgreen;
+                font-weight: 900;
+                border-radius: 10px;
+                padding: 10px;
+            }
+          
          
 
             /*BOTOÕES/////////////////////////////////////////////////////////////////////////////*/
@@ -267,11 +279,11 @@
             }
 
             .delete {
-                background-color: cyan;
+                background-color: darkblue;
                 border-radius: 5px;
                 text-align: center;
                 padding: 3px;
-                color:#000;
+                color:#fff;
             }
 
             .prof-turmas{
@@ -429,17 +441,44 @@
 
 
                     <a class=" m-3 navbar-brand minha-nav" href="/">ENOS HR &copy;</a>
+                    @switch(Auth::user()->role)
+                        @case(1)
+                                <a class=" m-3 navbar-brand minha-nav" href="/">ALUNO</a>
+                            @break
+                        @case(2)
+                            <a class=" m-3 navbar-brand minha-nav" href="/">PROFESSOR</a>
+                            @break
+                        @case(3)
+                            <a class=" m-3 navbar-brand minha-nav" href="/">ADMINISTRADOR</a>
+                            @break
+                        @default
+                            
+                    @endswitch
+                   
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="navbar-nav">
-                        <a class="nav-item nav-link "   href="{{ asset('alunos')}}">Alunos </a>
-                        <a class="nav-item nav-link "  href="{{ asset('professores') }}">Professores</a>
-                        <a class="nav-item nav-link "  href="{{ asset('cursos ') }}">Cursos</a>
-                        <a class="nav-item nav-link "   href="{{ asset('disciplinas ') }}">Disciplinas</a>
-                        <a class="nav-item nav-link "   href="{{ asset('notas ') }}">Notas</a>
-                        <a class="nav-item nav-link "   href="{{ asset('turmas ') }}">Turmas</a>
+
+                        @if (Auth::user()->role > 0)
+                            <a class="nav-item nav-link "   href="{{ asset('alunos')}}">Alunos </a>
+                            <a class="nav-item nav-link "   href="{{ asset('notas ') }}">Notas</a>
+                            
+                            @if (Auth::user()->role>1)
+                                <a class="nav-item nav-link "  href="{{ asset('professores') }}">Professores</a>
+                            @endif
+                            @if (Auth::user()->role>2)
+                                <a class="nav-item nav-link "  href="{{ asset('cursos ') }}">Cursos</a>
+                                <a class="nav-item nav-link "   href="{{ asset('turmas ') }}">Turmas</a>
+                                <a class="nav-item nav-link "   href="{{ asset('disciplinas ') }}">Disciplinas</a>
+                            @endif
+                        @endif
+                        
+                        
+                     
+                        
+                        
                       </div>
                     </div>
                     
@@ -458,13 +497,19 @@
                             </a> --}}
 
                                <div class="input-group form-group" >
+
+                                @if (Auth::user()->role == 3)
+
                                     @if (Route::has('register'))
-                
+                    
                                     <a class="dropdown-item"  
                                     
                                         href="{{ route('register') }}">{{ __('Registar') }}</a>
                                 
                                     @endif
+                                    
+                                @endif
+                                   
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

@@ -2,24 +2,48 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nota;
 use App\Models\Aluno;
 use App\Models\Curso;
-use App\Models\Disciplina;
-use App\Models\Nota;
 use App\Models\Turma;
+use App\Models\Disciplina;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Schema;
 use App\Http\Requests\StoreAlunoRequest;
 use App\Http\Requests\UpdateAlunoRequest;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Http\Request;
-
+use Illuminate\Contracts\Auth\Guard;
 
 class AlunoController extends Controller
 {
 
-    public function __construct()
+    // public function __construct()
+    // {
+    //     $this->middleware(function ($request, $next) {
+    //     $user = Auth::user();
+    //     return $next($request);
+    //     });
+    //     dd(get_defined_vars());
+    // }
+    
+    public function __construct(Guard $auth)
     {
-        // $this->middleware('auth', ['except' => ['index', 'show']]);
+      
         $this->middleware('auth');
+        // $this->middleware(function ($request, $next) {      
+        //     if(auth()->user()->hasRole(1)){
+        //         return redirect()->route('home')->withFlashMessage('You are not authorized to access that page.')->withFlashType('warning');
+        //     }
+        //     return $next($request);
+        // });
+       
+        // dd(get_defined_vars());
+  
+    }
+
+    public function check_role(){
+        $user = Auth::user();
+        return $user->role;
     }
 
 
@@ -30,7 +54,8 @@ class AlunoController extends Controller
      */
     public function index()
     {
-
+        $user = Auth::user();
+        
         // $alunos = Aluno::orderBy('created_at','DESC')->get();
         $alunos = Aluno::orderBy('nome')->get();
         // $alunos = Aluno::with('cursos')->get();
@@ -47,9 +72,10 @@ class AlunoController extends Controller
         // dd(get_defined_vars());
 
         $turmas = Turma::all();
+        // $user = Auth::user();
 
         // dd(get_defined_vars()) ;
-        return view ('alunos.index',compact('alunos','curso','turmas'));
+        return view ('alunos.index',compact('alunos','curso','turmas','user'));
     }
 
     /**
@@ -59,6 +85,10 @@ class AlunoController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
+      
+        if ($user->role > 1)
+        {
         
         $cursos = Curso::all()->pluck('nome','id');
         $turma = Turma::all()->pluck('id','id');
@@ -66,6 +96,10 @@ class AlunoController extends Controller
           
     //    dd($turma);
         return view('alunos.create',compact('cursos','turma'));
+        }
+        else {
+            return view ('welcome');
+        }
     }
 
     /**
@@ -77,8 +111,11 @@ class AlunoController extends Controller
     public function store(StoreAlunoRequest $request)
     {
 
-        
-        
+      $user = Auth::user();
+      
+      if ($user->role == 3)
+      {
+
         $this->validate($request, [
             'nome'=>'required',
             'morada'=>'required',
@@ -117,6 +154,9 @@ class AlunoController extends Controller
         $aluno->save();
 
         return redirect ('/alunos')->with('message','Aluno registado');
+      }
+      else return redirect ('/alunos')->with('message','NÃO AUTORIZADO');
+
     }
 
     /**
@@ -220,14 +260,23 @@ class AlunoController extends Controller
     public function edit($id)
     {
 
-        $turmas = Turma::all();
-        $cursos = Curso::all();
-        $aluno = Aluno::find($id);
+        $user = Auth::user();
+      
+        if ($user->role > 1){
 
-        // dd(get_defined_vars());
+        
+            $turmas = Turma::all();
+            $cursos = Curso::all();
+            $aluno = Aluno::find($id);
 
-        // return view('alunos.update')->with('aluno',$aluno);
+            // dd(get_defined_vars());
+
+            // return view('alunos.update')->with('aluno',$aluno);
         return view('alunos.update', compact('aluno','turmas','cursos'));
+        }
+        else{
+          return redirect ('/alunos')->with('message','NÃO AUTORIZADO');
+        }
 
         // $cursos = Curso::all();
         // $turma = Turma::all();
@@ -313,6 +362,8 @@ class AlunoController extends Controller
 
         return redirect('/alunos')->with ('message', 'Turma atualizada');
     }
+
+    
     
 }
 

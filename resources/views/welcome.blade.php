@@ -207,6 +207,42 @@ margin-left: 4px;
                         </div>
                     </div>
                 </div>
+                <div class="dados">
+                    <table class="table ">
+                        <thead>
+                          <tr class="text-center">
+                            <th scope="col" class="text-center">email</th>
+                            <th scope="col" class="text-center">password</th>
+                           
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                         
+                            <td>admin@admin</td>
+                            <td>admin</td>
+                          
+                          </tr>
+                          <tr>
+                         
+                            <td>prof@prof</td>
+                            <td>prof</td>
+                          
+                          </tr>
+                          <tr>
+                         
+                            <td>aluno@aluno</td>
+                            <td>aluno</td>
+                          
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                 
+                    
+               
+
+                </div>
             @endguest
         
         
@@ -218,29 +254,48 @@ margin-left: 4px;
                 <h1 class="titulo-inicial titulo-topo">Sistema E.N.O.S.</h1>
 
 
-                <img src="https://cdn.pixabay.com/photo/2015/11/05/08/21/geometry-1023846_960_720.jpg" 
+                {{-- <div class="dados">
+                    <table class="table ">
+                        <thead>
+                          <tr class="text-center">
+                            <th scope="col" class="text-center">email</th>
+                            <th scope="col" class="text-center">password</th>
+                           
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                         
+                            <td>admin@admin</td>
+                            <td>admin</td>
+                          
+                          </tr>
+                          <tr>
+                         
+                            <td>prof@prof</td>
+                            <td>prof</td>
+                          
+                          </tr>
+                          <tr>
+                         
+                            <td>aluno@aluno</td>
+                            <td>aluno</td>
+                          
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                     
+
+                </div> --}}
+
+                <img class="fundo" 
+                src="https://cdn.pixabay.com/photo/2015/11/05/08/21/geometry-1023846_960_720.jpg" 
                       alt="welcome">
+
+                      {{-- <img src="{{ url('img/welcomeTest.png') }}" alt="inicio"> --}}
             
-                {{-- <ul>
-                    <li>
-                        <a href="alunos" class="btn-inicial ">Alunos</a>
-                    </li>
-                    <li>
-                        <a href="professores" class="btn-inicial ">Professores</a>
-                    </li>
-                    <li>
-                        <a href="cursos" class="btn-inicial ">Cursos</a>
-                    </li>
-                    <li>
-                        <a href="disciplinas" class="btn-inicial ">Disciplinas</a>
-                    </li>
-                    <li>
-                        <a href="notas" class="btn-inicial ">Notas</a>
-                    </li>
-                    <li>
-                        <a href="turmas" class="btn-inicial ">Turmas</a>
-                    </li>
-                </ul> --}}
+       {{-- {{ dd($user->role) }} --}}
             </div>
         @endauth
         

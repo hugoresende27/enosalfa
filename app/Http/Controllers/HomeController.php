@@ -13,9 +13,18 @@ class HomeController extends Controller
      *
      * @return void
      */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+        $user = Auth::user();
+        return $next($request);
+        });
+        // dd(get_defined_vars());
     }
 
     /**
@@ -25,6 +34,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+
+        $user = Auth::user();
+        return view('welcome', compact('user'));
     }
 }

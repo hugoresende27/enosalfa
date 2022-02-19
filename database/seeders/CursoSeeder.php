@@ -29,7 +29,7 @@ class CursoSeeder extends Seeder
 
         \DB::table('alunos')->insert([
             'nome' => 'José Carlos',
-            'email' => 'fake@mail.com',
+            'email' => 'aluno@aluno',
             'idade' => '1989-6-17',
             'morada'=>'rua da Areia, n.13',
             'telefone' => 99999999,
@@ -48,7 +48,7 @@ class CursoSeeder extends Seeder
 
         \DB::table('professors')->insert([
             'nome' => 'Prof. Alberto',
-            'email' => 'fake@mail.com',
+            'email' => 'prof@prof',
             'idade' => '1958-6-17',
             'morada'=>'rua da Areia, n.17',
             'telefone' => 6666666,

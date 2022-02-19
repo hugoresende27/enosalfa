@@ -16,8 +16,10 @@
 
 
     {{-- <a href="/" class="btn-voltar " style="background-color: red">Voltar</a> --}}
+    @if (Auth::user()->role >1)
+      <a href="/alunos/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
+    @endif
     
-    <a href="/alunos/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
 
 
 
@@ -56,64 +58,36 @@
                   <td> <a href="/alunos/{{ $key->id }}">  {{ $key->nome }} </a></td>
                 <td>   {{ $key->email }} </td>
 
-                {{-- @foreach ($curso as $item)
-
-                  @if(isset($item) && ($item->id == $key->id_curso))
-
-                      {{-- <td><a href="/cursos/{{ $item->id }}">  {{ $item->nome }}</a></td> 
-                  @else
-                      
-                  @endif 
-
-                @endforeach --}}
-                
-                
-
-                {{-- @foreach ($turmas as $turma)
-                @if ($key->id_)
-                    
-                @endif
-                    
-                @endforeach --}}
-                {{-- <td>{{ $key->id_turma }}</td> --}}
+      
                 <td>{{ $key->sala }}</td>
-                {{-- <td>    
-                  @foreach ($curso as $item)
-                  <td>{{ $item }}</td>
-                @endforeach</td> --}}
-            
-
-                {{-- <td>{{ $row['id']}} </td>
-                <td>{{ $row['nome']}} </td>
-                
-                <td>{{ $curso[$key]}} </td>
-              
-                <td>{{ $row['turma']}} </td>
-                <td>{{ $row['sala']}} </td> --}}
+ 
              
                
         
               <td>  <a href="/alunos/{{ $key->id }}/alunoturmas">Atribuir Turma</a></td>
-              <td>  <a href="/alunos/{{ $key->id }}/edit">EDITAR</a></td>
-        
-        
-                <td>
-                    
-                    <form action="/alunos/{{ $key->id }}" method="POST">
-                        @csrf
-                        @method('delete')
-                        <button type="submit"
-                                class="border-b-2  border-dotted italic text-black"
-                                > Apagar </button>
-        
-                    </form>
-        
-                </td>
-                
-              </tr>
-
+              @if (Auth::user()->role >1)
+                  <td>  <a href="/alunos/{{ $key->id }}/edit">EDITAR</a></td>
+              
+            
+          
+          
+                  <td>
+                      
+                      <form action="/alunos/{{ $key->id }}" method="POST">
+                          @csrf
+                          @method('delete')
+                          <button type="submit"
+                                  class="border-b-2  border-dotted italic text-black"
+                                  > Apagar </button>
+          
+                      </form>
+          
+                  </td>
+                  
+                </tr>
+              @endif
               @endforeach
-      
+              
         </tbody>
       </table>
 </div>

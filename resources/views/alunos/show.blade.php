@@ -21,9 +21,10 @@
   <div class="card bg-light mb-3" style="max-width: ">
     <div class="card-header display-4">{!! $aluno->nome !!} 
     
+      @if (Auth::user()->role >1)
         <a href="../alunos/{{ $aluno->id }}/edit" class="float-right btn-editar" style="font-size: 1.2rem">EDITAR</a>
         {{-- <a href="{{ action('AlunoController@edit') }}" class="float-right btn-editar">EDITAR</a> --}}
-
+      @endif
     </div>
       <div class="card-body">
         <h5 class="card-title">Aluno ID:
@@ -82,11 +83,12 @@
             <a href="/turmas/{{ $aluno->id_turma }}">{{ $aluno->id_turma }}</a>  
            
           </span>
+          @if (Auth::user()->role >1)
           <span style="background-color:rgb(128, 19, 0); padding:5px !important; color:#fff; margin-left:10px" >
             <a href="/alunos/{{ $aluno->id }}/alunoturmas">Atribuir Turma</a> 
            
           </span>
-          
+          @endif
 
         </h5>
         <h5 class="card-title">Sala: 

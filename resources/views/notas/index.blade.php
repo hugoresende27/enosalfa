@@ -25,9 +25,9 @@
 
 
     {{-- <a href="/" class="btn-voltar" style="background-color: red">Voltar</a> --}}
-    
-    <a href="/notas/create" class="btn-adicionar" style="background-color: green">Lançar Nota</a>
-
+    @if (Auth::user()->role >1)
+      <a href="/notas/create" class="btn-adicionar" style="background-color: green">Lançar Nota</a>
+    @endif
 
     <div class="table-responsive">
 
