@@ -12,6 +12,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
+![Esquema BD](https://github.com/hugoresende27/enosalfa/blob/main/documentation/BD_scheme.jpeg)
+
+
 #### Pretende-se com este trabalho, desenvolver um sistema que permita realizar a gestão de uma
 escola/centro de formação, onde possam ser registados:
 - Cursos (pode ter várias turmas); -- show cursos mostra turmas do curso
