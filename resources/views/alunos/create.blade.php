@@ -24,7 +24,8 @@
       </ul>
   </div>       
 @endif
-    
+          
+@if (Auth::user()->role >2)
 
 
         <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Registar um aluno</h1>
@@ -80,6 +81,10 @@
             </div>
         {!! Form::close() !!}
 
+        @else
+            
+        <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+        @endif  
         
 
 @endsection

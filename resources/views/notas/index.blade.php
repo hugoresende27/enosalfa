@@ -70,20 +70,22 @@
           
          
     
-    
+            @if (Auth::user()->role >1)
            
-            <td>
-                
-                <form action="/notas/{{ $nota->id }}" method="POST">
-                    @csrf
-                    @method('delete')
-                    <button type="submit"
-                            class="border-b-2  border-dotted italic text-red-200"
-                            > Apagar </button>
-    
-                </form>
-    
-            </td>
+              <td>
+                  
+                  <form action="/notas/{{ $nota->id }}" method="POST">
+                      @csrf
+                      @method('delete')
+                      <button type="submit"
+                              class="border-b-2  border-dotted italic text-red-200"
+                              > Apagar </button>
+      
+                  </form>
+      
+              </td>
+
+            @endif
             
           </tr>
           @endforeach

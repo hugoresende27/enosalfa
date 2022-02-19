@@ -27,9 +27,9 @@ td a {
 
 
     {{-- <a href="/" class="btn-voltar" style="background-color: red">Voltar</a> --}}
-
-    <a href="/turmas/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
-
+    @if (Auth::user()->role >2)
+      <a href="/turmas/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
+    @endif
 
     <div class="table-responsive">
 
@@ -63,32 +63,22 @@ td a {
             </td>
           
            
-            {{-- @foreach ($todos_os_cursos as $curso)
-                @if ($turma->id_curso == $curso->id)
-                  <td> <a href="/cursos">{{ $curso->nome }} </a> </td>
-                @endif
-            @endforeach --}}
+            @if (Auth::user()->role >2)
+    
+              <td>
+                  
+                  <form action="/turmas/{{ $turma->id }}" method="POST">
+                      @csrf
+                      @method('delete')
+                      <button type="submit"
+                              class="border-b-2  border-dotted italic text-black"
+                              > Apagar </button>
+      
+                  </form>
+      
+              </td>
 
-          
-           
-          
-       
-     
-            {{-- <td><a href="">Editar </a></td> --}}
-    
-    
-            <td>
-                
-                <form action="/turmas/{{ $turma->id }}" method="POST">
-                    @csrf
-                    @method('delete')
-                    <button type="submit"
-                            class="border-b-2  border-dotted italic text-black"
-                            > Apagar </button>
-    
-                </form>
-    
-            </td>
+            @endif
             
           </tr>
           @endforeach

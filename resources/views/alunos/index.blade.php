@@ -16,7 +16,7 @@
 
 
     {{-- <a href="/" class="btn-voltar " style="background-color: red">Voltar</a> --}}
-    @if (Auth::user()->role >1)
+    @if (Auth::user()->role >2)
       <a href="/alunos/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
     @endif
     
@@ -63,10 +63,11 @@
  
              
                
-        
-              <td>  <a href="/alunos/{{ $key->id }}/alunoturmas">Atribuir Turma</a></td>
-              @if (Auth::user()->role >1)
-                  <td>  <a href="/alunos/{{ $key->id }}/edit">EDITAR</a></td>
+              @if (Auth::user()->role >2)
+
+                <td>  <a href="/alunos/{{ $key->id }}/alunoturmas">Atribuir Turma</a></td>
+              
+                <td>  <a href="/alunos/{{ $key->id }}/edit">EDITAR</a></td>
               
             
           

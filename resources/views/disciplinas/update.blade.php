@@ -25,6 +25,7 @@
 
 
 <div class="container p-3" style="margin:20px">
+    @if (Auth::user()->role >2)
     <a href="/disciplinas" class="btn-voltar" style="background-color: red">Voltar</a>
 
 
@@ -61,5 +62,10 @@
             
             </div>
         </form> 
+        
+    @else
+            
+    <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+    @endif  
 
 @endsection

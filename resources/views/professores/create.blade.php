@@ -28,7 +28,7 @@
 
 
         <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Registar um Professor</h1>
-
+        @if (Auth::user()->role >2)
         {!! Form::open(['route' => 'guardar_prof', 'method'=> 'POST']) !!}
 
             <div class="form-group display-6 ">
@@ -60,5 +60,10 @@
 
             </div>
         {!! Form::close() !!}
+
+        @else
+            
+        <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+        @endif 
 
 @endsection

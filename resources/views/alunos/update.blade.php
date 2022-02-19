@@ -30,7 +30,8 @@
     
         <h1 class="text-center text-uppercase bg-dark" style="font-family: 'Consolas'; color:#fff;font-size:2.5rem;">EDITAR ALUNO</h1>
             {{-- <p>{{ dd(get_defined_vars()) }}</p> --}}
-
+      
+            @if (Auth::user()->role >1)
 
             <form action="/alunos/{{ $aluno->id }}" method="POST" class="form-update">
                 {{-- {{ dd(get_defined_vars()) }} --}}
@@ -105,6 +106,9 @@
             
             </form>
 
-        
+            @else
+            
+            <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+            @endif  
 
 @endsection

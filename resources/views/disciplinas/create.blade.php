@@ -27,7 +27,7 @@
 <div class="container p-3" style="margin:20px">
     <a href="/disciplinas" class="btn-voltar" style="background-color: red">Voltar</a>
 
-
+    @if (Auth::user()->role >2)
         <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Registar uma Disciplina</h1>
 
         {!! Form::open(['route' => 'guardar_disci', 'method'=> 'POST']) !!}
@@ -40,5 +40,11 @@
 
             </div>
         {!! Form::close() !!}
+
+        @else
+            
+        <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+        @endif  
+            
 
 @endsection

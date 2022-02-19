@@ -16,9 +16,11 @@
 
 
   
-
+@if (Auth::user()->role >2)
 
     <a href="/professores/create" class="btn-adicionar float-left" style="background-color: green">Adicionar</a>
+
+     @endif 
 
     <div class="table-responsive">
 
@@ -61,10 +63,10 @@
              
             @endforeach --}}
            
-     
-            <td><a href="/professores/{{ $item->id }}/profturmas">Atribuir Turmas </a></td>
-            <td><a href="/professores/{{ $item->id }}/edit">Editar </a></td>
-    
+            @if (Auth::user()->role >2)
+              <td><a href="/professores/{{ $item->id }}/profturmas">Atribuir Turmas </a></td>
+              <td><a href="/professores/{{ $item->id }}/edit">Editar </a></td>
+           
     
             <td>
                 
@@ -78,7 +80,7 @@
                 </form>
     
             </td>
-            
+            @endif
           </tr>
           @endforeach
       

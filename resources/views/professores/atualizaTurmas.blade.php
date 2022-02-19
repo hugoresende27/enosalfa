@@ -15,6 +15,7 @@
 <div class="container p-3" style="margin:20px">
 
   <a href="{{ url()->previous() }}" class="btn-voltar" style="background-color: red">Voltar</a>
+  @if (Auth::user()->role >2)
   <h1 class="text-white text-center display-4">PROFESSOR</h1>
 
   
@@ -54,6 +55,10 @@
     </div>
   
 
+    @else
+            
+    <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+    @endif 
  
 
  

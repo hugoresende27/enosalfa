@@ -172,6 +172,15 @@
                 border-radius: 10px;
                 padding: 10px;
             }
+
+            .roletag{
+                background-color: red;
+                padding: 16px;
+                border-radius: 5px;
+                /* width: 100px; */
+                font-weight: 900 !important;
+                font-family: 'Consolas', sans-serif;
+            }
           
          
 
@@ -440,16 +449,16 @@
      
 
 
-                    <a class=" m-3 navbar-brand minha-nav" href="/">ENOS HR &copy;</a>
+                    {{-- <a class=" m-3 navbar-brand minha-nav" href="/">ENOS HR &copy;</a> --}}
                     @switch(Auth::user()->role)
                         @case(1)
-                                <a class=" m-3 navbar-brand minha-nav" href="/">ALUNO</a>
+                                <a class=" m-3 navbar-brand minha-nav roletag" href="/">NÍVEL: ALUNO</a>
                             @break
                         @case(2)
-                            <a class=" m-3 navbar-brand minha-nav" href="/">PROFESSOR</a>
+                            <a class=" m-3 navbar-brand minha-nav roletag" href="/">NÍVEL: PROFESSOR</a>
                             @break
                         @case(3)
-                            <a class=" m-3 navbar-brand minha-nav" href="/">ADMINISTRADOR</a>
+                            <a class=" m-3 navbar-brand minha-nav roletag" href="/">NÍVEL: ADMINISTRADOR</a>
                             @break
                         @default
                             
@@ -464,14 +473,17 @@
                         @if (Auth::user()->role > 0)
                             <a class="nav-item nav-link "   href="{{ asset('alunos')}}">Alunos </a>
                             <a class="nav-item nav-link "   href="{{ asset('notas ') }}">Notas</a>
+                            <a class="nav-item nav-link "  href="{{ asset('cursos ') }}">Cursos</a>
                             
                             @if (Auth::user()->role>1)
                                 <a class="nav-item nav-link "  href="{{ asset('professores') }}">Professores</a>
-                            @endif
-                            @if (Auth::user()->role>2)
-                                <a class="nav-item nav-link "  href="{{ asset('cursos ') }}">Cursos</a>
                                 <a class="nav-item nav-link "   href="{{ asset('turmas ') }}">Turmas</a>
                                 <a class="nav-item nav-link "   href="{{ asset('disciplinas ') }}">Disciplinas</a>
+                            @endif
+                            @if (Auth::user()->role>2)
+                                
+                                
+                                
                             @endif
                         @endif
                         

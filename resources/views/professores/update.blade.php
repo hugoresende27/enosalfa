@@ -31,7 +31,7 @@
         <h1 class="text-center text-uppercase bg-dark" style="font-family: 'Consolas'; color:#fff;font-size:2.5rem;">EDITAR PROFESSOR</h1>
             {{-- <p>{{ dd(get_defined_vars()) }}</p> --}}
 
-
+            @if (Auth::user()->role >2)
             <form action="/professores/{{ $professore->id }}" method="POST" class="form-update">
                 {{-- {{ dd(get_defined_vars()) }} --}}
                 @method('PUT')
@@ -112,6 +112,7 @@
                 </button>
             
             </form>
+            @endif
 
         
 

@@ -17,29 +17,15 @@ use Illuminate\Contracts\Auth\Guard;
 class AlunoController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->middleware(function ($request, $next) {
-    //     $user = Auth::user();
-    //     return $next($request);
-    //     });
-    //     dd(get_defined_vars());
-    // }
-    
-    public function __construct(Guard $auth)
+    public function __construct()
     {
-      
-        $this->middleware('auth');
-        // $this->middleware(function ($request, $next) {      
-        //     if(auth()->user()->hasRole(1)){
-        //         return redirect()->route('home')->withFlashMessage('You are not authorized to access that page.')->withFlashType('warning');
-        //     }
-        //     return $next($request);
-        // });
-       
-        // dd(get_defined_vars());
   
+        $this->middleware('auth');
     }
+
+    
+    
+
 
     public function check_role(){
         $user = Auth::user();
@@ -85,21 +71,14 @@ class AlunoController extends Controller
      */
     public function create()
     {
-        $user = Auth::user();
       
-        if ($user->role > 1)
-        {
-        
         $cursos = Curso::all()->pluck('nome','id');
         $turma = Turma::all()->pluck('id','id');
       
           
-    //    dd($turma);
+  
         return view('alunos.create',compact('cursos','turma'));
-        }
-        else {
-            return view ('welcome');
-        }
+     
     }
 
     /**
@@ -111,10 +90,7 @@ class AlunoController extends Controller
     public function store(StoreAlunoRequest $request)
     {
 
-      $user = Auth::user();
-      
-      if ($user->role == 3)
-      {
+ 
 
         $this->validate($request, [
             'nome'=>'required',
@@ -134,19 +110,17 @@ class AlunoController extends Controller
             'email.email' => 'email tem de ser válido!',
             'telefone.required' => 'Preencha o telefone!',
             'telefone.integer' => 'Número de telefone inválido!',
-            // 'turma.required' => 'Preencha a turma!',
             'sala.required' => 'Preencha a sala!',
-            // 'curso.required' => 'Preencha o curso!',
-            // 'curso.integer' => 'Curso tem de ser um número de curso',
+         
         ]);
-        // dd($this);
+      
         $aluno = new Aluno;
         $aluno->nome=$request->input('nome');
         $aluno->morada=$request->input('morada');
         $aluno->email=$request->input('email');
         
         $aluno->telefone=$request->input('telefone');
-        // $aluno->turma=$request->input('turma');
+        
         $aluno->sala=$request->input('sala');
         $aluno->idade=$request->input('data_nascimento');
         $aluno->id_curso=$request->input('curso');
@@ -154,8 +128,7 @@ class AlunoController extends Controller
         $aluno->save();
 
         return redirect ('/alunos')->with('message','Aluno registado');
-      }
-      else return redirect ('/alunos')->with('message','NÃO AUTORIZADO');
+
 
     }
 
@@ -168,8 +141,7 @@ class AlunoController extends Controller
     public function show(Aluno $aluno)
     {
 
-        //$aluno = $aluno;
-        //  dd(get_defined_vars()) ; 
+
         
 
         $curso = Curso::with('alunos')->where('id', $aluno->id_curso)->first();
@@ -183,9 +155,7 @@ class AlunoController extends Controller
         $disc = Disciplina::all();
         
         $nota = Nota::where('id_aluno', $aluno->id)->get();
-        // $disc = Disciplina::where('id')->get();
-        // dd($nota);
-        //  dd(get_defined_vars()) ; 
+     
         return view ('alunos.show', compact('aluno','curso','x','disc','nota'));
 
       

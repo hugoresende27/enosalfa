@@ -21,9 +21,9 @@
 
   <div class="card bg-light mb-3" style="max-width: ">
     <div class="card-header display-4">{!! $nome !!} 
-
-      <a href="../professores/{{ $id }}/edit" class="float-right btn-editar" style="font-size: 1.2rem">EDITAR</a>
-      
+      @if (Auth::user()->role >2)
+        <a href="../professores/{{ $id }}/edit" class="float-right btn-editar" style="font-size: 1.2rem">EDITAR</a>
+      @endif
     </div>
       
       <div class="card-body">
@@ -44,10 +44,13 @@
               {{ $disciplina->nome }}
           </span>
           @else
+
             <span style="background-color:red; padding:5px !important; color:#fff;" >
-              <a href="../professores/{{ $id }}/edit" >
-              SEM DISCIPLINA
-              </a></span>
+              @if (Auth::user()->role >2)
+                <a href="../professores/{{ $id }}/edit" >
+                SEM DISCIPLINA
+                </a></span>
+              @endif
           @endif
 
               
@@ -110,11 +113,12 @@
      
 
         </h5>
-        <span style="background-color:rgb(115, 122, 12); padding:5px !important; color:#fff; margin-left:10px" >
-          <a href="/professores/{{ $id }}/profturmas">Atribuir Turma</a> 
-         
-        </span>
-
+        @if (Auth::user()->role >2)
+          <span style="background-color:rgb(115, 122, 12); padding:5px !important; color:#fff; margin-left:10px" >
+            <a href="/professores/{{ $id }}/profturmas">Atribuir Turma</a> 
+          
+          </span>
+        @endif
         <h5 class="card-title">Registado em: 
 
           {{ $created_at }}

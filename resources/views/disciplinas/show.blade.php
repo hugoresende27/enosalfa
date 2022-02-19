@@ -18,7 +18,7 @@
 
 
     <a href="/disciplinas" class="btn-voltar" style="background-color: red">Voltar</a>
-    
+    @if (Auth::user()->role >1)
    
 <div class="table-responsive">
 
@@ -74,5 +74,10 @@
 
     </div>
     </div>    
+
+    @else
+            
+    <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+    @endif  
     
 @endsection

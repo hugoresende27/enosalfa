@@ -41,6 +41,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - apagar aluno OK
  - ficha tecnica aluno OK
  - tabela alunos tem id_curso e id_turma
+ - ACESSOS :: index alunos, notas e cursos, apenas pode visualizar, tudo o resto tem ACESSO VEDADO
 
 2. professor 
  - adicionar precisa de disciplina -------- TO DO ATRIBUIÇÃO DE TURMAS INPUT DE TURMA ---------
@@ -50,6 +51,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - atribuir turma OK
  - apagar professor OK
  - ficha tecnica professor OK
+ - ACESSOS :: index Alunos, pode editar aluno mas não criar, lançar e apagar notas, consegue ver cursos, lista de professores, turmas e disciplinas
  
 
 3. curso 

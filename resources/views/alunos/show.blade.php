@@ -83,7 +83,7 @@
             <a href="/turmas/{{ $aluno->id_turma }}">{{ $aluno->id_turma }}</a>  
            
           </span>
-          @if (Auth::user()->role >1)
+          @if (Auth::user()->role >2)
           <span style="background-color:rgb(128, 19, 0); padding:5px !important; color:#fff; margin-left:10px" >
             <a href="/alunos/{{ $aluno->id }}/alunoturmas">Atribuir Turma</a> 
            

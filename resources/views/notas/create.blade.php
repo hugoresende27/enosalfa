@@ -33,7 +33,7 @@
 
 
 <div class=" p-3" style="margin:20px">
-    <a href="/notas" class="btn-voltar" style="background-color: red">Voltar</a>
+    {{-- <a href="/notas" class="btn-voltar" style="background-color: red">Voltar</a> --}}
 
          {{-- DEBUG DE ERROS NO FORM-------------------- --}}
   @if ($errors->any())
@@ -48,6 +48,7 @@
   </div>       
 @endif 
 
+@if (Auth::user()->role >1)
 
         <h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Lançar uma nota</h1>
 
@@ -69,5 +70,10 @@
 
             </div>
         {!! Form::close() !!}
+
+@else
+            
+<h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Apenas professores podem lançar notas</h1>
+@endif
 
 @endsection

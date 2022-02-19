@@ -15,11 +15,13 @@
  </div>
 @endif
 
-
+@if (Auth::user()->role >2)
     {{-- <a href="/" class="btn-voltar" style="background-color: red">Voltar</a> --}}
     
     <a href="/disciplinas/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
+@endif
 
+@if (Auth::user()->role > 1)
     <div class="table-responsive">
 
 
@@ -51,23 +53,25 @@
             <td> <a href="/disciplinas/{{ $item->id }} ">{{ $item->nome }}  </a> </td>
 
        
-         
-     
-            <td><a href="/disciplinas/{{ $item->id }}/edit">Editar </a></td>
-    
-    
-            <td>
-                
-                <form action="/disciplinas/{{ $item->id }}" method="POST">
-                    @csrf
-                    @method('delete')
-                    <button type="submit"
-                            class="border-b-2  border-dotted italic"
-                            > Apagar </button>
-    
-                </form>
-    
-            </td>
+            @if (Auth::user()->role >2)
+      
+              <td><a href="/disciplinas/{{ $item->id }}/edit">Editar </a></td>
+      
+      
+              <td>
+                  
+                  <form action="/disciplinas/{{ $item->id }}" method="POST">
+                      @csrf
+                      @method('delete')
+                      <button type="submit"
+                              class="border-b-2  border-dotted italic"
+                              > Apagar </button>
+      
+                  </form>
+      
+              </td>
+
+            @endif
             
           </tr>
     
@@ -79,5 +83,13 @@
 
     
     </div>    
+
+    
+    @endif
+
+    @if (Auth::user()->role == 1)
+            
+      <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+    @endif  
     
 @endsection

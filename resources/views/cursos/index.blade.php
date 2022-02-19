@@ -18,9 +18,9 @@
 
 
     {{-- <a href="/" class="btn-voltar" style="background-color: red">Voltar</a> --}}
-    
-    <a href="/cursos/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
-
+    @if (Auth::user()->role >2)
+      <a href="/cursos/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
+    @endif
     <div class="table-responsive">
 
     <table class="  table table-striped table-dark">
@@ -48,23 +48,24 @@
             
             
             
-     
-            <td><a href="/cursos/{{ $item->id }}/edit">Editar </a></td>
-            
-            
-    
-            <td>
+            @if (Auth::user()->role >2)
+                <td><a href="/cursos/{{ $item->id }}/edit">Editar </a></td>
                 
-                <form action="/cursos/{{ $item->id }}" method="POST">
-                    @csrf
-                    @method('delete')
-                    <button type="submit"
-                            class="border-b-2  border-dotted italic text-black"
-                            > Apagar </button>
-    
-                </form>
-    
-            </td>
+                
+        
+                <td>
+                    
+                    <form action="/cursos/{{ $item->id }}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit"
+                                class="border-b-2  border-dotted italic text-black"
+                                > Apagar </button>
+        
+                    </form>
+        
+                </td>
+                @endif
             
           </tr>
           @endforeach
