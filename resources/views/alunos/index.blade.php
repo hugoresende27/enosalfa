@@ -93,7 +93,7 @@
              
                
         
-              <td>  <a href="/alunos/">Atribuir Turma</a></td>
+              <td>  <a href="/alunos/{{ $key->id }}/alunoturmas">Atribuir Turma</a></td>
               <td>  <a href="/alunos/{{ $key->id }}/edit">EDITAR</a></td>
         
         

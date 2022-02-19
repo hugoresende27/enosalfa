@@ -21,7 +21,7 @@
   <div class="card bg-light mb-3" style="max-width: ">
     <div class="card-header display-4">{!! $aluno->nome !!} 
     
-        <a href="../alunos/{{ $aluno->id }}/edit" class="float-right btn-editar">EDITAR</a>
+        <a href="../alunos/{{ $aluno->id }}/edit" class="float-right btn-editar" style="font-size: 1.2rem">EDITAR</a>
         {{-- <a href="{{ action('AlunoController@edit') }}" class="float-right btn-editar">EDITAR</a> --}}
 
     </div>
@@ -80,8 +80,13 @@
         <h5 class="card-title">Turma: 
           <span style="background-color:green; padding:5px !important; color:#fff;" >
             <a href="/turmas/{{ $aluno->id_turma }}">{{ $aluno->id_turma }}</a>  
+           
           </span>
-     
+          <span style="background-color:rgb(128, 19, 0); padding:5px !important; color:#fff; margin-left:10px" >
+            <a href="/alunos/{{ $aluno->id }}/alunoturmas">Atribuir Turma</a> 
+           
+          </span>
+          
 
         </h5>
         <h5 class="card-title">Sala: 

@@ -96,7 +96,7 @@
                                 <button type="submit" class="meuBtn btn btn-primary" style="background-color: green">
                                     {{ __('Registar') }}
                                 </button>
-                             
+                             {{-- {{ dd(get_defined_vars()) }} --}}
                             </div>
                         </div>
                     </form>

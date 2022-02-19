@@ -22,11 +22,13 @@
   <div class="card bg-light mb-3" style="max-width: ">
     <div class="card-header display-4">{!! $nome !!} 
 
-      <a href="../professores/{{ $id }}/edit" class="float-right btn-editar">EDITAR</a>
+      <a href="../professores/{{ $id }}/edit" class="float-right btn-editar" style="font-size: 1.2rem">EDITAR</a>
       
     </div>
       
       <div class="card-body">
+      
+    
 
         <h5 class="card-title">
 
@@ -81,11 +83,11 @@
        {{ $telefone }}
 
         </h5>
-
+       
 
         <h5 class="card-title">Turmas: 
 
- 
+        
               @foreach ($turmas as $t)
             
                 @if ($t->professor_id == $id)
@@ -108,6 +110,10 @@
      
 
         </h5>
+        <span style="background-color:rgb(115, 122, 12); padding:5px !important; color:#fff; margin-left:10px" >
+          <a href="/professores/{{ $id }}/profturmas">Atribuir Turma</a> 
+         
+        </span>
 
         <h5 class="card-title">Registado em: 
 

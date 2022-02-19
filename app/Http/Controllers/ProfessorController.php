@@ -282,7 +282,7 @@ class ProfessorController extends Controller
         }
         
        
-        return redirect('/professores')->with ('message', $message);
+        return redirect('/professores/'.$professore->id)->with ('message', $message);
                     
     }
 

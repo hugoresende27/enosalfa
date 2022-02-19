@@ -22,11 +22,11 @@ escola/centro de formação, onde possam ser registados:
 disciplina pode ser ministrada por vários professores); -- show professor mostra disciplina
 - Disciplinas;
 - Alunos/Formandos (fazem parte de uma turma e a uma turma pertence uma sala); ----- TO DO ------
-- Notas dos alunos a cada disciplina.
+- Notas dos alunos a cada disciplina. ---- index notas tem lista com todas as notas, alunos e disciplina
 
 - Deverá ser possível extrair a seguinte informação de acordo com o tipo de utilizador:
-- Aluno:Dados pessoais e notas às respetivas disciplinas;
-- Professor:Consultar as suas turmas;
+- Aluno:Dados pessoais e notas às respetivas disciplinas;  --- show aluno tem dados pessoais e tabela com notas em baixo
+- Professor:Consultar as suas turmas;  --- show professor tem opção atribuir turmas
 - Administrador:Poderá visualizar tudo;
 - O sistema a desenvolver deverá ter um “front-office” que possibilite o acesso remoto através
 de “login” e com um ambiente para cada tipo de utilizador.
@@ -37,6 +37,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - index mostra id, nome do aluno e nome do curso
  - show mostra ficha do aluno
  - editar aluno permite alterar curso
+ - atribuir turma OK
  - apagar aluno OK
  - ficha tecnica aluno OK
  - tabela alunos tem id_curso e id_turma
@@ -45,7 +46,8 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - adicionar precisa de disciplina -------- TO DO ATRIBUIÇÃO DE TURMAS INPUT DE TURMA ---------
  - index mostra nome professor, disciplina
  - show mostra ficha professor com dados e turmas
- - editar professor permite alterar tudo
+ - editar professor permite dados e disciplina
+ - atribuir turma OK
  - apagar professor OK
  - ficha tecnica professor OK
  

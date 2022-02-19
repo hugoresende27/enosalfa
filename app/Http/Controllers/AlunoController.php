@@ -296,6 +296,23 @@ class AlunoController extends Controller
   
     }
 
+    public function aluno_turmas(Aluno $aluno){
+
+        $turmas = Turma::all();
+        return view('alunos.atualizaTurmas',compact('aluno','turmas'));
+    }
+
+    public function turmas_save(Request $request, Aluno $aluno){
+
+        $guarda = Aluno::where('id',$aluno->id)
+            ->update([
+               
+                'id_turma'=>$request->input('turma'),
+            ]);
+
+
+        return redirect('/alunos')->with ('message', 'Turma atualizada');
+    }
     
 }
 
