@@ -45,6 +45,10 @@ class CursoSeeder extends Seeder
             'nome' => 'Laravel',     
           
         ]);
+        \DB::table('disciplinas')->insert([
+            'nome' => 'PHP',     
+          
+        ]);
 
         \DB::table('professors')->insert([
             'nome' => 'Prof. Alberto',
@@ -68,6 +72,20 @@ class CursoSeeder extends Seeder
             
             'id_turma'  => 1,
             'id_curso'  => 1,
+           
+        ]);
+        \DB::table('notas')->insert([
+            
+            'id_disciplina'  => 1,
+            'id_aluno'  => 1,
+            'nota' => 19
+           
+        ]);
+        \DB::table('notas')->insert([
+            
+            'id_disciplina'  => 2,
+            'id_aluno'  => 1,
+            'nota' => 20
            
         ]);
         

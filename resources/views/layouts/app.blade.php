@@ -181,6 +181,8 @@
                 font-weight: 900 !important;
                 font-family: 'Consolas', sans-serif;
             }
+
+           
           
          
 
@@ -209,6 +211,21 @@
                 background-color: #fff;
                 transform: scale(1.2);
             }
+            .nav-item2 {
+                margin: 5px;
+                border-radius: 10px;
+                padding: 10px;
+                color: #fff !important;
+                background-color: darkgreen;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+            .nav-item2:hover {
+                color: #000 !important;
+                
+            }
+
+          
 
      
             .btn-inicial{
@@ -494,12 +511,16 @@
                       </div>
                     </div>
                     
-                    <li class="nav-item dropdown">
+                    <li class="nav-item2 dropdown"
+                        style =""
+                    
+                    
+                    >
                         <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <div class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
 
                             {{-- <a class="dropdown-item" href="{{ route('register') }}"
@@ -508,7 +529,7 @@
                                 REGISTAR
                             </a> --}}
 
-                               <div class="input-group form-group" >
+                               <div class="input-group form-group menu2" >
 
                                 @if (Auth::user()->role == 3)
 
@@ -516,7 +537,11 @@
                     
                                     <a class="dropdown-item"  
                                     
-                                        href="{{ route('register') }}">{{ __('Registar') }}</a>
+                                        href="{{ route('register') }}">{{ __('Registar novo user') }}</a>
+                    
+                                    <a class="dropdown-item"  
+                                    
+                                        href="/usersmanager">Gestão Users</a>
                                 
                                     @endif
                                     
