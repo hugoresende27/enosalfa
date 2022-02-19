@@ -453,20 +453,22 @@
                                 REGISTAR
                             </a> --}}
 
-                               <div class="input-group form-group"  style="text-align: center; margin:10px; padding:20px">
-                                            @if (Route::has('register'))
-                        
-                                            <a class="btn-heros vermelho meuBtn"  
-                                            
-                                                href="{{ route('register') }}">{{ __('Registar') }}</a>
-                                        </div>
-                                            @endif
+                               <div class="input-group form-group" >
+                                    @if (Route::has('register'))
+                
+                                    <a class="dropdown-item"  
+                                    
+                                        href="{{ route('register') }}">{{ __('Registar') }}</a>
+                                
+                                    @endif
 
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                </div>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf

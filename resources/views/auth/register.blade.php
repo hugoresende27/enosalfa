@@ -16,7 +16,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header ">
+                    <h5 class="card-title" style="text-align: center;font-size:1.2rem">
+                        {{ __('REGISTO DE NOVO USER') }}
+                    </h5>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -70,6 +74,17 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">Tipo de User</label>
+
+                            <select class="col-md-6" name="role">
+                                <option value="1">Aluno</option>
+                                <option value="2">Professor</option>
+                                <option value="3">Administrador</option>
+                               
+                            </select>
                         </div>
 
                         <div class="row mb-0">

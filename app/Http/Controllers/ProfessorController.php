@@ -86,11 +86,8 @@ class ProfessorController extends Controller
 
         $prof->id_disciplina=$request->input('disciplinas');
         // dd(get_defined_vars());
-        // $prof->turmas()->attach(
-        //         [  'id_professor'=>'1',
-        //             'id_turma'=> $request->input('turma_id')
-        // ]);
-         
+       
+       
         
         
         
@@ -98,20 +95,13 @@ class ProfessorController extends Controller
       
         $prof->push();
 
-        if(($request->input('turma')) != NULL){
-            $prof_turma = new professor_turma;
-            $prof_turma->professor_id = $prof->id;
-            $prof_turma->turma_id=$request->input('turma_id');
-
+        // if(($request->input('turma')) != NULL){
+        //     $prof_turma = new professor_turma;
+        //     $prof_turma->professor_id = $prof->id;
+        //     $prof_turma->turma_id=$request->input('turma_id');
         
-            
-        // $turma_curso = Turma::where('id',$request->input('turma_id'))->first();
-        // if(isset($prof_turma->id_curso)){
-        //     $prof_turma->id_curso=$turma_curso->id;
+        // $prof_turma->save();
         // }
-        
-        $prof_turma->save();
-        }
 
         
         
@@ -280,84 +270,18 @@ class ProfessorController extends Controller
 
     public function turmas_save(Request $request,Professor $professore)
     {
+
+        $x = $professore->prof_turmas_prof()->where('turma_id',$request->input('turma_id'))->get();
+        // $y = $professore->prof_turmas_prof()->where('professor_id',$professore->id)->get();
    
-        $message="";
-        // $turmas = Turma::find(1);
-        // // dd(get_defined_vars());
-        // foreach($turmas->professores as $t){
-        //     echo $t->pivot->id;
-        // }
-        // dd(get_defined_vars());
-        // $guarda = new professor_turma;
-        // $guarda->turmas()->attach($request->input('turma_id'));
-        
-        // if(($request->input('turma_id'))  != NULL) {
-
-
-        // $guarda = new professor_turma;
-        // $guarda->turmas()->attach($request->input('turma_id'));
-            
-        // $total_turmas = count($request->input('turma_id'));
-        
-        // $arr = $request->input('turma_id');
-
-            
-               
-            // foreach ($arr as $a){
-                // $exists = count(professor_turma::where('professor_id', $professore->id)->where('turma_id',$a)->get());
-                // if ($exists==0){
-                    
-        $verifica = professor_turma::all();
-        foreach($verifica as $v){
-            $teste = professor_turma::where('professor_id',$v->professor_id)->first();
-            if ($request->input('turma_id') == $teste->turma_id){
-                continue;
-            }
-            else {
-
-                $guarda = new professor_turma;
-                // $guarda->turmas()->attach($request->input('turma_id'));
-        
-                // for ($i=0; $i<$total_turmas;$i++){
-                //    dd(get_defined_vars());
-                $guarda->create([
-                            
-                    'professor_id'=>$professore->id,
-                    'turma_id'=>$request->input('turma_id'),
-                ]); 
-                $message = "ATUALIZADO";
-
-            }
-        }
-       
-        $dupplicates = \App\Models\professor_turma::query()
-        ->select('professor_id', 'turma_id', \DB::raw('COUNT(*) as `count`'))
-        ->groupBy([
-            'professor_id',
-            'turma_id',
+        $message ="Turma já está atribuida!";
+        if ( count($x) == 0) {
+            $professore->prof_turmas_turma()->attach($request->input('turma_id'));
+            $message="Turma Registada";
            
-        ]);
-        // ->havingRaw("COUNT(*) > 1")
-        //  ->havingRaw(("(COUNT(*) > 1)"))->get();
-        //  ->havingRaw('COUNT(*) >?', [1])->get();
-
-        $dupplicates = $dupplicates
-         ->havingRaw('COUNT(*) >?', [1])->get();
-        // dd(get_defined_vars());
-    foreach($dupplicates as $dupplicate) {
-        // var_dump('Deleting one group');
-        $safeId = \App\Models\professor_turma::query()
-        ->orderByRaw('ISNULL(created_at) ASC')
-        ->where('professor_id', $dupplicate->professor_id)
-        ->where('turma_id', $dupplicate->turma_id)->value('id');
-
-        $deleteQuery = \App\Models\professor_turma::query()
-            ->where('professor_id', $dupplicate->professor_id)
-            ->where('turma_id', $dupplicate->turma_id)->where('id','!=',$safeId)
-            ->delete();
-    }
-                        
-          //  dd(get_defined_vars());
+        }
+        
+       
         return redirect('/professores')->with ('message', $message);
                     
     }
