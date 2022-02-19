@@ -14,15 +14,27 @@ class Disciplina extends Model
  *
  * @return \Illuminate\Database\Eloquent\Relations\HasOne
  */
-public function set_fk_professor()
-{
-    return $this->hasMany(Professor::class, 'id_disciplina', 'id');
-}
+    public function set_fk_professor()
+    {
+        return $this->hasMany(Professor::class, 'id_disciplina', 'id');
+    }
 
-public function nota() 
-{
-    return $this->hasMany(Nota::class, 'id_disciplina');
-}
+    public function nota() 
+    {
+        return $this->hasMany(Nota::class, 'id_disciplina');
+    }
+
+
+    public function curso() 
+    {
+        return $this->hasOne(Curso::class);
+    }
+
+    public function relacao_disciplina_curso(){
+        return $this->belongsToMany(Curso::class, 'curso_disciplinas');
+      }
+
+
 
 }
 

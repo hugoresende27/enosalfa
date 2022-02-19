@@ -143,7 +143,7 @@ class AlunoController extends Controller
 
 
         
-
+        //chamar aqui a function 'alunos' do modelo Curso BELOGNSTO
         $curso = Curso::with('alunos')->where('id', $aluno->id_curso)->first();
 
         $anoAtual = now();
@@ -159,66 +159,7 @@ class AlunoController extends Controller
         return view ('alunos.show', compact('aluno','curso','x','disc','nota'));
 
       
-        // $id = $id->id_curso;
-        
-        
-        /*
-        $tudo = Aluno::where('id', $id)->get();
-
-
-        $aluno_nome = Aluno::where('id', $id)->pluck('nome');
-        $skips = ["[","]","\""];
-        // dd($curso);
-        $aluno_nome = str_replace($skips, ' ',$aluno_nome);
-        
-        
-        
-        // $columns = Schema::getColumnListing('alunos');
-        foreach($tudo as $teste){
-            $data =  new \DateTime($teste->idade);
-            // $data2 = strtotime($data);
-            $anoAtual = now();
-            // $anos = $anoAtual - $data;  
-            $x = $data->diff($anoAtual)->format("%y");
-        }
-        
-        // dd($data->format('Y'));
-        // dd($x);
-
-   
-        // $last = \DB::table('alunos')
-        //           ->join('cursos', 'cursos.id', '=', 'alunos.id_curso')
-        //           ->get();
-        // $last = \DB::table('cursos')
-        //           ->join('alunos', 'id_curso', '=', 'cursos.id')
-        //           ->where('cursos.id','=','alunos.id_curso')
-        //           ->get();
-        // $last = \DB::table('alunos')
-        //           ->join('cursos', 'cursos.id', '=', 'alunos.id_curso')
-        //           ->where('alunos.id_curso','cursos.id')
-        //           ->get();
-
-        $last2 = Aluno::where('id_curso');
-        // $last = Curso::where('id',Aluno::where('id_curso'));
-        $last = Curso::with('alunos')->where('id', );
-      
-        // dd($lastOperationUser);
-
-        //$someVariable = Input::get("some_variable");
-        //$todos = Aluno::all()->pluck('id_curso');
-      
-        // $results = \DB::select( \DB::raw("SELECT nome FROM cursos WHERE id = '$x'") );
-        //  $results = \DB::select( \DB::raw("SELECT 'nome' from  cursos
-        //  where 'cursos.id'='alunos.id_curso'") );
-        // dd($results);
-        //$armies = Curso::with('aluno')->get();
-
-        //  dd(get_defined_vars()) ;
-
      
-
-        return view ('alunos.show', compact('aluno_nome','tudo','x','last'));
-        */
     }
 
     /**
@@ -330,7 +271,7 @@ class AlunoController extends Controller
             ]);
 
 
-        return redirect('/alunos')->with ('message', 'Turma atualizada');
+        return redirect('/alunos/'.$aluno->id)->with ('message', 'Turma atualizada');
     }
 
     

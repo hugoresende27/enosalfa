@@ -88,6 +88,24 @@ class CursoSeeder extends Seeder
             'nota' => 20
            
         ]);
+
+        \DB::table('curso_disciplinas')->insert([
+            
+            'id_curso'  => 1,
+            'id_disciplina'  => 1,
+         
+           
+        ]);
+
+        \DB::table('curso_disciplinas')->insert([
+            
+            'id_curso'  => 1,
+            'id_disciplina'  => 2,
+         
+           
+        ]);
+
+ 
         
     
       

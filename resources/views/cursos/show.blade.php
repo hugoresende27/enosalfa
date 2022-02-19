@@ -25,7 +25,7 @@
 
       <div class="card-header display-4">
      
-        {!! $curso_nome !!} 
+        {!! $curso->nome !!} 
 
         {{-- <a href="../cursos/{{ $id }}/edit" class="float-right btn-editar">EDITAR</a> --}}
 
@@ -34,7 +34,23 @@
         <div class="card-body">
 
           <h5 class="card-title lista-alunos-curso">ID:
-            {{ $id }}
+            {{ $curso->id }}
+ 
+          </h5>
+
+    
+
+          <h5 class="card-title">Disciplinas:
+
+            @foreach ($arr_subjs as $sub)
+
+            
+              <div class="lista-alunos-curso">
+                <a href="/disciplinas/{{ $sub->id }}">{{ $sub->nome }}</a> 
+              </div>
+       
+       
+            @endforeach
  
           </h5>
 

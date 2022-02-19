@@ -14,4 +14,21 @@ class AdminController extends Controller
 
         return view ('admin.index', compact('users'));
     }
+
+    public function destroy($id)
+    {
+
+        if ($id != 1){
+
+            $user = User::where('id', $id);
+            $user->delete();
+            // dd(get_defined_vars());
+            return redirect('/usersmanager')->with ('message', 'User apagado!');
+
+        }
+        else {
+            return redirect('/usersmanager')->with ('message', 'Não pode apagar o administrador');
+        }
+        
+    }
 }

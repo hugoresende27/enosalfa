@@ -26,6 +26,7 @@ Route::get('/', function () {
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/usersmanager', [App\Http\Controllers\AdminController::class,'index']);
+Route::delete('/usersmanager/{user}/delete', [App\Http\Controllers\AdminController::class,'destroy']);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Route::get('/alunos/{id_curso}',  [\App\Http\Controllers\AlunoController::class,'show']);
@@ -45,6 +46,8 @@ Route::post('/professores/{professore}/updateTurma',  [\App\Http\Controllers\Pro
 Route::resource('cursos', CursoController::class);
 Route::post('/cursos/create',  [\App\Http\Controllers\CursoController::class,'store'])->name('guardar_curso');
 Route::get('/cursos/{curso}',  [\App\Http\Controllers\CursoController::class,'show']);
+Route::get('/cursos/{curso}/cursodisciplinas',  [\App\Http\Controllers\CursoController::class,'curso_disciplinas']);
+Route::post('/cursos/{curso}/updateCurso',  [\App\Http\Controllers\CursoController::class,'disciplina_save']);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::resource('disciplinas', DisciplinaController::class);
 Route::post('/disciplinas/create',  [\App\Http\Controllers\DisciplinaController::class,'store'])->name('guardar_disci');

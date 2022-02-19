@@ -23,8 +23,18 @@ class Curso extends Model
     public  function  alunos()//: BelongsTo
     {
         return $this->belongsTo(Aluno::class, 'id_curso', 'id');
-        // return $this->hasOne(Aluno::class, 'id_curso', 'id');
-        //  return $this->hasMany(Aluno::class, 'id_curso', 'id');
+      
     }
 
+    public function curso_disciplina_curso(){
+        // return $this->belongsToMany(Disciplina::class, 'curso_disciplinas','id_disciplina','id_curso');
+        return $this->belongsToMany(Disciplina::class, 'curso_disciplinas','id_curso','id_disciplina');
+      }
+
+      public function curso_disciplina_disciplina(){
+        return $this->belongsToMany(Curso::class, 'curso_disciplinas','id_curso','id_disciplina')
+        ->withPivot(['id_curso']);
+      }
+
+    
 }

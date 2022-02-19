@@ -30,11 +30,10 @@
             <th scope="col">ID do curso</th>
             <th scope="col">Nome do curso</th>
         
-            
-            
-            
+
             
             <th scope="col">EDITAR</th>
+            <th scope="col">GESTOR</th>
             <th scope="col">APAGAR</th>
           </tr>
         </thead>
@@ -50,6 +49,7 @@
             
             @if (Auth::user()->role >2)
                 <td><a href="/cursos/{{ $item->id }}/edit">Editar </a></td>
+                <td><a href="/cursos/{{$item->id}}/cursodisciplinas">Atribuir Disciplinas </a></td>
                 
                 
         

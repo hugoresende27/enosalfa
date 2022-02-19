@@ -11,7 +11,7 @@ class professor_turma extends Model
     protected $guarded = [];
     use HasFactory;
 
-    public function turmas(){
-        return $this->belongsToMany(Turma::class, 'professor_turmas','professor_id' );
-      }
+    // public function turmas(){
+    //     return $this->belongsToMany(Turma::class, 'professor_turmas','professor_id' );
+    //   }
 }

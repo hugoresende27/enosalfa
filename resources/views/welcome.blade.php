@@ -253,49 +253,21 @@ margin-left: 4px;
             <div class="menu">
                 <h1 class="titulo-inicial titulo-topo">Sistema E.N.O.S.</h1>
 
-
-                {{-- <div class="dados">
-                    <table class="table ">
-                        <thead>
-                          <tr class="text-center">
-                            <th scope="col" class="text-center">email</th>
-                            <th scope="col" class="text-center">password</th>
-                           
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                         
-                            <td>admin@admin</td>
-                            <td>admin</td>
-                          
-                          </tr>
-                          <tr>
-                         
-                            <td>prof@prof</td>
-                            <td>prof</td>
-                          
-                          </tr>
-                          <tr>
-                         
-                            <td>aluno@aluno</td>
-                            <td>aluno</td>
-                          
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-                     
-
-                </div> --}}
+     {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
+     @if (session()->has('message'))
+     <div class="text-white">
+         <p class="delete">
+             {{ session()->get('message') }}
+         </p>
+     </div>
+    @endif
+      
 
                 <img class="fundo" 
                 src="https://cdn.pixabay.com/photo/2015/11/05/08/21/geometry-1023846_960_720.jpg" 
                       alt="welcome">
 
-                      {{-- <img src="{{ url('img/welcomeTest.png') }}" alt="inicio"> --}}
-            
-       {{-- {{ dd($user->role) }} --}}
+   
             </div>
         @endauth
         

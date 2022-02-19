@@ -22,6 +22,9 @@
   
     <div class="table-responsive">
 
+      <div class="float-left">
+        <a  href="{{ route('register') }}" class="btn-adicionar" style="background-color: green">Registar Novo User</a>
+    </div>
 
     <table class=" table table-striped table-dark">
         <thead>
@@ -57,7 +60,7 @@
                
                 <td>
                   
-                    <form action="/" method="POST">
+                    <form action="/usersmanager/{{ $u->id }}/delete" method="POST">
                         @csrf
                         @method('delete')
                         <button type="submit"

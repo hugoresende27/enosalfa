@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Curso;
 use App\Models\Aluno;
 use App\Models\Turma;
+use App\Models\Disciplina;
 use App\Models\professor_turma;
 use App\Models\Cursos_turma;
+use App\Models\Curso_disciplinas;
 use App\Http\Requests\StoreCursoRequest;
 use App\Http\Requests\UpdateCursoRequest;
+use Illuminate\Http\Request;
 
 class CursoController extends Controller
 {
@@ -75,20 +78,37 @@ class CursoController extends Controller
      * @param  \App\Models\Curso  $curso
      * @return \Illuminate\Http\Response
      */
-    public function show( $id)
+    public function show(Curso $curso)
     {
-        $alunos = Aluno::where('id_curso', $id)->get();
-        $curso_nome = Curso::where('id', $id)->pluck('nome');
+        $alunos = Aluno::where('id_curso', $curso->id)->get();
+        // $curso_nome = Curso::where('id', $id)->pluck('nome');
         
-        // dd($alunos);
-        $skips = ["[","]","\""];
-        $curso_nome = str_replace($skips, ' ',$curso_nome);
+        
+        // $skips = ["[","]","\""];
+        // $curso_nome = str_replace($skips, ' ',$curso_nome);
 
-        $cursos_turma = Cursos_turma::where('id_curso',$id)->get();
-        // $cursos_turma = Turma::where('id',$id)->get();
-      
-        // dd(get_defined_vars());        
-        return view ('cursos.show', compact('alunos','curso_nome','id','cursos_turma'));
+        $cursos_turma = Cursos_turma::where('id_curso',$curso->id)->get();
+        
+
+        $curso_disciplinas = Curso_disciplinas::where('id_curso',$curso->id)->get();
+
+        $arr_subjs = array();
+
+        foreach ($curso_disciplinas as $cd){
+                $dis = Disciplina::where('id',$cd->id_disciplina)->get();
+                foreach ($dis as $d){
+                    array_push($arr_subjs,$d);
+                }
+        }
+
+
+
+        // $x=$curso->curso_disciplina_curso()->where('id',);
+     
+
+        // dd(get_defined_vars());
+             
+        return view ('cursos.show', compact('alunos','cursos_turma','curso_disciplinas','curso','arr_subjs'));
     }
 
     /**
@@ -143,5 +163,30 @@ class CursoController extends Controller
         $cur->delete();
         
         return redirect('/cursos')->with ('message', 'Curso apagado!');
+    }
+
+    public function curso_disciplinas(Curso $curso){
+
+        $disciplinas = Disciplina::all();
+        return view('cursos.atualizaDisciplinas',compact('curso','disciplinas'));
+    }
+
+    public function disciplina_save(Request $request,Curso $curso)
+    {
+
+        $x = $curso->curso_disciplina_curso()->where('id_disciplina',$request->input('disciplina'))->get();
+        // $x = $curso->curso_disciplina_curso()->get();
+        // $y = $professore->prof_turmas_prof()->where('professor_id',$professore->id)->get();
+   
+        $message ="Disciplina já está atribuida!";
+        if ( count($x) == 0) {
+            $curso->curso_disciplina_disciplina()->attach($request->input('disciplina'));
+            $message="Disciplina Registada";
+           
+        }
+        // dd(get_defined_vars());
+       
+        return redirect('/cursos/'.$curso->id)->with ('message', $message);
+                    
     }
 }

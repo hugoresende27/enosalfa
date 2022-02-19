@@ -2,9 +2,6 @@
 
 ## [Projeto_final](http://enos-alfa.herokuapp.com/)
 
-###  user : admin@admin
-###  pass : 1234
-           
 
 <p align="center"><a href="http://enos-alfa.herokuapp.com/" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
@@ -59,7 +56,8 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - index mostra ID Curso e nome do curso
  - show curso mostra ID do curso, alunos a frequentar e turmas com o curso atribuido
  - editar nome do curso OK
- - show do curso mostra os alunos a frequentar o curso, turmas e id
+ - atribuir disciplinas a curso ok
+ - show do curso mostra o id, os alunos a frequentar o curso, turmas e disciplinas 
  - apagar curso OK
 
 
