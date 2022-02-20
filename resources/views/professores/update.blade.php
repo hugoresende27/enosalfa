@@ -112,7 +112,12 @@
                 </button>
             
             </form>
-            @endif
+
+        @else
+            
+    <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+    @endif 
+ 
 
         
 

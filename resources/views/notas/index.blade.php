@@ -94,6 +94,9 @@
       </table>
 
     </div>
+    <div class="text-center next-previous">
+      {{ $todas_as_notas->links(); }}
+    </div>
     </div>    
     
 @endsection

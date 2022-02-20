@@ -36,8 +36,15 @@
 
           @if (isset($curso->id))
             <span style="background-color:green; padding:5px !important; color:#fff;" >
-                <a href="/cursos/{{ $curso->id }}" class="text-black"> {{ $curso->nome }}</a>
+              {{ $curso->nome }}
             </span>
+            @if (Auth::user()->role >2)
+              <span style="background-color:rgb(128, 19, 0); padding:5px !important; color:#fff; margin-left:10px" >
+                <a href="/alunos/{{ $aluno->id }}/edit" class="text-black">  Alterar</a>
+              </span>
+              @endif
+               
+            
           @else
           <span style="background-color:red; padding:5px !important; color:#fff;" >
             <a href="../alunos/{{ $aluno->id }}/edit">
@@ -85,7 +92,7 @@
           </span>
           @if (Auth::user()->role >2)
           <span style="background-color:rgb(128, 19, 0); padding:5px !important; color:#fff; margin-left:10px" >
-            <a href="/alunos/{{ $aluno->id }}/alunoturmas">Atribuir Turma</a> 
+            <a href="/alunos/{{ $aluno->id }}/alunoturmas">Alterar</a> 
            
           </span>
           @endif

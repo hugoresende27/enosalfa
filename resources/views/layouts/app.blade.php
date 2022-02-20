@@ -183,7 +183,17 @@
             }
 
            
-          
+            .next-previous{
+                
+            }
+            .next-previous a {
+                color: #000 !important;
+                /* background-color: darkgreen !important;
+                font-family: 'Consolas',sans-serif !important;
+                padding: 10px !important;
+                border-radius: 5px !important; */
+
+            }
          
 
             /*BOTOÕES/////////////////////////////////////////////////////////////////////////////*/

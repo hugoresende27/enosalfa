@@ -90,16 +90,19 @@
               @endforeach
               
         </tbody>
+       
       </table>
-
-        <div class="text-center">
-          {{ $alunos->links(); }}
-        </div>
+ 
+      
+        
+        
 
 
 </div>
     
-
+<div class="text-center next-previous">
+  {{ $alunos->links(); }}
+</div>
 
     </div>    
     

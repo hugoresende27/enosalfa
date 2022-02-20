@@ -74,6 +74,10 @@ class DatabaseSeeder extends Seeder
           
             \App\Models\professor_turma::factory()->create();
        }
+        for($i=0;$i<50;$i++){
+          
+            \App\Models\curso_disciplinas::factory()->create();
+       }
 
      
 

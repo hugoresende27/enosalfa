@@ -28,7 +28,8 @@ class NotaController extends Controller
     {
 
         
-        $todas_as_notas = Nota::all();
+        // $todas_as_notas = Nota::all();
+        $todas_as_notas = Nota::paginate(20);
         // $todas_as_notas = Nota::orderBy('nota','DESC')->get();
         
         // $alunos = Aluno::all();
