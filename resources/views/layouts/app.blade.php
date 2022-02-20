@@ -93,7 +93,7 @@
 
             .principal button:hover{
                 background-color: red;
-                transform: scale(1.2);
+                transform: scale(1.05);
             }
 
             .tit{
