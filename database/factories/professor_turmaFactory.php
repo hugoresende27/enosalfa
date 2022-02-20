@@ -17,9 +17,8 @@ class professor_turmaFactory extends Factory
     public function definition()
     {
         return [
-            'id_professor'=>rand(1,75),
-            'id_turma'=>rand(1,90),
-            'id_curso'=>rand(1,30)
+            'professor_id'=>rand(1,20),
+            'turma_id'=>rand(1,10),
         ];
     }
 }

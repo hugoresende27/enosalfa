@@ -43,36 +43,36 @@ class DatabaseSeeder extends Seeder
         
         
         
-        for($i=0;$i<30;$i++){
+        for($i=0;$i<5;$i++){
           
-            //  \App\Models\Curso::factory()->create();
+             \App\Models\Curso::factory()->create();
         }
 
-        for($i=0;$i<90;$i++){
+        for($i=0;$i<10;$i++){
           
-            //  \App\Models\Turma::factory()->create();
+             \App\Models\Turma::factory()->create();
         }
+        for($i=0;$i<20;$i++){
+          
+             \App\Models\Disciplina::factory()->create();
+        }
+
+        for($i=0;$i<20;$i++){
+            \App\Models\Professor::factory()->create();
+           
+       }
+        for($i=0;$i<150;$i++){
+            \App\Models\Aluno::factory()->create();
+           
+       }
+
+        for($i=0;$i<300;$i++){
+          
+            \App\Models\Nota::factory()->create();
+       }
         for($i=0;$i<50;$i++){
           
-            //  \App\Models\Disciplina::factory()->create();
-        }
-
-        for($i=0;$i<75;$i++){
-            // \App\Models\Professor::factory()->create();
-           
-       }
-        for($i=0;$i<20;$i++){
-            // \App\Models\Aluno::factory()->create();
-           
-       }
-
-        for($i=0;$i<300;$i++){
-          
-            // \App\Models\Nota::factory()->create();
-       }
-        for($i=0;$i<300;$i++){
-          
-            // \App\Models\professor_turma::factory()->create();
+            \App\Models\professor_turma::factory()->create();
        }
 
      

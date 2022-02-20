@@ -43,25 +43,18 @@ class AlunoController extends Controller
         $user = Auth::user();
         
         // $alunos = Aluno::orderBy('created_at','DESC')->get();
-        $alunos = Aluno::orderBy('nome')->get();
-        // $alunos = Aluno::with('cursos')->get();
+        // $alunos = Aluno::orderBy('nome')->get();
+        $alunos = Aluno::paginate(10);
         
-        // $curso = Curso::all()->pluck('nome');
         $curso = Curso::all();
-        // $x = new Curso();
-        // $curso= $x->aluno();
-        // $curso = Curso::where('id');
-        // $curso = Curso::with('aluno')->get();
-        // $x = new Curso();
-        // $x->aluno()->get();
-        // dd($x);
-        // dd(get_defined_vars());
+       
+        
 
         $turmas = Turma::all();
-        // $user = Auth::user();
+     
 
         // dd(get_defined_vars()) ;
-        return view ('alunos.index',compact('alunos','curso','turmas','user'));
+        return view ('alunos.index',compact('alunos','curso','turmas'));
     }
 
     /**

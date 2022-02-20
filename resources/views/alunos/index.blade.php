@@ -91,6 +91,12 @@
               
         </tbody>
       </table>
+
+        <div class="text-center">
+          {{ $alunos->links(); }}
+        </div>
+
+
 </div>
     
 
