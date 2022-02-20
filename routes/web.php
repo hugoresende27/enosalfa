@@ -7,6 +7,7 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\NotaController;
 use App\Http\Controllers\TurmaController;
+use App\Http\Controllers\SalaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +59,7 @@ Route::post('/notas/create',  [\App\Http\Controllers\NotaController::class,'stor
 Route::resource('turmas', TurmaController::class);
 Route::post('/turmas/create',  [\App\Http\Controllers\TurmaController::class,'store'])->name('guardar_turma');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+Route::resource('salas', SalaController::class);
 
 Auth::routes();
 

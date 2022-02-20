@@ -99,8 +99,9 @@
 
         </h5>
         <h5 class="card-title">Sala: 
-
-          {{ $aluno->sala }}
+          <span style="background-color:green; padding:5px !important; color:#fff;" >
+          {{ $sala }}
+          </span>
         </h5>
         <h5 class="card-title">Registado em: 
 

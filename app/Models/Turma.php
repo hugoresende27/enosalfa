@@ -11,12 +11,12 @@ class Turma extends Model
 
     protected $guarded = [];
     
-    // public function professores(){
-    //     return $this->belongsToMany(Turma::class, 'professor_turmas');
-    //   }
+    public function professores(){
+        return $this->belongsToMany(Turma::class, 'professor_turmas');
+      }
 
-    // public function salas(){
-    //   return $this->hasOne(Sala::class);
-    // }
+    public function salas(){
+      return $this->hasOne(Sala::class);
+    }
 
 }

@@ -34,5 +34,7 @@ class Aluno extends Model
         return $this->hasMany(Nota::class, 'id_aluno');
     }
 
+ 
+
    
 }

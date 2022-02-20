@@ -6,6 +6,7 @@ use App\Models\Turma;
 use App\Models\Professor;
 use App\Models\Curso;
 use App\Models\Aluno;
+use App\Models\Sala;
 use App\Models\professor_turma;
 use App\Models\Cursos_turma;
 use App\Http\Requests\StoreTurmaRequest;
@@ -32,7 +33,11 @@ class TurmaController extends Controller
        
         $todas_as_turmas = Turma::orderBy('id')->get();
 
-        return view('turmas.index',compact('todas_as_turmas','todos_os_cursos'));
+        $sala = Sala::with('turma')->pluck('nome');
+
+        // dd($sala);
+
+        return view('turmas.index',compact('todas_as_turmas','todos_os_cursos','sala'));
     }
 
     /**

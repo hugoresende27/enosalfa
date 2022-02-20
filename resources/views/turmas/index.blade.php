@@ -37,6 +37,7 @@ td a {
         <thead>
           <tr>
             <th scope="col">Turma</th>
+            <th scope="col">Sala</th>
             
             {{-- <th scope="col">Curso</th> --}}
           
@@ -59,6 +60,15 @@ td a {
               <a href="/turmas/{{ $turma->id }}" class="especial-link-turma">  {{ $turma->id }} 
               
               </a>
+
+            </td>
+            
+            <td class=""> 
+              
+              
+                {{ $sala }} 
+              
+              
 
             </td>
           

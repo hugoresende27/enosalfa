@@ -21,9 +21,34 @@ class CursoSeeder extends Seeder
            
         ]);
 
+        \DB::table('salas')->insert([
+            'nome'  => 'Sala Mundo',
+            'lugares'  => 16,
+            'aquecimento'  => 0,
+            'janelas'  => 1,
+            'internet'  => 1,
+            
+        ]);
+        \DB::table('salas')->insert([
+            'nome'  => 'Sala Tecnológica',
+            'lugares'  => 12,
+            'aquecimento'  => 1,
+            'janelas'  => 1,
+            'internet'  => 1,
+            
+        ]);
+        \DB::table('salas')->insert([
+            'nome'  => 'Sala Anfiteatro',
+            'lugares'  => 80,
+            'aquecimento'  => 0,
+            'janelas'  => 1,
+            'internet'  => 0,
+            
+        ]);
+
         \DB::table('turmas')->insert([
             'id_curso'  => 1,
-           
+            'sala_id' =>1,
         ]);
 
 
@@ -33,7 +58,7 @@ class CursoSeeder extends Seeder
             'idade' => '1989-6-17',
             'morada'=>'rua da Areia, n.13',
             'telefone' => 99999999,
-            'sala' => 1,
+            // 'sala' => 1,
             'id_turma'=>1,
             'id_curso'=>1,
             'created_at'=>now()
@@ -104,6 +129,10 @@ class CursoSeeder extends Seeder
          
            
         ]);
+
+        \DB::table('alunos')->where('id',1)->update(['sala_id'=> 1]);
+            
+          
 
  
         

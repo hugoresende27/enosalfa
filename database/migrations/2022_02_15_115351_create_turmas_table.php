@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('turmas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_curso')->nullable();
+            $table->unsignedBigInteger('sala_id')->nullable();
             
             
             $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('set null');

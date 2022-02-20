@@ -86,22 +86,11 @@ class ProfessorController extends Controller
 
         $prof->id_disciplina=$request->input('disciplinas');
         // dd(get_defined_vars());
-       
-       
-        
-        
-        
-        
+
       
         $prof->push();
 
-        // if(($request->input('turma')) != NULL){
-        //     $prof_turma = new professor_turma;
-        //     $prof_turma->professor_id = $prof->id;
-        //     $prof_turma->turma_id=$request->input('turma_id');
-        
-        // $prof_turma->save();
-        // }
+   
 
         
         
@@ -211,36 +200,7 @@ class ProfessorController extends Controller
 
         return redirect ('/professores'.'/'.$professore->id)->with('message','Registo Atualizado');
 
-        /*
-        $relations = professor_turma::where('professor_id',$professore->id)->get();
-        // dd(get_defined_vars());
-        // dd($relations[1]);
-        foreach ($relations as $r)
-        {
-            // dd(get_defined_vars());
-       
-        if( $r->turma_id == $request->input('turmas'))
-            
-                {
-                 
-                    return redirect ('/professores'.'/'.$professore->id)->with('message','Registo Atualizado');
-                }
-                
-
-            else 
-                
-                {
-                    $guarda3 = professor_turma::where('professor_id',$professore->id)
-                    ->create([                  
-                        'id_turma'=>$request->input('turmas'),
-                        'professor_id'=>$professore->id
-                    ]);
-                    return redirect ('/professores'.'/'.$professore->id)->with('message','Registo Atualizado');
-                }
-                
         
-            }
-*/
     }
 
     /**

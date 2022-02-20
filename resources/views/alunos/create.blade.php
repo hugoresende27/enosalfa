@@ -44,8 +44,7 @@
 
                 <br>
 
-                {{ Form::label('sala','Sala') }}
-                {{ Form::text('sala','', ['class'=>'form-control m-3','placeholder'=>'Sala']) }}
+        
 
           
 

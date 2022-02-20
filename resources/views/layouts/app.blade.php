@@ -497,6 +497,10 @@
                                 <a class="dropdown-item"  
                                 
                                     href="/usersmanager">Gestão Users</a>
+
+                                <a class="dropdown-item"  
+                                
+                                    href="/salas">Salas</a>
                             
                                 @endif
                                 

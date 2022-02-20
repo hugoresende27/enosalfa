@@ -25,7 +25,7 @@ return new class extends Migration
 
 
             // $table->string('turma');
-            $table->string('sala');
+            $table->unsignedBigInteger('sala_id')->nullable();
             $table->unsignedBigInteger('id_curso')->nullable();
             $table->unsignedBigInteger('id_turma')->nullable();
             // $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');

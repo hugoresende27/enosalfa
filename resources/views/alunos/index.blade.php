@@ -59,7 +59,7 @@
                 <td>   {{ $key->email }} </td>
 
       
-                <td>{{ $key->sala }}</td>
+                <td>{{ $sala }}</td>
  
              
                

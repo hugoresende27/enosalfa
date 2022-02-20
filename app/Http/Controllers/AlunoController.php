@@ -6,6 +6,7 @@ use App\Models\Nota;
 use App\Models\Aluno;
 use App\Models\Curso;
 use App\Models\Turma;
+use App\Models\Sala;
 use App\Models\Disciplina;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -48,13 +49,16 @@ class AlunoController extends Controller
         
         $curso = Curso::all();
        
-        
-
         $turmas = Turma::all();
      
+        $sala = Sala::with('aluno')->pluck('nome');
+
+        
+        $skips = ["[","]","\""];
+        $sala = str_replace($skips, ' ',$sala);
 
         // dd(get_defined_vars()) ;
-        return view ('alunos.index',compact('alunos','curso','turmas'));
+        return view ('alunos.index',compact('alunos','curso','turmas','sala'));
     }
 
     /**
@@ -90,9 +94,7 @@ class AlunoController extends Controller
             'morada'=>'required',
             'email'=>'required|email',
             'telefone'=>'required|integer',
-            // 'turma'=>'required',
-            'sala'=>'required',
-            // 'curso'=>[new minhaValidation],'integer','min:1'
+  
             
             
         ],
@@ -103,7 +105,7 @@ class AlunoController extends Controller
             'email.email' => 'email tem de ser válido!',
             'telefone.required' => 'Preencha o telefone!',
             'telefone.integer' => 'Número de telefone inválido!',
-            'sala.required' => 'Preencha a sala!',
+       
          
         ]);
       
@@ -114,7 +116,7 @@ class AlunoController extends Controller
         
         $aluno->telefone=$request->input('telefone');
         
-        $aluno->sala=$request->input('sala');
+       
         $aluno->idade=$request->input('data_nascimento');
         $aluno->id_curso=$request->input('curso');
         $aluno->id_turma=$request->input('turma');
@@ -137,7 +139,7 @@ class AlunoController extends Controller
 
         
         //chamar aqui a function 'alunos' do modelo Curso BELOGNSTO
-        $curso = Curso::with('alunos')->where('id', $aluno->id_curso)->first();
+        $curso = Curso::with('alunos')->where('id', $aluno->id_curso)->first(); 
 
         $anoAtual = now();
 
@@ -148,8 +150,16 @@ class AlunoController extends Controller
         $disc = Disciplina::all();
         
         $nota = Nota::where('id_aluno', $aluno->id)->get();
+
+
+        //chamr aqui a função 'aluno' do model Sala HASONE
+        $sala = Sala::with('aluno')->pluck('nome');
+
+        $skips = ["[","]","\""];
+        $sala = str_replace($skips, ' ',$sala);
      
-        return view ('alunos.show', compact('aluno','curso','x','disc','nota'));
+        // dd(get_defined_vars());
+        return view ('alunos.show', compact('aluno','curso','x','disc','nota','sala'));
 
       
      
@@ -202,7 +212,7 @@ class AlunoController extends Controller
             'morada'=>'required',
             'email'=>'required|email',
             'telefone'=>'required|integer',
-            'sala'=>'required',
+         
             
             
         ],
@@ -213,7 +223,7 @@ class AlunoController extends Controller
             'email.email' => 'email tem de ser válido!',
             'telefone.required' => 'Preencha o telefone!',
             'telefone.integer' => 'Número de telefone inválido!',        
-            'sala.required' => 'Preencha a sala!',
+         
           
         ]);
 
@@ -224,7 +234,7 @@ class AlunoController extends Controller
                 'email'=>$request->input('email'),
                 'telefone'=>$request->input('telefone'),
                 'idade'=>$request->input('data_nascimento'),
-                'sala'=>$request->input('sala'),
+                
                 'id_curso'=>$request->input('curso'),
                 'id_turma'=>$request->input('turma'),
             ]);
