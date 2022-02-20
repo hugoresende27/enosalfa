@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container p-3" style="margin:20px">
+<div class="container" style="margin:20px">
 
   <h1 class="text-white text-center display-4 minha-tag"
       style="background-color: darkgreen; 

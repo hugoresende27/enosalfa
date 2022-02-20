@@ -17,7 +17,7 @@ class ProfessorFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => "Prof.".$this->faker->name(),
+            'nome' => $this->faker->name(),
             'id_disciplina'  => rand(1, 20),
             'idade' => $this->faker->dateTimeBetween($startDate = '-50 years', $endDate = '-18 years', $timezone = null),
             'morada' => $this->faker->streetAddress(),

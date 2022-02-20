@@ -67,7 +67,7 @@ class AlunoController extends Controller
       
         $cursos = Curso::all()->pluck('nome','id');
         $turma = Turma::all()->pluck('id','id');
-      
+        // $salas = Sala::all();
           
   
         return view('alunos.create',compact('cursos','turma'));

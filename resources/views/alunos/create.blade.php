@@ -2,12 +2,6 @@
 
 @section('content')
 
-<style>
-
-  
-
-    </style>
-
 
 <div class="container p-3" style="margin:20px">
     <a href="/alunos" class="btn-voltar" style="background-color: red">Voltar</a>
@@ -57,24 +51,7 @@
 
                 {{ Form::label('curso','Curso',['class'=>' m-3']) }}<br>
                 {{  Form::select('curso', $cursos,null); }}<br>
-{{-- 
-                {{ Form::label('turma','Turma',['class'=>' m-3']) }}<br>
-                {{  Form::select('turma', $turma,null); }}<br> --}}
 
-              
-              
-
-                {{-- <p class="text-white" style="font-size: 20pt">{{ $cursos }}</p> --}}
-              
-
-                {{-- {{ Form::text('curso','', ['class'=>'form-control m-3','placeholder'=>'Curso']) }} --}}
-
-                {{-- @foreach ($cursos as $key=>$row)
-                   
-                    
-                        <p class="text-white" style="font-size:1.5rem; text-align:left;">  {{ $key }} &rAarr; {{ $row }} </p>
-            
-                @endforeach --}}
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 

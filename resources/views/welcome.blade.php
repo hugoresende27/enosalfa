@@ -17,7 +17,7 @@ height: 100%;
 font-family: 'Numans', sans-serif;
 } */
 
-.container{
+/* .container{
 height: 100%;
 align-content: center;
 }
@@ -93,7 +93,7 @@ color: white;
 
 .links a{
 margin-left: 4px;
-}
+} */
 
 
         /*CSS LOGIN ///////////////////////////////////////////////////////////////////////////////////////////// */
@@ -251,7 +251,8 @@ margin-left: 4px;
     
 
             <div class="menu">
-                <h1 class="titulo-inicial titulo-topo">Sistema E.N.O.S.</h1>
+                <h1 class="titulo-inicial titulo-topo" style="font-family: 'Numans', sans-serif;">Sistema E.N.O.S.</h1>
+                
 
      {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
      @if (session()->has('message'))
