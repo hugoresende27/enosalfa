@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
        }
         for($i=0;$i<50;$i++){
           
-            \App\Models\curso_disciplinas::factory()->create();
+            \App\Models\Curso_disciplinas::factory()->create();
        }
 
      
