@@ -237,7 +237,7 @@ class AlunoController extends Controller
                 // 'id_turma'=>$request->input('turma'),
             ]);
 
-        return redirect ('/alunos/'.$aluno->id)->with('message','Registo Atualizado');
+        return redirect ('/alunos')->with('message','Registo Atualizado');
     }
 
     /**
