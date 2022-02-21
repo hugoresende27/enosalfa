@@ -19,7 +19,7 @@ class Curso_disciplinasFactory extends Factory
         return [
             //
             'id_curso'=>rand(1,5),
-            'id_disciplina'=>rand(1,20),
+            'id_disciplina'=>rand(1,5),
         ];
     }
 }

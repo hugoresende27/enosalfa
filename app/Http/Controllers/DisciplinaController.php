@@ -133,9 +133,19 @@ class DisciplinaController extends Controller
     {
                
         $disc = Disciplina::where('id', $id);
-        // dd($disc);
-        $disc->delete();
+
+        $check = Professor::where('id_disciplina',$id)->pluck('nome');
+        $x=count($check);
+        // dd(get_defined_vars());
+        if (count($check) == 0){
+
+            $disc->delete();
        
-        return redirect('/disciplinas')->with ('message', 'Disciplina apagada!');
+            return redirect('/disciplinas')->with ('message', 'Disciplina apagada!');
+        } else {
+            return redirect('/disciplinas')->with ('message', 'Disciplina tem professor, apague primeiro o professor!');
+        }
+        // dd(get_defined_vars());
+   
     }
 }

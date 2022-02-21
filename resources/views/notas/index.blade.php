@@ -12,7 +12,7 @@
 
 <div class="container p-3 minimo-altura" style="margin:20px">
 
-  <h1 class="text-white text-center display-4">NOTAS</h1>
+  <h1 class="text-white text-center display-4 tag-tit1">NOTAS</h1>
   
      {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
  @if (session()->has('message'))

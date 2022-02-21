@@ -15,7 +15,7 @@ td a {
 
 <div class="container p-3" style="margin:20px">
 
-  <h1 class="text-white text-center display-4">TURMAS</h1>
+  <h1 class="text-white text-center display-4 tag-tit1">TURMAS</h1>
    {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
  @if (session()->has('message'))
  <div class="text-white">

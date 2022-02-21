@@ -27,13 +27,6 @@ class AlunoController extends Controller
     
     
 
-
-    public function check_role(){
-        $user = Auth::user();
-        return $user->role;
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -68,11 +61,11 @@ class AlunoController extends Controller
     {
       
         $cursos = Curso::all()->pluck('nome','id');
-        $turma = Turma::all()->pluck('id','id');
+        // $turma = Turma::all()->pluck('id','id');
         // $salas = Sala::all();
           
   
-        return view('alunos.create',compact('cursos','turma'));
+        return view('alunos.create',compact('cursos'));
      
     }
 
@@ -268,15 +261,11 @@ class AlunoController extends Controller
 
         $input = (int)$request->input('turma');
         
-        $sala_aluno = Turma::where('id',$input)->pluck('sala_id');
+        $sala_aluno = Turma::where('id',$input)->first();
        
-        // $sala_aluno = Turma::where('id',$input)->get();
-        foreach($sala_aluno as $sal){
-        //     if ($input == $sal->sala_id){
-                $sala = $input;
-                
-            }
-        // }
+        
+        $sala = $sala_aluno->sala_id;
+       
         // dd(get_defined_vars());
         $guarda = Aluno::where('id',$aluno->id)
             ->update([

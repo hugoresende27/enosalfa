@@ -18,8 +18,8 @@ class NotaFactory extends Factory
     {
         return [
             'created_at'=>now(),
-            'id_disciplina'=>rand(1,20),
-            'id_aluno'=>rand(1,150),
+            'id_disciplina'=>rand(1,5),
+            'id_aluno'=>rand(1,5),
             'nota'=>rand(4,20)
         ];
     }

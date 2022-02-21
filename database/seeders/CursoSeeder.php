@@ -76,12 +76,23 @@ class CursoSeeder extends Seeder
         ]);
 
         \DB::table('professors')->insert([
-            'nome' => 'Prof. Alberto',
+            'nome' => 'Prof. Luis',
             'email' => 'prof@prof',
             'idade' => '1958-6-17',
             'morada'=>'rua da Areia, n.17',
             'telefone' => 6666666,
             'id_disciplina' => 1,
+            'created_at'=>now()
+            
+           
+        ]);
+        \DB::table('professors')->insert([
+            'nome' => 'Prof. Manuel',
+            'email' => 'prof@prof',
+            'idade' => '1978-6-17',
+            'morada'=>'rua da Areia, n.17',
+            'telefone' => 9999999,
+            'id_disciplina' => 2,
             'created_at'=>now()
             
            

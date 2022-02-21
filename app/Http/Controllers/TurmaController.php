@@ -9,6 +9,7 @@ use App\Models\Aluno;
 use App\Models\Sala;
 use App\Models\professor_turma;
 use App\Models\Cursos_turma;
+
 use App\Http\Requests\StoreTurmaRequest;
 use App\Http\Requests\UpdateTurmaRequest;
 
@@ -164,8 +165,17 @@ class TurmaController extends Controller
     {
         $tur = Turma::where('id', $id);
       
+        $check = Cursos_turma::where('id_turma',$id)->pluck('id');
         $tur->delete();
+        if (count($check) == 0){
+            
        
-        return redirect('/turmas')->with ('message', 'Turma apagada!');
+            $message = "Turma apagada!";
+        } else {
+            $message = "Turma tem curso e alunos...mas foi apagada";
+        }
+
+        return redirect('/turmas')->with ('message', $message);
+  
     }
 }
