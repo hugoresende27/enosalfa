@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
         */
         
         
-        
+    /*    
         for($i=0;$i<5;$i++){
           
              \App\Models\Curso::factory()->create();
@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
             \App\Models\Curso_disciplinas::factory()->create();
        }
 
-     
+     */
 
         // \App\Models\Curso::factory()->create();
         // \App\Models\Turma::factory()->create();

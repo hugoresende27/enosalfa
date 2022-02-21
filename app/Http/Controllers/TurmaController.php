@@ -144,9 +144,14 @@ class TurmaController extends Controller
             'id_curso' => $curso_id,
             'sala_id' => $sala_id,
         ]);
+        $save2 = Aluno::where('id_turma', $turma->id)->update([
+            
+            'id_curso' => $curso_id,
+            'sala_id' => $sala_id,
+        ]);
 
         // dd(get_defined_vars());
-        return redirect ('/turmas/'.$turma->id)->with('message','Registo Atualizado');
+        return redirect ('/turmas')->with('message','Registo Atualizado');
     }
 
     /**

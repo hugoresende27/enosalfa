@@ -260,13 +260,16 @@ class AlunoController extends Controller
 
 
         $input = (int)$request->input('turma');
-        // $sala_aluno = Turma::where('sala_id',$aux)->pluck('sala_id');
-        $sala_aluno = Turma::where('sala_id',$input)->get();
+        
+        $sala_aluno = Turma::where('id',$input)->pluck('sala_id');
+       
+        // $sala_aluno = Turma::where('id',$input)->get();
         foreach($sala_aluno as $sal){
-            if ($input == $sal->sala_id){
+        //     if ($input == $sal->sala_id){
                 $sala = $input;
+                
             }
-        }
+        // }
         // dd(get_defined_vars());
         $guarda = Aluno::where('id',$aluno->id)
             ->update([
