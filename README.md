@@ -3,12 +3,7 @@
 ## [Projeto_final](http://enos-alfa.herokuapp.com/)
 
 #### Factory 
-- 5 cursos
-- 10 Turmas
-- 20 Disicplinas
-- 20 Professores
-- 150 Alunos
-- 300 Notas atribuidas
+
 
 
 
