@@ -29,7 +29,7 @@ use App\Models\User;
 */
 
 
-Route::get('/', function () {
+Route::get('/home', function () {
     $user = Auth::user();
     $alunos = Aluno::all()->count();
     $profs = Professor::all()->count();
@@ -41,6 +41,24 @@ Route::get('/', function () {
     // dd(get_defined_vars());
     return view('welcome',compact('user','alunos','profs','turmas','disciplinas','cursos','salas','users'));
 });
+
+Auth::routes();
+
+Route::get('/',function () {
+    $user = Auth::user();
+    $alunos = Aluno::all()->count();
+    $profs = Professor::all()->count();
+    $turmas = Turma::all()->count();
+    $disciplinas = Disciplina::all()->count();
+    $cursos = Curso::all()->count();
+    $salas = Sala::all()->count();
+    $users = User::all()->count();
+    // dd(get_defined_vars());
+    return view('welcome',compact('user','alunos','profs','turmas','disciplinas','cursos','salas','users'));
+});
+
+
+
 
 
 Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search');
@@ -84,8 +102,3 @@ Route::resource('salas', SalaController::class);
 Route::post('/salas/create',  [\App\Http\Controllers\SalaController::class,'store'])->name('guardar_sala');
 
 
-Auth::routes();
-
-// Route::get('/home',function () {
-//     return view('welcome');
-// });
