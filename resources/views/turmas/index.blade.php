@@ -37,12 +37,13 @@ td a {
         <thead>
           <tr>
             <th scope="col">Turma</th>
+            <th scope="col">Curso</th>
             <th scope="col">Sala</th>
             
             {{-- <th scope="col">Curso</th> --}}
           
             
-            {{-- <th scope="col">EDITAR</th> --}}
+            <th scope="col">EDITAR</th>
             <th scope="col">APAGAR</th>
           </tr>
         </thead>
@@ -62,18 +63,48 @@ td a {
               </a>
 
             </td>
-            
-            <td class=""> 
-              
-              
-                {{ $sala }} 
-              
-              
 
-            </td>
+            @foreach ($cursos as $curso)
+              @if ($turma->id_curso == $curso->id)
+                <td class=""> 
+         
+                  {{ $curso->nome }} 
+
+                </td>
+
+                  
+              @endif
+                
+            @endforeach
+
+
+            @foreach ($salas as $sala)
+              @if ($turma->sala_id == $sala->id)
+                <td class=""> 
+         
+                  {{ $sala->nome }} 
+
+                </td>
+
+                  
+              @endif
+                
+            @endforeach
+            
+          
+            
           
            
             @if (Auth::user()->role >2)
+    
+              <td>
+                  
+                  <a href="/turmas/{{ $turma->id }}/edit">
+                     Editar </a>
+      
+                  
+      
+              </td>
     
               <td>
                   

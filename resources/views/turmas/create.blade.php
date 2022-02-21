@@ -61,12 +61,13 @@
             <div class="display-6 text-center">
               
                
-                {{-- {{ Form::label('curso','Escolha o Curso', ['class'=>'m-3 minha-label']) }} --}}
-                <label for="curso" class="m-3 p-3">Escolha o Curso</label>
-                {{-- {{  Form::select('curso_escolhido', $todos_os_cursos,null,['class'=>' input-select m-3','placeholder'=>'Curso','required'=>'required']); }} --}}
-                {{-- {{ Form::text('disciplina','', ['class'=>'form-control m-3','placeholder'=>'disciplina']) }} --}}
+              
+                <label for="curso" class="m-3 p-3">Escolha o Curso</label><br>
+            
 
-                {{  Form::select('curso_escolhido', $todos_os_cursos,null,['class'=>' m-3','required'=>'required']); }}
+                {{  Form::select('curso_escolhido', $todos_os_cursos,null,['class'=>' m-3','required'=>'required']); }}<br>
+                <label for="curso" class="m-3 p-3">Escolha a Sala</label><br>
+                {{  Form::select('sala_escolhida', $salas,null,['class'=>' m-3','required'=>'required']); }}
             
                 {{ Form::submit('Registar', ['class'=>'btn btn-primary w-100 m-3 p-3 meuBtn']) }}
 

@@ -16,7 +16,7 @@
 <div class="container p-3" style="margin:20px">
 
   <a href="{{ url()->previous() }}" class="btn-voltar" style="background-color: red">Voltar</a>
-  <h1 class="text-white text-center display-4">ALUNO</h1>
+  <h1 class="text-white text-center display-4 tag-tit1">atribuir turma</h1>
 
   
 

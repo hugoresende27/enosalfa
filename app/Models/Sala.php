@@ -10,7 +10,7 @@ class Sala extends Model
     use HasFactory;
 
     public function aluno(){
-        return $this->hasOne(Sala::class,  'id');
+        return $this->hasOne(Sala::class,  'id', 'sala_id');
       }
     public function turma(){
         return $this->hasOne(Sala::class,  'id');

@@ -17,7 +17,8 @@ class CursoFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->word(),
+            // 'nome' => $this->faker->word(),
+            'nome' => $this->faker->sentence($nbWords = 3, $variableNbWords = true),
             
             
             // 'id_aluno'=>rand(1,50),          

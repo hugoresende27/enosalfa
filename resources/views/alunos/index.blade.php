@@ -29,14 +29,14 @@
     <table class="  table table-striped table-dark">
         <thead>
           <tr>
-            <th scope="col">ID do aluno</th>
+            {{-- <th scope="col">ID do aluno</th> --}}
             <th scope="col">Nome</th>
             
-            <th scope="col">Email</th>
+            {{-- <th scope="col">Email</th> --}}
             {{-- <th scope="col">ID do Curso</th> --}}
-            {{-- <th scope="col">Turma</th> --}}
-            <th scope="col">Sala</th>
             
+            <th scope="col">Sala</th>
+            <th scope="col">Turma</th>
             
            
             <th scope="col">GESTÃO</th>
@@ -54,18 +54,29 @@
               <tr>
 
                 
-                <td>{{ $key->id }}</td>
-                  <td> <a href="/alunos/{{ $key->id }}">  {{ $key->nome }} </a></td>
-                <td>   {{ $key->email }} </td>
+                {{-- <td>{{ $key->id }}</td> --}}
+                    <td> <a href="/alunos/{{ $key->id }}">  {{ $key->nome }} </a></td>
 
-      
-                <td>{{ $sala }}</td>
+                  @foreach ($salas as $sala)
+                    @if ( $key->sala_id == $sala->id)
+                      <td>{{ $sala->nome }}</td>
+                  
+                    @endif
+                  
+                  @endforeach
+    
+
+                  <td>   {{ $key->id_turma }} </td>
+
+
+             
+                
  
              
                
               @if (Auth::user()->role >2)
 
-                <td>  <a href="/alunos/{{ $key->id }}/alunoturmas">Atribuir Turma</a></td>
+                <td>  <a href="/alunos/{{ $key->id }}/alunoturmas">Alterar Turma</a></td>
               
                 <td>  <a href="/alunos/{{ $key->id }}/edit">EDITAR</a></td>
               

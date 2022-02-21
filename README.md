@@ -33,35 +33,31 @@ de “login” e com um ambiente para cada tipo de utilizador.
 
 ### FUNCIONALIDADES IMPLEMENTADAS 
 1. aluno 
- - adicionar ok
- - index mostra id, nome do aluno e nome do curso
- - show mostra ficha do aluno
- - editar aluno permite alterar curso
- - atribuir turma OK
- - apagar aluno OK
- - ficha tecnica aluno OK
- - tabela alunos tem id_curso e id_turma
+ - adicionar 
+ - index mostra nome, sala, turma, alterar turma, editar e apagar
+ - show mostra ficha tecnica aluno
+ - editar aluno permite alterar curso ou dados pessoais
+ - alterar turma 
+ - apagar aluno 
  - ACESSOS :: index alunos, notas e cursos, apenas pode visualizar, tudo o resto tem ACESSO VEDADO
 
 2. professor 
- - adicionar precisa de disciplina -------- TO DO ATRIBUIÇÃO DE TURMAS INPUT DE TURMA ---------
- - index mostra nome professor, disciplina
- - show mostra ficha professor com dados e turmas
- - editar professor permite dados e disciplina
- - atribuir turma OK
- - apagar professor OK
- - ficha tecnica professor OK
+ - adicionar (precisa de disciplina) 
+ - index mostra nome professor e disciplina
+ - show mostra ficha tecnica professor 
+ - editar professor permite alterar dados pessoais e disciplina
+ - atribuir turma 
+ - apagar professor 
  - ACESSOS :: index Alunos, pode editar aluno mas não criar, lançar e apagar notas, consegue ver cursos, lista de professores, turmas e disciplinas
  
 
-3. curso 
+3. curso   
  - adicionar precisa apenas do nome do curso
  - index mostra ID Curso e nome do curso
- - show curso mostra ID do curso, alunos a frequentar e turmas com o curso atribuido
- - editar nome do curso OK
- - atribuir disciplinas a curso ok
- - show do curso mostra o id, os alunos a frequentar o curso, turmas e disciplinas 
- - apagar curso OK
+ - show curso mostra ID do curso, alunos a frequentar, turmas com o curso atribuido e disciplinas do curso ------ TO DO melhorar front-end 
+ - editar nome do curso 
+ - atribuir disciplinas a curso 
+ - apagar curso 
 
 
 
@@ -82,11 +78,17 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - nota pode ser apagada, e lançada de novo
 
 6. Turmas
- - adicionar turma precisa de curso, número atribuido à turma vai ser o ID
- - index mostra ID Turma(número da turma é o ID)
- - show da turma mostra ficha técnica da turma, com ID e Alunos
- - apagar turma OK
+ - adicionar turma precisa de curso, número atribuido à turma vai ser o ID e sala
+ - index mostra ID Turma(número da turma é o ID), curso e sala
+ - show da turma mostra ficha técnica da turma, com ID, sala e Alunos
+ - apagar turma 
  - 1 turma tem 1 id_curso
+
+7. Administrador
+- apenas o administrador tem acesso a um menu ao na nav-bar de logout, esse menu tem :
+ - gestão de users, pode adicionar ou remover users e definir os níveis de acesso, professor, aluno ou admin
+ - gestão de salas
+
 
 
 <p align="center"><a href="http://enos-alfa.herokuapp.com/" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>

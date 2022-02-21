@@ -88,22 +88,7 @@
 
                     
                 </select><br>
-                {{-- <label for="turmas" class="m-3 p-3">Turmas</label>  
-                <select name="turmas" id="turmas" class="m-3 p-3">
-
-                  
-
-                     @foreach($turmas as $t)
-    
-
-                                <option  value="{{ $t->id  }}">{{ $t->id }}</option>
-
-
-                      @endforeach
-                        
-                   
-       
-              </select><br> --}}
+            
 
             
                 <button type="submit" 

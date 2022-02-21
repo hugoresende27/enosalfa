@@ -64,6 +64,13 @@
                 text-decoration: none;
                 color: #000;
             }
+
+            select{
+                background-color: #000;
+                color: #fff;
+                font-size: 1.2rem;
+                padding: 10px;
+            }
             .titulo-topo{
                 background-color: darkgreen;
                 padding: 10px;
@@ -239,7 +246,7 @@
             }
             .btn-voltar{
                 padding: 15px;
-                margin: 10px;
+                margin: 10px 0px;
                 border-radius: 5px;
                 font-size: 26px; 
                 float:left; 
@@ -309,6 +316,14 @@
                 border-radius: 5px;
                 text-align: center;
                 color: #fff;
+            }
+
+            .tag-tit1{
+                background-color: rgb(6, 24, 6);
+                width:auto;
+                margin-top: 10px;
+                border-radius: 5px;
+                text-transform: uppercase;
             }
           
             /*///////////////ESPECIAIS////////////////////////////////////////////////////////////////////*/

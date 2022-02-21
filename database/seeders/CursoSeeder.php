@@ -30,7 +30,7 @@ class CursoSeeder extends Seeder
             
         ]);
         \DB::table('salas')->insert([
-            'nome'  => 'Sala Tecnológica',
+            'nome'  => 'Sala Tecnologia',
             'lugares'  => 12,
             'aquecimento'  => 1,
             'janelas'  => 1,

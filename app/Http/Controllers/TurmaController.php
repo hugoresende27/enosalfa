@@ -29,15 +29,15 @@ class TurmaController extends Controller
      */
     public function index()
     {
-        $todos_os_cursos = Curso::all();
+        $cursos = Curso::all();
        
         $todas_as_turmas = Turma::orderBy('id')->get();
 
-        $sala = Sala::with('turma')->pluck('nome');
+        $salas = Sala::all();
 
-        // dd($sala);
+        // dd(get_defined_vars());
 
-        return view('turmas.index',compact('todas_as_turmas','todos_os_cursos','sala'));
+        return view('turmas.index',compact('todas_as_turmas','cursos','salas'));
     }
 
     /**
@@ -49,8 +49,9 @@ class TurmaController extends Controller
     {
 
         $todos_os_cursos = Curso::all()->pluck('nome','id');
+        $salas = Sala::all()->pluck('nome','id');
         // dd($todos_os_cursos);
-        return view ('turmas.create',compact('todos_os_cursos'));
+        return view ('turmas.create',compact('todos_os_cursos','salas'));
     }
 
     /**
@@ -65,6 +66,7 @@ class TurmaController extends Controller
 
         $turma = new Turma;
         $turma->id_curso=$request->input('curso_escolhido');
+        $turma->sala_id=$request->input('sala_escolhida');
 
         $turma->save();
 
@@ -96,8 +98,14 @@ class TurmaController extends Controller
         // $alunos = Aluno::all();
         $alunos = Aluno::where('id_turma', $turma->id)->get();
 
+        $sala = Sala::with('turma')->where('id', $turma->id)->pluck('nome');
+
+        
+        $skips = ["[","]","\""];
+        $sala = str_replace($skips, ' ',$sala);
+
         // dd(get_defined_vars());
-        return view('turmas.show', compact('turma','alunos','curso'));
+        return view('turmas.show', compact('turma','alunos','curso','sala'));
     }
 
     /**
@@ -108,7 +116,13 @@ class TurmaController extends Controller
      */
     public function edit(Turma $turma)
     {
-        //
+
+        // $salas = Sala::all()->pluck('nome','id');
+        // $cursos = Curso::all()->pluck('nome','id');
+        $cursos = Curso::all();
+        $salas = Sala::all();
+        // dd(get_defined_vars());
+        return view('turmas.update', compact('salas','cursos','turma'));
     }
 
     /**
@@ -120,7 +134,19 @@ class TurmaController extends Controller
      */
     public function update(UpdateTurmaRequest $request, Turma $turma)
     {
-        //
+       
+
+        $curso_id = (int)$request->input('curso_escolhido');
+        $sala_id = (int)$request->input('sala_escolhida');
+        // dd(get_defined_vars());
+        $save = Turma::where('id', $turma->id)->update([
+            
+            'id_curso' => $curso_id,
+            'sala_id' => $sala_id,
+        ]);
+
+        // dd(get_defined_vars());
+        return redirect ('/turmas/'.$turma->id)->with('message','Registo Atualizado');
     }
 
     /**

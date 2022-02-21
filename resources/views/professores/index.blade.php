@@ -28,9 +28,10 @@
         <thead>
           <tr>
             <th scope="col">Nome</th>
-            <th scope="col">Email</th>
+            {{-- <th scope="col">Email</th> --}}
+            <th scope="col">Disciplina</th>
             
-            {{-- <th scope="col">Disciplina</th> --}}
+            
             
             
             <th scope="col" >GESTÃO</th>
@@ -41,27 +42,21 @@
         <tbody>
          
           @foreach ($profs as $item)
-          {{-- @foreach($profs as $key=>$row) --}}
+        
         
           <tr>
         
             <td> <a href="/professores/{{ $item->id }}"> {{ $item->nome }} </a> </td>
-            <td>  {{ $item->email }} </td>
-            {{-- <td>  {{ $row['nome'] }} </td> --}}
-         
-            {{-- @foreach ($disciplina as $d)
-                @if ($d->id == $item->id_disciplina)
-                  <td> <a href="/disciplinas/{{ $d->id }}">{{ $d->nome }} </a> </td>
-                @endif
-            @endforeach --}}
-           
-            {{-- @foreach ($turmas as $tu)
-           
-              @if ($tu->id == $item->id_turma)
-                <td> <a href="/turmas"> {{ $tu->id }} </a> </td>
+            {{-- <td>  {{ $item->email }} </td> --}}
+
+            @foreach ($disciplinas as $disciplina)
+              @if ($disciplina->id == $item->id_disciplina )
+                <td>  {{ $disciplina->nome }} </td>
               @endif
-             
-            @endforeach --}}
+                
+            @endforeach
+            
+          
            
             @if (Auth::user()->role >2)
               <td><a href="/professores/{{ $item->id }}/profturmas">Atribuir Turmas </a></td>

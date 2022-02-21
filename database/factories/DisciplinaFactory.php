@@ -17,7 +17,9 @@ class DisciplinaFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->safeColorName(),
+            // 'nome' => $this->faker->safeColorName(),
+            // 'nome' => $this->faker->company(),
+            'nome' => $this->faker->word(),
         ];
     }
 }

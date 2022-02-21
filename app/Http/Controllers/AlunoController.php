@@ -43,22 +43,20 @@ class AlunoController extends Controller
     {
         $user = Auth::user();
         
-        // $alunos = Aluno::orderBy('created_at','DESC')->get();
+        $alunos = Aluno::orderBy('created_at','DESC')->paginate(10);
         // $alunos = Aluno::orderBy('nome')->get();
-        $alunos = Aluno::paginate(10);
+        // $alunos = Aluno::paginate(10);
         
         $curso = Curso::all();
        
         $turmas = Turma::all();
      
-        $sala = Sala::with('aluno')->pluck('nome');
+        $salas = Sala::all();
 
-        
-        $skips = ["[","]","\""];
-        $sala = str_replace($skips, ' ',$sala);
+
 
         // dd(get_defined_vars()) ;
-        return view ('alunos.index',compact('alunos','curso','turmas','sala'));
+        return view ('alunos.index',compact('alunos','curso','turmas','salas'));
     }
 
     /**
@@ -153,7 +151,7 @@ class AlunoController extends Controller
 
 
         //chamr aqui a função 'aluno' do model Sala HASONE
-        $sala = Sala::with('aluno')->pluck('nome');
+        $sala = Sala::with('aluno')->where('id', $aluno->sala_id)->pluck('nome');
 
         $skips = ["[","]","\""];
         $sala = str_replace($skips, ' ',$sala);
@@ -192,10 +190,6 @@ class AlunoController extends Controller
           return redirect ('/alunos')->with('message','NÃO AUTORIZADO');
         }
 
-        // $cursos = Curso::all();
-        // $turma = Turma::all();
-        // dd(get_defined_vars());
-        // return view('alunos.update', compact('aluno','cursos','turma'));
     }
 
     /**
@@ -213,8 +207,6 @@ class AlunoController extends Controller
             'email'=>'required|email',
             'telefone'=>'required|integer',
          
-            
-            
         ],
         [
             'nome.required' => 'Preencha o nome!',
@@ -224,7 +216,6 @@ class AlunoController extends Controller
             'telefone.required' => 'Preencha o telefone!',
             'telefone.integer' => 'Número de telefone inválido!',        
          
-          
         ]);
 
         $guarda = Aluno::where('id',$aluno->id)
@@ -267,14 +258,25 @@ class AlunoController extends Controller
 
     public function turmas_save(Request $request, Aluno $aluno){
 
+
+        $input = (int)$request->input('turma');
+        // $sala_aluno = Turma::where('sala_id',$aux)->pluck('sala_id');
+        $sala_aluno = Turma::where('sala_id',$input)->get();
+        foreach($sala_aluno as $sal){
+            if ($input == $sal->sala_id){
+                $sala = $input;
+            }
+        }
+        // dd(get_defined_vars());
         $guarda = Aluno::where('id',$aluno->id)
             ->update([
                
                 'id_turma'=>$request->input('turma'),
+                'sala_id'=> $sala
             ]);
 
 
-        return redirect('/alunos/'.$aluno->id)->with ('message', 'Turma atualizada');
+        return redirect('/alunos/')->with ('message', 'Turma atualizada');
     }
 
     

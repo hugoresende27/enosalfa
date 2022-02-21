@@ -29,11 +29,11 @@ class ProfessorController extends Controller
     public function index()
     {
 
-        $disciplina = Disciplina::all();
+        $disciplinas = Disciplina::all();
         $turmas = Turma::all();
         $profs = Professor::orderBy('created_at','DESC')->get();
         // dd($disciplina);
-        return view('professores.index', compact('disciplina','profs','turmas'));
+        return view('professores.index', compact('profs','turmas','disciplinas'));
        
     }
 

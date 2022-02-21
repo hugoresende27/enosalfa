@@ -71,9 +71,9 @@
             </div>
         {!! Form::close() !!}
 
-@else
+        @else
             
-<h1 class="text-center text-uppercase" style="font-family: 'Consolas'; color:#fff;font-size:5rem;">Apenas professores podem lançar notas</h1>
-@endif
+        <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+        @endif 
 
 @endsection

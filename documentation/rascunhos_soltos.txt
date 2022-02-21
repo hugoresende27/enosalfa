@@ -43,3 +43,27 @@
         
         // $skips = ["[","]","\""];
         // $curso_nome = str_replace($skips, ' ',$curso_nome);
+
+
+
+        
+        //$alunos = Aluno::with('nota')->get();
+        // $alunos = Aluno::with('nota')->get();
+        // $a = Aluno::with('nota')->pluck('nome','id');
+        // $a = Aluno::find($a->id);
+        // $notas = Nota::all();
+        // $notas = Nota::with('alunos')->get();
+        //$notas = Nota::with('aluno')->pluck('nota','id_aluno')->toArray();
+        // $a = Aluno::all();
+        // $a = Aluno::pluck('nome','id');
+        // $notas = Nota::pluck('id_aluno');
+
+        // $n = Nota::with('alunos')->where('id_aluno', $a->id)->first();
+        // $alunos = Nota::with('alunos')->where('id_aluno',$a->nome)->first();
+        // $outro = $a;
+
+        // $x= Nota::selectRaw('id as value, nota as text')->get();
+       
+        //$disciplinas = Disciplina::with('nota')->pluck('nome','id')->toArray();
+        // dd(get_defined_vars()) ;
+        //return view('notas.index',compact('alunos','notas','disciplinas'));
