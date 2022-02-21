@@ -9,6 +9,14 @@ use App\Http\Controllers\NotaController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\SalaController;
 
+use App\Models\Aluno;
+use App\Models\Professor;
+use App\Models\Disciplina;
+use App\Models\Curso;
+use App\Models\Sala;
+use App\Models\Turma;
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,8 +31,19 @@ use App\Http\Controllers\SalaController;
 
 Route::get('/', function () {
     $user = Auth::user();
-    return view('welcome',compact('user'));
+    $alunos = Aluno::all()->count();
+    $profs = Professor::all()->count();
+    $turmas = Turma::all()->count();
+    $disciplinas = Disciplina::all()->count();
+    $cursos = Curso::all()->count();
+    $salas = Sala::all()->count();
+    $users = User::all()->count();
+    // dd(get_defined_vars());
+    return view('welcome',compact('user','alunos','profs','turmas','disciplinas','cursos','salas','users'));
 });
+
+
+Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/usersmanager', [App\Http\Controllers\AdminController::class,'index']);
 Route::delete('/usersmanager/{user}/delete', [App\Http\Controllers\AdminController::class,'destroy']);
@@ -35,6 +54,8 @@ Route::resource('alunos',  AlunoController::class);
 Route::post('/alunos/create',  [App\Http\Controllers\AlunoController::class,'store'])->name('guardar_aluno');
 Route::get('/alunos/{aluno}/alunoturmas',  [\App\Http\Controllers\AlunoController::class,'aluno_turmas']);
 Route::post('/alunos/{aluno}/updateTurma',  [\App\Http\Controllers\AlunoController::class,'turmas_save']);
+// Route::get('/alunos/search',  [\App\Http\Controllers\AlunoController::class,'index'])->name('search');
+// Route::get('/search/', 'App\Http\Controllers\AlunoController@search')->name('search');
 // Route::post('/alunos/{id}',  [\App\Http\Controllers\AlunoController::class,'edit'])->name('editar_aluno');
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,9 +81,11 @@ Route::resource('turmas', TurmaController::class);
 Route::post('/turmas/create',  [\App\Http\Controllers\TurmaController::class,'store'])->name('guardar_turma');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::resource('salas', SalaController::class);
+Route::post('/salas/create',  [\App\Http\Controllers\SalaController::class,'store'])->name('guardar_sala');
+
 
 Auth::routes();
 
-Route::get('/home',function () {
-    return view('welcome');
-});
+// Route::get('/home',function () {
+//     return view('welcome');
+// });

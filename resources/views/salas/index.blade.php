@@ -4,7 +4,7 @@
 
 <div class="container p-3" style="margin:20px">
 
-  <h1 class="text-white text-center display-4">GERIR SALAS</h1>
+  <h1 class="text-white text-center display-4 tag-tit1">GERIR SALAS</h1>
    {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
  @if (session()->has('message'))
  <div class="text-white">
@@ -75,12 +75,12 @@
            
            
     
-            <td>edit</td>
+            <td> <a href="salas/{{$sala->id}}/edit">Editar </a> </td>
            
     
             <td>
                 
-                <form action="" method="POST">
+                <form action="salas/{{ $sala->id }}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit"

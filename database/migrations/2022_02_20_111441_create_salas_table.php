@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('aquecimento');
             $table->boolean('janelas');
             $table->boolean('internet');
+            $table->timestamps();
           
         });
 

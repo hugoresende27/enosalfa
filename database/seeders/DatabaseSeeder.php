@@ -43,38 +43,38 @@ class DatabaseSeeder extends Seeder
         
         
         
-        for($i=0;$i<4;$i++){
+        for($i=0;$i<20;$i++){
           
              \App\Models\Curso::factory()->create();
         }
 
-        for($i=0;$i<4;$i++){
+        for($i=0;$i<20;$i++){
           
              \App\Models\Turma::factory()->create();
         }
-        for($i=0;$i<3;$i++){
+        for($i=0;$i<20;$i++){
           
              \App\Models\Disciplina::factory()->create();
         }
 
-        for($i=0;$i<3;$i++){
+        for($i=0;$i<20;$i++){
             \App\Models\Professor::factory()->create();
            
        }
-        for($i=0;$i<4;$i++){
+        for($i=0;$i<20;$i++){
             \App\Models\Aluno::factory()->create();
            
        }
 
-        for($i=0;$i<5;$i++){
+        for($i=0;$i<20;$i++){
           
             \App\Models\Nota::factory()->create();
        }
-        for($i=0;$i<5;$i++){
+        for($i=0;$i<40;$i++){
           
             \App\Models\professor_turma::factory()->create();
        }
-        for($i=0;$i<5;$i++){
+        for($i=0;$i<40;$i++){
           
             \App\Models\Curso_disciplinas::factory()->create();
        }

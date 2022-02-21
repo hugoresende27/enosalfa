@@ -50,7 +50,7 @@
    
 
           @foreach ($todas_as_notas as $nota)
-
+          <tr>
         
               @foreach ($alunos as $a)
               

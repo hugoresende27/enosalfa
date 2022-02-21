@@ -4,7 +4,7 @@
 
 <div class="container p-3" style="margin:20px">
 
-  <h1 class="text-white text-center display-4 tag-tit1">ADICIONAR SALAS</h1>
+  <h1 class="text-white text-center display-4 tag-tit1">EDITAR SALA {{ $sala->nome }}</h1>
    {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
  @if (session()->has('message'))
  <div class="text-white">
@@ -24,7 +24,9 @@
 
             <div class="form-group display-6 text-center">
                 
-               <form action="create" method="POST">
+               <form action="../{{ $sala->id }}" method="POST">
+                @method('PUT')
+              
                 @csrf
                 <div class="mb-6">
                     <label class="block mb-2 text-xs font-bold text-gray-700 uppercase"
@@ -97,7 +99,7 @@
                </div>
                <button type="submit"
                class="float-right meuBtn text-white m-3"
-               > Registar </button>
+               > Atualizar </button>
 
                </form>
 

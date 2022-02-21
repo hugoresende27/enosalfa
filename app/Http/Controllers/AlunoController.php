@@ -227,8 +227,10 @@ class AlunoController extends Controller
                 'idade'=>$request->input('data_nascimento'),
                 
                 'id_curso'=>$request->input('curso'),
-                // 'id_turma'=>$request->input('turma'),
+                'id_turma'=>null,
             ]);
+
+       
 
         return redirect ('/alunos')->with('message','Registo Atualizado');
     }
@@ -262,40 +264,59 @@ class AlunoController extends Controller
         $input = (int)$request->input('turma');
         
         $sala_aluno = Turma::where('id',$input)->first();
-       
+        
         
         $sala = $sala_aluno->sala_id;
+        $curso = $sala_aluno->id_curso;
        
         // dd(get_defined_vars());
         $guarda = Aluno::where('id',$aluno->id)
             ->update([
                
                 'id_turma'=>$request->input('turma'),
-                'sala_id'=> $sala
+                'sala_id'=> $sala,
+                'id_curso' =>$curso
             ]);
-
+        
 
         return redirect('/alunos/')->with ('message', 'Turma atualizada');
     }
 
+    // public function search(Request $request){
+    //     // Get the search value from the request
+    //     $search = $request->input('search');
+    
+    //     // Search in the title and body columns from the posts table
+    //     $results = Aluno::query()
+    //         ->where('nome', 'LIKE', "%{$search}%")
+    //         // ->orWhere('body', 'LIKE', "%{$search}%")
+    //         ->get();
+    //     // dd(get_defined_vars());
+    //     // Return the search view with the resluts compacted
+    //     return view('alunos.search', compact('results'));
+    // }
+
     
     
 }
 
 
-use Illuminate\Contracts\Validation\Rule;
-class minhaValidation implements Rule
-{
+
+
+
+// use Illuminate\Contracts\Validation\Rule;
+// class minhaValidation implements Rule
+// {
 
    
 
-    public function passes($attribute, $value)
-    {
-        $numCursos = Curso::count();
-        return $value<$numCursos;
-    }
-    public function message()
-    {
-        return 'Curso não válido';
-    }
-}
+//     public function passes($attribute, $value)
+//     {
+//         $numCursos = Curso::count();
+//         return $value<$numCursos;
+//     }
+//     public function message()
+//     {
+//         return 'Curso não válido';
+//     }
+// }

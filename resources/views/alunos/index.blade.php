@@ -13,6 +13,12 @@
      </p>
  </div>
 @endif
+{{-- 
+<form action="{{ route('search') }}" method="GET">
+  {{ csrf_field() }}
+  <input type="text" name="search" required/>
+  <button type="submit" class="btn-editar">Search</button>
+</form> --}}
 
 
     {{-- <a href="/" class="btn-voltar " style="background-color: red">Voltar</a> --}}

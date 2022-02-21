@@ -3,10 +3,6 @@
 ## [Projeto_final](http://enos-alfa.herokuapp.com/)
 
 
-
-
-
-
 ![Esquema BD](https://github.com/hugoresende27/enosalfa/blob/main/documentation/BD_scheme.jpeg)
 
 
@@ -32,7 +28,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - index mostra nome, sala, turma, alterar turma, editar e apagar
  - show mostra ficha tecnica aluno
  - editar aluno permite alterar curso ou dados pessoais
- - alterar turma 
+ - alterar turma vai alterar o curso para o curso da turma correspondente
  - apagar aluno 
  - ACESSOS :: index alunos, notas e cursos, apenas pode visualizar, tudo o resto tem ACESSO VEDADO
 
@@ -80,10 +76,13 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - 1 turma tem 1 id_curso
 
 7. Administrador
-- apenas o administrador tem acesso a um menu ao na nav-bar de logout, esse menu tem :
+ - apenas o administrador tem acesso a um menu ao na nav-bar de logout, esse menu tem :
  - gestão de users, pode adicionar ou remover users e definir os níveis de acesso, professor, aluno ou admin
- - gestão de salas
+ - gestão de salas, pode adicionar, editar ou remover salas
 
+8. Procurar
+ - Sistema de search com querys feitas nas tabelas alunos, professores, cursos, disciplinas e salas
+ 
 
 
 <p align="center"><a href="http://enos-alfa.herokuapp.com/" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>

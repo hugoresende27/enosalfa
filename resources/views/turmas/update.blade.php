@@ -67,7 +67,7 @@
             <select name="curso_escolhido" id="disciplinas" class="m-3 p-3">
    
                     @foreach($cursos as $c)
-                        <option selected="" value="{{ $c->id }}">{{ $c->nome }}</option>
+                        <option value="{{ $c->id }}">{{ $c->nome }}</option>
                     @endforeach
 
                 
@@ -77,7 +77,7 @@
             <select name="sala_escolhida" id="disciplinas" class="m-3 p-3">
    
                     @foreach($salas as $s)
-                        <option selected="" value="{{ $s->id }}">{{ $s->nome }}</option>
+                        <option value="{{ $s->id }}">{{ $s->nome }}</option>
                     @endforeach
 
                 

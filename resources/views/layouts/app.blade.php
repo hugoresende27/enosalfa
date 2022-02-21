@@ -265,11 +265,7 @@
                 border: none;
        
             }
-
-         
-
-
-            .card-title{
+           .card-title{
                 text-align: left;
                 width: fit-content;
             }
@@ -281,8 +277,8 @@
             .mostrar-erros{
                 background-color: red;
                 border-radius: 5px;
-                text-align: right;
-                padding: 3px;
+                text-align: center;
+                /* padding: 3px; */
             }
 
 
@@ -324,6 +320,12 @@
                 margin-top: 10px;
                 border-radius: 5px;
                 text-transform: uppercase;
+            }
+
+            .span-res{               
+                background-color: darkred;
+                padding: 10px;
+                margin: 0 5px;
             }
           
             /*///////////////ESPECIAIS////////////////////////////////////////////////////////////////////*/
@@ -559,17 +561,24 @@
                             @endif
                         @endif
                         
-                        
+                     
                      
                         
                         
                       </div>
+                    
                     </div>
                     
                    
                   </nav>
-             
-              
+
+                  <div class="text-center">
+                    <form action="{{ route('search') }}" method="GET">
+                        {{ csrf_field() }}
+                        <input type="text" name="search" required/>
+                        <button type="submit" class="btn-editar">Procurar</button>
+                    </form>
+                   </div>
 
 
                 @endguest

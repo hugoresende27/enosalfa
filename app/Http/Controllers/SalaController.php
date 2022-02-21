@@ -39,7 +39,34 @@ class SalaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nome'=>'required',
+            'lugares'=>'required|integer|min:1',
+            'aquecimento'=>'required',
+            'internet'=>'required',
+            'janelas'=>'required',
+                   
+        ],
+        [
+            'nome.required' => 'Preencha o nome!',
+            'lugares.min' => 'Preencha os lugares com um número válido!',
+            'lugares.required' => 'Preencha os lugares!',
+            'lugares.integer' => 'Preencha os lugares com um número!',
+            
+       
+        ]);
+        
+        $sala = new Sala;
+        $sala->nome=$request->input('nome');
+        $sala->lugares=$request->input('lugares');
+        $sala->aquecimento=$request->input('aquecimento');
+        $sala->internet=$request->input('internet');
+        $sala->janelas=$request->input('janelas');
+
+        $sala->save();
+
+        return redirect ('/salas')->with('message','Sala registada');
+
     }
 
     /**
@@ -59,9 +86,10 @@ class SalaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Sala $sala)
     {
-        //
+        // $sala = Sala::where('id',$id);
+        return view ('salas.update', compact('sala'));
     }
 
     /**
@@ -71,9 +99,37 @@ class SalaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Sala $sala)
     {
-        //
+        $this->validate($request, [
+            'nome'=>'required',
+            'lugares'=>'required|integer|min:1',
+            'aquecimento'=>'required',
+            'internet'=>'required',
+            'janelas'=>'required',
+                   
+        ],
+        [
+            'nome.required' => 'Preencha o nome!',
+            'lugares.min' => 'Preencha os lugares com um número válido!',
+            'lugares.required' => 'Preencha os lugares!',
+            'lugares.integer' => 'Preencha os lugares com um número!',
+            
+       
+        ]);
+        
+        $save = Sala::where('id', $sala->id)->update([
+            
+            'nome' => $request->input('nome'),
+            'lugares'=>$request->input('lugares'),
+            'aquecimento'=>$request->input('aquecimento'),
+            'internet'=>$request->input('internet'),
+            'janelas'=>$request->input('janelas'),
+            
+        ]);
+       
+
+        return redirect ('/salas')->with('message','Sala Atualizada');
     }
 
     /**
@@ -84,6 +140,10 @@ class SalaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sala = Sala::where('id', $id);
+        // dd(get_defined_vars());
+        $sala->delete();
+       
+        return redirect('/professores')->with ('message', 'Sala apagada!');
     }
 }

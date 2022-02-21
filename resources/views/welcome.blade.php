@@ -211,8 +211,8 @@ margin-left: 4px;
                     <table class="table ">
                         <thead>
                           <tr class="text-center">
-                            <th scope="col" class="text-center">email</th>
-                            <th scope="col" class="text-center">password</th>
+                            <th scope="col" class="text-center" class="text-center">email</th>
+                            <th scope="col" class="text-center" class="text-center">password</th>
                            
                           </tr>
                         </thead>
@@ -252,6 +252,7 @@ margin-left: 4px;
 
             <div class="menu">
                 <h1 class="titulo-inicial titulo-topo" style="font-family: 'Numans', sans-serif;">Sistema E.N.O.S.</h1>
+                <h1 class="tag-tit1" style="padding: 10px;color:#fff" >total de registos</h1>
                 
 
      {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
@@ -263,6 +264,34 @@ margin-left: 4px;
      </div>
     @endif
       
+
+    <table class="table table-dark ">
+        <thead>
+          <tr >
+            <th scope="col" class="text-center">ALUNOS</th>
+            <th scope="col" class="text-center">PROFESSORES</th>
+            <th scope="col" class="text-center">DISCIPLINAS</th>
+            <th scope="col" class="text-center">CURSOS</th>
+            <th scope="col" class="text-center">SALAS</th>
+            <th scope="col" class="text-center">USERS</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+           
+            <td>{{ $alunos }}</td>
+            <td>{{ $profs }}</td>
+            <td>{{ $disciplinas }}</td>
+            <td>{{ $cursos }}</td>
+            <td>{{ $salas }}</td>
+            <td>{{ $users }}</td>
+           
+          </tr>
+        
+        </tbody>
+      </table>
+                
 
                 <img class="fundo" 
                 src="https://cdn.pixabay.com/photo/2015/11/05/08/21/geometry-1023846_960_720.jpg" 

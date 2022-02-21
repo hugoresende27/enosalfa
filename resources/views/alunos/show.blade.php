@@ -36,12 +36,12 @@
 
           @if (isset($curso->id))
             <span style="background-color:green; padding:5px !important; color:#fff;" >
-              {{ $curso->nome }}
+              <a href="../cursos/{{ $curso->id }}"> {{ $curso->nome }} </a>
             </span>
             @if (Auth::user()->role >2)
-              <span style="background-color:rgb(128, 19, 0); padding:5px !important; color:#fff; margin-left:10px" >
+              {{-- <span style="background-color:rgb(128, 19, 0); padding:5px !important; color:#fff; margin-left:10px" >
                 <a href="/alunos/{{ $aluno->id }}/edit" class="text-black">  Alterar</a>
-              </span>
+              </span> --}}
               @endif
                
             
@@ -118,17 +118,17 @@
   </div>
 
  
-<div class="container p-3" style="margin:20px">
+<div class="container" style="">
 
 
-  <h2 class="text-white display-8">Notas</h2>
+  <h2 class="text-white display-8 tag-tit1 text-center">Notas</h2>
 
   
 
-  <div class="card bg-light mb-3" style="max-width: ">
+  <div class="card bg-light " style="max-width: ">
 
 
-    <div class="table-responsive">
+    <div class="table-responsive text-center">
 
 
 
@@ -136,45 +136,29 @@
       <thead>
         <tr>
           
-          <th scope="col">0-20</th>
-          <th scope="col">Disciplina</th>
+          <th scope="col" class="text-center">0-20</th>
+          <th scope="col" class="text-center">Disciplina</th>
         </tr>
       </thead>
       <tbody>
+      
+        @foreach ($nota as $n)
         <tr>
-    @foreach ($nota as $n)
-        
-    <td>{{ $n->nota}}</td>
+          <td>{{ $n->nota}}</td>
             
-        @foreach ($disc as $d)
+          @foreach ($disc as $d)
             @if ($d->id == $n->id_disciplina)
               <td><a href="/disciplinas/{{ $d->id }}">  {{ $d->nome}} </a></td>
             @endif
            
             
+          @endforeach
+        </tr> 
         @endforeach
-      </tr> 
-    @endforeach
         
-
+      
          
-          {{-- @foreach ($disc as $d)
-          <tr>
-            @foreach ($nota as $n)
-
-              @if ($d->id == $n->id_disciplina)
-
-                <td>{{ $d->nome }}</td>
-                <td>{{ $n->nota }}</td>
-
-              @endif
-
-                
-            @endforeach
-
-          </tr>
- 
-          @endforeach --}}
+     
           
        
     

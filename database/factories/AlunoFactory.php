@@ -22,9 +22,9 @@ class AlunoFactory extends Factory
             'morada' => $this->faker->streetAddress(),
             'email' => $this->faker->email(),
             'telefone' => $this->faker->numerify('91#######'),
-            'id_turma'  => rand(1,5) ,
+            'id_turma'  => rand(1,20) ,
             'sala_id'  => rand(1, 3),
-            'id_curso'  => rand(1, 5),
+            'id_curso'  => rand(1, 20),
             // 'id_turma'  => rand(1, 90),
             'created_at'=>now()
             
