@@ -117,7 +117,14 @@ class AlunoController extends Controller
        
         $aluno->idade=$request->input('data_nascimento');
         $aluno->id_curso=$request->input('curso');
-        $aluno->id_turma=$request->input('turma');
+        
+       
+
+        // $turma_sala = Turma::where('id_curso',$request->input('curso'))->pluck('sala_id');
+        // dd(get_defined_vars());
+        // $sala = Sala::where('id')
+
+        // $aluno->sala_id=$turma_sala;
         $aluno->save();
 
         return redirect ('/alunos')->with('message','Aluno registado');
@@ -227,7 +234,7 @@ class AlunoController extends Controller
                 'idade'=>$request->input('data_nascimento'),
                 
                 'id_curso'=>$request->input('curso'),
-                'id_turma'=>$request->input('turma'),
+                // 'id_turma'=>$request->input('turma'),
             ]);
 
         return redirect ('/alunos/'.$aluno->id)->with('message','Registo Atualizado');

@@ -186,7 +186,7 @@ class CursoController extends Controller
         }
         // dd(get_defined_vars());
        
-        return redirect('/cursos/'.$curso->id)->with ('message', $message);
+        return redirect('/cursos')->with ('message', $message);
                     
     }
 }
