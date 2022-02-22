@@ -37,10 +37,10 @@
                 background-image: url('https://cdn.pixabay.com/photo/2015/04/01/11/08/sillouette-702178_960_720.jpg');
                 background-size: cover;
 
-                align-content: center;
+                /* align-content: center; */
                 display: flex;          /*coloca tudo em linha*/
                 flex-direction: column; /*coloca tudo em coluna*/
-                align-items: center;    
+                /* align-items: center;     */
 
 
                 /* background-repeat: no-repeat; */
@@ -526,24 +526,18 @@ div[class*=box] {
         background-image: cover;
         /* min-width: 100vw; */
         /* text-align: center; */
-        align-content: center;
+       /* align-content: center;
         /*display: flex;          /*coloca tudo em linha*/
-        flex-direction: column; /*coloca tudo em coluna*/
-        align-items: center;    /*alinha horizontalmente*/
+       /* flex-direction: column; /*coloca tudo em coluna*/
+       /* align-items: center;    /*alinha horizontalmente*/
         /* justify-content: center;/*alinha tudo verticalmente com uso de height:100vh*/
+        background-size: cover;
+
     }
 
-    
-        /* .{
-            background-color: darkgreen;
-            color:rgb(0, 0, 0);
-            margin: 5px;
-            border-radius: 10px;
-            padding-left: 10px;
-            font-weight: 700;
-            text-align: center;
-            }
-  */
+   
+
+ 
 
     .nav-item{
         padding: 10px !important;
