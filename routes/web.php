@@ -131,7 +131,10 @@ Route::post('/salas/create',  [\App\Http\Controllers\SalaController::class,'stor
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('/email', function() {
-    Mail::to('hugoresende27@gmail.com')->send(new \App\Mail\WelcomeMail());
+
+
+    Mail::to("hugoresende27@gmail.com")->send(new \App\Mail\WelcomeMail());
+    echo "enviado!";
     return new \App\Mail\WelcomeMail();
 });
 // Route::get('/teste', function() {
