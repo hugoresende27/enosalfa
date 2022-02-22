@@ -257,9 +257,11 @@
             .meuBtn{
                 font-weight: 900;
                 font-family: 'Consolas',sans-serif !important;
-                font-size: 2.5rem !important;
+                font-size: 1.5rem !important;
                 border: none;
                height: 100px !important;
+               
+               /* height: auto !important; */
                
             }
             .meuBtn:hover{
@@ -390,21 +392,22 @@ div[class*=box] {
   color: #FFF;
   transition: all 0.5s;
   position: relative; 
-
+  font-size: 1.2rem;
+    /* margin: 0 5px; */
+    /* margin-left: -10px; */
   
 }
 .btn-two span a{
     color: #fff;
     font-family: 'Roboto', sans-serif !important;
-    font-size: 1.2rem;
-    margin: 0 5px;
+   
     text-align: center;
     text-decoration: none;
-    margin-left: -20px;
+    
     
 }
 .btn-two span {
-    
+    margin-left: -10px;
     z-index: 2; 
     display: block;
     position: absolute;
@@ -655,25 +658,33 @@ div[class*=box] {
                         @if (Auth::user()->role > 0)
 
                        <!-- Hover #1 -->
+
+
+                       
                         <div class="box-1">
-                            
-                            <div class="btn btn-two">
-                                <span><a  href="{{ asset('alunos')}}" >Alunos </a></span>
-                            </div>
+                            <a  href="{{ asset('alunos')}}" >
+                                <div class="btn btn-two">
+                                    <span>  Alunos </span>
+                                </div>
+                            </a>
+                        </div>
+                       
+
+
+                        <div class="box-1">
+                            <a  href="{{ asset('notas ') }}">
+                                <div class="btn btn-two">
+                                    <span>Notas</span>
+                                </div>
+                            </a> 
                         </div>
                         
                         <div class="box-1">
-                            
-                            <div class="btn btn-two">
-                                <span><a  href="{{ asset('notas ') }}">Notas</a> </span>
-                            </div>
-                        </div>
-                        
-                        <div class="box-1">
-                            
-                            <div class="btn btn-two">
-                                <span><a  href="{{ asset('cursos ') }}">Cursos</a></span>
-                            </div>
+                            <a  href="{{ asset('cursos ') }}">
+                                <div class="btn btn-two">
+                                    <span>Cursos</span>
+                                </div>
+                            </a>
                         </div>
                         
                    
@@ -681,56 +692,38 @@ div[class*=box] {
                                 @if (Auth::user()->role>1)
                                                               
                                 <div class="box-1">
-                            
-                                    <div class="btn btn-two">
-                                        <span><a  href="{{ asset('professores') }}">Professores</a></span>
-                                    </div>
+                                    <a  href="{{ asset('professores') }}">
+                                        <div class="btn btn-two">
+                                            <span>Professores</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="box-1">
-                            
-                                    <div class="btn btn-two">
-                                        <span> <a  href="{{ asset('turmas ') }}">Turmas</a></span>
-                                    </div>
+                                    <a  href="{{ asset('turmas ') }}">
+                                        <div class="btn btn-two">
+                                            <span> Turmas</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="box-1">
-                            
-                                    <div class="btn btn-two">
-                                        <span> <a  href="{{ asset('disciplinas ') }}">Disciplinas</a></span>
-                                    </div>
+                                    <a  href="{{ asset('disciplinas ') }}">
+                                        <div class="btn btn-two">
+                                            <span> Disciplinas</span>
+                                        </div>
+                                    </a>
                                 </div>
                                         
-                                        
-                                    
-                                                              
-                                       
-                                        
-                                    
-                                                              
-                                       
-                                        
-                                    
-                                
-                                  
+                            
                                 @endif
                                 @if (Auth::user()->role>2)
                                     
                                     
                                     
                                 @endif
-
-                     
-                           
-                            
-                            
-                           
+                    
                         @endif
 
-                       
-                        
                      
-                     
-                        
-                        
                       </div>
                     
                     </div>

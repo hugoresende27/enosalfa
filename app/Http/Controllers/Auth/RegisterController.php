@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
+use App\Mail\WelcomeMail;
+
 class RegisterController extends Controller
 {
     /*
@@ -79,6 +81,11 @@ class RegisterController extends Controller
         {
             $role = (int)$data['role'];
             // dd($role); 
+
+
+            // \Mail::to($data['email'])->send(new WelcomeMail($user));
+
+
             return User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
@@ -89,10 +96,7 @@ class RegisterController extends Controller
       
         else {
             return User::create([
-                // 'name' => 0,
-                // 'email' => $data['email'],
-                // 'password' => Hash::make($data['password']),
-                // 'role' => $role,
+              
             ]);
         }
 

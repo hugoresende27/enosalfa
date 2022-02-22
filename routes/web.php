@@ -17,6 +17,9 @@ use App\Models\Sala;
 use App\Models\Turma;
 use App\Models\User;
 
+// use App\Mail\TestEmail;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,3 +105,17 @@ Route::resource('salas', SalaController::class);
 Route::post('/salas/create',  [\App\Http\Controllers\SalaController::class,'store'])->name('guardar_sala');
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Route::get('/email', function() {
+//     return new \App\Mail\WelcomeMail();
+// });
+// Route::get('/teste', function() {
+
+    
+
+//     $data = ['message' => 'This is a test!'];
+
+//     Mail::to('john@example.com')->send(new TestEmail($data));
+//     // return new \App\Mail\TestMail();
+// });
