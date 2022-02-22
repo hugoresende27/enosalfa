@@ -36,6 +36,13 @@
             html,body{
                 background-image: url('https://cdn.pixabay.com/photo/2015/04/01/11/08/sillouette-702178_960_720.jpg');
                 background-size: cover;
+
+                align-content: center;
+                display: flex;          /*coloca tudo em linha*/
+                flex-direction: column; /*coloca tudo em coluna*/
+                align-items: center;    
+
+
                 /* background-repeat: no-repeat; */
                 height: 100%;
                 /* font-family: 'Numans', sans-serif; */
@@ -259,7 +266,7 @@
                 font-family: 'Consolas',sans-serif !important;
                 font-size: 1.5rem !important;
                 border: none;
-               height: 100px !important;
+               height: 50px !important;
                
                /* height: auto !important; */
                
@@ -598,6 +605,11 @@ div[class*=box] {
         </style>
     </head>
     <body class="antialiased">
+
+
+      
+
+
         <div class="menu-login">
               <!-- Right Side Of Navbar -->
               <ul class="">
@@ -787,7 +799,9 @@ div[class*=box] {
          @include('layouts.footer')
     </div>
 
-    </body>
+
+
+ </body>
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
