@@ -148,7 +148,13 @@ class AlunoController extends Controller
         $disc = Disciplina::all();
         
         $nota = Nota::where('id_aluno', $aluno->id)->get();
-
+        $tot_notas = count($nota);
+        $media = 0;
+        foreach ($nota as $n){
+            $media += $n->nota;
+        }
+        if ($media != 0) $media = $media / $tot_notas;
+        $media = round($media,2);
 
         //chamr aqui a função 'aluno' do model Sala HASONE
         $sala = Sala::with('aluno')->where('id', $aluno->sala_id)->pluck('nome');
@@ -157,7 +163,7 @@ class AlunoController extends Controller
         $sala = str_replace($skips, ' ',$sala);
      
         // dd(get_defined_vars());
-        return view ('alunos.show', compact('aluno','curso','x','disc','nota','sala'));
+        return view ('alunos.show', compact('aluno','curso','x','disc','nota','sala','media'));
 
       
      

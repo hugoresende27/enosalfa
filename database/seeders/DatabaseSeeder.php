@@ -66,7 +66,7 @@ class DatabaseSeeder extends Seeder
            
        }
 
-        for($i=0;$i<20;$i++){
+        for($i=0;$i<40;$i++){
           
             \App\Models\Nota::factory()->create();
        }

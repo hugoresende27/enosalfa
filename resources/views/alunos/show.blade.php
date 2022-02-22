@@ -103,6 +103,13 @@
           {{ $sala }}
           </span>
         </h5>
+        <h5 class="card-title">Média: 
+          <span <?php if ($media>14) echo 'style="background-color:green; padding:5px !important; color:#fff;"';
+                    if ($media>10) echo 'style="background-color:orange; padding:5px !important; color:#fff;"';
+                    else  echo 'style="background-color:red; padding:5px !important; color:#fff;"' ?>   >
+          {{ $media }}
+          </span>
+        </h5>
         <h5 class="card-title">Registado em: 
 
           {{ $aluno->created_at }}
