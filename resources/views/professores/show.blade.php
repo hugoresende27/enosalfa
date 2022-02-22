@@ -21,7 +21,7 @@
 @if (Auth::user()->role>1)
     
 
-  <div class="card bg-light mb-3" style="max-width: ">
+  <div class="card bg-light mb-3 show-meu" style="max-width: ">
     <div class="card-header display-4">{!! $nome !!} 
       @if (Auth::user()->role >2)
         <a href="../professores/{{ $id }}/edit" class="float-right btn-editar" style="font-size: 1.2rem">EDITAR</a>

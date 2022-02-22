@@ -326,11 +326,39 @@
                 border-radius: 5px;
                 text-transform: uppercase;
             }
+            .tag-tit2{
+                background-color: rgb(6, 24, 6);
+                color: #fff;
+                width:auto;
+                padding: 20px;
+                border-radius: 5px;
+                text-transform: uppercase;
+                font-size:1.2rem;
+            }
 
             .span-res{               
                 background-color: darkred;
                 padding: 10px;
                 margin: 0 5px;
+            }
+            .show-meu{
+                /* opacity: 0.5 !important; */
+               border-radius: 20px !important;
+                background-color: rgba(0,0,0,.7) !important;
+                color: #fff;
+            }
+
+            .btn-procurar {
+                font-weight: 900;
+                background-color: greenyellow;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .btn-procurar:hover {
+                background-color: darkgreen;
+                color:white;
+                padding: 10px;
+                border-radius: 10px;
             }
            
           
@@ -735,7 +763,7 @@ div[class*=box] {
                     <form action="{{ route('search') }}" method="GET">
                         {{ csrf_field() }}
                         <input type="text" name="search" required/>
-                        <button type="submit" class="btn-editar">Procurar</button>
+                        <button type="submit" class="btn-procurar">Procurar</button>
                     </form>
                    </div>
 

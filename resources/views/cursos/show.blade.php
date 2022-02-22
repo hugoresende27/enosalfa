@@ -21,7 +21,7 @@
 <a href="{{ url()->previous() }}" class="btn-voltar" style="background-color: red">Voltar</a>
 
     <h1 class="text-white text-center display-4"> Ficha Técnica do Curso</h1>
-    <div class="card bg-light mb-3" style="max-width: ">
+    <div class="card bg-light mb-3 show-meu" style="max-width: ">
 
       <div class="card-header display-4">
      

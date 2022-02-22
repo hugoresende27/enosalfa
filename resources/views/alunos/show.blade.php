@@ -18,7 +18,7 @@
   <h1 class="text-white text-center display-4"> Ficha Técnica do aluno</h1>
 
 
-  <div class="card bg-light mb-3" style="max-width: ">
+  <div class="card bg-light mb-3 show-meu" style="max-width: ">
     <div class="card-header display-4">{!! $aluno->nome !!} 
     
       @if (Auth::user()->role >1)

@@ -269,10 +269,11 @@ margin-left: 4px;
         <thead>
           <tr class="table-success">
             <th scope="col" class="text-center">ALUNOS</th>
-            <th scope="col" class="text-center">PROFESSORES</th>
+            <th scope="col" class="text-center">PROFESSORES</th> 
             <th scope="col" class="text-center">DISCIPLINAS</th>
             <th scope="col" class="text-center">CURSOS</th>
             <th scope="col" class="text-center">SALAS</th>
+            <th scope="col" class="text-center">NOTAS</th>
             <th scope="col" class="text-center">USERS</th>
           
           </tr>
@@ -285,13 +286,14 @@ margin-left: 4px;
             <td>{{ $disciplinas }}</td>
             <td>{{ $cursos }}</td>
             <td>{{ $salas }}</td>
+            <td>{{ $tot_notas }}</td>
             <td>{{ $users }}</td>
            
           </tr>
         
         </tbody>
       </table>
-                
+                <p class="tag-tit2">Média da escola : {{ $media }} </p>
 
                 {{-- <img class="fundo" 
                 src="https://cdn.pixabay.com/photo/2015/11/05/08/21/geometry-1023846_960_720.jpg" 

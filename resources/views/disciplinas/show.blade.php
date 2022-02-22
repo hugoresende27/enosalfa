@@ -4,7 +4,7 @@
 
 <div class="container p-3" style="margin:20px">
 
-  <h1 class="text-white text-center display-4">TODAS AS NOTAS DA DISCIPLINA </h1>
+  <h1 class="text-white text-center display-4 tag-tit1">TODAS AS NOTAS DA DISCIPLINA </h1>
   <h5 class="prof-turmas">{{ $disciplina->nome }}</h5>
 
      {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}

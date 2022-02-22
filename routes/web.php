@@ -16,6 +16,7 @@ use App\Models\Curso;
 use App\Models\Sala;
 use App\Models\Turma;
 use App\Models\User;
+use App\Models\Nota;
 
 // use App\Mail\TestEmail;
 
@@ -41,8 +42,19 @@ Route::get('/home', function () {
     $cursos = Curso::all()->count();
     $salas = Sala::all()->count();
     $users = User::all()->count();
+
+    $medias = Nota::all();
+    $tot_notas = Nota::all()->count();
+    $media=0;
+    foreach ($medias as $m){
+        $media += $m->nota; 
+    }
+
+    if ($media != 0) $media = $media / $tot_notas;
+    $media = round($media,2);
     // dd(get_defined_vars());
-    return view('welcome',compact('user','alunos','profs','turmas','disciplinas','cursos','salas','users'));
+    
+    return view('welcome',compact('user','alunos','profs','turmas','disciplinas','cursos','salas','users','media','tot_notas'));
 });
 
 Auth::routes();
@@ -56,8 +68,19 @@ Route::get('/',function () {
     $cursos = Curso::all()->count();
     $salas = Sala::all()->count();
     $users = User::all()->count();
+
+    $medias = Nota::all();
+    $tot_notas = Nota::all()->count();
+    $media=0;
+    foreach ($medias as $m){
+        $media += $m->nota; 
+    }
+
+    if ($media != 0) $media = $media / $tot_notas;
+    $media = round($media,2);
     // dd(get_defined_vars());
-    return view('welcome',compact('user','alunos','profs','turmas','disciplinas','cursos','salas','users'));
+    
+    return view('welcome',compact('user','alunos','profs','turmas','disciplinas','cursos','salas','users','media','tot_notas'));
 });
 
 

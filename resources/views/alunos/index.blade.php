@@ -13,15 +13,9 @@
      </p>
  </div>
 @endif
-{{-- 
-<form action="{{ route('search') }}" method="GET">
-  {{ csrf_field() }}
-  <input type="text" name="search" required/>
-  <button type="submit" class="btn-editar">Search</button>
-</form> --}}
 
 
-    {{-- <a href="/" class="btn-voltar " style="background-color: red">Voltar</a> --}}
+
     @if (Auth::user()->role >2)
       <a href="/alunos/create" class="btn-adicionar" style="background-color: green">Adicionar</a>
     @endif
@@ -35,11 +29,10 @@
     <table class="  table table-striped table-dark">
         <thead>
           <tr>
-            {{-- <th scope="col">ID do aluno</th> --}}
+    
             <th scope="col">Nome</th>
             
-            {{-- <th scope="col">Email</th> --}}
-            {{-- <th scope="col">ID do Curso</th> --}}
+         
             
             <th scope="col">Sala</th>
             <th scope="col">Turma</th>
@@ -53,26 +46,31 @@
         <tbody>
          
         
-            {{-- @foreach ($alunos as $key=>$row) --}}
-            {{-- <h1> {{ $al->id_curso }} </h1> --}}
+     
             @foreach ($alunos as $key)
-          {{-- {{ dd($al) }} --}}
+  
               <tr>
 
-                
-                {{-- <td>{{ $key->id }}</td> --}}
                     <td> <a href="/alunos/{{ $key->id }}">  {{ $key->nome }} </a></td>
 
-                  @foreach ($salas as $sala)
-                    @if ( $key->sala_id == $sala->id)
-                      <td>{{ $sala->nome }}</td>
-                  
-                    @endif
-                  
-                  @endforeach
-    
+                  @if (isset($key->sala_id ))
+                    @foreach ($salas as $sala)
+                      @if ( $key->sala_id == $sala->id)
+                        <td>{{ $sala->nome }}</td>
+                    
+                      @endif
+                    
+                    @endforeach
+                  @else
+                    <td>NÃO</td>
+                  @endif
+                @if (isset($key->id_turma ))
+                  <td>   {{$key->id_turma  }} </td>
+                @else
+                  <td>NÃO</td>
+                @endif
 
-                  <td>   {{ $key->id_turma }} </td>
+                 
 
 
              
