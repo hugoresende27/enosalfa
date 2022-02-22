@@ -41,7 +41,6 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - apagar professor 
  - ACESSOS :: index Alunos, pode editar aluno mas não criar, lançar e apagar notas, consegue ver cursos, lista de professores, turmas e disciplinas
  
-
 3. curso   
  - adicionar precisa apenas do nome do curso
  - index mostra ID Curso e nome do curso
@@ -50,8 +49,6 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - atribuir disciplinas a curso 
  - apagar curso 
 
-
-
 4. Disciplina 
  - adicionar nome
  - index mostra ID Disciplina e nome da disciplina
@@ -59,8 +56,6 @@ de “login” e com um ambiente para cada tipo de utilizador.
  - editar nome da disciplina OK
  - apagar disciplina OK
  
-
-
 5. Notas
  - lançar notas precisa de aluno e disciplina
  - index notas mostra aluno, nota e disciplina
@@ -82,7 +77,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
 
 8. Procurar
  - Sistema de search com querys feitas nas tabelas alunos, professores, cursos, disciplinas e salas
- 
+
 
 
 <p align="center"><a href="http://enos-alfa.herokuapp.com/" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>

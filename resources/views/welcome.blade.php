@@ -265,9 +265,9 @@ margin-left: 4px;
     @endif
       
 
-    <table class="table table-dark ">
+    <table class="table table-striped">
         <thead>
-          <tr >
+          <tr class="table-success">
             <th scope="col" class="text-center">ALUNOS</th>
             <th scope="col" class="text-center">PROFESSORES</th>
             <th scope="col" class="text-center">DISCIPLINAS</th>
@@ -278,7 +278,7 @@ margin-left: 4px;
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="table-info">
            
             <td>{{ $alunos }}</td>
             <td>{{ $profs }}</td>
@@ -293,9 +293,9 @@ margin-left: 4px;
       </table>
                 
 
-                <img class="fundo" 
+                {{-- <img class="fundo" 
                 src="https://cdn.pixabay.com/photo/2015/11/05/08/21/geometry-1023846_960_720.jpg" 
-                      alt="welcome">
+                      alt="welcome"> --}}
 
    
             </div>

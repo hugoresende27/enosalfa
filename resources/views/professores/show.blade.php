@@ -18,6 +18,8 @@
   <h1 class="text-white text-center display-4">Ficha Técnica do Professor</h1>
 
   
+@if (Auth::user()->role>1)
+    
 
   <div class="card bg-light mb-3" style="max-width: ">
     <div class="card-header display-4">{!! $nome !!} 
@@ -135,6 +137,10 @@
   
     </div>
   
+    @else
+            
+    <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
+    @endif 
 
  
 

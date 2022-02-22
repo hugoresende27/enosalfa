@@ -30,6 +30,7 @@
 
         <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
             /*BODY E PRINCIPAL/////////////////////////////////////////////////////////////////////////////*/
             html,body{
@@ -255,9 +256,11 @@
 
             .meuBtn{
                 font-weight: 900;
-                font-family: 'Consolas',sans-serif;
+                font-family: 'Consolas',sans-serif !important;
                 font-size: 2.5rem !important;
                 border: none;
+               height: 100px !important;
+               
             }
             .meuBtn:hover{
           
@@ -327,6 +330,7 @@
                 padding: 10px;
                 margin: 0 5px;
             }
+           
           
             /*///////////////ESPECIAIS////////////////////////////////////////////////////////////////////*/
 
@@ -344,8 +348,112 @@
             .card-body h5{
                 font-size:1.5rem !important;
             }
+/*///////////////BOTÕES MENU////////////////////////////////////////////////////////////////////*/
+div[class*=box] {
+  /* height: 33.33%;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+}
 
-           
+.box-1 { 
+    background-color: darkgreen; 
+    border-radius: 10px !important;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+
+.btn {
+  line-height: 25px;
+  height: 40px;
+  text-align: center;
+  width: 120px;
+  cursor: pointer;
+  font-family: 'Roboto' , sans-serif !important;
+  color: #fff !important;
+  font-weight: 900 !important;
+  
+}
+
+
+
+
+
+/* 
+========================
+      BUTTON TWO
+========================
+*/
+.btn-two {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative; 
+
+  
+}
+.btn-two span a{
+    color: #fff;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 1.2rem;
+    margin: 0 5px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: -20px;
+    
+}
+.btn-two span {
+    
+    z-index: 2; 
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    }
+.btn-two::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  /* border: 1px solid #fff; */
+  background-color: darkgreen;
+  border-radius: 10px;
+}
+.btn-two::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  /* border: 1px solid #fff; */
+  background-color: darkgreen;
+  border-radius: 10px;
+}
+.btn-two:hover::before {
+  transform: rotate(-45deg);
+  background-color: red;
+ 
+}
+.btn-two:hover::after {
+  transform: rotate(45deg);
+  background-color: red;
+  
+}
+
+
+
+
+
+
+
 
             /*///////////////MEDIA QUERYS////////////////////////////////////////////////////////////////////*/
 
@@ -545,21 +653,79 @@
                       <div class="navbar-nav">
 
                         @if (Auth::user()->role > 0)
-                            <a class="nav-item nav-link "   href="{{ asset('alunos')}}">Alunos </a>
-                            <a class="nav-item nav-link "   href="{{ asset('notas ') }}">Notas</a>
-                            <a class="nav-item nav-link "  href="{{ asset('cursos ') }}">Cursos</a>
+
+                       <!-- Hover #1 -->
+                        <div class="box-1">
                             
-                            @if (Auth::user()->role>1)
-                                <a class="nav-item nav-link "  href="{{ asset('professores') }}">Professores</a>
-                                <a class="nav-item nav-link "   href="{{ asset('turmas ') }}">Turmas</a>
-                                <a class="nav-item nav-link "   href="{{ asset('disciplinas ') }}">Disciplinas</a>
-                            @endif
-                            @if (Auth::user()->role>2)
+                            <div class="btn btn-two">
+                                <span><a  href="{{ asset('alunos')}}" >Alunos </a></span>
+                            </div>
+                        </div>
+                        
+                        <div class="box-1">
+                            
+                            <div class="btn btn-two">
+                                <span><a  href="{{ asset('notas ') }}">Notas</a> </span>
+                            </div>
+                        </div>
+                        
+                        <div class="box-1">
+                            
+                            <div class="btn btn-two">
+                                <span><a  href="{{ asset('cursos ') }}">Cursos</a></span>
+                            </div>
+                        </div>
+                        
+                   
                                 
+                                @if (Auth::user()->role>1)
+                                                              
+                                <div class="box-1">
+                            
+                                    <div class="btn btn-two">
+                                        <span><a  href="{{ asset('professores') }}">Professores</a></span>
+                                    </div>
+                                </div>
+                                <div class="box-1">
+                            
+                                    <div class="btn btn-two">
+                                        <span> <a  href="{{ asset('turmas ') }}">Turmas</a></span>
+                                    </div>
+                                </div>
+                                <div class="box-1">
+                            
+                                    <div class="btn btn-two">
+                                        <span> <a  href="{{ asset('disciplinas ') }}">Disciplinas</a></span>
+                                    </div>
+                                </div>
+                                        
+                                        
+                                    
+                                                              
+                                       
+                                        
+                                    
+                                                              
+                                       
+                                        
+                                    
                                 
-                                
-                            @endif
+                                  
+                                @endif
+                                @if (Auth::user()->role>2)
+                                    
+                                    
+                                    
+                                @endif
+
+                     
+                           
+                            
+                            
+                           
                         @endif
+
+                       
                         
                      
                      
