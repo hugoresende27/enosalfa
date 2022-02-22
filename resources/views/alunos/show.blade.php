@@ -35,22 +35,16 @@
         <h5 class="card-title">Curso:
 
           @if (isset($curso->id))
-            <span style="background-color:green; padding:5px !important; color:#fff;" >
+            <span class="tag-verde" >
               <a href="../cursos/{{ $curso->id }}"> {{ $curso->nome }} </a>
             </span>
-            @if (Auth::user()->role >2)
-              {{-- <span style="background-color:rgb(128, 19, 0); padding:5px !important; color:#fff; margin-left:10px" >
-                <a href="/alunos/{{ $aluno->id }}/edit" class="text-black">  Alterar</a>
-              </span> --}}
-              @endif
-               
-            
+  
           @else
-          <span style="background-color:red; padding:5px !important; color:#fff;" >
-            <a href="../alunos/{{ $aluno->id }}/edit">
-             SEM CURSO
-            </a>
-          </span>
+            <span class="tag-red" >
+              <a href="../alunos/{{ $aluno->id }}/edit">
+              SEM CURSO
+              </a>
+            </span>
           @endif
 
         </h5>
@@ -84,14 +78,19 @@
         </h5>
 
        
-
+       
         <h5 class="card-title">Turma: 
-          <span style="background-color:green; padding:5px !important; color:#fff;" >
-            <a href="/turmas/{{ $aluno->id_turma }}">{{ $aluno->id_turma }}</a>  
-           
-          </span>
+          @if (isset($aluno->id_turma))
+          
+            <span class="tag-verde" >
+              <a href="/turmas/{{ $aluno->id_turma }}">{{ $aluno->id_turma }}</a>  
+            
+            </span>
+            
+          @endif
+        
           @if (Auth::user()->role >2)
-          <span style="background-color:rgb(128, 19, 0); padding:5px !important; color:#fff; margin-left:10px" >
+          <span class="tag-red" >
             <a href="/alunos/{{ $aluno->id }}/alunoturmas">Alterar</a> 
            
           </span>
@@ -99,7 +98,7 @@
 
         </h5>
         <h5 class="card-title">Sala: 
-          <span style="background-color:green; padding:5px !important; color:#fff;" >
+          <span class="tag-verde" >
           {{ $sala }}
           </span>
         </h5>

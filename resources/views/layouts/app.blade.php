@@ -368,6 +368,30 @@
                 border-radius: 10px;
             }
            
+            .tag-verde{
+                background-color:green; 
+                border-radius:5px;
+                padding:3px !important; 
+                color:#fff;
+            }
+            .tag-verde:hover{
+                background-color:yellowgreen;                      
+            }
+            .tag-verde:hover a{               
+                color:#000 !important;              
+            }
+            .tag-red{
+                background-color:red; 
+                border-radius:5px;
+                padding:3px !important; 
+                color:#fff;
+            }
+            .tag-red:hover{
+                background-color:yellowgreen;                      
+            }
+            .tag-red:hover a{               
+                color:#000 !important;              
+            }
           
             /*///////////////ESPECIAIS////////////////////////////////////////////////////////////////////*/
 

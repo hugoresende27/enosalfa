@@ -42,12 +42,12 @@
         <h5 class="card-title">Disciplina:
           
           @if (isset($disciplina->id))
-          <span style="background-color:green; padding:5px !important; color:#fff;" >
+          <span class="tag-verde" >
               {{ $disciplina->nome }}
           </span>
           @else
 
-            <span style="background-color:red; padding:5px !important; color:#fff;" >
+            <span class="tag-red" >
               @if (Auth::user()->role >2)
                 <a href="../professores/{{ $id }}/edit" >
                 SEM DISCIPLINA
@@ -105,9 +105,7 @@
 
 
                @else
-                {{-- <a href="/professores/{{ $id }}/edit">  <span style="background-color:red; padding:5px !important; color:#fff;" ></a> --}}
-              
-                    {{-- SEM TURMAS --}}
+ 
               
                   </span>
                 @endif
@@ -116,7 +114,7 @@
 
         </h5>
         @if (Auth::user()->role >2)
-          <span style="background-color:rgb(115, 122, 12); padding:5px !important; color:#fff; margin-left:10px" >
+          <span class="tag-verde" >
             <a href="/professores/{{ $id }}/profturmas">Atribuir Turma</a> 
           
           </span>

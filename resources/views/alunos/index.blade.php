@@ -70,13 +70,7 @@
                   <td>NÃO</td>
                 @endif
 
-                 
-
-
-             
-                
- 
-             
+        
                
               @if (Auth::user()->role >2)
 
