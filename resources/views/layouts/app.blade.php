@@ -42,7 +42,6 @@
                 flex-direction: column; /*coloca tudo em coluna*/
                 /* align-items: center;     */
 
-
                 /* background-repeat: no-repeat; */
                 height: 100%;
                 /* font-family: 'Numans', sans-serif; */

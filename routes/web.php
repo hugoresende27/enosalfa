@@ -18,7 +18,7 @@ use App\Models\Turma;
 use App\Models\User;
 use App\Models\Nota;
 
-// use App\Mail\TestEmail;
+use App\Mail\TestEmail;
 
 
 /*
@@ -130,9 +130,10 @@ Route::post('/salas/create',  [\App\Http\Controllers\SalaController::class,'stor
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Route::get('/email', function() {
-//     return new \App\Mail\WelcomeMail();
-// });
+Route::get('/email', function() {
+    Mail::to('hugoresende27@gmail.com')->send(new \App\Mail\WelcomeMail());
+    return new \App\Mail\WelcomeMail();
+});
 // Route::get('/teste', function() {
 
     
