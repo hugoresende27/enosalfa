@@ -162,8 +162,7 @@ margin-left: 4px;
     </style>
 
 
-
-
+  
       
 
             @guest
@@ -177,6 +176,15 @@ margin-left: 4px;
                         <div class="card">
                             <div class="card-header">
                                 <h3 class=" display-4">Enos Escola</h3>
+                                   {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
+     @if (session()->has('message'))
+     <div class="text-white">
+         <p class="delete">
+             {{ session()->get('message') }}
+         </p>
+     </div>
+    @endif
+
                                 
                             </div>
                             <div class="card-body">
@@ -192,14 +200,14 @@ margin-left: 4px;
                                         @endif
                                         
                                     </div>
-                                        {{-- <div class="input-group form-group"  style="text-align: center; margin:10px; padding:20px">
-                                            @if (Route::has('register'))
+                                        <div class="input-group form-group"  style="text-align: center;  padding:20px">
+                                           
                         
-                                            <a class="btn-heros vermelho meuBtn"  
-                                            
-                                                href="{{ route('register') }}">{{ __('Registar') }}</a>
+                                            <a class="btn-heros verde meuBtn"  
+                                                
+                                                href="email">Info</a>
                                         </div>
-                                            @endif --}}
+                                           
                                     
                                 </form>
                             </div>

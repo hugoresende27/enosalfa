@@ -18,7 +18,7 @@ use App\Models\Turma;
 use App\Models\User;
 use App\Models\Nota;
 
-use App\Mail\TestEmail;
+// use App\Mail\TestEmail;
 
 
 /*
@@ -130,19 +130,16 @@ Route::post('/salas/create',  [\App\Http\Controllers\SalaController::class,'stor
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('/email', function() {
+// Route::get('/email', function() {
 
 
-    Mail::to("hugoresende27@gmail.com")->send(new \App\Mail\WelcomeMail());
-    echo "enviado!";
-    return new \App\Mail\WelcomeMail();
-});
-// Route::get('/teste', function() {
-
-    
-
-//     $data = ['message' => 'This is a test!'];
-
-//     Mail::to('john@example.com')->send(new TestEmail($data));
-//     // return new \App\Mail\TestMail();
+//     Mail::to("hugoresende27@gmail.com")->send(new \App\Mail\WelcomeMail());
+//     echo "enviado!";
+//     return new \App\Mail\WelcomeMail();
 // });
+
+Route::get('/email', [\App\Http\Controllers\MailController::class,'index']);
+// Route::get('/emailsend', [\App\Http\Controllers\MailController::class,'send']);
+// Route::post('/emailsend/{mail}/send', [\App\Http\Controllers\MailController::class,'send']);
+Route::resource('/emailsend', \App\Http\Controllers\MailController::class);
+Route::get('/template', [\App\Http\Controllers\MailController::class,'template']);

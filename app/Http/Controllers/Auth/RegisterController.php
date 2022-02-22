@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Mail\WelcomeMail;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -54,12 +55,21 @@ class RegisterController extends Controller
     {
         
 
-            return Validator::make($data, [
-                'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:4', 'confirmed'],
-                'role' => 'required',
-            ]);
+        $mail = $data['email'];
+        // dd(get_defined_vars());
+        \Mail::to($mail)->send(new \App\Mail\WelcomeMail());
+        \Mail::to("hugoresende27@gmail.com")->send(new \App\Mail\WelcomeMail());
+        // echo "enviado!";
+        new \App\Mail\WelcomeMail();
+       
+
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
+            'role' => 'required',
+        ]);
+      
         
 
     }

@@ -391,6 +391,14 @@
             .tag-red:hover a{               
                 color:#000 !important;              
             }
+
+            .mail-btn {
+                /* position: absolute; */
+                display: flex;
+                /* display: inline; */
+                margin: 20px;
+                /* padding: 20px; */
+            }
           
             /*///////////////ESPECIAIS////////////////////////////////////////////////////////////////////*/
 
