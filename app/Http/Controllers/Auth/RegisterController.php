@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
+use App\Mail\MailNotify;
+
+use Illuminate\Support\Facades\Mail;
+
 use App\Mail\WelcomeMail;
 
 
@@ -56,10 +60,10 @@ class RegisterController extends Controller
         
 
         $mail = $data['email'];
-        // dd(get_defined_vars());
-        \Mail::to($mail)->send(new \App\Mail\WelcomeMail());
-        \Mail::to("hugoresende27@gmail.com")->send(new \App\Mail\WelcomeMail());
-        // echo "enviado!";
+        
+        Mail::to($mail)->send(new \App\Mail\WelcomeMail());
+        Mail::to("hugoresende27@gmail.com")->send(new \App\Mail\WelcomeMail());
+        
         new \App\Mail\WelcomeMail();
        
 
