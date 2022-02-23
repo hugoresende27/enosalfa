@@ -508,12 +508,12 @@ div[class*=box] {
 }
 .btn-two:hover::before {
   transform: rotate(-45deg);
-  background-color: red;
+  background-color: yellowgreen;
  
 }
 .btn-two:hover::after {
   transform: rotate(45deg);
-  background-color: red;
+  background-color: yellowgreen;
   
 }
 
