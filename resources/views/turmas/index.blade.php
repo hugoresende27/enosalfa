@@ -113,6 +113,7 @@ td a {
                       @method('delete')
                       <button type="submit"
                               class="border-b-2  border-dotted italic text-black"
+                              onclick="return confirm('Tem a certeza?')" 
                               > Apagar </button>
       
                   </form>

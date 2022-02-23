@@ -79,6 +79,7 @@
                       @method('delete')
                       <button type="submit"
                               class="border-b-2  border-dotted italic text-red-200"
+                              onclick="return confirm('Tem a certeza?')" 
                               > Apagar </button>
       
                   </form>
