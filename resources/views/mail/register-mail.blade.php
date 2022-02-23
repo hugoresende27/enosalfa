@@ -32,6 +32,10 @@
         width: 300px;
         height: 400px;
     }
+    p{
+        background-color: #000;
+        color:#fff;
+    }
 
 </style>
 <div class="container" style="margin:20px; color:#fff !important">
@@ -40,21 +44,18 @@
         style=""
     >Enos HR &copy; 2022</h1>
     <div class="text-center">
-    <div class="card" style="width: 18rem;">
+    <div class="card" >
+
+        {{-- {{ dd(get_defined_vars()) }} --}}
         @if (isset($details))
-            <p>EMAIL:{{ $details['name'] }}</p>
-            <p>NOME:{{ $details['email']}}</p>
-            <p>PASSWORD:{{ $details['password'] }}</p>
+            <p>NOME:{{ $details['nome'] }}</p>
+            <p>EMAIL:{{ $details['email']}}</p>
+            <p>PASSWORD:{{ $details['pass'] }}</p>
             <p>ACESSO:{{ $details['role'] }}</p>
         @endif
-
-        <img class="card-img-top minha-img" src="https://cdn.pixabay.com/photo/2015/04/01/11/08/sillouette-702178_960_720.jpg" alt="Card image cap">
-        <div class="card-body">
-            <a href="https://enos-alfa.herokuapp.com/" class="btn btn-primary">
-          <h5 class=" text-center">Software Enos</h5>
-          <p class="card-text">Conheça o software Enos</p>
-          </a>
-        </div>
+        
+        <a href="https://enos-alfa.herokuapp.com/" class="btn btn-primary">
+      
       </div>
     </div>
 

@@ -16,9 +16,14 @@ class TestEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $details;
+
+
+    public function __construct($details)
     {
         //
+        $this->details = $details;
     }
 
     /**
@@ -28,6 +33,10 @@ class TestEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.welcome');
+
+        return $this->subject('Email de registo ENOS')
+        ->markdown('mail.register-mail');
+
+        // return $this->markdown('mail.welcome-mail');
     }
 }

@@ -142,4 +142,7 @@ Route::get('/email', [\App\Http\Controllers\MailController::class,'index']);
 // Route::get('/emailsend', [\App\Http\Controllers\MailController::class,'send']);
 // Route::post('/emailsend/{mail}/send', [\App\Http\Controllers\MailController::class,'send']);
 Route::resource('/emailsend', \App\Http\Controllers\MailController::class);
-Route::get('/template', [\App\Http\Controllers\MailController::class,'template']);
+
+// Route::get('/template', [\App\Http\Controllers\MailController::class,'template']);
+// Route::get('/templatereg', [\App\Http\Controllers\MailController::class,'templatereg']);
+

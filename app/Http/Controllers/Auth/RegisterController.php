@@ -60,13 +60,20 @@ class RegisterController extends Controller
         
 
         $mail = $data['email'];
-        
-        Mail::to($mail)->send(new \App\Mail\WelcomeMail());
-        Mail::to("hugoresende27@gmail.com")->send(new \App\Mail\WelcomeMail());
-        
-        new \App\Mail\WelcomeMail();
-       
 
+        $details = [
+            'nome' => $data['name'],
+            'email' => $data['email'],
+            'pass' => $data['password'],
+            'role' => $data['role'],
+        ];
+        
+        Mail::to($mail)->send(new \App\Mail\TestEmail($details)  );
+        // Mail::to("hugoresende27@gmail.com")->send(new \App\Mail\WelcomeMail());
+        
+        // new \App\Mail\WelcomeMail();
+       
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],

@@ -30,8 +30,13 @@ class MailController extends Controller
         return view('mail.index')->with('message');
     }
 
+
     public function template()
     {
         return view ('mail.welcome-mail');
+    }
+    public function templatereg()
+    {
+        return view ('mail.register-mail');
     }
 }
