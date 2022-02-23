@@ -694,6 +694,10 @@ div[class*=box] {
                                 <a class="dropdown-item"  
                                 
                                     href="/salas">Salas</a>
+
+                                <a class="dropdown-item"  
+                                
+                                    href="/infos">Pedidos de Info</a>
                             
                                 @endif
                                 

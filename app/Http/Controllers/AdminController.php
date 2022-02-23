@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\AllMails;
+
+
 class AdminController extends Controller
 {
     //
@@ -14,6 +17,14 @@ class AdminController extends Controller
         $users = User::all();
 
         return view ('admin.index', compact('users'));
+    }
+
+    public function infos()
+    {
+
+        $mails = AllMails::all();
+        
+        return view ('admin.infos',compact('mails'));
     }
 
     public function destroy($id)

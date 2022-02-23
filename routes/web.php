@@ -93,6 +93,10 @@ Route::get('/usersmanager', [App\Http\Controllers\AdminController::class,'index'
 Route::delete('/usersmanager/{user}/delete', [App\Http\Controllers\AdminController::class,'destroy']);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Route::get('/infos', [App\Http\Controllers\AdminController::class,'infos']);
+
+
+
 // Route::get('/alunos/{id_curso}',  [\App\Http\Controllers\AlunoController::class,'show']);
 Route::resource('alunos',  AlunoController::class);
 Route::post('/alunos/create',  [App\Http\Controllers\AlunoController::class,'store'])->name('guardar_aluno');
