@@ -219,7 +219,7 @@ margin-left: 4px;
                         </div>
                     </div>
                 </div>
-                <div class="dados">
+                {{-- <div class="dados">
                     <table class="table ">
                         <thead>
                           <tr class="text-center">
@@ -254,7 +254,7 @@ margin-left: 4px;
                     
                
 
-                </div>
+                </div> --}}
             @endguest
         
         
