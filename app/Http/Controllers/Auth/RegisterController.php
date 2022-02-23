@@ -46,7 +46,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -94,12 +94,12 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $user = Auth::user();
-        // dd($user->role); 
-        $x = (int)$user->role;
-        // dd(get_defined_vars());
-        if ($x== 3)
-        {
+        // $user = Auth::user();
+        // // dd($user->role); 
+        // $x = (int)$user->role;
+        // // dd(get_defined_vars());
+        // if ($x== 3)
+        // {
             $role = (int)$data['role'];
             // dd($role); 
 
@@ -115,11 +115,11 @@ class RegisterController extends Controller
             ]);
         }
       
-        else {
-            return User::create([
+//         else {
+//             return User::create([
               
-            ]);
-        }
+//             ]);
+//         }
 
-}
+// }
 }

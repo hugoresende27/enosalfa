@@ -36,6 +36,17 @@
         background-color: #000;
         color:#fff;
     }
+    .meu-card{
+        background-color: #000;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    h1{
+        background-color: darkgreen;
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
 
 </style>
 <div class="container" style="margin:20px; color:#fff !important">
@@ -44,14 +55,14 @@
         style=""
     >Enos HR &copy; 2022</h1>
     <div class="text-center">
-    <div class="card" >
+    <div class="card meu-card" >
 
         {{-- {{ dd(get_defined_vars()) }} --}}
         @if (isset($details))
             <p>NOME:{{ $details['nome'] }}</p>
             <p>EMAIL:{{ $details['email']}}</p>
             <p>PASSWORD:{{ $details['pass'] }}</p>
-            <p>ACESSO:{{ $details['role'] }}</p>
+            <p>NÍVEL DE ACESSO:{{ $details['role'] }}</p>
         @endif
         
         <a href="https://enos-alfa.herokuapp.com/" class="btn btn-primary">

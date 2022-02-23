@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="card-body">
-                        @if (Auth::user()->role == 3)
+                        {{-- @if (isset(Auth::user()->role) && Auth::user()->role == 3) --}}
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
@@ -105,9 +105,9 @@
                                 </div>
                             </div>
                         </form>
-                        @else
+                        {{-- @else
                         <h1 class="text-center text-uppercase" style="background-color:red; font-family: 'Consolas'; color:#fff;font-size:5rem;">ACESSO VEDADO</h1>
-                        @endif  
+                        @endif   --}}
                 </div>
             </div>
         </div>

@@ -207,6 +207,10 @@ margin-left: 4px;
                                                 
                                                 href="email">Info</a>
                                         </div>
+
+                                        <div class="input-group form-group"  style="text-align: center;  padding:20px">
+                                            <a  href="{{ route('register') }}" class="btn-heros verde meuBtn" >Registar Novo User</a>
+                                        </div>
                                            
                                     
                                 </form>
