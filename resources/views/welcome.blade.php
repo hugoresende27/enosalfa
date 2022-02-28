@@ -178,7 +178,7 @@ margin-left: 4px;
                                 <h3 class=" display-4">Enos Escola</h3>
                                    {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
      @if (session()->has('message'))
-     <div class="text-white">
+     <div class="text-white"  id='hideMe'>
          <p class="delete">
              {{ session()->get('message') }}
          </p>

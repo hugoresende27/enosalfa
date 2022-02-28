@@ -7,7 +7,7 @@
   <h1 class="text-white text-center display-4 tag-tit1">PROFESSORES</h1>
    {{-- SE HOUVER MENSAGEM MOSTRA AQUI ---------------- --}}
  @if (session()->has('message'))
- <div class="text-white">
+ <div class="text-white"  id='hideMe'>
      <p class="delete">
          {{ session()->get('message') }}
      </p>

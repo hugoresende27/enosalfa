@@ -416,6 +416,34 @@
             .card-body h5{
                 font-size:1.5rem !important;
             }
+            
+/*///////////////////////////////HIDE ME //////////////////////////////////////*/
+
+#hideMe {
+    -moz-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 2s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
 /*///////////////BOTÕES MENU////////////////////////////////////////////////////////////////////*/
 div[class*=box] {
   /* height: 33.33%;
