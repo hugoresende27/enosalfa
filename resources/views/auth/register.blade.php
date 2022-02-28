@@ -87,7 +87,7 @@
                                 <select class="col-md-6" name="role">
                                     <option value="1">Aluno</option>
                                     <option value="2">Professor</option>
-                                    <option value="3">Administrador</option>
+                                    {{-- <option value="3">Administrador</option> --}}
                                 
                                 </select>
                             </div>
