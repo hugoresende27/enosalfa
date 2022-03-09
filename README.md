@@ -5,6 +5,19 @@
 
 ![Esquema BD](https://github.com/hugoresende27/enosalfa/blob/main/documentation/BD_scheme.jpeg)
 
+- Para realizar o projeto final usei a framework Laravel, baseada na arquitetura MVC.
+- Para sistema de login foi utilizado o laravel Auth que vai criar o modelo User, os controladores na pasta Auth e actualizar o ficheiro routes.
+- Foram criados vários modelos, na pasta App\Models, Aluno, Turma, Curso, Disciplina, Professor, estes modelos contêm as relações entre eles e os campos que são de acesso ou protegidos na respectiva tabela. Existem também alguns modelos relacionais para permitir a inserção e bom funcionamento de dados no caso de adicionar disciplinas a um curso (Curso_disciplinas) ou adicionar turmas a um curso(Cursos_turmas), como se tratam de relações muitos para um ou mesmo muitos para muitos foram criadas tabelas 'pivot' para gerir os dados à medida que o utilizador (professor ou admin) adicionam, editam ou apagam dados.
+- Foram criados controladores, pasta App\Http\Controllers, os controladores contêm as funções associadas a cada modelo. Adicionar, actualizar ou eliminar dados da base de dados são funções escritas dentro de cada ficheiro com o nome de create, store, edit, update ou destroy. Alguns controladores têm na função __construct o middleware no return para não permitir acessos indevidos por URL
+- Na pasta resources/views estão todas as 'blades', o front-end destinado a ser mostrado ao utilizador. Estas blades vão receber da função um objeto ou outro parametro, que é acedido na blade com recurso a um @foreach se for um objeto ou apenas fazendo um  {{ echo em laravel }}. 
+- O ficheiro web.php na pasta Routes vai conter todas as rotas disponíveis por URL
+- na pasta config do projeto existem vários ficheiros de config, tendo alterado algum código em database.phpe app.php para fazer o host no heroku
+- o ficheiro composer.json vai conter todas as dependencias necessárias para o projecto, devendo usar o comando composer update e composer install para descarregar as dependencias necessarias para o projecto
+- o ficheiro .env é muito importante, contém vars de configuração como o nome da DB do projeto, nome do projeto, configurações do serviço de email, etc.
+- como extra adicionei o envio de um email ao fazer o registo, com o uso da função Mail::to e um serviço externo SendGrid, existe também um modelo dentro da pasta App\Mail com o ficheiro TestMail.php que vai retornar uma view que vai ser o email enviado.
+
+
+
 
 #### Pretende-se com este trabalho, desenvolver um sistema que permita realizar a gestão de uma
 escola/centro de formação, onde possam ser registados:
@@ -12,7 +25,7 @@ escola/centro de formação, onde possam ser registados:
 - Professores (assumindo que um professor só ministra uma disciplina, mas uma
 disciplina pode ser ministrada por vários professores); -- show professor mostra disciplina
 - Disciplinas;
-- Alunos/Formandos (fazem parte de uma turma e a uma turma pertence uma sala); ----- TO DO ------
+- Alunos/Formandos (fazem parte de uma turma e a uma turma pertence uma sala);
 - Notas dos alunos a cada disciplina. ---- index notas tem lista com todas as notas, alunos e disciplina
 
 - Deverá ser possível extrair a seguinte informação de acordo com o tipo de utilizador:
@@ -44,7 +57,7 @@ de “login” e com um ambiente para cada tipo de utilizador.
 3. curso   
  - adicionar precisa apenas do nome do curso
  - index mostra ID Curso e nome do curso
- - show curso mostra ID do curso, alunos a frequentar, turmas com o curso atribuido e disciplinas do curso ------ TO DO melhorar front-end 
+ - show curso mostra ID do curso, alunos a frequentar, turmas com o curso atribuido e disciplinas do curso  
  - editar nome do curso 
  - atribuir disciplinas a curso 
  - apagar curso 
