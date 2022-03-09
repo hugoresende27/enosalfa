@@ -90,24 +90,24 @@ class ProfessorSeeder extends Seeder
 
   
         ]);
-        \DB::table('professors')->insert([
-            'nome'  => 'Ricardo',
-              'email' => 'fake@mail.com',
-              'idade' => '1945-12-11',
-              'morada'=>'rua da Flores, n.13',
-              'telefone' => 99999999
+        // \DB::table('professors')->insert([
+        //     'nome'  => 'Ricardo',
+        //       'email' => 'fake@mail.com',
+        //       'idade' => '1945-12-11',
+        //       'morada'=>'rua da Flores, n.13',
+        //       'telefone' => 99999999
 
   
-        ]);
-        \DB::table('professors')->insert([
-            'nome'  => 'Daniel',
-               'email' => 'fake@mail.com',
-               'idade' => '1977-10-9',
-               'morada'=>'rua da Flores, n.13',
-               'telefone' => 99999999
+        // ]);
+        // \DB::table('professors')->insert([
+        //     'nome'  => 'Daniel',
+        //        'email' => 'fake@mail.com',
+        //        'idade' => '1977-10-9',
+        //        'morada'=>'rua da Flores, n.13',
+        //        'telefone' => 99999999
 
   
-        ]);
+        // ]);
 
         //Professor::factory()->count(10)->create();
     }

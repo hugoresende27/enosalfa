@@ -20,6 +20,22 @@ class CursoSeeder extends Seeder
             'nome'  => 'Desenvolvedor WEB Inicial',
            
         ]);
+        \DB::table('cursos')->insert([
+            'nome'  => 'Desenvolvedor WEB Intermedio',
+           
+        ]);
+        \DB::table('cursos')->insert([
+            'nome'  => 'Desenvolvedor WEB Avançado',
+           
+        ]);
+        \DB::table('cursos')->insert([
+            'nome'  => 'Photoshop',
+           
+        ]);
+        \DB::table('cursos')->insert([
+            'nome'  => 'Gestão Empresarial',
+           
+        ]);
 
         \DB::table('salas')->insert([
             'nome'  => 'Sala Mundo',

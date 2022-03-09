@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
             
             // // AlunoSeeder::class,       
             
-            // ProfessorSeeder::class,
+            ProfessorSeeder::class,
             
-            // DisciplinaSeeder::class, 
+            DisciplinaSeeder::class, 
             // TurmaSeeder::class,
             // \App\Models\Professor::factory(10)->create(),
             // CursoSeeder::class
@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
         
         for($i=0;$i<5;$i++){
           
-             \App\Models\Curso::factory()->create();
+            //  \App\Models\Curso::factory()->create();
         }
 
         for($i=0;$i<10;$i++){
@@ -59,11 +59,11 @@ class DatabaseSeeder extends Seeder
         }
         for($i=0;$i<10;$i++){
           
-             \App\Models\Disciplina::factory()->create();
+            //  \App\Models\Disciplina::factory()->create();
         }
 
         for($i=0;$i<10;$i++){
-            \App\Models\Professor::factory()->create();
+            // \App\Models\Professor::factory()->create();
            
        }
         for($i=0;$i<10;$i++){

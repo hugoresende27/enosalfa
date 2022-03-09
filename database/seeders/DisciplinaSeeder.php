@@ -17,7 +17,7 @@ class DisciplinaSeeder extends Seeder
     {
         \DB::table('disciplinas')->insert([
             'nome'  => 'PHP',
-            'id_professor'  => 1,       
+                   
   
         ]);
 
@@ -29,7 +29,7 @@ class DisciplinaSeeder extends Seeder
 
         \DB::table('disciplinas')->insert([
             'nome'  => 'JAVA',
-            'id_professor'  => 2,       
+                   
   
         ]);
 
@@ -41,7 +41,7 @@ class DisciplinaSeeder extends Seeder
 
         \DB::table('disciplinas')->insert([
             'nome'  => 'JavaScript',
-            'id_professor'  => 3,       
+                   
   
         ]);
 
@@ -54,7 +54,7 @@ class DisciplinaSeeder extends Seeder
         
         \DB::table('disciplinas')->insert([
             'nome'  => 'Python',
-            'id_professor'  => 4,       
+                   
   
         ]);
 
@@ -66,7 +66,7 @@ class DisciplinaSeeder extends Seeder
 
         \DB::table('disciplinas')->insert([
             'nome'  => 'Matemática',
-            'id_professor'  => 5,       
+                   
   
         ]);
 
@@ -77,7 +77,7 @@ class DisciplinaSeeder extends Seeder
 
         \DB::table('disciplinas')->insert([
             'nome'  => 'Algoritmia',
-            'id_professor'  => 6,       
+                   
   
         ]);
 
@@ -89,7 +89,7 @@ class DisciplinaSeeder extends Seeder
 
         \DB::table('disciplinas')->insert([
             'nome'  => 'Inglês Técnico',
-            'id_professor'  => 7,       
+                   
   
         ]);
 
@@ -101,7 +101,7 @@ class DisciplinaSeeder extends Seeder
 
         \DB::table('disciplinas')->insert([
             'nome'  => 'C/C++',
-            'id_professor'  => 8,       
+                   
   
         ]);
         \DB::table('professors')->where('id',8)->update(['id_disciplina'=> 8]);
@@ -113,7 +113,7 @@ class DisciplinaSeeder extends Seeder
 
         \DB::table('disciplinas')->insert([
             'nome'  => 'Psicologia',
-            'id_professor'  => 9,       
+                   
   
         ]);
         \DB::table('professors')->where('id',9)->update(['id_disciplina'=> 9]);
@@ -124,7 +124,7 @@ class DisciplinaSeeder extends Seeder
 
         \DB::table('disciplinas')->insert([
             'nome'  => 'Bases de Dados',
-            'id_professor'  => 10,       
+                   
   
         ]);
         \DB::table('professors')->where('id',10)->update(['id_disciplina'=> 10]);
